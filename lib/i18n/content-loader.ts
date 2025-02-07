@@ -56,22 +56,26 @@ export interface SEOMetadata {
   title: string;
   description: string;
   keywords: string[];
-  ogImage: {
-    url: string;
-    width: number;
-    height: number;
-    alt: string;
-  };
   openGraph: {
+    title: string;
+    description: string;
     siteName: string;
     url: string;
+    images: Array<{
+      url: string;
+      width: number;
+      height: number;
+      alt: string;
+    }>;
   };
-  twitterCard: {
+  twitter: {
     card: "summary" | "summary_large_image" | "player" | "app";
     site: string;
     creator: string;
-    image: string;
-    imageAlt: string;
+    images: {
+      url: string;
+      alt: string;
+    };
   };
 }
 

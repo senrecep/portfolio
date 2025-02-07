@@ -13,22 +13,27 @@
     "no code platform geliştirici",
     "portfolyo"
   ],
-  "ogImage": {
-    "url": "/images/og-banner.png",
-    "width": 1200,
-    "height": 384,
-    "alt": "Recep Şen - Yazılım Mühendisi"
-  },
   "openGraph": {
-    "siteName": "Recep Şen",
-    "url": "https://senrecep.com"
+    "title": "Recep Şen - Yazılım Mühendisi",
+    "description": "Backend geliştirme konusunda uzmanlaşmış Yazılım Mühendisi Recep Şen'in kişisel portfolyo web sitesi",
+    "siteName": "Recep Şen Portfolio",
+    "images": [
+      {
+        "url": "/images/og-banner.png",
+        "width": 1200,
+        "height": 384,
+        "alt": "Recep Şen - Yazılım Mühendisi"
+      }
+    ]
   },
-  "twitterCard": {
+  "twitter": {
     "card": "summary_large_image",
     "site": "@senrecep0",
     "creator": "@senrecep0",
-    "image": "/images/og-banner.png",
-    "imageAlt": "Recep Şen - Yazılım Mühendisi"
+    "images": {
+      "url": "/images/og-banner.png",
+      "alt": "Recep Şen - Yazılım Mühendisi"
+    }
   }
 }
 

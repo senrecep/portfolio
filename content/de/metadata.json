@@ -13,22 +13,27 @@
     "no code platform entwickler",
     "portfolio"
   ],
-  "ogImage": {
-    "url": "/images/og-banner.png",
-    "width": 1200,
-    "height": 384,
-    "alt": "Recep Şen - Software Engineer"
-  },
   "openGraph": {
-    "siteName": "Recep Şen",
-    "url": "https://senrecep.com"
+    "title": "Recep Şen - Software Engineer",
+    "description": "Persönliche Portfolio-Website von Recep Şen, einem auf Backend-Entwicklung spezialisierten Software Engineer",
+    "siteName": "Recep Şen Portfolio",
+    "images": [
+      {
+        "url": "/images/og-banner.png",
+        "width": 1200,
+        "height": 384,
+        "alt": "Recep Şen - Software Engineer"
+      }
+    ]
   },
-  "twitterCard": {
+  "twitter": {
     "card": "summary_large_image",
     "site": "@senrecep0",
     "creator": "@senrecep0",
-    "image": "/images/og-banner.png",
-    "imageAlt": "Recep Şen - Software Engineer"
+    "images": {
+      "url": "/images/og-banner.png",
+      "alt": "Recep Şen - Software Engineer"
+    }
   }
 }
 

@@ -28,34 +28,19 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   const metadata = await getSEOMetadata(lang);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
   return {
+    metadataBase: new URL(siteUrl),
     title: metadata.title,
     description: metadata.description,
     keywords: metadata.keywords,
     openGraph: {
-      title: metadata.title,
-      description: metadata.description,
-      siteName: metadata.openGraph.siteName,
-      url: metadata.openGraph.url,
-      images: [
-        {
-          url: metadata.ogImage.url,
-          width: metadata.ogImage.width,
-          height: metadata.ogImage.height,
-          alt: metadata.ogImage.alt,
-        },
-      ],
+      ...metadata.openGraph,
+      locale: lang,
+      type: "website",
     },
-    twitter: {
-      card: metadata.twitterCard.card,
-      site: metadata.twitterCard.site,
-      creator: metadata.twitterCard.creator,
-      images: {
-        url: metadata.twitterCard.image,
-        alt: metadata.twitterCard.imageAlt,
-      },
-    },
+    twitter: metadata.twitter,
   };
 }
 
