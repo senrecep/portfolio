@@ -56,8 +56,19 @@ export interface SEOMetadata {
   title: string;
   description: string;
   keywords: string[];
-  ogImage: string;
-  twitterCard: string;
+  ogImage: {
+    url: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
+  twitterCard: {
+    card: "summary" | "summary_large_image" | "player" | "app";
+    site: string;
+    creator: string;
+    image: string;
+    imageAlt: string;
+  };
 }
 
 export async function getProfile(locale: string): Promise<Profile> {

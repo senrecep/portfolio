@@ -28,7 +28,33 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   const metadata = await getSEOMetadata(lang);
-  return metadata;
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    keywords: metadata.keywords,
+    openGraph: {
+      title: metadata.title,
+      description: metadata.description,
+      images: [
+        {
+          url: metadata.ogImage.url,
+          width: metadata.ogImage.width,
+          height: metadata.ogImage.height,
+          alt: metadata.ogImage.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: metadata.twitterCard.card,
+      site: metadata.twitterCard.site,
+      creator: metadata.twitterCard.creator,
+      images: {
+        url: metadata.twitterCard.image,
+        alt: metadata.twitterCard.imageAlt,
+      },
+    },
+  };
 }
 
 export default async function Home({ params }: PageProps) {
