@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { languages, defaultLanguage, isValidLanguage } from "@/lib/i18n/config";
+import {
+  languageCodes,
+  defaultLanguage,
+  isValidLanguage,
+} from "@/lib/i18n/config";
 
 // Check user's language
 async function getLocale(request: NextRequest) {
@@ -31,7 +35,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // If pathname already contains a valid language, continue
-  const langPattern = languages.map((l) => l.code).join("|");
+  const langPattern = languageCodes.join("|");
   if (new RegExp(`^/(${langPattern})(?:/|$)`).test(pathname)) {
     return NextResponse.next();
   }

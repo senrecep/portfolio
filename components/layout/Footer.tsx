@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Profile } from "@/lib/i18n/content-loader";
 
 interface FooterProps {
@@ -9,29 +8,27 @@ interface FooterProps {
 }
 
 export function Footer({ profile, translations }: FooterProps) {
-  const { socialLinks } = profile;
-
   return (
-    <footer className="bg-primary text-primary-foreground py-6">
-      <div className="container mx-auto px-4 md:px-6">
+    <footer className="bg-slate-900 dark:bg-slate-950 text-slate-50">
+      <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} {profile.personalInfo.name}.{" "}
-            {translations.allRightsReserved}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 max-w-full">
-            {socialLinks.map((link) => (
-              <Link
+          <div className="flex gap-4">
+            {profile.socialLinks.map((link) => (
+              <a
                 key={link.name}
                 href={link.url}
-                className="hover:underline text-sm whitespace-nowrap"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-slate-300 hover:text-slate-50 dark:text-slate-400 dark:hover:text-slate-50 transition-colors"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </div>
+          <p className="text-slate-300 dark:text-slate-400 text-sm">
+            © {new Date().getFullYear()} {profile.personalInfo.name}.{" "}
+            {translations.allRightsReserved}
+          </p>
         </div>
       </div>
     </footer>

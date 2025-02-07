@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileDown } from "lucide-react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
 interface CVDownloadButtonProps {
   url: string;
@@ -66,9 +67,10 @@ export function Header({ profile: profileData, translations }: HeaderProps) {
     profileData.personalInfo;
 
   return (
-    <header className="bg-primary text-primary-foreground py-8 md:py-16">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-end mb-4">
+    <header className="bg-slate-900 dark:bg-slate-950 text-slate-50">
+      <div className="container mx-auto px-4 md:px-6 py-8">
+        <div className="flex justify-end items-center gap-4 mb-4">
+          <ThemeToggle />
           <LanguageSwitcher />
         </div>
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -77,13 +79,15 @@ export function Header({ profile: profileData, translations }: HeaderProps) {
             <h2 className="text-2xl md:text-3xl font-semibold">
               {position}
               {company && company.trim() !== "" && (
-                <span className="text-xl md:text-2xl text-primary-foreground/80">
+                <span className="text-xl md:text-2xl text-slate-300 dark:text-muted-foreground">
                   {" "}
                   @{company}
                 </span>
               )}
             </h2>
-            <p className="text-lg md:text-xl">{about}</p>
+            <p className="text-lg md:text-xl text-slate-300 dark:text-muted-foreground">
+              {about}
+            </p>
             {cv?.url && cv?.fileName && (
               <CVDownloadButton
                 url={cv.url}
@@ -93,7 +97,7 @@ export function Header({ profile: profileData, translations }: HeaderProps) {
             )}
           </div>
           <div className="flex justify-center">
-            <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden border-4 border-white/10 shadow-xl">
+            <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden border-4 border-slate-700/50 dark:border-border shadow-xl">
               <Image
                 src={imageUrl}
                 alt={name}

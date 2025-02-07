@@ -1,12 +1,12 @@
 import { MetadataRoute } from "next";
+import { languageCodes } from "@/lib/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const languages = ["en", "tr", "de"];
   const lastModified = new Date();
 
   // Create language-specific routes
-  const languageRoutes = languages.map((lang) => ({
+  const languageRoutes = languageCodes.map((lang) => ({
     url: `${siteUrl}/${lang}`,
     lastModified,
     changeFrequency: "weekly" as const,

@@ -7,10 +7,11 @@ import { Blog } from "@/components/sections/Blog";
 import { Skills } from "@/components/sections/Skills";
 import { Certificates } from "@/components/sections/Certificates";
 import { Metadata } from "next";
+import { languageCodes } from "@/lib/i18n/config";
 
 interface PageProps {
   params: Promise<{
-    lang: "en" | "tr" | "de";
+    lang: string;
   }>;
 }
 
@@ -20,7 +21,7 @@ export const revalidate = false;
 
 // Generate static pages for all supported languages
 export function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "tr" }, { lang: "de" }];
+  return languageCodes.map((lang) => ({ lang }));
 }
 
 export async function generateMetadata({
@@ -31,16 +32,13 @@ export async function generateMetadata({
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
   return {
+    ...metadata,
     metadataBase: new URL(siteUrl),
-    title: metadata.title,
-    description: metadata.description,
-    keywords: metadata.keywords,
     openGraph: {
       ...metadata.openGraph,
+      url: `${siteUrl}/${lang}`,
       locale: lang,
-      type: "website",
     },
-    twitter: metadata.twitter,
   };
 }
 
