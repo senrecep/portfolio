@@ -1,0 +1,30 @@
+{
+  "title": "Recep Şen - Yazılım Mühendisi",
+  "description": "Backend geliştirme konusunda uzmanlaşmış Yazılım Mühendisi Recep Şen'in kişisel portfolyo sitesi",
+  "keywords": [
+    "yazılım mühendisi",
+    "backend geliştirme",
+    "full stack",
+    "geliştirici",
+    "easyapp",
+    "taptoweb",
+    "dotnet",
+    "mikroservisler",
+    "kodsuz platform geliştirici",
+    "portfolyo"
+  ],
+  "ogImage": {
+    "url": "/images/og-banner.png",
+    "width": 1200,
+    "height": 384,
+    "alt": "Recep Şen - Yazılım Mühendisi"
+  },
+  "twitterCard": {
+    "card": "summary_large_image",
+    "site": "@senrecep0",
+    "creator": "@senrecep0",
+    "image": "/images/og-banner.png",
+    "imageAlt": "Recep Şen - Yazılım Mühendisi"
+  }
+}
+

@@ -1,0 +1,111 @@
+"use client";
+
+import { Profile } from "@/lib/i18n/content-loader";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { FileDown } from "lucide-react";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+
+interface CVDownloadButtonProps {
+  url: string;
+  fileName: string;
+  label: string;
+}
+
+// Separate client component for download functionality
+function CVDownloadButton({ url, fileName, label }: CVDownloadButtonProps) {
+  const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (url.startsWith("http")) {
+      e.preventDefault();
+      try {
+        const response = await fetch(
+          `/api/download?url=${encodeURIComponent(url)}`
+        );
+        if (!response.ok) throw new Error("Download failed");
+
+        const blob = await response.blob();
+        const downloadUrl = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = downloadUrl;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.URL.revokeObjectURL(downloadUrl);
+      } catch (error) {
+        console.error("Failed to download CV:", error);
+      }
+    }
+  };
+
+  return (
+    <Button asChild className="mt-4" variant="secondary">
+      <a
+        href={url}
+        download={fileName}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={handleDownload}
+      >
+        <FileDown className="mr-2 h-4 w-4" />
+        {label}
+      </a>
+    </Button>
+  );
+}
+
+interface HeaderProps {
+  profile: Profile;
+  translations: {
+    downloadCV: string;
+  };
+}
+
+export function Header({ profile: profileData, translations }: HeaderProps) {
+  const { name, position, about, company, cv, imageUrl } =
+    profileData.personalInfo;
+
+  return (
+    <header className="bg-primary text-primary-foreground py-8 md:py-16">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex justify-end mb-4">
+          <LanguageSwitcher />
+        </div>
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold">{name}</h1>
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              {position}
+              {company && company.trim() !== "" && (
+                <span className="text-xl md:text-2xl text-primary-foreground/80">
+                  {" "}
+                  @{company}
+                </span>
+              )}
+            </h2>
+            <p className="text-lg md:text-xl">{about}</p>
+            {cv?.url && cv?.fileName && (
+              <CVDownloadButton
+                url={cv.url}
+                fileName={cv.fileName}
+                label={translations.downloadCV}
+              />
+            )}
+          </div>
+          <div className="flex justify-center">
+            <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden border-4 border-white/10 shadow-xl">
+              <Image
+                src={imageUrl}
+                alt={name}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
+
