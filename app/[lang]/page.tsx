@@ -9,9 +9,9 @@ import { Certificates } from "@/components/sections/Certificates";
 import { Metadata } from "next";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     lang: "en" | "tr" | "de";
-  };
+  }>;
 }
 
 // Force static page generation
@@ -26,13 +26,13 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { lang } = await Promise.resolve(params);
+  const { lang } = await params;
   const metadata = await getSEOMetadata(lang);
   return metadata;
 }
 
 export default async function Home({ params }: PageProps) {
-  const { lang } = await Promise.resolve(params);
+  const { lang } = await params;
   const profile = await getProfile(lang);
   const t = translations[lang];
 
