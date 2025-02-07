@@ -62,6 +62,10 @@ export interface SEOMetadata {
     height: number;
     alt: string;
   };
+  openGraph: {
+    siteName: string;
+    url: string;
+  };
   twitterCard: {
     card: "summary" | "summary_large_image" | "player" | "app";
     site: string;

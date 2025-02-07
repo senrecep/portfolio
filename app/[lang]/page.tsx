@@ -36,6 +36,8 @@ export async function generateMetadata({
     openGraph: {
       title: metadata.title,
       description: metadata.description,
+      siteName: metadata.openGraph.siteName,
+      url: metadata.openGraph.url,
       images: [
         {
           url: metadata.ogImage.url,

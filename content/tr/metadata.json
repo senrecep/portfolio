@@ -1,6 +1,6 @@
 {
   "title": "Recep Şen - Yazılım Mühendisi",
-  "description": "Backend geliştirme konusunda uzmanlaşmış Yazılım Mühendisi Recep Şen'in kişisel portfolyo sitesi",
+  "description": "Backend geliştirme konusunda uzmanlaşmış Yazılım Mühendisi Recep Şen'in kişisel portfolyo web sitesi",
   "keywords": [
     "yazılım mühendisi",
     "backend geliştirme",
@@ -10,7 +10,7 @@
     "taptoweb",
     "dotnet",
     "mikroservisler",
-    "kodsuz platform geliştirici",
+    "no code platform geliştirici",
     "portfolyo"
   ],
   "ogImage": {
@@ -18,6 +18,10 @@
     "width": 1200,
     "height": 384,
     "alt": "Recep Şen - Yazılım Mühendisi"
+  },
+  "openGraph": {
+    "siteName": "Recep Şen",
+    "url": "https://senrecep.com"
   },
   "twitterCard": {
     "card": "summary_large_image",

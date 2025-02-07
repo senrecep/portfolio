@@ -19,6 +19,10 @@
     "height": 384,
     "alt": "Recep Şen - Software Engineer"
   },
+  "openGraph": {
+    "siteName": "Recep Şen",
+    "url": "https://senrecep.com"
+  },
   "twitterCard": {
     "card": "summary_large_image",
     "site": "@senrecep0",

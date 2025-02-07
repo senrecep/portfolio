@@ -10,7 +10,7 @@
     "taptoweb",
     "dotnet",
     "microservices",
-    "no code plattform entwickler",
+    "no code platform entwickler",
     "portfolio"
   ],
   "ogImage": {
@@ -18,6 +18,10 @@
     "width": 1200,
     "height": 384,
     "alt": "Recep Şen - Software Engineer"
+  },
+  "openGraph": {
+    "siteName": "Recep Şen",
+    "url": "https://senrecep.com"
   },
   "twitterCard": {
     "card": "summary_large_image",
