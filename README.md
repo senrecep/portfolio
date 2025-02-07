@@ -11,6 +11,7 @@ This is a modern, internationalized personal portfolio website built with Next.j
 - 🎯 SEO optimized
 - 💅 Styled with TailwindCSS and shadcn/ui
 - 🚀 Optimized performance
+- 📊 Google Analytics 4 integration
 
 ## 🚀 Getting Started
 
@@ -18,6 +19,7 @@ This is a modern, internationalized personal portfolio website built with Next.j
 
 - Node.js 18.x or later
 - npm or yarn or pnpm
+- Google Analytics 4 account (for analytics)
 
 ### Installation
 
@@ -41,7 +43,11 @@ pnpm install
 cp .env.example .env.local
 ```
 
-4. Start the development server:
+4. Configure your environment variables in `.env.local`:
+   - Get your Google Analytics Measurement ID from your GA4 property settings
+   - Replace the placeholder in `NEXT_PUBLIC_GA_MEASUREMENT_ID` with your actual GA4 Measurement ID
+
+5. Start the development server:
 ```bash
 npm run dev
 # or
@@ -68,6 +74,17 @@ senrecep/
 ```
 
 ## 🔧 Configuration
+
+### Google Analytics Setup
+
+1. Create a Google Analytics 4 property in your [Google Analytics account](https://analytics.google.com/)
+2. Go to: Admin → Data Streams → Web
+3. Create a new stream or select an existing one
+4. Copy your Measurement ID (starts with "G-")
+5. Add your Measurement ID to `.env.local`:
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
+```
 
 ### Content Management
 
