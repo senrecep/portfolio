@@ -3,21 +3,24 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const languages = ["en", "tr", "de"];
+  const lastModified = new Date();
 
-  const routes = languages.map((lang) => ({
+  // Create language-specific routes
+  const languageRoutes = languages.map((lang) => ({
     url: `${siteUrl}/${lang}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "weekly" as const,
     priority: 1,
   }));
 
-  return [
-    {
-      url: siteUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    ...routes,
-  ];
+  // Create root route that redirects to default language
+  const rootRoute = {
+    url: siteUrl,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 1,
+  };
+
+  return [rootRoute, ...languageRoutes];
 }
+

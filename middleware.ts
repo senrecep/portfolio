@@ -15,8 +15,12 @@ async function getLocale(request: NextRequest) {
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Skip API requests
-  if (pathname.startsWith("/api")) {
+  // Skip API requests and special files
+  if (
+    pathname.startsWith("/api") ||
+    pathname === "/sitemap.xml" ||
+    pathname === "/robots.txt"
+  ) {
     return NextResponse.next();
   }
 
@@ -41,7 +45,7 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Catch all pages for language redirection, but exclude certain files and folders
-    "/((?!_next/static|_next/image|favicon.ico|files/|images/).*)",
+    "/((?!_next/static|_next/image|favicon.ico|files/|images/|sitemap.xml|robots.txt).*)",
   ],
 };
 
