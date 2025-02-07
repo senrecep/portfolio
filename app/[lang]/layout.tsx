@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 
 interface LayoutProps {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     lang: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
@@ -32,7 +32,8 @@ export async function generateMetadata({
   };
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default async function Layout({ children, params }: LayoutProps) {
+  await params; // Ensure params is resolved
   return <>{children}</>;
 }
 
