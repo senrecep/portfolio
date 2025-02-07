@@ -20,6 +20,17 @@ export const metadata: Metadata = {
   ),
   title: "Portfolio Website",
   description: "A personal portfolio website built with Next.js and TypeScript",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
