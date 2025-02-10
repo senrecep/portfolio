@@ -49,15 +49,17 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
         </div>
         <div className="flex justify-between items-center mt-4">
           <span className="text-sm text-muted-foreground">{post.date}</span>
-          <a
-            href={post.blogUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/90 transition-colors"
-          >
-            {translations.readMore}
-            <ExternalLink className="h-4 w-4 ml-2" />
-          </a>
+          {post.blogUrl && (
+            <a
+              href={post.blogUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/90 transition-colors"
+            >
+              {translations.readMore}
+              <ExternalLink className="h-4 w-4 ml-2" />
+            </a>
+          )}
         </div>
       </CardContent>
     </Card>

@@ -52,15 +52,17 @@ export function ProjectCard({ project, translations }: ProjectCardProps) {
           </div>
         </div>
         <div className="flex justify-end mt-4">
-          <a
-            href={project.projectUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/90 transition-colors"
-          >
-            {translations.viewProject}
-            <ExternalLink className="h-4 w-4 ml-2" />
-          </a>
+          {project.projectUrl && (
+            <a
+              href={project.projectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/90 transition-colors"
+            >
+              {translations.viewProject}
+              <ExternalLink className="h-4 w-4 ml-2" />
+            </a>
+          )}
         </div>
       </CardContent>
     </Card>
