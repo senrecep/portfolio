@@ -56,6 +56,13 @@
   ],
   "blogPosts": [
     {
+      "title": "C#'ta Parametre Geçirme Yöntemlerinin Performans Analizi",
+      "description": "C# parametre geçirme yöntemlerinin derinlemesine incelemesi: Struct, class, record ve ref tiplerinin karşılaştırmalı performans analizi ve optimizasyon için en iyi pratikler.",
+      "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
+      "date": "02/20/2025",
+      "imageUrl": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*TaEfLjbYsF33FDctLLbI6g.png"
+    },
+    {
       "title": "C# İş Kurallarını Yönetmenin Modern Yolu: Kural Motoru Deseni",
       "description": "Result pattern ile merkezi kontrol, yüksek test edilebilirlik ve optimal performans sunan modern bir C# deseni",
       "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
