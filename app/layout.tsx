@@ -4,7 +4,7 @@ import "./globals.css";
 import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "next-themes";
-import { getSEOMetadata } from "@/lib/i18n/content-loader";
+import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
 import { defaultLanguage } from "@/lib/i18n/config";
 
 const geistSans = Geist({
@@ -72,4 +72,3 @@ export default function RootLayout({
     </html>
   );
 }
-

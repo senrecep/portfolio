@@ -1,5 +1,5 @@
 "use client";
-import { SkillCategory } from "@/lib/i18n/content-loader";
+import { SkillCategory, SkillLevel } from "@/lib/i18n/content-loader";
 import { DynamicIcon, getIconName } from "@/components/ui/DynamicIcon";
 
 interface SkillsProps {
@@ -10,18 +10,24 @@ interface SkillsProps {
 }
 
 // Skill level badge component - simplified to avoid hydration issues
-function SkillBadge({ level }: { level: string }) {
+function SkillBadge({
+  level,
+  levelType,
+}: {
+  level: string;
+  levelType: SkillLevel;
+}) {
   // Use simple, static classes that won't change between server and client
   let badgeClasses = "px-2 py-1 rounded-full text-xs font-medium ";
 
-  switch (level.toLowerCase()) {
-    case "expert":
+  switch (levelType) {
+    case SkillLevel.EXPERT:
       badgeClasses += "bg-blue-500 text-white";
       break;
-    case "proficient":
+    case SkillLevel.PROFICIENT:
       badgeClasses += "border border-blue-400 text-blue-600";
       break;
-    case "familiar":
+    case SkillLevel.FAMILIAR:
       badgeClasses += "border border-gray-300 text-gray-600";
       break;
     default:
@@ -109,7 +115,10 @@ export function Skills({ skills, translations }: SkillsProps) {
                             {skill.name}
                           </span>
                         </div>
-                        <SkillBadge level={skill.level} />
+                        <SkillBadge
+                          level={skill.level}
+                          levelType={skill.levelType}
+                        />
                       </div>
                     );
                   })}

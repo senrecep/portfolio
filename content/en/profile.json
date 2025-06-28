@@ -18,26 +18,31 @@
         {
           "name": "Agentic AI Frameworks (e.g., AutoGen)",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "bot"
         },
         {
           "name": "LLM Integration & Fine-Tuning",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "sparkles"
         },
         {
           "name": "Vector DBs & Semantic Caching Systems",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "search"
         },
         {
           "name": "AI Workflows & Automation",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "workflow"
         },
         {
           "name": "Automated Cost-Optimization Strategies",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "trending-down"
         }
       ]
@@ -49,21 +54,25 @@
         {
           "name": ".NET & C#",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "code-2"
         },
         {
           "name": "Microservices & Domain-Driven Design (DDD)",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "blocks"
         },
         {
           "name": "Node.js & Nest.js",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "server"
         },
         {
           "name": "Go (Golang)",
           "level": "Familiar",
+          "levelType": "familiar",
           "icon": "code-2"
         }
       ]
@@ -75,26 +84,31 @@
         {
           "name": "PostgreSQL",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "database"
         },
         {
           "name": "Redis",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "zap"
         },
         {
           "name": "RabbitMQ",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "message-square"
         },
         {
           "name": "MongoDB",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "leaf"
         },
         {
           "name": "Elasticsearch",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "search"
         }
       ]
@@ -106,21 +120,25 @@
         {
           "name": "Google Cloud Platform (GCP)",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "cloud"
         },
         {
           "name": "Docker & Containerization",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "container"
         },
         {
           "name": "CI/CD Pipeline Architecture",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "git-branch"
         },
         {
           "name": "Kubernetes (K8s)",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "ship"
         }
       ]
@@ -132,16 +150,19 @@
         {
           "name": "TypeScript",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "code"
         },
         {
           "name": "Next.js",
           "level": "Proficient",
+          "levelType": "proficient",
           "icon": "triangle"
         },
         {
           "name": "API Design",
           "level": "Expert",
+          "levelType": "expert",
           "icon": "share-2"
         }
       ]

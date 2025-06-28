@@ -1,4 +1,4 @@
-import { getProfile, getSEOMetadata } from "@/lib/i18n/content-loader";
+import { getProfile, getSEOMetadata } from "@/lib/i18n/server-content-loader";
 import { translations } from "@/lib/i18n/translations";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
