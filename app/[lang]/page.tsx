@@ -49,7 +49,10 @@ export default async function Home({ params }: PageProps) {
 
   const hasBlogPosts = profile.blogPosts && profile.blogPosts.length > 0;
   const hasProjects = profile.projects && profile.projects.length > 0;
-  const hasSkills = profile.skills && profile.skills.length > 0;
+  const hasSkills =
+    profile.skills &&
+    Array.isArray(profile.skills) &&
+    profile.skills.length > 0;
   const hasCertificates =
     profile.certificates && profile.certificates.length > 0;
 
@@ -109,4 +112,3 @@ export default async function Home({ params }: PageProps) {
     </div>
   );
 }
-

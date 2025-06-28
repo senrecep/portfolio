@@ -30,6 +30,18 @@ export interface Certificate {
   credentialUrl?: string;
 }
 
+export interface SkillItem {
+  name: string;
+  level: string;
+  icon?: string;
+}
+
+export interface SkillCategory {
+  name: string;
+  icon?: string;
+  items: SkillItem[];
+}
+
 export interface Profile {
   personalInfo: {
     name: string;
@@ -42,7 +54,7 @@ export interface Profile {
       fileName: string;
     };
   };
-  skills?: string[];
+  skills?: string[] | SkillCategory[];
   certificates?: Certificate[];
   projects?: Project[];
   blogPosts?: BlogPost[];
@@ -108,4 +120,3 @@ export function getTranslation(
 
   return typeof translation === "string" ? translation : key;
 }
-

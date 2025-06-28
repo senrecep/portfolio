@@ -11,25 +11,141 @@
     }
   },
   "skills": [
-    "Microservices",
-    "Google Cloud",
-    "AI",
-    "No-Code",
-    "PostgreSQL",
-    "MongoDB",
-    "Redis",
-    "RabbitMQ",
-    "Elasticsearch",
-    "Docker",
-    "Kubernetes",
-    ".NET",
-    "C#",
-    "TypeScript",
-    "Next.js",
-    "Nuxt.js",
-    "Node.js",
-    "Nest.js",
-    "GO"
+    {
+      "name": "AI, Agents & Automation",
+      "icon": "brain",
+      "items": [
+        {
+          "name": "Agentic AI Frameworks (e.g., AutoGen)",
+          "level": "Proficient",
+          "icon": "bot"
+        },
+        {
+          "name": "LLM Integration & Fine-Tuning",
+          "level": "Expert",
+          "icon": "sparkles"
+        },
+        {
+          "name": "Vector DBs & Semantic Caching Systems",
+          "level": "Proficient",
+          "icon": "search"
+        },
+        {
+          "name": "AI Workflows & Automation",
+          "level": "Proficient",
+          "icon": "workflow"
+        },
+        {
+          "name": "Automated Cost-Optimization Strategies",
+          "level": "Expert",
+          "icon": "trending-down"
+        }
+      ]
+    },
+    {
+      "name": "Core Architecture & Backend",
+      "icon": "code",
+      "items": [
+        {
+          "name": ".NET & C#",
+          "level": "Expert",
+          "icon": "code-2"
+        },
+        {
+          "name": "Microservices & Domain-Driven Design (DDD)",
+          "level": "Expert",
+          "icon": "blocks"
+        },
+        {
+          "name": "Node.js & Nest.js",
+          "level": "Proficient",
+          "icon": "server"
+        },
+        {
+          "name": "Go (Golang)",
+          "level": "Familiar",
+          "icon": "code-2"
+        }
+      ]
+    },
+    {
+      "name": "Data & Messaging",
+      "icon": "database",
+      "items": [
+        {
+          "name": "PostgreSQL",
+          "level": "Expert",
+          "icon": "database"
+        },
+        {
+          "name": "Redis",
+          "level": "Expert",
+          "icon": "zap"
+        },
+        {
+          "name": "RabbitMQ",
+          "level": "Expert",
+          "icon": "message-square"
+        },
+        {
+          "name": "MongoDB",
+          "level": "Proficient",
+          "icon": "leaf"
+        },
+        {
+          "name": "Elasticsearch",
+          "level": "Proficient",
+          "icon": "search"
+        }
+      ]
+    },
+    {
+      "name": "Cloud Native & DevOps",
+      "icon": "cloud",
+      "items": [
+        {
+          "name": "Google Cloud Platform (GCP)",
+          "level": "Proficient",
+          "icon": "cloud"
+        },
+        {
+          "name": "Docker & Containerization",
+          "level": "Proficient",
+          "icon": "container"
+        },
+        {
+          "name": "CI/CD Pipeline Architecture",
+          "level": "Proficient",
+          "icon": "git-branch"
+        },
+        {
+          "name": "Kubernetes (K8s)",
+          "level": "Proficient",
+          "icon": "ship"
+        }
+      ]
+    },
+    {
+      "name": "Frontend & API Layer",
+      "icon": "monitor",
+      "items": [
+        {
+          "name": "TypeScript",
+          "level": "Expert",
+          "icon": "code"
+        },
+        {
+          "name": "Next.js",
+          "level": "Proficient",
+          "icon": "triangle"
+        },
+        {
+          "name": "API Design",
+          "level": "Expert",
+          "icon": "share-2"
+        }
+      ]
+    }
   ],
   "certificates": [
     {
