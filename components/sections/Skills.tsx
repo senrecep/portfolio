@@ -1,7 +1,6 @@
 "use client";
 import { SkillCategory, SkillLevel } from "@/lib/i18n/content-loader";
 import { DynamicIcon, getIconName } from "@/components/ui/DynamicIcon";
-import { useMemo } from "react";
 
 interface SkillsProps {
   skills: string[] | SkillCategory[];
@@ -18,27 +17,23 @@ function SkillBadge({
   level: string;
   levelType: SkillLevel;
 }) {
-  // Use simple, static classes that won't change between server and client
-  const badgeClasses = useMemo(() => {
-    let classes = "px-2 py-1 rounded-full text-xs font-medium ";
+  // Use direct static classes to avoid any hydration issues
+  let badgeClasses = "px-2 py-1 rounded-full text-xs font-medium ";
 
-    switch (levelType) {
-      case SkillLevel.EXPERT:
-        classes += "bg-blue-500 text-white";
-        break;
-      case SkillLevel.PROFICIENT:
-        classes += "border border-blue-400 text-blue-600";
-        break;
-      case SkillLevel.FAMILIAR:
-        classes += "border border-gray-300 text-gray-600";
-        break;
-      default:
-        classes += "border border-gray-300 text-gray-600";
-        break;
-    }
-
-    return classes;
-  }, [levelType]);
+  switch (levelType) {
+    case SkillLevel.EXPERT:
+      badgeClasses += "bg-blue-500 text-white";
+      break;
+    case SkillLevel.PROFICIENT:
+      badgeClasses += "border border-blue-400 text-blue-600";
+      break;
+    case SkillLevel.FAMILIAR:
+      badgeClasses += "border border-gray-300 text-gray-600";
+      break;
+    default:
+      badgeClasses += "border border-gray-300 text-gray-600";
+      break;
+  }
 
   return <span className={badgeClasses}>{level}</span>;
 }
@@ -67,7 +62,7 @@ export function Skills({ skills, translations }: SkillsProps) {
       </div>
 
       {isSkillCategoryFormat ? (
-        <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+        <div className="mx-auto grid justify-center gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[64rem]">
           {/* New structured format with categories */}
           {(skills as SkillCategory[]).map((category, categoryIndex) => {
             const iconName = category.icon
@@ -77,7 +72,7 @@ export function Skills({ skills, translations }: SkillsProps) {
             return (
               <div
                 key={categoryIndex}
-                className="border border-border rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow"
+                className="border border-border rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow w-full"
               >
                 {/* Category header with dynamic icon */}
                 <div className="flex items-center space-x-3">
@@ -135,14 +130,16 @@ export function Skills({ skills, translations }: SkillsProps) {
       ) : (
         // Simple array format - original layout
         <div className="mx-auto max-w-[64rem]">
-          <div className="flex flex-wrap gap-2 justify-center">
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center">
             {(skills as string[]).map((skill, index) => (
-              <span
+              <div
                 key={index}
-                className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-border hover:bg-accent transition-colors"
+                className="border border-border rounded-lg p-4 hover:shadow-lg transition-shadow w-full"
               >
-                {skill}
-              </span>
+                <span className="text-sm font-medium text-foreground">
+                  {skill}
+                </span>
+              </div>
             ))}
           </div>
         </div>

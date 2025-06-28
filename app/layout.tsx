@@ -49,7 +49,6 @@ export default function RootLayout({
     <html lang={defaultLanguage} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning
       >
         <ClientProviders gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}>
           {children}
