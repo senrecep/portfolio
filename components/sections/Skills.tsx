@@ -65,7 +65,7 @@ export function Skills({ skills, translations }: SkillsProps) {
 
             return (
               <div
-                key={`category-${categoryIndex}-${category.name}`}
+                key={categoryIndex}
                 className="border border-border rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow"
               >
                 {/* Category header with dynamic icon */}
@@ -94,10 +94,7 @@ export function Skills({ skills, translations }: SkillsProps) {
 
                     return (
                       <div
-                        key={`skill-${categoryIndex}-${skillIndex}-${skill.name.substring(
-                          0,
-                          10
-                        )}`}
+                        key={skillIndex}
                         className="flex items-center justify-between gap-2"
                       >
                         <div className="flex items-center gap-2 flex-1">
@@ -127,7 +124,7 @@ export function Skills({ skills, translations }: SkillsProps) {
           <div className="flex flex-wrap gap-2 justify-center">
             {(skills as string[]).map((skill, index) => (
               <span
-                key={`simple-skill-${index}-${skill.substring(0, 10)}`}
+                key={index}
                 className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-border hover:bg-accent transition-colors"
               >
                 {skill}
