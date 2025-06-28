@@ -3,7 +3,7 @@
     "name": "Recep Şen",
     "position": "Technical Lead",
     "company": "Taptoweb",
-    "about": "Software Engineer mit Expertise in .NET, Cloud-Technologien und Microservices-Architektur. Leidenschaftlich daran interessiert, Wissen durch technisches Schreiben zu teilen und innovative Lösungen zu entwickeln.",
+    "about": "Technical Lead & Softwarearchitekt. Ich entwickle wirkungsvolle, skalierbare Systeme und verwandle komplexe geschäftliche Herausforderungen in elegante technische Lösungen für hunderttausende von Nutzern.",
     "imageUrl": "/images/profile.jpg",
     "cv": {
       "url": "/files/cv.pdf",
@@ -134,4 +134,3 @@
     }
   ]
 }
-

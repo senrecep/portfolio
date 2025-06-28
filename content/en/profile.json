@@ -3,7 +3,7 @@
     "name": "Recep Şen",
     "position": "Technical Lead",
     "company": "Taptoweb",
-    "about": "Software Engineer with expertise in .NET, Cloud Technologies, and Microservices Architecture. Passionate about sharing knowledge through technical writing and developing innovative solutions.",
+    "about": "Technical Lead & Software Architect building high-impact, scalable systems. I turn complex business challenges into elegant technical solutions that serve hundreds of thousands of users.",
     "imageUrl": "/images/profile.jpg",
     "cv": {
       "url": "/files/cv.pdf",
@@ -65,7 +65,7 @@
   "projects": [
     {
       "title": "Easyapp",
-      "description": "Easily build your app on your mobile device with no-code and AI-Powered solutions.",
+      "description": "Led the architecture and development of a microservices-based platform serving 150,000+ users. Implemented AI-driven cost optimization and a capital-efficient, on-demand infrastructure.",
       "projectUrl": "https://easyapp.ai",
       "tags": ["AI", "Mobile", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp"
@@ -134,4 +134,3 @@
     }
   ]
 }
-

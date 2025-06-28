@@ -3,7 +3,7 @@
     "name": "Recep Şen",
     "position": "Teknik Lider",
     "company": "Taptoweb",
-    "about": "Yazılım Mühendisi olarak .NET, Bulut Teknolojileri ve Mikroservis Mimarisi konularında uzmanlığa sahibim. Teknik yazılar yazarak bilgi paylaşımı yapmayı ve yenilikçi çözümler geliştirmeyi seviyorum.",
+    "about": "Teknik Lider ve Yazılım Mimarı. Yüksek etki yaratan, ölçeklenebilir sistemler inşa ediyorum. Karmaşık iş problemlerini, yüz binlerce kullanıcıya hizmet eden zarif ve etkili teknik çözümlere dönüştürüyorum.",
     "imageUrl": "/images/profile.jpg",
     "cv": {
       "url": "/files/cv.pdf",
@@ -134,4 +134,3 @@
     }
   ]
 }
-
