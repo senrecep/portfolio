@@ -1,6 +1,7 @@
 "use client";
 import { SkillCategory, SkillLevel } from "@/lib/i18n/content-loader";
 import { DynamicIcon, getIconName } from "@/components/ui/DynamicIcon";
+import { useMemo } from "react";
 
 interface SkillsProps {
   skills: string[] | SkillCategory[];
@@ -18,22 +19,26 @@ function SkillBadge({
   levelType: SkillLevel;
 }) {
   // Use simple, static classes that won't change between server and client
-  let badgeClasses = "px-2 py-1 rounded-full text-xs font-medium ";
+  const badgeClasses = useMemo(() => {
+    let classes = "px-2 py-1 rounded-full text-xs font-medium ";
 
-  switch (levelType) {
-    case SkillLevel.EXPERT:
-      badgeClasses += "bg-blue-500 text-white";
-      break;
-    case SkillLevel.PROFICIENT:
-      badgeClasses += "border border-blue-400 text-blue-600";
-      break;
-    case SkillLevel.FAMILIAR:
-      badgeClasses += "border border-gray-300 text-gray-600";
-      break;
-    default:
-      badgeClasses += "border border-gray-300 text-gray-600";
-      break;
-  }
+    switch (levelType) {
+      case SkillLevel.EXPERT:
+        classes += "bg-blue-500 text-white";
+        break;
+      case SkillLevel.PROFICIENT:
+        classes += "border border-blue-400 text-blue-600";
+        break;
+      case SkillLevel.FAMILIAR:
+        classes += "border border-gray-300 text-gray-600";
+        break;
+      default:
+        classes += "border border-gray-300 text-gray-600";
+        break;
+    }
+
+    return classes;
+  }, [levelType]);
 
   return <span className={badgeClasses}>{level}</span>;
 }

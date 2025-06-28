@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
-import { Analytics } from "@vercel/analytics/react";
-import { ThemeProvider } from "next-themes";
+import { ClientProviders } from "@/components/shared/ClientProviders";
 import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
 import { defaultLanguage } from "@/lib/i18n/config";
 
@@ -51,23 +49,11 @@ export default function RootLayout({
     <html lang={defaultLanguage} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ClientProviders gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}>
           {children}
-        </ThemeProvider>
-
-        <Analytics />
-
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <GoogleAnalytics
-            GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
-          />
-        )}
+        </ClientProviders>
       </body>
     </html>
   );
