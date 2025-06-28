@@ -19,8 +19,8 @@
     "siteName": "Recep Şen Portfolio",
     "images": [
       {
-        "url": "/images/og-banner-tr.png",
-        "width": 1400,
+        "url": "/images/og-banner.tr.png",
+        "width": 1200,
         "height": 364,
         "alt": "Recep Şen - Yazılım Mühendisi"
       }
@@ -31,7 +31,7 @@
     "site": "@senrecep0",
     "creator": "@senrecep0",
     "images": {
-      "url": "/images/og-banner-tr.png",
+      "url": "/images/og-banner.tr.png",
       "alt": "Recep Şen - Yazılım Mühendisi"
     }
   }
