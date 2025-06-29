@@ -3,6 +3,7 @@
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
+import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 interface ClientProvidersProps {
   children: React.ReactNode;
@@ -11,12 +12,13 @@ interface ClientProvidersProps {
 
 export function ClientProviders({ children, gaId }: ClientProvidersProps) {
   return (
-    <>
+    <ErrorBoundary>
       <NextThemesProvider
         attribute="class"
         defaultTheme="system"
         enableSystem
-        disableTransitionOnChange
+        disableTransitionOnChange={false}
+        storageKey="theme"
       >
         {children}
       </NextThemesProvider>
@@ -24,6 +26,6 @@ export function ClientProviders({ children, gaId }: ClientProvidersProps) {
       <Analytics />
 
       {gaId && <GoogleAnalytics GA_MEASUREMENT_ID={gaId} />}
-    </>
+    </ErrorBoundary>
   );
 }
