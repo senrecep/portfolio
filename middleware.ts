@@ -18,6 +18,18 @@ async function getLocale(request: NextRequest) {
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  const response = NextResponse.next();
+
+  // Add compression and performance headers for all responses
+  response.headers.set("Vary", "Accept-Encoding");
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set("X-Frame-Options", "DENY");
+  response.headers.set("X-XSS-Protection", "1; mode=block");
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  response.headers.set(
+    "Permissions-Policy",
+    "camera=(), microphone=(), geolocation=()"
+  );
 
   // Skip API requests and special files
   if (
@@ -25,7 +37,16 @@ export async function middleware(request: NextRequest) {
     pathname === "/sitemap.xml" ||
     pathname === "/robots.txt"
   ) {
-    return NextResponse.next();
+    // Add specific headers for API and special files
+    if (pathname.startsWith("/api")) {
+      response.headers.set(
+        "Cache-Control",
+        "public, max-age=300, s-maxage=3600"
+      );
+    } else {
+      response.headers.set("Cache-Control", "public, max-age=86400");
+    }
+    return response;
   }
 
   // Check requests to home page
@@ -37,7 +58,12 @@ export async function middleware(request: NextRequest) {
   // If pathname already contains a valid language, continue
   const langPattern = languageCodes.join("|");
   if (new RegExp(`^/(${langPattern})(?:/|$)`).test(pathname)) {
-    return NextResponse.next();
+    // Add performance headers for language-specific pages
+    response.headers.set(
+      "Cache-Control",
+      "public, max-age=3600, must-revalidate"
+    );
+    return response;
   }
 
   // Redirect all other requests with language
@@ -52,4 +78,3 @@ export const config = {
     "/((?!_next/static|_next/image|favicon.ico|files/|images/|sitemap.xml|robots.txt).*)",
   ],
 };
-

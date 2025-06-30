@@ -8,11 +8,19 @@ import { defaultLanguage } from "@/lib/i18n/config";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  // Optimize font loading for better performance
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial", "sans-serif"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  // Optimize font loading for better performance
+  display: "swap",
+  preload: true,
+  fallback: ["ui-monospace", "monospace"],
 });
 
 export async function generateMetadata(): Promise<Metadata> {

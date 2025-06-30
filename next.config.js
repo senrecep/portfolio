@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    optimizePackageImports: ["lucide-react"],
+
+  // 🚀 GZIP COMPRESSION - Enabled by default but explicitly set
+  compress: true,
+
+  // 🎯 Production optimizations
+  compiler: {
+    // Remove console.log statements in production for smaller bundles
+    removeConsole: process.env.NODE_ENV === "production",
   },
+
+  // 🖼️ Image optimizations for better compression
   images: {
     remotePatterns: [
       {
@@ -11,31 +19,6 @@ const nextConfig = {
         hostname: "**",
       },
     ],
-  },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=3600, must-revalidate",
-          },
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "X-Frame-Options",
-            value: "DENY",
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
-          },
-        ],
-      },
-    ];
   },
 };
 
