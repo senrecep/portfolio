@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
 
-  // 🚀 GZIP COMPRESSION - Enabled by default but explicitly set
+  // 🚀 GZIP COMPRESSION - Force enable
   compress: true,
 
   // 🎯 Production optimizations
@@ -19,6 +19,21 @@ const nextConfig = {
         hostname: "**",
       },
     ],
+  },
+
+  // Only set Vary header to hint compression support
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Vary",
+            value: "Accept-Encoding",
+          },
+        ],
+      },
+    ];
   },
 };
 
