@@ -4,6 +4,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
 import ErrorBoundary from "@/components/shared/ErrorBoundary";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 interface ClientProvidersProps {
   children: React.ReactNode;
@@ -26,6 +27,8 @@ export function ClientProviders({ children, gaId }: ClientProvidersProps) {
       <Analytics />
 
       {gaId && <GoogleAnalytics GA_MEASUREMENT_ID={gaId} />}
+
+      <SpeedInsights />
     </ErrorBoundary>
   );
 }

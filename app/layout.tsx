@@ -4,7 +4,6 @@ import "./globals.css";
 import { ClientProviders } from "@/components/shared/ClientProviders";
 import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
 import { defaultLanguage } from "@/lib/i18n/config";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
