@@ -1,6 +1,7 @@
 {
   "title": "Recep Şen - Software Engineer",
   "description": "Ich entwickle wirkungsvolle, skalierbare Systeme und verwandle komplexe geschäftliche Herausforderungen in elegante technische Lösungen für hunderttausende von Nutzern.",
+  "callsign": "TB1REC",
   "keywords": [
     "software engineer",
     "backend entwicklung",
@@ -11,7 +12,10 @@
     "dotnet",
     "microservices",
     "no code platform entwickler",
-    "portfolio"
+    "portfolio",
+    "TB1REC",
+    "amateur radio",
+    "ham radio"
   ],
   "openGraph": {
     "title": "Recep Şen - Software Engineer",

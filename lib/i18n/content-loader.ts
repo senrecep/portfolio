@@ -54,6 +54,7 @@ export interface Profile {
     company: string;
     about: string;
     imageUrl: string;
+    callsign?: string;
     cv?: {
       url: string;
       fileName: string;

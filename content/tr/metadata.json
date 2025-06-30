@@ -1,6 +1,7 @@
 {
   "title": "Recep Şen - Yazılım Mühendisi",
   "description": "Yüksek etki yaratan, ölçeklenebilir sistemler inşa ediyorum. Karmaşık iş problemlerini, yüz binlerce kullanıcıya hizmet eden zarif ve etkili teknik çözümlere dönüştürüyorum.",
+  "callsign": "TB1REC",
   "keywords": [
     "yazılım mühendisi",
     "backend geliştirme",
@@ -11,7 +12,10 @@
     "dotnet",
     "mikroservisler",
     "no code platform geliştirici",
-    "portfolyo"
+    "portfolyo",
+    "TB1REC",
+    "amatör radio",
+    "ham radio"
   ],
   "openGraph": {
     "title": "Recep Şen - Yazılım Mühendisi",
