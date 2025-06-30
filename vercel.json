@@ -60,7 +60,5 @@
       "source": "/",
       "destination": "/en"
     }
-  ],
-  "compresses": true,
-  "framework": "nextjs"
+  ]
 }
