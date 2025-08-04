@@ -57,7 +57,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClientProviders gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}>
+        <ClientProviders 
+          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          clarityId={process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}
+        >
           {children}
         </ClientProviders>
       </body>
