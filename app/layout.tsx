@@ -10,7 +10,7 @@ const geistSans = Geist({
   subsets: ["latin"],
   // Optimize font loading for better performance
   display: "swap",
-  preload: true, // Re-enable preload since fonts are now properly configured
+  preload: true, 
   fallback: ["system-ui", "arial", "sans-serif"],
 });
 
@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   // Optimize font loading for better performance
   display: "swap",
-  preload: true, // Re-enable preload since fonts are now properly configured
+  preload: true, 
   fallback: ["ui-monospace", "monospace"],
 });
 
