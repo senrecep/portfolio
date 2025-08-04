@@ -109,6 +109,7 @@ export function Header({ profile: profileData, translations }: HeaderProps) {
                 src={imageUrl}
                 alt={name}
                 fill
+                sizes="300px"
                 className="object-cover hover:scale-105 transition-transform duration-300"
                 priority
               />

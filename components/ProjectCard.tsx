@@ -30,6 +30,7 @@ export function ProjectCard({ project, translations }: ProjectCardProps) {
                   src={project.imageUrl!}
                   alt={project.title}
                   fill
+                  sizes="24px"
                   className="object-contain"
                   onError={() => setImageError(true)}
                 />

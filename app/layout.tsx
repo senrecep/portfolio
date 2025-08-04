@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClientProviders } from "@/components/shared/ClientProviders";
+import MicrosoftClarity from "@/components/shared/MicrosoftClarity";
 import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
 import { defaultLanguage } from "@/lib/i18n/config";
 const geistSans = Geist({
@@ -9,7 +10,7 @@ const geistSans = Geist({
   subsets: ["latin"],
   // Optimize font loading for better performance
   display: "swap",
-  preload: true,
+  preload: true, // Re-enable preload since fonts are now properly configured
   fallback: ["system-ui", "arial", "sans-serif"],
 });
 
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   // Optimize font loading for better performance
   display: "swap",
-  preload: true,
+  preload: true, // Re-enable preload since fonts are now properly configured
   fallback: ["ui-monospace", "monospace"],
 });
 
@@ -54,12 +55,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={defaultLanguage} suppressHydrationWarning>
+      <head>
+        <MicrosoftClarity />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ClientProviders 
           gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
-          clarityId={process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}
         >
           {children}
         </ClientProviders>
