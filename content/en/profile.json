@@ -24,8 +24,8 @@
         },
         {
           "name": "LLM Integration & Fine-Tuning",
-          "level": "Expert",
-          "levelType": "expert",
+          "level": "Proficient",
+          "levelType": "proficient",
           "icon": "sparkles"
         },
         {
@@ -42,8 +42,8 @@
         },
         {
           "name": "Automated Cost-Optimization Strategies",
-          "level": "Expert",
-          "levelType": "expert",
+          "level": "Proficient",
+          "levelType": "proficient",
           "icon": "trending-down"
         }
       ]

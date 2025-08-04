@@ -24,8 +24,8 @@
         },
         {
           "name": "LLM Entegrasyonu ve İnce Ayar",
-          "level": "Uzman",
-          "levelType": "expert",
+          "level": "Yetkin",
+          "levelType": "proficient",
           "icon": "sparkles"
         },
         {
@@ -42,8 +42,8 @@
         },
         {
           "name": "Otomatik Maliyet Optimizasyon Stratejileri",
-          "level": "Uzman",
-          "levelType": "expert",
+          "level": "Yetkin",
+          "levelType": "proficient",
           "icon": "trending-down"
         }
       ]
