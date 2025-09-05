@@ -24,8 +24,8 @@
         },
         {
           "name": "LLM-Integration & Fine-Tuning",
-          "level": "Kompetent",
-          "levelType": "proficient",
+          "level": "Experte",
+          "levelType": "expert",
           "icon": "sparkles"
         },
         {
@@ -36,8 +36,8 @@
         },
         {
           "name": "KI-Workflows & Automatisierung",
-          "level": "Kompetent",
-          "levelType": "proficient",
+          "level": "Experte",
+          "levelType": "expert",
           "icon": "workflow"
         },
         {

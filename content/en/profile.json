@@ -24,8 +24,8 @@
         },
         {
           "name": "LLM Integration & Fine-Tuning",
-          "level": "Proficient",
-          "levelType": "proficient",
+          "level": "Expert",
+          "levelType": "expert",
           "icon": "sparkles"
         },
         {
@@ -36,8 +36,8 @@
         },
         {
           "name": "AI Workflows & Automation",
-          "level": "Proficient",
-          "levelType": "proficient",
+          "level": "Expert",
+          "levelType": "expert",
           "icon": "workflow"
         },
         {

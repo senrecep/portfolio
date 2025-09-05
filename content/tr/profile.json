@@ -24,8 +24,8 @@
         },
         {
           "name": "LLM Entegrasyonu ve İnce Ayar",
-          "level": "Yetkin",
-          "levelType": "proficient",
+          "level": "Uzman",
+          "levelType": "expert",
           "icon": "sparkles"
         },
         {
@@ -36,8 +36,8 @@
         },
         {
           "name": "AI İş Akışları ve Otomasyon",
-          "level": "Yetkin",
-          "levelType": "proficient",
+          "level": "Uzman",
+          "levelType": "expert",
           "icon": "workflow"
         },
         {
