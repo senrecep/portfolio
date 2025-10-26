@@ -59,6 +59,7 @@ export default async function Home({ params }: PageProps) {
         translations={{
           downloadCV: t.actions.downloadCV,
         }}
+        language={lang}
       />
       <main className="container mx-auto px-4 py-8">
         {hasBlogPosts && (

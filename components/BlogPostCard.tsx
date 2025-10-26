@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
+import { trackExternalLink } from "@/lib/analytics";
 
 interface BlogPostCardProps {
   post: BlogPost;
@@ -54,6 +55,7 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/90 transition-colors"
+              onClick={() => trackExternalLink(post.blogUrl!, `Blog: ${post.title}`)}
             >
               {translations.readMore}
               <ExternalLink className="h-4 w-4 ml-2" />

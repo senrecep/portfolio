@@ -7,16 +7,26 @@ import { FileDown } from "lucide-react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { RadioIcon } from "@/components/shared/RadioIcon";
+import { trackCVDownload } from "@/lib/analytics";
 
 interface CVDownloadButtonProps {
   url: string;
   fileName: string;
   label: string;
+  language?: string;
 }
 
 // Separate client component for download functionality
-function CVDownloadButton({ url, fileName, label }: CVDownloadButtonProps) {
+function CVDownloadButton({ url, fileName, label, language }: CVDownloadButtonProps) {
   const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Track the download attempt (optional language context)
+    try {
+      trackCVDownload(language);
+    } catch (err) {
+      // Ensure analytics failures don't block download
+      console.warn("trackCVDownload failed:", err);
+    }
+
     if (url.startsWith("http")) {
       e.preventDefault();
       try {
@@ -61,9 +71,10 @@ interface HeaderProps {
   translations: {
     downloadCV: string;
   };
+  language?: string;
 }
 
-export function Header({ profile: profileData, translations }: HeaderProps) {
+export function Header({ profile: profileData, translations, language }: HeaderProps) {
   const { name, position, about, company, cv, imageUrl, callsign } =
     profileData.personalInfo;
 
@@ -100,6 +111,7 @@ export function Header({ profile: profileData, translations }: HeaderProps) {
                 url={cv.url}
                 fileName={cv.fileName}
                 label={translations.downloadCV}
+                language={language}
               />
             )}
           </div>

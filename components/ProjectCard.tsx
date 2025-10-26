@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
+import { trackExternalLink } from "@/lib/analytics";
 
 interface ProjectCardProps {
   project: Project;
@@ -59,6 +60,7 @@ export function ProjectCard({ project, translations }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/90 transition-colors"
+              onClick={() => trackExternalLink(project.projectUrl!, `Project: ${project.title}`)}
             >
               {translations.viewProject}
               <ExternalLink className="h-4 w-4 ml-2" />
