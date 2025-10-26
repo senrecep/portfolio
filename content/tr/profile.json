@@ -190,6 +190,13 @@
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
       "tags": ["C#", ".NET", "Tasarım Desenleri", "Fonksiyonel Programlama"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
+    },
+    {
+      "title": "Maaş Simülatörü",
+      "description": "Türkiye'deki brüt ve net maaş hesaplamalarını gerçek zamanlı olarak yapan interaktif web uygulaması. Vergi dilimleri, SGK primleri ve diğer kesintileri detaylı şekilde gösterir.",
+      "projectUrl": "https://salary-sim.senrecep.com/",
+      "tags": ["Next.js", "TypeScript", "Finans", "Hesaplama"],
+      "imageUrl": "https://salary-sim.senrecep.com/og-image.png"
     }
   ],
   "blogPosts": [

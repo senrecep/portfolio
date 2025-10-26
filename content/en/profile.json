@@ -221,6 +221,13 @@
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
       "tags": ["C#", ".NET", "Design Patterns", "Functional Programming"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
+    },
+    {
+      "title": "Salary Simulator",
+      "description": "Interactive web application for real-time gross and net salary calculations in Turkey. Displays detailed tax brackets, social security premiums, and other deductions.",
+      "projectUrl": "https://salary-sim.senrecep.com/",
+      "tags": ["Next.js", "TypeScript", "Finance", "Calculator"],
+      "imageUrl": "https://salary-sim.senrecep.com/og-image.png"
     }
   ],
   "blogPosts": [
