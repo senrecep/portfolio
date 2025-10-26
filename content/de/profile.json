@@ -196,7 +196,7 @@
       "description": "Interaktive Webanwendung für Echtzeit-Brutto- und Nettogehaltsberechnungen in der Türkei. Zeigt detaillierte Steuerklassen, Sozialversicherungsbeiträge und andere Abzüge an.",
       "projectUrl": "https://salary-sim.senrecep.com/",
       "tags": ["Next.js", "TypeScript", "Finanzen", "Rechner"],
-      "imageUrl": "https://salary-sim.senrecep.com/og-image.png"
+      "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     }
   ],
   "blogPosts": [
