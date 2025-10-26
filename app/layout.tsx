@@ -5,12 +5,13 @@ import { ClientProviders } from "@/components/shared/ClientProviders";
 import MicrosoftClarity from "@/components/shared/MicrosoftClarity";
 import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
 import { defaultLanguage } from "@/lib/i18n/config";
+import { buildMetadataWithAbsoluteUrls } from "@/lib/i18n/metadata-utils";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   // Optimize font loading for better performance
   display: "swap",
-  preload: true, 
+  preload: true,
   fallback: ["system-ui", "arial", "sans-serif"],
 });
 
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   // Optimize font loading for better performance
   display: "swap",
-  preload: true, 
+  preload: true,
   fallback: ["ui-monospace", "monospace"],
 });
 
@@ -28,12 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
   return {
-    ...metadata,
-    metadataBase: new URL(siteUrl),
-    openGraph: {
-      ...metadata.openGraph,
-      url: siteUrl,
-    },
+    ...buildMetadataWithAbsoluteUrls(metadata, siteUrl),
     robots: {
       index: true,
       follow: true,
