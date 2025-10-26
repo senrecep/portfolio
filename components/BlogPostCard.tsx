@@ -2,7 +2,7 @@
 
 import { type BlogPost } from "@/lib/i18n/content-loader";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { trackExternalLink } from "@/lib/analytics";
@@ -24,15 +24,15 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
     <Card className="overflow-hidden flex flex-col hover:shadow-lg transition-shadow w-full">
       {shouldShowImage && (
         <div className="relative w-full aspect-[16/9]">
-          <Image
-            key={index}
+          <OptimizedImage
             src={post.imageUrl!}
             alt={post.title}
+            key={index}
             fill
-            className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             quality={75}
-            onError={() => setImageError(true)}
+            objectFit="cover"
+            onErrorCallback={() => setImageError(true)}
           />
         </div>
       )}

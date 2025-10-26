@@ -1,13 +1,13 @@
 "use client";
 
 import { Profile } from "@/lib/i18n/content-loader";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileDown } from "lucide-react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { RadioIcon } from "@/components/shared/RadioIcon";
 import { trackCVDownload } from "@/lib/analytics";
+import { OptimizedImage } from "@/components/shared/OptimizedImage";
 
 interface CVDownloadButtonProps {
   url: string;
@@ -16,16 +16,9 @@ interface CVDownloadButtonProps {
   language?: string;
 }
 
-// Separate client component for download functionality
 function CVDownloadButton({ url, fileName, label, language }: CVDownloadButtonProps) {
   const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Track the download attempt (optional language context)
-    try {
-      trackCVDownload(language);
-    } catch (err) {
-      // Ensure analytics failures don't block download
-      console.warn("trackCVDownload failed:", err);
-    }
+    trackCVDownload(language);
 
     if (url.startsWith("http")) {
       e.preventDefault();
@@ -117,13 +110,14 @@ export function Header({ profile: profileData, translations, language }: HeaderP
           </div>
           <div className="flex justify-center">
             <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden border-4 border-slate-700/50 dark:border-border shadow-xl">
-              <Image
+              <OptimizedImage
                 src={imageUrl}
                 alt={name}
                 fill
                 sizes="300px"
-                className="object-cover hover:scale-105 transition-transform duration-300"
+                className="hover:scale-105 transition-transform duration-300"
                 priority
+                objectFit="cover"
               />
             </div>
           </div>
