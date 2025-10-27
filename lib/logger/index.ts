@@ -7,12 +7,6 @@ const logger = pino({
       return { level: label };
     },
   },
-  transport: {
-    target: 'pino-pretty',
-    options: {
-      colorize: true,
-    },
-  },
 });
 
 export default logger;
