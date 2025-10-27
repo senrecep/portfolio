@@ -5,6 +5,7 @@ import {
   defaultLanguage,
   isValidLanguage,
 } from "@/lib/i18n/config";
+import logger from "@/lib/logger";
 
 // Check user's language
 async function getLocale(request: NextRequest) {
@@ -20,8 +21,7 @@ export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const response = NextResponse.next();
 
-  console.log({
-    timestamp: new Date().toISOString(),
+  logger.info({
     method: request.method,
     url: request.url,
     pathname,
