@@ -12,18 +12,20 @@ This is a modern, internationalized personal portfolio website built with Next.j
 - 💅 Styled with TailwindCSS and shadcn/ui
 - 🚀 Optimized performance with gzip compression
 - 📊 Google Analytics 4 integration
-- � Microsoft Clarity user behavior analytics
-- �🗜️ Automatic asset compression and caching
+- 🏷️ Google Tag Manager integration
+- 🔍 Microsoft Clarity user behavior analytics
+- 🗜️ Automatic asset compression and caching
 - ⚡ Static asset optimization
 - 🔧 Bundle analysis support
 
 ## 🚀 Getting Started
-
 ### Prerequisites
 
 - Node.js 18.x or later
 - npm or yarn or pnpm
 - Google Analytics 4 account (for analytics)
+- Google Tag Manager account (optional, for advanced tracking)
+- Microsoft Clarity account (for user behavior analytics)
 - Microsoft Clarity account (for user behavior analytics)
 
 ### Installation
@@ -54,11 +56,13 @@ cp .env.example .env.local
 4. Configure your environment variables in `.env.local`:
 
    - Get your Google Analytics Measurement ID from your GA4 property settings
+   - Get your Google Tag Manager ID from your GTM account (optional)
    - Get your Microsoft Clarity Project ID from your Clarity account
    - Replace the placeholders with your actual IDs:
 
 ```bash
 NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
+NEXT_PUBLIC_GTM_ID="GTM-XXXXXXXX"
 NEXT_PUBLIC_CLARITY_PROJECT_ID="XXXXXXXXXX"
 ```
 
@@ -102,6 +106,28 @@ senrecep/
 ```bash
 NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
 ```
+
+### Google Tag Manager Setup
+
+1. Create a Google Tag Manager account at [tagmanager.google.com](https://tagmanager.google.com/)
+2. Create a new container for your website
+3. Copy your Container ID (starts with "GTM-")
+4. Add your Container ID to `.env.local`:
+
+```bash
+NEXT_PUBLIC_GTM_ID="GTM-XXXXXXXX"
+```
+
+Google Tag Manager provides:
+- **Centralized Tag Management** - Manage all your marketing and analytics tags in one place
+- **Event Tracking** - Track custom events without code changes
+- **Conversion Tracking** - Set up conversion tracking for ads and campaigns
+- **Third-party Integrations** - Easy integration with various marketing tools
+- **Version Control** - Track changes and roll back if needed
+
+The GTM script is automatically loaded:
+- In the `<head>` section for optimal performance
+- With a noscript fallback in the `<body>` for users with JavaScript disabled
 
 ### Microsoft Clarity Setup
 

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClientProviders } from "@/components/shared/ClientProviders";
 import MicrosoftClarity from "@/components/shared/MicrosoftClarity";
+import { GoogleTagManagerHead } from "@/components/shared/GoogleTagManager";
 import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
 import { defaultLanguage } from "@/lib/i18n/config";
 import { buildMetadataWithAbsoluteUrls } from "@/lib/i18n/metadata-utils";
@@ -49,16 +50,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+
   return (
     <html lang={defaultLanguage} suppressHydrationWarning>
       <head>
+        {gtmId && <GoogleTagManagerHead GTM_ID={gtmId} />}
         <MicrosoftClarity />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClientProviders 
+        <ClientProviders
           gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          gtmId={gtmId}
         >
           {children}
         </ClientProviders>
