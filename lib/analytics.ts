@@ -5,6 +5,7 @@ declare global {
       targetId: string,
       config?: Record<string, unknown>
     ) => void;
+    dataLayer?: Array<Record<string, unknown>>;
   }
 }
 
@@ -12,8 +13,17 @@ export const trackEvent = (
   eventName: string,
   eventParams?: Record<string, unknown>
 ) => {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("event", eventName, eventParams);
+  if (typeof window !== "undefined") {
+    if (window.gtag) {
+      window.gtag("event", eventName, eventParams);
+    }
+
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: eventName,
+        ...eventParams,
+      });
+    }
   }
 };
 
