@@ -21,11 +21,20 @@ export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const response = NextResponse.next();
 
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  const realIp = request.headers.get("x-real-ip");
+  const cfConnectingIp = request.headers.get("cf-connecting-ip");
+
+  const clientIp = cfConnectingIp ||
+                   (forwardedFor ? forwardedFor.split(",")[0].trim() : null) ||
+                   realIp ||
+                   "unknown";
+
   logger.info({
     method: request.method,
     url: request.url,
     pathname,
-    ip: request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip"),
+    ip: clientIp,
     userAgent: request.headers.get("user-agent"),
   });
 
