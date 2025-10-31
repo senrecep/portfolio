@@ -192,10 +192,10 @@
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
     },
     {
-      "title": "Gehaltsrechner",
-      "description": "Interaktive Webanwendung für Echtzeit-Brutto- und Nettogehaltsberechnungen in der Türkei. Zeigt detaillierte Steuerklassen, Sozialversicherungsbeiträge und andere Abzüge an.",
+      "title": "Karriere- und Gehaltsvergleichssimulator",
+      "description": "Umfassendster Gehaltsvergleichssimulator der Türkei. Vergleich des Nettoeinkommens zwischen SGK-Angestellten (4/a) und Bağ-Kur-Selbstständigen (4/b). Brutto-/Nettogehalt, Steuern, Prämien und Arbeitgeberkostenberechnungen. 2026 TES-Reform-Simulation, Unterstützung für junge Unternehmer, Dienstleistungsexportbefreiung. Monatlicher/Jährlicher Modus, TRY/USD-Währungsumrechnung.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["Next.js", "TypeScript", "Finanzen", "Rechner"],
+      "tags": ["JavaScript", "Finanzen", "Steuern", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     }
   ],

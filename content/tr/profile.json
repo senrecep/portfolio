@@ -192,10 +192,10 @@
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
     },
     {
-      "title": "Maaş Simülatörü",
-      "description": "Türkiye'deki brüt ve net maaş hesaplamalarını gerçek zamanlı olarak yapan interaktif web uygulaması. Vergi dilimleri, SGK primleri ve diğer kesintileri detaylı şekilde gösterir.",
+      "title": "Kariyer ve Maaş Karşılaştırma Simülatörü",
+      "description": "Türkiye'nin en kapsamlı maaş karşılaştırma simülatörü. SGK'lı maaşlı çalışan (4/a) ile Bağ-Kur'lı şahıs şirketi (4/b) net gelir karşılaştırması. Brüt/Net maaş, vergi, prim, işveren maliyeti hesaplama. 2026 TES Reform simülasyonu, Genç Girişimci desteği, Hizmet İhracatı istisnası. Aylık/Yıllık mod, TRY/USD para birimi desteği.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["Next.js", "TypeScript", "Finans", "Hesaplama"],
+      "tags": ["JavaScript", "Finans", "Vergi", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     }
   ],

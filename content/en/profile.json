@@ -223,10 +223,10 @@
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
     },
     {
-      "title": "Salary Simulator",
-      "description": "Interactive web application for real-time gross and net salary calculations in Turkey. Displays detailed tax brackets, social security premiums, and other deductions.",
+      "title": "Career & Salary Comparison Simulator",
+      "description": "Turkey's most comprehensive salary comparison simulator. Compare net income between SGK salaried employees (4/a) and Bağ-Kur self-employed (4/b). Gross/Net salary, tax, premium, employer cost calculations. 2026 TES Reform simulation, Young Entrepreneur support, Service Export exemption. Monthly/Yearly mode, TRY/USD currency support.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["Next.js", "TypeScript", "Finance", "Calculator"],
+      "tags": ["JavaScript", "Finance", "Tax", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     }
   ],
