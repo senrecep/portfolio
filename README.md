@@ -1,39 +1,71 @@
 # Personal Portfolio Website
 
-This is a modern, internationalized personal portfolio website built with Next.js 15, React 19, and TailwindCSS. It features a clean, responsive design with support for multiple languages and dark/light themes.
+A modern, internationalized personal portfolio website built with Next.js 15.5, React 19, and TailwindCSS. Features a clean, responsive design with support for multiple languages, dark/light themes, and comprehensive SEO optimizations.
 
-## 🌟 Features
+## Features
 
-- 🌐 Internationalization (i18n) support
-- 🎨 Dark/Light theme
-- 📱 Fully responsive design
-- ⚡ Built with Next.js 15 and React 19
-- 🎯 SEO optimized
-- 💅 Styled with TailwindCSS and shadcn/ui
-- 🚀 Optimized performance with gzip compression
-- 📊 Google Analytics 4 integration
-- 🏷️ Google Tag Manager integration
-- 🔍 Microsoft Clarity user behavior analytics
-- 🗜️ Automatic asset compression and caching
-- ⚡ Static asset optimization
-- 🔧 Bundle analysis support
+### Core
+- Next.js 15.5 with App Router and Turbopack
+- React 19 with Server Components
+- TypeScript for type safety
+- TailwindCSS with shadcn/ui components
 
-## 🚀 Getting Started
+### Internationalization
+- Multi-language support (English, Turkish, German)
+- Automatic language detection from browser
+- hreflang tags for SEO
+- Localized metadata and content
+
+### SEO & Performance
+- JSON-LD structured data (Person + WebSite schema)
+- Automatic sitemap generation with alternates
+- Canonical URLs and hreflang tags
+- Image optimization (AVIF/WebP)
+- LCP optimization with preloading
+- Static page generation (SSG)
+- GZIP compression
+
+### Analytics & Tracking
+- Google Analytics 4 integration
+- Google Tag Manager integration
+- Microsoft Clarity user behavior analytics
+
+### Developer Experience
+- Biome for fast linting and formatting
+- ESLint with Next.js config
+- Docker support with standalone output
+- Pino logger for structured logging
+
+### Security
+- Security headers (HSTS, X-Frame-Options, etc.)
+- Input validation and sanitization
+- Rate limiting support
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| Framework | Next.js 15.5.7 |
+| UI Library | React 19.2.1 |
+| Styling | TailwindCSS 3.4 |
+| Components | shadcn/ui, Radix UI |
+| Icons | Lucide React, Lordicon |
+| Linting | Biome 2.3, ESLint 9 |
+| Language | TypeScript 5 |
+
+## Getting Started
+
 ### Prerequisites
 
-- Node.js 18.x or later
-- npm or yarn or pnpm
-- Google Analytics 4 account (for analytics)
-- Google Tag Manager account (optional, for advanced tracking)
-- Microsoft Clarity account (for user behavior analytics)
-- Microsoft Clarity account (for user behavior analytics)
+- Node.js 20.x or later
+- npm, yarn, or pnpm
 
 ### Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/senrecep/portfolio.git
 cd portfolio
 ```
 
@@ -41,13 +73,9 @@ cd portfolio
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
-3. Create your environment variables:
+3. Create environment variables:
 
 ```bash
 cp .env.example .env.local
@@ -55,12 +83,8 @@ cp .env.example .env.local
 
 4. Configure your environment variables in `.env.local`:
 
-   - Get your Google Analytics Measurement ID from your GA4 property settings
-   - Get your Google Tag Manager ID from your GTM account (optional)
-   - Get your Microsoft Clarity Project ID from your Clarity account
-   - Replace the placeholders with your actual IDs:
-
 ```bash
+NEXT_PUBLIC_SITE_URL="https://yourdomain.com"
 NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
 NEXT_PUBLIC_GTM_ID="GTM-XXXXXXXX"
 NEXT_PUBLIC_CLARITY_PROJECT_ID="XXXXXXXXXX"
@@ -70,181 +94,181 @@ NEXT_PUBLIC_CLARITY_PROJECT_ID="XXXXXXXXXX"
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view your site.
 
-## 📝 Project Structure
+## Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server with Turbopack |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run lint` | Run Next.js ESLint |
+| `npm run lint:biome` | Run Biome linter |
+| `npm run format` | Format code with Biome |
+| `npm run check` | Run Biome check (lint + format) |
+| `npm run check:fix` | Auto-fix Biome issues |
+
+## Project Structure
 
 ```
-senrecep/
-├── app/                   # Next.js app directory
-├── components/           # React components
-├── content/             # Multilingual content
-│   ├── en/             # English content
-│   ├── tr/             # Turkish content
-│   └── de/             # German content
-├── lib/                 # Utility functions
-├── public/             # Static assets
-└── styles/             # Global styles
+portfolio/
+├── app/                    # Next.js App Router
+│   ├── [lang]/            # Language-specific routes
+│   ├── api/               # API routes
+│   ├── layout.tsx         # Root layout
+│   ├── sitemap.ts         # Dynamic sitemap
+│   └── robots.ts          # Robots.txt
+├── components/
+│   ├── layout/            # Layout components (Header, Footer)
+│   ├── sections/          # Page sections (Blog, Projects, Skills)
+│   ├── shared/            # Shared components (JsonLd, OptimizedImage)
+│   └── ui/                # UI primitives (Button, Card, etc.)
+├── content/               # Multilingual content
+│   ├── en/               # English
+│   ├── tr/               # Turkish
+│   └── de/               # German
+├── lib/
+│   ├── i18n/             # Internationalization utilities
+│   ├── logger/           # Pino logger configuration
+│   └── utils.ts          # Utility functions
+├── public/
+│   ├── files/            # Downloadable files (CV)
+│   └── images/           # Static images
+├── biome.json            # Biome configuration
+├── next.config.js        # Next.js configuration
+└── tailwind.config.ts    # Tailwind configuration
 ```
 
-## 🔧 Configuration
-
-### Google Analytics Setup
-
-1. Create a Google Analytics 4 property in your [Google Analytics account](https://analytics.google.com/)
-2. Go to: Admin → Data Streams → Web
-3. Create a new stream or select an existing one
-4. Copy your Measurement ID (starts with "G-")
-5. Add your Measurement ID to `.env.local`:
-
-```bash
-NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
-```
-
-### Google Tag Manager Setup
-
-1. Create a Google Tag Manager account at [tagmanager.google.com](https://tagmanager.google.com/)
-2. Create a new container for your website
-3. Copy your Container ID (starts with "GTM-")
-4. Add your Container ID to `.env.local`:
-
-```bash
-NEXT_PUBLIC_GTM_ID="GTM-XXXXXXXX"
-```
-
-Google Tag Manager provides:
-- **Centralized Tag Management** - Manage all your marketing and analytics tags in one place
-- **Event Tracking** - Track custom events without code changes
-- **Conversion Tracking** - Set up conversion tracking for ads and campaigns
-- **Third-party Integrations** - Easy integration with various marketing tools
-- **Version Control** - Track changes and roll back if needed
-
-The GTM script is automatically loaded:
-- In the `<head>` section for optimal performance
-- With a noscript fallback in the `<body>` for users with JavaScript disabled
-
-### Microsoft Clarity Setup
-
-1. Create a Microsoft Clarity account at [clarity.microsoft.com](https://clarity.microsoft.com/)
-2. Create a new project for your website
-3. Copy your Project ID from the dashboard
-4. Add your Project ID to `.env.local`:
-
-```bash
-NEXT_PUBLIC_CLARITY_PROJECT_ID="XXXXXXXXXX"
-```
-
-Microsoft Clarity provides:
-- **Heatmaps** - See where users click, scroll, and engage
-- **Session Recordings** - Watch real user sessions to understand behavior
-- **User Insights** - Analyze user journey and identify pain points
-- **Performance Metrics** - Monitor site performance and user experience
-
-### Content Management
-
-All content is managed through JSON files in the `content` directory. Each language has its own subdirectory containing:
-
-- `profile.json`: Personal information
-- `metadata.json`: SEO and site metadata
+## Configuration
 
 ### Adding a New Language
 
-1. Create a new directory in `content/` with the language code
-2. Copy the JSON files from an existing language directory
-3. Translate the content
-4. Update `lib/i18n/config.ts` to include the new language
+1. Create a new directory in `content/` with the language code:
 
-## 📦 Deployment
+```bash
+mkdir content/fr
+```
 
-### Deploying to Vercel
+2. Copy and translate the JSON files:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com).
+```bash
+cp content/en/*.json content/fr/
+```
 
-1. Push your code to a Git repository
-2. Import your project to Vercel
-3. Vercel will detect Next.js automatically and configure the build settings
-4. Your app will be deployed to a production URL
+3. Update `lib/i18n/config.ts`:
 
-### Other Deployment Options
+```typescript
+export const languages: Language[] = [
+  // ... existing languages
+  {
+    code: "fr",
+    name: "French",
+    nativeName: "Français",
+    locale: "fr-FR",
+    direction: "ltr",
+  },
+];
+```
 
-You can also deploy to other platforms that support Node.js:
+4. Add translations in `lib/i18n/translations.ts`
 
-1. Build your application:
+### Content Management
+
+Content is managed through JSON files:
+
+- `content/{lang}/profile.json` - Personal info, skills, projects, blog posts
+- `content/{lang}/metadata.json` - SEO metadata, OpenGraph, Twitter Card
+
+### Analytics Setup
+
+#### Google Analytics 4
+
+1. Create a GA4 property at [analytics.google.com](https://analytics.google.com/)
+2. Get your Measurement ID (G-XXXXXXXXXX)
+3. Add to `.env.local`: `NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"`
+
+#### Google Tag Manager
+
+1. Create a container at [tagmanager.google.com](https://tagmanager.google.com/)
+2. Get your Container ID (GTM-XXXXXXXX)
+3. Add to `.env.local`: `NEXT_PUBLIC_GTM_ID="GTM-XXXXXXXX"`
+
+#### Microsoft Clarity
+
+1. Create a project at [clarity.microsoft.com](https://clarity.microsoft.com/)
+2. Get your Project ID
+3. Add to `.env.local`: `NEXT_PUBLIC_CLARITY_PROJECT_ID="XXXXXXXXXX"`
+
+## Deployment
+
+### Docker
+
+Build and run with Docker:
+
+```bash
+docker build -t portfolio .
+docker run -p 3000:3000 portfolio
+```
+
+### Vercel
+
+Deploy to Vercel with one click:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/senrecep/portfolio)
+
+### Manual Deployment
 
 ```bash
 npm run build
-# or
-yarn build
-# or
-pnpm build
-```
-
-2. Start the production server:
-
-```bash
 npm run start
-# or
-yarn start
-# or
-pnpm start
 ```
 
-## ⚡ Performance Optimizations
+## Performance
 
-This portfolio website includes several performance optimizations:
+### Build Output
 
-### Compression & Caching
-
-- **Gzip Compression**: Enabled by default in Next.js for all responses
-- **Static Asset Caching**: Long-term caching for static assets (CSS, JS, images)
-- **Browser Caching**: Optimized cache headers for different content types
-- **Image Optimization**: Automatic image compression and WebP conversion
-
-### Bundle Analysis
-
-To analyze your bundle size:
-
-```bash
-npm run analyze
-# or
-yarn analyze
-# or
-pnpm analyze
+```
+Route (app)                    Size     First Load JS
+┌ ○ /_not-found               1.01 kB        123 kB
+├ ● /[lang]                    160 kB        282 kB
+├ ƒ /api/download              143 B         123 kB
+├ ○ /robots.txt                143 B         123 kB
+└ ○ /sitemap.xml               143 B         123 kB
++ First Load JS shared         122 kB
 ```
 
-### Additional Optimizations
+### Optimizations
 
-- **Turbopack**: Fast bundler for development (enabled with `--turbopack`)
-- **Static Generation**: Pages are statically generated at build time
-- **Code Splitting**: Automatic code splitting for better loading performance
-- **Font Optimization**: Optimized Google Fonts loading with Geist
-- **Tree Shaking**: Unused code elimination
+- **Static Generation**: All language pages pre-rendered at build time
+- **Image Optimization**: Automatic AVIF/WebP conversion
+- **Font Optimization**: Google Fonts with `display: swap`
+- **Code Splitting**: Automatic per-route code splitting
+- **Compression**: GZIP enabled by default
 
-### Performance Headers
+## SEO Features
 
-The application sets several performance-related headers:
+- **Structured Data**: JSON-LD Person and WebSite schemas
+- **hreflang**: Automatic language alternates
+- **Sitemap**: Dynamic sitemap with language alternates
+- **Meta Tags**: OpenGraph, Twitter Card
+- **Canonical URLs**: Automatic canonical URL generation
 
-- `Vary: Accept-Encoding` for compression negotiation
-- `Cache-Control` headers for optimal caching
-- Security headers for enhanced protection
+## Contributing
 
-## 🤝 Contributing
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
-- [next-intl](https://next-intl-docs.vercel.app/)
+- [Biome](https://biomejs.dev/)
+- [Radix UI](https://www.radix-ui.com/)
