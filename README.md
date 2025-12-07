@@ -111,17 +111,19 @@ Open [http://localhost:3000](http://localhost:3000) to view your site.
 
 ## Available Scripts
 
-| Script                | Description                             |
-| --------------------- | --------------------------------------- |
-| `npm run dev`         | Start development server with Turbopack |
-| `npm run build`       | Build for production                    |
-| `npm run start`       | Start production server                 |
-| `npm run lint`        | Run Next.js ESLint                      |
-| `npm run lint:biome`  | Run Biome linter                        |
-| `npm run format`      | Format code with Biome                  |
-| `npm run check`       | Run Biome check (lint + format)         |
-| `npm run check:fix`   | Auto-fix Biome issues                   |
-| `npm run create:lang` | Create new language support             |
+| Script               | Description                              |
+| -------------------- | ---------------------------------------- |
+| `npm run dev`        | Start development server with Turbopack  |
+| `npm run build`      | Build for production                     |
+| `npm run start`      | Start production server                  |
+| `npm run lint`       | Run Next.js ESLint                       |
+| `npm run lint:biome` | Run Biome linter                         |
+| `npm run format`     | Format code with Biome                   |
+| `npm run check`      | Run Biome check (lint + format)          |
+| `npm run check:fix`  | Auto-fix Biome issues                    |
+| `npm run lang:add`   | Add new language(s) support              |
+| `npm run lang:list`  | List all supported languages             |
+| `npm run lang:help`  | Show language script help                |
 
 ## Project Structure
 
@@ -162,13 +164,13 @@ Use the built-in script to add new language support:
 
 ```bash
 # Add single language
-npm run create:lang -- fr
+npm run lang:add -- fr
 
 # Add multiple languages
-npm run create:lang -- de es it
+npm run lang:add -- de es it
 
 # List all supported languages
-npm run create:lang -- --list
+npm run lang:list
 ```
 
 The script automatically:

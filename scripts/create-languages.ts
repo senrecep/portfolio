@@ -3,9 +3,9 @@
  * Create Languages Script
  *
  * Usage:
- *   npm run create:lang -- en fr de    # Create multiple languages
- *   npm run create:lang -- ja          # Create single language
- *   npm run create:lang -- --list      # List all supported languages
+ *   npm run lang:add -- en fr de    # Create multiple languages
+ *   npm run lang:add -- ja          # Create single language
+ *   npm run lang:list               # List all supported languages
  *
  * This script:
  * - Creates content/{lang}/ directory with profile.json and metadata.json
@@ -835,11 +835,11 @@ function createContentFiles(lang: string): void {
 
   fs.writeFileSync(
     profilePath,
-    JSON.stringify(getProfileTemplate(lang), null, 2),
+    JSON.stringify(getProfileTemplate(lang), null, 2)
   );
   fs.writeFileSync(
     metadataPath,
-    JSON.stringify(getMetadataTemplate(lang), null, 2),
+    JSON.stringify(getMetadataTemplate(lang), null, 2)
   );
 
   console.log(`  ✓ Created content/${lang}/profile.json`);
@@ -865,7 +865,7 @@ function updateConfigFile(lang: string): void {
   // Insert before the closing bracket of the languages array
   content = content.replace(
     /(export const languages: Language\[\] = \[[\s\S]*?)(];)/,
-    `$1${languageEntry}\n$2`,
+    `$1${languageEntry}\n$2`
   );
 
   fs.writeFileSync(CONFIG_FILE, content);
@@ -924,7 +924,7 @@ function updateTranslationsFile(lang: string): void {
   // Insert before the closing bracket of the translations object
   content = content.replace(
     /(export const translations: Translations = \{[\s\S]*?)(};)/,
-    `$1${translationEntry}\n$2`,
+    `$1${translationEntry}\n$2`
   );
 
   fs.writeFileSync(TRANSLATIONS_FILE, content);
@@ -941,12 +941,12 @@ Portfolio Language Creator
 ==========================
 
 Usage:
-  npm run create:lang -- <lang_codes...>   Create new languages
-  npm run create:lang -- --list            List supported languages
+  npm run lang:add -- <lang_codes...>   Create new languages
+  npm run lang:list                     List supported languages
 
 Examples:
-  npm run create:lang -- fr de             Create French and German
-  npm run create:lang -- ja ko zh          Create Japanese, Korean, Chinese
+  npm run lang:add -- fr de             Create French and German
+  npm run lang:add -- ja ko zh          Create Japanese, Korean, Chinese
 
 Supported languages: ${Object.keys(SUPPORTED_LANGUAGES).join(", ")}
     `);
@@ -988,7 +988,7 @@ Supported languages: ${Object.keys(SUPPORTED_LANGUAGES).join(", ")}
       updateConfigFile(lang);
       updateTranslationsFile(lang);
       console.log(
-        `✅ ${SUPPORTED_LANGUAGES[lang].name} created successfully!\n`,
+        `✅ ${SUPPORTED_LANGUAGES[lang].name} created successfully!\n`
       );
     } catch (error) {
       console.error(`❌ Error creating ${lang}:`, error);
@@ -999,8 +999,9 @@ Supported languages: ${Object.keys(SUPPORTED_LANGUAGES).join(", ")}
   console.log("   1. Translate content in content/<lang>/profile.json");
   console.log("   2. Update metadata in content/<lang>/metadata.json");
   console.log(
-    "   3. Create OG banner at /public/images/og-banner.<lang>.webp\n",
+    "   3. Create OG banner at /public/images/og-banner.<lang>.webp\n"
   );
 }
 
 main();
+

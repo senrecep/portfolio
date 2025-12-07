@@ -11,7 +11,9 @@
     "format": "biome format --write ./",
     "check": "biome check ./",
     "check:fix": "biome check --write ./",
-    "create:lang": "npx tsx scripts/create-languages.ts"
+    "lang:add": "npx tsx scripts/create-languages.ts",
+    "lang:list": "npx tsx scripts/create-languages.ts --list",
+    "lang:help": "npx tsx scripts/create-languages.ts --help"
   },
   "dependencies": {
     "@lordicon/react": "^1.11.0",

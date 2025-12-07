@@ -166,13 +166,13 @@ Create social media preview images:
 
 ```bash
 # Add French
-npm run create:lang -- fr
+npm run lang:add -- fr
 
 # Add multiple languages
-npm run create:lang -- de es it ja
+npm run lang:add -- de es it ja
 
 # See all available languages
-npm run create:lang -- --list
+npm run lang:list
 ```
 
 ### Manual Setup
