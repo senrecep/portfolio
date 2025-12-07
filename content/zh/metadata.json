@@ -22,7 +22,7 @@
     "siteName": "Recep Şen 作品集",
     "images": [
       {
-        "url": "/images/og-banner.en.webp?v=2",
+        "url": "/images/og-banner.zh.webp",
         "width": 1200,
         "height": 630,
         "alt": "Recep Şen - 软件工程师"
@@ -34,7 +34,7 @@
     "site": "@senrecep0",
     "creator": "@senrecep0",
     "images": {
-      "url": "/images/og-banner.en.webp?v=2",
+      "url": "/images/og-banner.zh.webp",
       "alt": "Recep Şen - 软件工程师"
     }
   }

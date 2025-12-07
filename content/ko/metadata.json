@@ -22,7 +22,7 @@
     "siteName": "Recep Şen 포트폴리오",
     "images": [
       {
-        "url": "/images/og-banner.en.webp?v=2",
+        "url": "/images/og-banner.ko.webp",
         "width": 1200,
         "height": 630,
         "alt": "Recep Şen - 소프트웨어 엔지니어"
@@ -34,7 +34,7 @@
     "site": "@senrecep0",
     "creator": "@senrecep0",
     "images": {
-      "url": "/images/og-banner.en.webp?v=2",
+      "url": "/images/og-banner.ko.webp",
       "alt": "Recep Şen - 소프트웨어 엔지니어"
     }
   }

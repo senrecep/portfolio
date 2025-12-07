@@ -22,7 +22,7 @@
     "siteName": "Portfolio Recep Şen",
     "images": [
       {
-        "url": "/images/og-banner.en.webp?v=2",
+        "url": "/images/og-banner.it.webp",
         "width": 1200,
         "height": 630,
         "alt": "Recep Şen - Ingegnere del Software"
@@ -34,7 +34,7 @@
     "site": "@senrecep0",
     "creator": "@senrecep0",
     "images": {
-      "url": "/images/og-banner.en.webp?v=2",
+      "url": "/images/og-banner.it.webp",
       "alt": "Recep Şen - Ingegnere del Software"
     }
   }
