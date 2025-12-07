@@ -1,42 +1,35 @@
 {
-  "title": "Recep Şen - Yazılım Mühendisi",
-  "description": "Yüksek etki yaratan, ölçeklenebilir sistemler inşa ediyorum. Karmaşık iş problemlerini, yüz binlerce kullanıcıya hizmet eden zarif ve etkili teknik çözümlere dönüştürüyorum.",
-  "callsign": "TB1REC",
+  "title": "Adınız Soyadınız - Pozisyonunuz",
+  "description": "Kendiniz hakkında kısa bir açıklama yazın. Bu metin arama sonuçlarında ve sosyal medya önizlemelerinde görünecektir.",
+  "callsign": "",
   "keywords": [
     "yazılım mühendisi",
-    "backend geliştirme",
-    "full stack",
     "geliştirici",
-    "easyapp",
-    "taptoweb",
-    "dotnet",
-    "mikroservisler",
-    "no code platform geliştirici",
     "portfolyo",
-    "TB1REC",
-    "amatör radio",
-    "ham radio"
+    "web geliştirme",
+    "frontend",
+    "backend"
   ],
   "openGraph": {
-    "title": "Recep Şen - Yazılım Mühendisi",
-    "description": "Yüksek etki yaratan, ölçeklenebilir sistemler inşa ediyorum. Karmaşık iş problemlerini, yüz binlerce kullanıcıya hizmet eden zarif ve etkili teknik çözümlere dönüştürüyorum.",
-    "siteName": "Recep Şen Portfolio",
+    "title": "Adınız Soyadınız - Pozisyonunuz",
+    "description": "Kendiniz hakkında kısa bir açıklama yazın. Bu metin sosyal medya önizlemelerinde görünecektir.",
+    "siteName": "Portfolyonuz",
     "images": [
       {
         "url": "/images/og-banner.tr.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Yazılım Mühendisi | Portfolyo önizleme görseli"
+        "alt": "Adınız Soyadınız - Pozisyonunuz | Portfolyo önizlemesi"
       }
     ]
   },
   "twitter": {
     "card": "summary_large_image",
-    "site": "@senrecep0",
-    "creator": "@senrecep0",
+    "site": "@kullaniciadi",
+    "creator": "@kullaniciadi",
     "images": {
       "url": "/images/og-banner.tr.webp",
-      "alt": "Recep Şen - Yazılım Mühendisi | Portfolyo önizleme görseli"
+      "alt": "Adınız Soyadınız - Pozisyonunuz | Portfolyo önizlemesi"
     }
   }
 }

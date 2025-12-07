@@ -46,7 +46,7 @@ export async function middleware(request: NextRequest) {
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   response.headers.set(
     "Strict-Transport-Security",
-    "max-age=31536000; includeSubDomains"
+    "max-age=31536000; includeSubDomains",
   );
 
   // Compression header
@@ -63,7 +63,7 @@ export async function middleware(request: NextRequest) {
     if (pathname.startsWith("/api")) {
       response.headers.set(
         "Cache-Control",
-        "public, max-age=300, s-maxage=3600"
+        "public, max-age=300, s-maxage=3600",
       );
     } else {
       response.headers.set("Cache-Control", "public, max-age=86400");
@@ -83,7 +83,7 @@ export async function middleware(request: NextRequest) {
     // Add performance headers for language-specific pages
     response.headers.set(
       "Cache-Control",
-      "public, max-age=3600, must-revalidate"
+      "public, max-age=3600, must-revalidate",
     );
     return response;
   }
@@ -100,4 +100,3 @@ export const config = {
     "/((?!_next/static|_next/image|favicon.ico|files/|images/|sitemap.xml|robots.txt).*)",
   ],
 };
-

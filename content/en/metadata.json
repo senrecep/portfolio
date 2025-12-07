@@ -1,42 +1,35 @@
 {
-  "title": "Recep Şen - Software Engineer",
-  "description": "Building high-impact, scalable systems. I turn complex business challenges into elegant technical solutions that serve hundreds of thousands of users.",
-  "callsign": "TB1REC",
+  "title": "Your Name - Your Position",
+  "description": "Write a brief description about yourself. This will appear in search results and social media previews.",
+  "callsign": "",
   "keywords": [
     "software engineer",
-    "backend development",
-    "full stack",
     "developer",
-    "easyapp",
-    "taptoweb",
-    "dotnet",
-    "microservices",
-    "no code platform developer",
     "portfolio",
-    "TB1REC",
-    "amateur radio",
-    "ham radio"
+    "web development",
+    "frontend",
+    "backend"
   ],
   "openGraph": {
-    "title": "Recep Şen - Software Engineer",
-    "description": "Building high-impact, scalable systems. I turn complex business challenges into elegant technical solutions that serve hundreds of thousands of users.",
-    "siteName": "Recep Şen Portfolio",
+    "title": "Your Name - Your Position",
+    "description": "Write a brief description about yourself. This will appear in social media previews.",
+    "siteName": "Your Portfolio",
     "images": [
       {
         "url": "/images/og-banner.en.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Software Engineer | Portfolio preview banner"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
   "twitter": {
     "card": "summary_large_image",
-    "site": "@senrecep0",
-    "creator": "@senrecep0",
+    "site": "@yourusername",
+    "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.en.webp",
-      "alt": "Recep Şen - Software Engineer | Portfolio preview banner"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }

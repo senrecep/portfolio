@@ -36,7 +36,15 @@ export function Certificates({
         </h2>
       </div>
 
-      <div className="mx-auto grid justify-center gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[64rem]">
+      <div
+        className={`mx-auto grid justify-center gap-4 ${
+          certificates.length === 1
+            ? "max-w-[24rem] grid-cols-1"
+            : certificates.length === 2
+              ? "grid-cols-1 sm:grid-cols-2 max-w-[48rem]"
+              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[64rem]"
+        }`}
+      >
         {certificates.map((cert) => (
           <Card
             key={`${cert.title}-${cert.issuer}`}

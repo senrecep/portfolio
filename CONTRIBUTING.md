@@ -1,4 +1,4 @@
-# Contributing to Personal Portfolio Website
+# Contributing to Portfolio Template
 
 First off, thank you for considering contributing to this project! It's people like you that make this project such a great tool.
 
@@ -43,7 +43,7 @@ Enhancement suggestions are tracked as GitHub issues. When you are creating an e
 1. Fork the repository
 2. Create a new branch: `git checkout -b feature/your-feature-name`
 3. Make your changes
-4. Run the tests and linting: `npm run lint`
+4. Run the tests and linting: `npm run lint && npm run check`
 5. Commit your changes: `git commit -m 'Add some feature'`
 6. Push to the branch: `git push origin feature/your-feature-name`
 7. Submit a pull request
@@ -52,7 +52,7 @@ Enhancement suggestions are tracked as GitHub issues. When you are creating an e
 
 ```bash
 # Clone your fork
-git clone https://github.com/senrecep/portfolio.git
+git clone https://github.com/YOUR_USERNAME/portfolio.git
 
 # Navigate to the project directory
 cd portfolio
@@ -66,12 +66,46 @@ npm run dev
 
 ### Code Style
 
+We use Biome for linting and formatting:
+
+```bash
+# Check for issues
+npm run check
+
+# Auto-fix issues
+npm run check:fix
+
+# Format code
+npm run format
+```
+
+Style guidelines:
 * Use TypeScript
 * Follow the existing code style
 * Use meaningful variable and function names
 * Comment your code when necessary
 * Keep functions small and focused
 * Use modern ES6+ features
+
+## Adding New Languages
+
+If you want to add translations for a new language:
+
+1. Use the language creation script:
+   ```bash
+   npm run create:lang -- <language_code>
+   ```
+
+2. Translate the UI strings in `lib/i18n/translations.ts`
+
+3. Submit a PR with your translations
+
+### Translation Guidelines
+
+* Keep translations natural and idiomatic
+* Maintain consistent terminology
+* Test your translations in the UI
+* Consider cultural context
 
 ## Additional Notes
 
@@ -82,4 +116,13 @@ npm run dev
 * Limit the first line to 72 characters or less
 * Reference issues and pull requests liberally after the first line
 
-Thank you for contributing! 
+### Types of Contributions
+
+* **Bug fixes**: Fix issues in the codebase
+* **Features**: Add new functionality
+* **Documentation**: Improve or add documentation
+* **Translations**: Add or improve language translations
+* **Performance**: Improve performance
+* **Accessibility**: Improve accessibility
+
+Thank you for contributing!

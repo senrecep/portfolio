@@ -113,4 +113,3 @@ export default function robots(): MetadataRoute.Robots {
     host: siteUrl,
   };
 }
-
