@@ -80,7 +80,6 @@ export function OptimizedImage({
         quality={quality}
         onLoad={handleLoad}
         onError={handleError}
-        unoptimized
       />
     </>
   );

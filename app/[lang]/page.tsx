@@ -5,6 +5,7 @@ import { Blog } from "@/components/sections/Blog";
 import { Certificates } from "@/components/sections/Certificates";
 import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
+import { JsonLd } from "@/components/shared/JsonLd";
 import { languageCodes } from "@/lib/i18n/config";
 import { buildMetadataWithAbsoluteUrls } from "@/lib/i18n/metadata-utils";
 import { getProfile, getSEOMetadata } from "@/lib/i18n/server-content-loader";
@@ -41,7 +42,9 @@ export async function generateMetadata({
 export default async function Home({ params }: PageProps) {
   const { lang } = await params;
   const profile = await getProfile(lang);
+  const metadata = await getSEOMetadata(lang);
   const t = translations[lang];
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
   const hasBlogPosts = profile.blogPosts && profile.blogPosts.length > 0;
   const hasProjects = profile.projects && profile.projects.length > 0;
@@ -53,59 +56,66 @@ export default async function Home({ params }: PageProps) {
     profile.certificates && profile.certificates.length > 0;
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header
+    <>
+      <JsonLd
         profile={profile}
-        translations={{
-          downloadCV: t.actions.downloadCV,
-        }}
-        language={lang}
+        siteUrl={siteUrl}
+        siteName={metadata.openGraph?.siteName || metadata.title || "Portfolio"}
       />
-      <main className="container mx-auto px-4 py-8">
-        {hasBlogPosts && (
-          <Blog
-            profile={profile}
-            translations={{
-              title: t.sections.blog.title,
-              description: t.sections.blog.description || "",
-              readMore: t.sections.blog.readMore,
-            }}
-          />
-        )}
-        {hasProjects && profile.projects && (
-          <Projects
-            projects={profile.projects}
-            translations={{
-              title: t.sections.projects.title,
-              tags: t.sections.projects.tags,
-              viewProject: t.sections.projects.viewProject,
-            }}
-          />
-        )}
-        {hasCertificates && profile.certificates && (
-          <Certificates
-            certificates={profile.certificates}
-            translations={{
-              title: t.sections.certificates.title,
-              viewCredential: t.sections.certificates.viewCredential,
-            }}
-          />
-        )}
-        {hasSkills && profile.skills && (
-          <Skills
-            skills={profile.skills}
-            translations={{
-              title: t.sections.about.skills,
-            }}
-          />
-        )}
-      </main>
-      <Footer
-        profile={profile}
-        translations={{
-          allRightsReserved: t.footer.allRightsReserved,
-        }}
-      />
-    </div>
+      <div className="flex flex-col min-h-screen">
+        <Header
+          profile={profile}
+          translations={{
+            downloadCV: t.actions.downloadCV,
+          }}
+          language={lang}
+        />
+        <main className="container mx-auto px-4 py-8">
+          {hasBlogPosts && (
+            <Blog
+              profile={profile}
+              translations={{
+                title: t.sections.blog.title,
+                description: t.sections.blog.description || "",
+                readMore: t.sections.blog.readMore,
+              }}
+            />
+          )}
+          {hasProjects && profile.projects && (
+            <Projects
+              projects={profile.projects}
+              translations={{
+                title: t.sections.projects.title,
+                tags: t.sections.projects.tags,
+                viewProject: t.sections.projects.viewProject,
+              }}
+            />
+          )}
+          {hasCertificates && profile.certificates && (
+            <Certificates
+              certificates={profile.certificates}
+              translations={{
+                title: t.sections.certificates.title,
+                viewCredential: t.sections.certificates.viewCredential,
+              }}
+            />
+          )}
+          {hasSkills && profile.skills && (
+            <Skills
+              skills={profile.skills}
+              translations={{
+                title: t.sections.about.skills,
+              }}
+            />
+          )}
+        </main>
+        <Footer
+          profile={profile}
+          translations={{
+            allRightsReserved: t.footer.allRightsReserved,
+          }}
+        />
+      </div>
+    </>
   );
 }

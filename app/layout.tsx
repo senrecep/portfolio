@@ -56,6 +56,13 @@ export default function RootLayout({
   return (
     <html lang={defaultLanguage} suppressHydrationWarning>
       <head>
+        {/* Preload critical LCP image */}
+        <link
+          rel="preload"
+          href="/images/profile.webp"
+          as="image"
+          type="image/webp"
+        />
         {gtmId && <GoogleTagManagerHead GTM_ID={gtmId} />}
         <MicrosoftClarity />
       </head>

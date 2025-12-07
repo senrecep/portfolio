@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultLanguage, languageCodes } from "./config";
 import type { SEOMetadata } from "./content-loader";
 
 export function buildMetadataWithAbsoluteUrls(
@@ -10,10 +11,23 @@ export function buildMetadataWithAbsoluteUrls(
   },
 ): Metadata {
   const baseUrl = new URL(siteUrl);
+  const currentLang = additionalConfig?.locale || defaultLanguage;
+
+  // Build hreflang alternates for all languages
+  const languages: Record<string, string> = {};
+  for (const lang of languageCodes) {
+    languages[lang] = `${siteUrl}/${lang}`;
+  }
+  // Add x-default pointing to the default language
+  languages["x-default"] = `${siteUrl}/${defaultLanguage}`;
 
   return {
     ...metadata,
     metadataBase: baseUrl,
+    alternates: {
+      canonical: `${siteUrl}/${currentLang}`,
+      languages,
+    },
     openGraph: {
       ...metadata.openGraph,
       url: additionalConfig?.url || siteUrl,
