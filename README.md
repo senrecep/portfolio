@@ -111,19 +111,19 @@ Open [http://localhost:3000](http://localhost:3000) to view your site.
 
 ## Available Scripts
 
-| Script               | Description                              |
-| -------------------- | ---------------------------------------- |
-| `npm run dev`        | Start development server with Turbopack  |
-| `npm run build`      | Build for production                     |
-| `npm run start`      | Start production server                  |
-| `npm run lint`       | Run Next.js ESLint                       |
-| `npm run lint:biome` | Run Biome linter                         |
-| `npm run format`     | Format code with Biome                   |
-| `npm run check`      | Run Biome check (lint + format)          |
-| `npm run check:fix`  | Auto-fix Biome issues                    |
-| `npm run lang:add`   | Add new language(s) support              |
-| `npm run lang:list`  | List all supported languages             |
-| `npm run lang:help`  | Show language script help                |
+| Script               | Description                             |
+| -------------------- | --------------------------------------- |
+| `npm run dev`        | Start development server with Turbopack |
+| `npm run build`      | Build for production                    |
+| `npm run start`      | Start production server                 |
+| `npm run lint`       | Run Next.js ESLint                      |
+| `npm run lint:biome` | Run Biome linter                        |
+| `npm run format`     | Format code with Biome                  |
+| `npm run check`      | Run Biome check (lint + format)         |
+| `npm run check:fix`  | Auto-fix Biome issues                   |
+| `npm run lang:add`   | Add new language(s) support             |
+| `npm run lang:list`  | List all supported languages            |
+| `npm run lang:help`  | Show language script help               |
 
 ## Project Structure
 
@@ -344,25 +344,25 @@ git commit -m "feat: sync selected updates from upstream"
 
 These files can typically be updated without losing personal data:
 
-| Category | Files |
-| -------- | ----- |
-| Components | `components/sections/*.tsx`, `components/ui/*.tsx` |
+| Category      | Files                                                                |
+| ------------- | -------------------------------------------------------------------- |
+| Components    | `components/sections/*.tsx`, `components/ui/*.tsx`                   |
 | Configuration | `package.json`, `next.config.js`, `biome.json`, `tailwind.config.ts` |
-| Scripts | `scripts/*.ts` |
-| Documentation | `README.md`, `SETUP.md`, `CONTRIBUTING.md` |
-| API Routes | `app/api/**/*.ts` |
-| Middleware | `middleware.ts` |
-| Styles | `app/globals.css` |
+| Scripts       | `scripts/*.ts`                                                       |
+| Documentation | `README.md`, `SETUP.md`, `CONTRIBUTING.md`                           |
+| API Routes    | `app/api/**/*.ts`                                                    |
+| Middleware    | `middleware.ts`                                                      |
+| Styles        | `app/globals.css`                                                    |
 
 ### Files to NEVER Update from Upstream
 
 These contain your personal content - never overwrite them:
 
-| Category | Files |
-| -------- | ----- |
-| Content | `content/**/*.json` (profile.json, metadata.json) |
-| Images | `public/images/profile.webp`, `public/images/og-banner.*.webp` |
-| Files | `public/files/cv.pdf` |
+| Category    | Files                                                                            |
+| ----------- | -------------------------------------------------------------------------------- |
+| Content     | `content/**/*.json` (profile.json, metadata.json)                                |
+| Images      | `public/images/profile.webp`, `public/images/og-banner.*.webp`                   |
+| Files       | `public/files/cv.pdf`                                                            |
 | i18n Config | `lib/i18n/config.ts`, `lib/i18n/translations.ts` (if you added custom languages) |
 
 ### Example: Full Safe Update
@@ -419,11 +419,13 @@ git merge -s ours upstream/main -m "chore: mark upstream as merged (keeping loca
 ```
 
 **When to use this:**
+
 - You've reviewed upstream changes and decided they don't apply to your fork
 - You want a clean git history without "branch is behind" warnings
 - You've manually cherry-picked the changes you wanted
 
 **What it does:**
+
 - Creates a merge commit (so Git thinks upstream is merged)
 - Preserves 100% of your current content (nothing changes)
 - Future `git merge upstream/main` won't re-apply those changes
