@@ -3,7 +3,7 @@ declare global {
     gtag?: (
       command: string,
       targetId: string,
-      config?: Record<string, unknown>
+      config?: Record<string, unknown>,
     ) => void;
     dataLayer?: Array<Record<string, unknown>>;
   }
@@ -11,7 +11,7 @@ declare global {
 
 export const trackEvent = (
   eventName: string,
-  eventParams?: Record<string, unknown>
+  eventParams?: Record<string, unknown>,
 ) => {
   if (typeof window !== "undefined") {
     if (window.gtag) {

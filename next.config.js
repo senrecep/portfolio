@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   // Output standalone build for Docker deployment
-  output: 'standalone',
+  output: "standalone",
 
   // 🚀 GZIP COMPRESSION - Force enable
   compress: true,
@@ -13,7 +13,7 @@ const nextConfig = {
     removeConsole: false,
   },
 
-  serverExternalPackages: ['pino', 'pino-pretty'],
+  serverExternalPackages: ["pino", "pino-pretty"],
 
   // 🖼️ Image optimizations for better compression
   images: {
@@ -47,16 +47,16 @@ const nextConfig = {
 
     const url = new URL(siteUrl);
     const targetHost = url.hostname;
-    const sourceHost = targetHost.replace('www.', '');
+    const sourceHost = targetHost.replace("www.", "");
 
     if (targetHost === sourceHost) return [];
 
     return [
       {
-        source: '/:path*',
+        source: "/:path*",
         has: [
           {
-            type: 'host',
+            type: "host",
             value: sourceHost,
           },
         ],

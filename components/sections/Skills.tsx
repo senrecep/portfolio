@@ -1,6 +1,6 @@
 "use client";
-import { SkillCategory, SkillLevel } from "@/lib/i18n/content-loader";
 import { DynamicIcon, getIconName } from "@/components/ui/DynamicIcon";
+import { type SkillCategory, SkillLevel } from "@/lib/i18n/content-loader";
 
 interface SkillsProps {
   skills: string[] | SkillCategory[];

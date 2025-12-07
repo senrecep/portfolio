@@ -1,14 +1,14 @@
-import { getProfile, getSEOMetadata } from "@/lib/i18n/server-content-loader";
-import { translations } from "@/lib/i18n/translations";
-import { Header } from "@/components/layout/Header";
+import type { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
-import { Projects } from "@/components/sections/Projects";
+import { Header } from "@/components/layout/Header";
 import { Blog } from "@/components/sections/Blog";
-import { Skills } from "@/components/sections/Skills";
 import { Certificates } from "@/components/sections/Certificates";
-import { Metadata } from "next";
+import { Projects } from "@/components/sections/Projects";
+import { Skills } from "@/components/sections/Skills";
 import { languageCodes } from "@/lib/i18n/config";
 import { buildMetadataWithAbsoluteUrls } from "@/lib/i18n/metadata-utils";
+import { getProfile, getSEOMetadata } from "@/lib/i18n/server-content-loader";
+import { translations } from "@/lib/i18n/translations";
 
 interface PageProps {
   params: Promise<{

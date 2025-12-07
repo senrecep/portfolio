@@ -1,7 +1,7 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import { trackExternalLink } from "@/lib/analytics";
 
 interface Certificate {
@@ -65,7 +65,12 @@ export function Certificates({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/90 transition-colors mt-4"
-                  onClick={() => trackExternalLink(cert.credentialUrl!, `Certificate: ${cert.title}`)}
+                  onClick={() =>
+                    trackExternalLink(
+                      cert.credentialUrl!,
+                      `Certificate: ${cert.title}`,
+                    )
+                  }
                 >
                   {translations.viewCredential}
                   <ExternalLink className="h-4 w-4 ml-2" />

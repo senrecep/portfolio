@@ -1,7 +1,7 @@
 "use client";
 
-import { Profile } from "@/lib/i18n/content-loader";
 import { ProjectCard } from "@/components/ProjectCard";
+import type { Profile } from "@/lib/i18n/content-loader";
 
 interface ProjectsProps {
   projects: Profile["projects"];

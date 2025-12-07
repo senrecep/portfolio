@@ -1,9 +1,9 @@
 "use client";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import ErrorBoundary from "@/components/shared/ErrorBoundary";
 import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
 import { GoogleTagManagerBody } from "@/components/shared/GoogleTagManager";
-import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 interface ClientProvidersProps {
   children: React.ReactNode;
@@ -11,7 +11,11 @@ interface ClientProvidersProps {
   gtmId?: string;
 }
 
-export function ClientProviders({ children, gaId, gtmId }: ClientProvidersProps) {
+export function ClientProviders({
+  children,
+  gaId,
+  gtmId,
+}: ClientProvidersProps) {
   return (
     <ErrorBoundary>
       {gtmId && <GoogleTagManagerBody GTM_ID={gtmId} />}

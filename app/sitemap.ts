@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 import { languageCodes } from "@/lib/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,4 +23,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [rootRoute, ...languageRoutes];
 }
-

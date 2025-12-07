@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SEOMetadata } from "./content-loader";
+import type { SEOMetadata } from "./content-loader";
 
 export function buildMetadataWithAbsoluteUrls(
   metadata: SEOMetadata,
@@ -7,7 +7,7 @@ export function buildMetadataWithAbsoluteUrls(
   additionalConfig?: {
     url?: string;
     locale?: string;
-  }
+  },
 ): Metadata {
   const baseUrl = new URL(siteUrl);
 

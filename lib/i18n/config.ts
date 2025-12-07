@@ -52,4 +52,3 @@ export function formatDate(date: string | Date, lang: string): string {
   const locale = getLocaleByLanguage(lang);
   return new Date(date).toLocaleDateString(locale);
 }
-

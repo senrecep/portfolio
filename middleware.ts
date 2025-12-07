@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import {
-  languageCodes,
   defaultLanguage,
   isValidLanguage,
+  languageCodes,
 } from "@/lib/i18n/config";
 import logger from "@/lib/logger";
 
@@ -25,10 +25,11 @@ export async function middleware(request: NextRequest) {
   const realIp = request.headers.get("x-real-ip");
   const cfConnectingIp = request.headers.get("cf-connecting-ip");
 
-  const clientIp = cfConnectingIp ||
-                   (forwardedFor ? forwardedFor.split(",")[0].trim() : null) ||
-                   realIp ||
-                   "unknown";
+  const clientIp =
+    cfConnectingIp ||
+    (forwardedFor ? forwardedFor.split(",")[0].trim() : null) ||
+    realIp ||
+    "unknown";
 
   logger.info({
     method: request.method,
@@ -45,7 +46,7 @@ export async function middleware(request: NextRequest) {
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   response.headers.set(
     "Strict-Transport-Security",
-    "max-age=31536000; includeSubDomains"
+    "max-age=31536000; includeSubDomains",
   );
 
   // Compression header
@@ -61,7 +62,7 @@ export async function middleware(request: NextRequest) {
     if (pathname.startsWith("/api")) {
       response.headers.set(
         "Cache-Control",
-        "public, max-age=300, s-maxage=3600"
+        "public, max-age=300, s-maxage=3600",
       );
     } else {
       response.headers.set("Cache-Control", "public, max-age=86400");
@@ -81,7 +82,7 @@ export async function middleware(request: NextRequest) {
     // Add performance headers for language-specific pages
     response.headers.set(
       "Cache-Control",
-      "public, max-age=3600, must-revalidate"
+      "public, max-age=3600, must-revalidate",
     );
     return response;
   }

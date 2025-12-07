@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClientProviders } from "@/components/shared/ClientProviders";
-import MicrosoftClarity from "@/components/shared/MicrosoftClarity";
 import { GoogleTagManagerHead } from "@/components/shared/GoogleTagManager";
-import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
+import MicrosoftClarity from "@/components/shared/MicrosoftClarity";
 import { defaultLanguage } from "@/lib/i18n/config";
 import { buildMetadataWithAbsoluteUrls } from "@/lib/i18n/metadata-utils";
+import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
