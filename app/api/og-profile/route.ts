@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { isValidLanguage } from "@/lib/i18n/config";
 
 export async function GET(request: NextRequest) {
@@ -20,4 +20,3 @@ export async function GET(request: NextRequest) {
     );
   }
 }
-

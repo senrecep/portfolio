@@ -1,5 +1,5 @@
 {
-  "name": "senrecep",
+  "name": "portfolio-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,10 @@
     "lint:biome": "biome lint ./",
     "format": "biome format --write ./",
     "check": "biome check ./",
-    "check:fix": "biome check --write ./"
+    "check:fix": "biome check --write ./",
+    "lang:add": "npx tsx scripts/create-languages.ts",
+    "lang:list": "npx tsx scripts/create-languages.ts --list",
+    "lang:help": "npx tsx scripts/create-languages.ts --help"
   },
   "dependencies": {
     "@lordicon/react": "^1.11.0",
