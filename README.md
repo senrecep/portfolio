@@ -302,6 +302,113 @@ A built-in tool for creating OpenGraph banner images for all languages:
 2. Import and use in `app/[lang]/page.tsx`
 3. Add necessary data to `profile.json`
 
+## Updating from Upstream
+
+If you forked this template and want to get updates from the main repository without losing your personal content, follow this safe merge strategy:
+
+### Setup Upstream Remote (One-time)
+
+```bash
+# Add the original repository as upstream
+git remote add upstream https://github.com/senrecep/portfolio.git
+
+# Verify remotes
+git remote -v
+```
+
+### Safe Update Strategy
+
+**Important:** Never use `git merge upstream/main` or `git rebase upstream/main` directly - this will overwrite your personal content!
+
+Instead, selectively pull only the files you want:
+
+```bash
+# Fetch latest changes from upstream
+git fetch upstream
+
+# See what changed
+git diff HEAD upstream/main --name-status
+
+# Selectively checkout specific files (safe - won't touch your content)
+git checkout upstream/main -- components/sections/Projects.tsx
+git checkout upstream/main -- components/sections/Skills.tsx
+git checkout upstream/main -- scripts/create-languages.ts
+git checkout upstream/main -- package.json
+# ... add more files as needed
+
+# Commit the updates
+git commit -m "feat: sync selected updates from upstream"
+```
+
+### Files Safe to Update
+
+These files can typically be updated without losing personal data:
+
+| Category | Files |
+| -------- | ----- |
+| Components | `components/sections/*.tsx`, `components/ui/*.tsx` |
+| Configuration | `package.json`, `next.config.js`, `biome.json`, `tailwind.config.ts` |
+| Scripts | `scripts/*.ts` |
+| Documentation | `README.md`, `SETUP.md`, `CONTRIBUTING.md` |
+| API Routes | `app/api/**/*.ts` |
+| Middleware | `middleware.ts` |
+| Styles | `app/globals.css` |
+
+### Files to NEVER Update from Upstream
+
+These contain your personal content - never overwrite them:
+
+| Category | Files |
+| -------- | ----- |
+| Content | `content/**/*.json` (profile.json, metadata.json) |
+| Images | `public/images/profile.webp`, `public/images/og-banner.*.webp` |
+| Files | `public/files/cv.pdf` |
+| i18n Config | `lib/i18n/config.ts`, `lib/i18n/translations.ts` (if you added custom languages) |
+
+### Example: Full Safe Update
+
+```bash
+# 1. Fetch upstream
+git fetch upstream
+
+# 2. Update safe files
+git checkout upstream/main -- \
+  components/sections/Projects.tsx \
+  components/sections/Skills.tsx \
+  components/sections/Certificates.tsx \
+  components/sections/Blog.tsx \
+  components/layout/Header.tsx \
+  components/layout/Footer.tsx \
+  app/robots.ts \
+  middleware.ts \
+  package.json \
+  scripts/create-languages.ts
+
+# 3. Install any new dependencies
+npm install
+
+# 4. Test the build
+npm run build
+
+# 5. Commit if everything works
+git commit -m "feat: sync updates from upstream template"
+```
+
+### Resolving Conflicts
+
+If you've modified a file that also changed upstream:
+
+```bash
+# Option 1: Keep your version
+git checkout --ours path/to/file
+
+# Option 2: Take upstream version
+git checkout upstream/main -- path/to/file
+
+# Option 3: Manual merge - view both versions
+git diff HEAD upstream/main -- path/to/file
+```
+
 ## Contributing
 
 Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md).
