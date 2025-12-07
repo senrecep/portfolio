@@ -11,7 +11,10 @@ A modern, internationalized personal portfolio website built with Next.js 15.5, 
 - TailwindCSS with shadcn/ui components
 
 ### Internationalization
-- Multi-language support (English, Turkish, German)
+- Multi-language support (12 languages)
+  - 🇬🇧 English, 🇹🇷 Turkish, 🇩🇪 German
+  - 🇫🇷 French, 🇪🇸 Spanish, 🇳🇱 Dutch, 🇵🇹 Portuguese, 🇮🇹 Italian, 🇵🇱 Polish
+  - 🇯🇵 Japanese, 🇰🇷 Korean, 🇨🇳 Chinese (Simplified)
 - Automatic language detection from browser
 - hreflang tags for SEO
 - Localized metadata and content
@@ -126,10 +129,19 @@ portfolio/
 │   ├── sections/          # Page sections (Blog, Projects, Skills)
 │   ├── shared/            # Shared components (JsonLd, OptimizedImage)
 │   └── ui/                # UI primitives (Button, Card, etc.)
-├── content/               # Multilingual content
+├── content/               # Multilingual content (12 languages)
 │   ├── en/               # English
 │   ├── tr/               # Turkish
-│   └── de/               # German
+│   ├── de/               # German
+│   ├── fr/               # French
+│   ├── es/               # Spanish
+│   ├── nl/               # Dutch
+│   ├── pt/               # Portuguese
+│   ├── it/               # Italian
+│   ├── pl/               # Polish
+│   ├── ja/               # Japanese
+│   ├── ko/               # Korean
+│   └── zh/               # Chinese (Simplified)
 ├── lib/
 │   ├── i18n/             # Internationalization utilities
 │   ├── logger/           # Pino logger configuration
@@ -234,6 +246,8 @@ npm run start
 Route (app)                    Size     First Load JS
 ┌ ○ /_not-found               1.01 kB        123 kB
 ├ ● /[lang]                    160 kB        282 kB
+│   ├ /en, /tr, /de
+│   └ [+9 more paths]         (fr, es, nl, pt, it, pl, ja, ko, zh)
 ├ ƒ /api/download              143 B         123 kB
 ├ ○ /robots.txt                143 B         123 kB
 └ ○ /sitemap.xml               143 B         123 kB
