@@ -38,6 +38,7 @@ A modern, internationalized personal portfolio website built with Next.js 15.5, 
 - ESLint with Next.js config
 - Docker support with standalone output
 - Pino logger for structured logging
+- OG Banner preview tool for generating social media images
 
 ### Security
 - Security headers (HSTS, X-Frame-Options, etc.)
@@ -121,6 +122,7 @@ portfolio/
 ├── app/                    # Next.js App Router
 │   ├── [lang]/            # Language-specific routes
 │   ├── api/               # API routes
+│   ├── og-preview/        # OG Banner generator tool
 │   ├── layout.tsx         # Root layout
 │   ├── sitemap.ts         # Dynamic sitemap
 │   └── robots.ts          # Robots.txt
@@ -269,6 +271,18 @@ Route (app)                    Size     First Load JS
 - **Sitemap**: Dynamic sitemap with language alternates
 - **Meta Tags**: OpenGraph, Twitter Card
 - **Canonical URLs**: Automatic canonical URL generation
+- **OG Banners**: Language-specific social media images
+
+### OG Banner Generator
+
+A built-in tool for creating OpenGraph banner images for all languages:
+
+1. Start the development server: `npm run dev`
+2. Navigate to [http://localhost:3000/og-preview](http://localhost:3000/og-preview)
+3. Select language, take screenshot, convert to WebP
+4. Save to `public/images/og-banner.{lang}.webp`
+
+See `public/images/OG_BANNER_GUIDE.md` for detailed instructions.
 
 ## Contributing
 
