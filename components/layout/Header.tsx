@@ -121,7 +121,7 @@ export function Header({
             <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden border-4 border-slate-700/50 dark:border-border shadow-xl">
               <OptimizedImage
                 src={imageUrl}
-                alt={name}
+                alt={`${name} - ${position} profile photo`}
                 fill
                 sizes="300px"
                 className="hover:scale-105 transition-transform duration-300"

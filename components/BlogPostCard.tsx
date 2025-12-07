@@ -26,7 +26,7 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
         <div className="relative w-full aspect-[16/9]">
           <OptimizedImage
             src={post.imageUrl!}
-            alt={post.title}
+            alt={`Blog post thumbnail: ${post.title}`}
             key={index}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

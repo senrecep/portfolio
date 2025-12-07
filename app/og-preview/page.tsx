@@ -286,7 +286,7 @@ export default function OGPreviewPage() {
                 </div>
                 <div className="flex justify-end">
                   <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden border-4 border-slate-700/50 shadow-xl">
-                    <img src={imageUrl} alt={name} className="w-full h-full object-cover" />
+                    <img src={imageUrl} alt={`${name} - ${position} profile photo`} className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>

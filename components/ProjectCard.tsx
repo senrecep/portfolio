@@ -29,7 +29,7 @@ export function ProjectCard({ project, translations }: ProjectCardProps) {
               <div className="relative w-6 h-6 flex-shrink-0">
                 <OptimizedImage
                   src={project.imageUrl!}
-                  alt={project.title}
+                  alt={`${project.title} project icon`}
                   fill
                   sizes="24px"
                   objectFit="contain"
