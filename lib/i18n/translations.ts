@@ -12,6 +12,7 @@ export type Translations = {
         title: string;
         skills: string;
         languages: string;
+        resume: string;
         frontend: string;
         backend: string;
         databases: string;
@@ -35,6 +36,7 @@ export type Translations = {
     };
     actions: {
       downloadCV: string;
+      downloadPDF: string;
     };
     footer: {
       allRightsReserved: string;
@@ -56,6 +58,7 @@ export const translations: Translations = {
         title: "About Me",
         skills: "Skills",
         languages: "Programming Languages",
+        resume: "Resume",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Databases",
@@ -79,6 +82,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "Download CV",
+      downloadPDF: "Download PDF",
     },
     footer: {
       allRightsReserved: "All rights reserved.",
@@ -97,6 +101,7 @@ export const translations: Translations = {
         title: "Hakkımda",
         skills: "Yetenekler",
         languages: "Programlama Dilleri",
+        resume: "Özgeçmiş",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Veritabanları",
@@ -120,6 +125,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "CV'yi İndir",
+      downloadPDF: "PDF İndir",
     },
     footer: {
       allRightsReserved: "Tüm hakları saklıdır.",
