@@ -144,6 +144,7 @@ export const translations: Translations = {
         title: "Über mich",
         skills: "Fähigkeiten",
         languages: "Programmiersprachen",
+        resume: "Lebenslauf",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Datenbanken",
@@ -167,6 +168,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "Lebenslauf herunterladen",
+      downloadPDF: "PDF herunterladen",
     },
     footer: {
       allRightsReserved: "Alle Rechte vorbehalten.",
@@ -185,6 +187,7 @@ export const translations: Translations = {
         title: "À propos de moi",
         skills: "Compétences",
         languages: "Langages de programmation",
+        resume: "CV",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Bases de données",
@@ -208,6 +211,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "Télécharger le CV",
+      downloadPDF: "Télécharger le PDF",
     },
     footer: {
       allRightsReserved: "Tous droits réservés.",
@@ -226,6 +230,7 @@ export const translations: Translations = {
         title: "Sobre mí",
         skills: "Habilidades",
         languages: "Lenguajes de programación",
+        resume: "Currículum",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Bases de datos",
@@ -249,6 +254,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "Descargar CV",
+      downloadPDF: "Descargar PDF",
     },
     footer: {
       allRightsReserved: "Todos los derechos reservados.",
@@ -267,6 +273,7 @@ export const translations: Translations = {
         title: "Over mij",
         skills: "Vaardigheden",
         languages: "Programmeertalen",
+        resume: "CV",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Databases",
@@ -290,6 +297,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "Download CV",
+      downloadPDF: "PDF downloaden",
     },
     footer: {
       allRightsReserved: "Alle rechten voorbehouden.",
@@ -308,6 +316,7 @@ export const translations: Translations = {
         title: "Sobre mim",
         skills: "Habilidades",
         languages: "Linguagens de programação",
+        resume: "Currículo",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Bancos de dados",
@@ -331,6 +340,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "Baixar CV",
+      downloadPDF: "Baixar PDF",
     },
     footer: {
       allRightsReserved: "Todos os direitos reservados.",
@@ -349,6 +359,7 @@ export const translations: Translations = {
         title: "Chi sono",
         skills: "Competenze",
         languages: "Linguaggi di programmazione",
+        resume: "Curriculum",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Database",
@@ -372,6 +383,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "Scarica CV",
+      downloadPDF: "Scarica PDF",
     },
     footer: {
       allRightsReserved: "Tutti i diritti riservati.",
@@ -390,6 +402,7 @@ export const translations: Translations = {
         title: "O mnie",
         skills: "Umiejętności",
         languages: "Języki programowania",
+        resume: "CV",
         frontend: "Frontend",
         backend: "Backend",
         databases: "Bazy danych",
@@ -413,6 +426,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "Pobierz CV",
+      downloadPDF: "Pobierz PDF",
     },
     footer: {
       allRightsReserved: "Wszelkie prawa zastrzeżone.",
@@ -431,6 +445,7 @@ export const translations: Translations = {
         title: "自己紹介",
         skills: "スキル",
         languages: "プログラミング言語",
+        resume: "履歴書",
         frontend: "フロントエンド",
         backend: "バックエンド",
         databases: "データベース",
@@ -454,6 +469,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "履歴書をダウンロード",
+      downloadPDF: "PDFをダウンロード",
     },
     footer: {
       allRightsReserved: "無断転載禁止",
@@ -472,6 +488,7 @@ export const translations: Translations = {
         title: "소개",
         skills: "기술",
         languages: "프로그래밍 언어",
+        resume: "이력서",
         frontend: "프론트엔드",
         backend: "백엔드",
         databases: "데이터베이스",
@@ -495,6 +512,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "이력서 다운로드",
+      downloadPDF: "PDF 다운로드",
     },
     footer: {
       allRightsReserved: "모든 권리 보유.",
@@ -513,6 +531,7 @@ export const translations: Translations = {
         title: "关于我",
         skills: "技能",
         languages: "编程语言",
+        resume: "简历",
         frontend: "前端",
         backend: "后端",
         databases: "数据库",
@@ -536,6 +555,7 @@ export const translations: Translations = {
     },
     actions: {
       downloadCV: "下载简历",
+      downloadPDF: "下载 PDF",
     },
     footer: {
       allRightsReserved: "版权所有",
