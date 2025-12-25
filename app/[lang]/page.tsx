@@ -7,7 +7,10 @@ import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { languageCodes } from "@/lib/i18n/config";
-import { buildMetadataWithAbsoluteUrls } from "@/lib/i18n/metadata-utils";
+import {
+  buildMetadataWithAbsoluteUrls,
+  extractKeywordsFromProfile,
+} from "@/lib/i18n/metadata-utils";
 import { getProfile, getSEOMetadata } from "@/lib/i18n/server-content-loader";
 import { translations } from "@/lib/i18n/translations";
 
@@ -31,7 +34,13 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   const metadata = await getSEOMetadata(lang);
+  const profile = await getProfile(lang);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+  const dynamicKeywords = extractKeywordsFromProfile(profile);
+  metadata.keywords = [
+    ...new Set([...(metadata.keywords || []), ...dynamicKeywords]),
+  ];
 
   return buildMetadataWithAbsoluteUrls(metadata, siteUrl, {
     url: `${siteUrl}/${lang}`,

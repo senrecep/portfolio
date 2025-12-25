@@ -419,13 +419,11 @@ git merge -s ours upstream/main -m "chore: mark upstream as merged (keeping loca
 ```
 
 **When to use this:**
-
 - You've reviewed upstream changes and decided they don't apply to your fork
 - You want a clean git history without "branch is behind" warnings
 - You've manually cherry-picked the changes you wanted
 
 **What it does:**
-
 - Creates a merge commit (so Git thinks upstream is merged)
 - Preserves 100% of your current content (nothing changes)
 - Future `git merge upstream/main` won't re-apply those changes
