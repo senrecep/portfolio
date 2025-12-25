@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { defaultLanguage, getLanguageByCode } from "@/lib/i18n/config";
-import { buildMetadataWithAbsoluteUrls } from "@/lib/i18n/metadata-utils";
-import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
+import {
+  buildMetadataWithAbsoluteUrls,
+  extractKeywordsFromProfile,
+} from "@/lib/i18n/metadata-utils";
+import { getProfile, getSEOMetadata } from "@/lib/i18n/server-content-loader";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,6 +18,12 @@ export async function generateMetadata({
 }: LayoutProps): Promise<Metadata> {
   const { lang } = await params;
   const metadata = await getSEOMetadata(lang);
+  const profile = await getProfile(lang);
+
+  const dynamicKeywords = extractKeywordsFromProfile(profile);
+  metadata.keywords = [
+    ...new Set([...(metadata.keywords || []), ...dynamicKeywords]),
+  ];
   const defaultMetadata =
     lang !== defaultLanguage ? await getSEOMetadata(defaultLanguage) : metadata;
   const language = getLanguageByCode(lang);
