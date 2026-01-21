@@ -72,6 +72,29 @@ lib/
 - **Don't add comments** to unchanged code
 - **Don't use console.log** — use proper logging if needed
 
+## Testing
+
+| Type | Command | Notes |
+|------|---------|-------|
+| Build verification | `npm run build` | Must pass before commit |
+| Type checking | TypeScript compiler via build | Zero errors required |
+| Lint + Format | `npm run check:fix` | Biome handles both |
+
+**No test framework currently** — if adding tests, prefer Vitest for consistency with modern tooling.
+
+## Git Workflow
+
+- **Branch naming**: `[type]/[description]` (e.g., `feat/add-contact-form`, `fix/mobile-nav`)
+- **Commit format**: Semantic commits (`feat:`, `fix:`, `docs:`, `refactor:`, `style:`)
+- **PR process**: Use `/git-pr` command, include Co-Authored-By for Claude
+- **Main branch**: Always deployable, auto-deploys to Vercel
+
+## Boundaries
+
+- ✅ **Always do**: Run `npm run check:fix` before commit, follow existing patterns
+- ⚠️ **Ask first**: Adding new dependencies, modifying i18n config, changing routing structure
+- 🚫 **Never do**: Commit secrets, edit `node_modules/`, remove existing translations
+
 ## Commands
 
 | Command | Description |
