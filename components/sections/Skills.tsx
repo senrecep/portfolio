@@ -69,8 +69,8 @@ export function Skills({ skills, translations }: SkillsProps) {
             skills.length === 1
               ? "max-w-[24rem] grid-cols-1"
               : skills.length === 2
-              ? "grid-cols-1 sm:grid-cols-2 max-w-[48rem]"
-              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[64rem]"
+                ? "grid-cols-1 sm:grid-cols-2 max-w-[48rem]"
+                : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[64rem]"
           }`}
         >
           {/* New structured format with categories */}
@@ -144,8 +144,8 @@ export function Skills({ skills, translations }: SkillsProps) {
             skills.length === 1
               ? "max-w-[24rem] grid-cols-1"
               : skills.length === 2
-              ? "grid-cols-1 sm:grid-cols-2 max-w-[48rem]"
-              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[64rem]"
+                ? "grid-cols-1 sm:grid-cols-2 max-w-[48rem]"
+                : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[64rem]"
           }`}
         >
           {(skills as string[]).map((skill, index) => (
@@ -163,4 +163,3 @@ export function Skills({ skills, translations }: SkillsProps) {
     </section>
   );
 }
-

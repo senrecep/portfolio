@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { defaultLanguage, languageCodes } from "./config";
-import type { SEOMetadata, Profile, SkillCategory } from "./content-loader";
+import type { Profile, SEOMetadata, SkillCategory } from "./content-loader";
 
 export function extractKeywordsFromProfile(profile: Profile): string[] {
   const keywords = new Set<string>();
 
   // Personal Info
   if (profile.personalInfo.name) keywords.add(profile.personalInfo.name);
-  if (profile.personalInfo.position) keywords.add(profile.personalInfo.position);
+  if (profile.personalInfo.position)
+    keywords.add(profile.personalInfo.position);
 
   // Projects
   if (profile.projects) {
