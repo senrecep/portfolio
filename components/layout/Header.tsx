@@ -1,12 +1,11 @@
 "use client";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { CVDownloadButton } from "@/components/shared/CVDownloadButton";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { RadioIcon } from "@/components/shared/RadioIcon";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import type { Profile } from "@/lib/i18n/content-loader";
-
-import { CVDownloadButton } from "@/components/shared/CVDownloadButton";
 
 interface HeaderProps {
   profile: Profile;
