@@ -3,6 +3,7 @@
 import { FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackCVDownload } from "@/lib/analytics";
+import { cn } from "@/lib/utils";
 
 interface CVDownloadButtonProps {
   url: string;
@@ -46,15 +47,20 @@ export function CVDownloadButton({
   };
 
   return (
-    <Button asChild className={className} variant="secondary">
+    <Button
+      asChild
+      className={cn("hover:translate-y-0", className)}
+      variant="glass"
+    >
       <a
         href={url}
         download={fileName}
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleDownload}
+        className="group"
       >
-        <FileDown className="mr-2 h-4 w-4" />
+        <FileDown className="mr-2 h-4 w-4 group-hover:animate-bounce" />
         {label}
       </a>
     </Button>

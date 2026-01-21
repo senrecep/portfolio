@@ -57,7 +57,6 @@ function CopyButton({
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -72,7 +71,6 @@ function CopyButton({
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -104,7 +102,6 @@ function CopyButton({
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -119,7 +116,6 @@ function CopyButton({
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -216,12 +212,7 @@ export default function OGPreviewPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="flex items-center gap-3 text-slate-400">
-          <svg
-            className="w-5 h-5 animate-spin"
-            fill="none"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
             <circle
               className="opacity-25"
               cx="12"
@@ -260,7 +251,6 @@ export default function OGPreviewPage() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -284,11 +274,8 @@ export default function OGPreviewPage() {
             <div className="flex flex-wrap items-center gap-4 flex-1">
               {/* Language Select */}
               <div className="flex items-center gap-2">
-                <label htmlFor="lang-select" className="text-sm text-slate-400">
-                  Language
-                </label>
+                <label className="text-sm text-slate-400">Language</label>
                 <select
-                  id="lang-select"
                   value={selectedLang}
                   onChange={(e) => setSelectedLang(e.target.value)}
                   className="bg-slate-800 text-white px-3 py-2 rounded-lg border border-slate-700 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all text-sm"
@@ -303,12 +290,9 @@ export default function OGPreviewPage() {
 
               {/* Background Color */}
               <div className="flex items-center gap-2">
-                <label htmlFor="bg-color" className="text-sm text-slate-400">
-                  Background
-                </label>
+                <label className="text-sm text-slate-400">Background</label>
                 <div className="flex items-center gap-1">
                   <input
-                    id="bg-color"
                     type="color"
                     value={bgColor}
                     onChange={(e) => setBgColor(e.target.value)}
@@ -319,7 +303,6 @@ export default function OGPreviewPage() {
                     value={bgColor}
                     onChange={(e) => setBgColor(e.target.value)}
                     className="bg-slate-800 text-white text-xs font-mono px-2 py-1.5 rounded-lg border border-slate-700 w-20 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none"
-                    aria-label="Background color hex value"
                   />
                 </div>
               </div>
@@ -384,7 +367,6 @@ export default function OGPreviewPage() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        aria-hidden="true"
                       >
                         <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
                         <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
@@ -410,10 +392,9 @@ export default function OGPreviewPage() {
                 </div>
                 <div className="flex justify-end">
                   <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden border-4 border-slate-700/50 shadow-xl">
-                    {/* biome-ignore lint/performance/noImgElement: Using native img for screenshot tool, not for web display */}
                     <img
                       src={imageUrl}
-                      alt={`${name} - ${position}`}
+                      alt={`${name} - ${position} profile photo`}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -458,7 +439,6 @@ export default function OGPreviewPage() {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -605,7 +585,6 @@ export default function OGPreviewPage() {
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
-                          aria-hidden="true"
                         >
                           <path
                             strokeLinecap="round"
