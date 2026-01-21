@@ -1,120 +1,77 @@
 # Portfolio - senrecep.dev
 
+## Commands
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Dev server (Turbopack) |
+| `npm run build` | Production build |
+| `npm run check:fix` | Biome lint + format |
+
 ## WHAT - Project Overview
+**Next.js 15 portfolio** with i18n (12 languages) using App Router, TypeScript 5, React 19, Tailwind CSS, Shadcn UI.
 
-**Next.js 15 portfolio** with internationalization support for 12 languages.
-
-### Tech Stack
-- **Framework**: Next.js 15 (App Router, Turbopack)
-- **Language**: TypeScript 5, React 19
-- **Styling**: Tailwind CSS 3.4, Shadcn UI
-- **i18n**: next-intl (12 languages: en, tr, de, es, fr, it, ja, ko, nl, pl, pt, zh)
-- **Linting**: Biome (format + lint)
-
-### Structure
-```
-app/
-├── [lang]/           → Internationalized routes
-│   ├── page.tsx      → Home page
-│   └── resume/       → Resume/CV page
-├── api/              → API routes (OG images, PDF download)
-└── sitemap.ts        → Dynamic sitemap
-
-components/
-├── ui/               → Shadcn UI components
-├── sections/         → Page sections (Skills, Projects, Blog, etc.)
-├── layout/           → Header, Footer
-└── shared/           → Reusable utilities (ThemeToggle, LordIcon, etc.)
-
-content/
-└── {lang}/           → JSON content files per language
-
-lib/
-├── i18n/             → Content loaders
-├── utils.ts          → Utility functions (cn, etc.)
-└── validation.ts     → Input validation
-```
+### Key Directories
+- `app/[lang]/` — Internationalized routes
+- `components/` — UI (ui/, sections/, layout/, shared/)
+- `content/{lang}/` — JSON translations
+- `lib/` — Utilities, i18n loaders
 
 ## WHY - Architecture Decisions
-
-- **App Router**: Server Components for better SEO and performance
-- **next-intl**: Chosen over next-i18next for better App Router support
-- **Biome**: Single tool for both linting and formatting (faster than ESLint + Prettier)
+- **App Router**: Server Components for SEO and performance
+- **next-intl**: Better App Router support than next-i18next
+- **Biome**: Single tool, faster than ESLint + Prettier
 - **Shadcn UI**: Copy-paste components, no black-box dependencies
 
-## HOW - Code Conventions (with WHY)
-
+## HOW - Code Conventions
 ### TypeScript
-- Explicit types (avoid `var`) — *implicit inference caused type bugs*
-- No `any` type — *production bugs from untyped data*
-- Interface over type for objects — *better extensibility and error messages*
+- Explicit types — *inference caused bugs*
+- No `any` — *production bugs from untyped data*
+- Interface over type for objects — *better extensibility*
 
 ### React
-- Server Components by default — *better performance, smaller bundles*
-- `"use client"` only when needed — *minimize client JavaScript*
-- Avoid `useEffect` for data fetching — *use Server Components instead*
+- Server Components by default — *smaller bundles*
+- `"use client"` only when needed — *minimize JS*
 
 ### Styling
-- Use `cn()` utility for conditional classes — *consistent class merging*
-- Tailwind tokens over hardcoded values — *theme consistency*
-- Mobile-first responsive design — *most portfolio visitors are mobile*
-
-### i18n
-- Content in `content/{lang}/*.json` — *separation of concerns*
-- Type-safe translations — *catch missing keys at build time*
-- Fallback to English for missing keys — *graceful degradation*
-
-## NOT TO DO (Claude Tendencies)
-
-- **Don't create new files** if task can be done in existing file
-- **Don't add error handling** for impossible scenarios
-- **Don't over-engineer** — no extra abstractions beyond request
-- **Don't add comments** to unchanged code
-- **Don't use console.log** — use proper logging if needed
-
-## Testing
-
-| Type | Command | Notes |
-|------|---------|-------|
-| Build verification | `npm run build` | Must pass before commit |
-| Type checking | TypeScript compiler via build | Zero errors required |
-| Lint + Format | `npm run check:fix` | Biome handles both |
-
-**No test framework currently** — if adding tests, prefer Vitest for consistency with modern tooling.
-
-## Git Workflow
-
-- **Branch naming**: `[type]/[description]` (e.g., `feat/add-contact-form`, `fix/mobile-nav`)
-- **Commit format**: Semantic commits (`feat:`, `fix:`, `docs:`, `refactor:`, `style:`)
-- **PR process**: Use `/git-pr` command, include Co-Authored-By for Claude
-- **Main branch**: Always deployable, auto-deploys to Vercel
+- `cn()` for conditional classes — *consistent merging*
+- Mobile-first design — *most visitors are mobile*
 
 ## Boundaries
+- ✅ **Always**: Run `npm run check:fix`, follow existing patterns
+- ⚠️ **Ask first**: New dependencies, i18n config, routing changes
+- 🚫 **Never**: Commit secrets, edit `node_modules/`, remove translations
 
-- ✅ **Always do**: Run `npm run check:fix` before commit, follow existing patterns
-- ⚠️ **Ask first**: Adding new dependencies, modifying i18n config, changing routing structure
-- 🚫 **Never do**: Commit secrets, edit `node_modules/`, remove existing translations
+## NOT TO DO
+- Don't create new files if task fits existing file
+- Don't add error handling for impossible scenarios
+- Don't over-engineer beyond what's requested
+- Don't add comments to unchanged code
 
-## Commands
+## Testing
+| Type | Command | Notes |
+|------|---------|-------|
+| Build | `npm run build` | Must pass |
+| Lint | `npm run check:fix` | Biome |
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server (Turbopack) |
-| `npm run build` | Production build |
-| `npm run lint` | Next.js linter |
-| `npm run check:fix` | Biome lint + format |
-| `npm run lang:add` | Add new language |
+## Git Workflow
+- **Branch**: `[type]/[description]` (e.g., `feat/contact-form`)
+- **Commit**: Semantic (`feat:`, `fix:`, `docs:`)
+- **PR**: Use `/git-pr`, include Co-Authored-By
 
 ## Custom Commands
-
 | Command | Description |
 |---------|-------------|
-| `/git-pr` | Commit, push, and create PR |
-| `/lighthouse` | Run Lighthouse audit |
+| `/git-pr` | Commit, push, create PR |
+| `/git-fix-issue <n>` | Fix GitHub issue |
+| `/add-language` | Add new language |
 
-## Reference Documentation
-
+## References
 | Topic | File |
 |-------|------|
-| External Memory | `SCRATCHPAD.md` |
-| Translation Glossary | `content/TRANSLATION_GLOSSARY.md` |
+| Architecture | `docs/claude/architecture.md` |
+| Patterns | `docs/claude/patterns.md` |
+| Code Style | `docs/claude/code-style.md` |
+| AI Setup | `docs/claude/AI_SETUP.md` |
+| Memory | `SCRATCHPAD.md` |
+| Constitution | `.specify/memory/constitution.md` |
+| Translations | `content/TRANSLATION_GLOSSARY.md` |
