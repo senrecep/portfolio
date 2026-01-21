@@ -162,7 +162,7 @@ export function enableDragToScroll(): () => void {
   let startY = 0;
   let scrollLeft = 0;
   let scrollTop = 0;
-  let currentTarget: HTMLElement | null = null;
+  let currentTarget: HTMLElement | Window | null = null;
   let scrollDirection: "vertical" | "horizontal" | null = null;
   const dragThreshold = 5;
   let hasDragged = false;
@@ -185,9 +185,16 @@ export function enableDragToScroll(): () => void {
     );
   };
 
+  const canWindowScroll = (): boolean => {
+    return document.documentElement.scrollHeight > window.innerHeight;
+  };
+
   const findScrollableParent = (
     el: HTMLElement | null,
-  ): { element: HTMLElement; direction: "vertical" | "horizontal" } | null => {
+  ): {
+    element: HTMLElement | Window;
+    direction: "vertical" | "horizontal";
+  } | null => {
     while (el) {
       if (isHorizontallyScrollable(el)) {
         return { element: el, direction: "horizontal" };
@@ -196,6 +203,9 @@ export function enableDragToScroll(): () => void {
         return { element: el, direction: "vertical" };
       }
       el = el.parentElement;
+    }
+    if (canWindowScroll()) {
+      return { element: window, direction: "vertical" };
     }
     return null;
   };
@@ -217,9 +227,17 @@ export function enableDragToScroll(): () => void {
     scrollDirection = scrollable.direction;
     startX = e.clientX;
     startY = e.clientY;
-    scrollLeft = scrollable.element.scrollLeft;
-    scrollTop = scrollable.element.scrollTop;
-    scrollable.element.style.cursor = "grabbing";
+
+    if (scrollable.element === window) {
+      scrollLeft = window.scrollX;
+      scrollTop = window.scrollY;
+    } else {
+      const el = scrollable.element as HTMLElement;
+      scrollLeft = el.scrollLeft;
+      scrollTop = el.scrollTop;
+      el.style.cursor = "grabbing";
+    }
+    document.body.style.cursor = "grabbing";
   };
 
   const onMouseMove = (e: MouseEvent): void => {
@@ -231,18 +249,27 @@ export function enableDragToScroll(): () => void {
     if (scrollDirection === "horizontal" && Math.abs(dx) > dragThreshold) {
       hasDragged = true;
       e.preventDefault();
-      currentTarget.scrollLeft = scrollLeft - dx;
+      if (currentTarget === window) {
+        window.scrollTo(scrollLeft - dx, window.scrollY);
+      } else {
+        (currentTarget as HTMLElement).scrollLeft = scrollLeft - dx;
+      }
     } else if (scrollDirection === "vertical" && Math.abs(dy) > dragThreshold) {
       hasDragged = true;
       e.preventDefault();
-      currentTarget.scrollTop = scrollTop - dy;
+      if (currentTarget === window) {
+        window.scrollTo(window.scrollX, scrollTop - dy);
+      } else {
+        (currentTarget as HTMLElement).scrollTop = scrollTop - dy;
+      }
     }
   };
 
   const onMouseUp = (): void => {
-    if (currentTarget) {
-      currentTarget.style.cursor = "";
+    if (currentTarget && currentTarget !== window) {
+      (currentTarget as HTMLElement).style.cursor = "";
     }
+    document.body.style.cursor = "";
     isDragging = false;
     currentTarget = null;
     scrollDirection = null;
