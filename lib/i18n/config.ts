@@ -91,6 +91,13 @@ export const languages: Language[] = [
     locale: "zh-CN",
     direction: "ltr",
   },
+  {
+    code: "ru",
+    name: "Russian",
+    nativeName: "Русский",
+    locale: "ru-RU",
+    direction: "ltr",
+  },
 ];
 
 export const defaultLanguage = "en";

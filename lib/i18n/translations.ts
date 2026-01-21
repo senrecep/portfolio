@@ -561,4 +561,47 @@ export const translations: Translations = {
       allRightsReserved: "版权所有",
     },
   },
+  ru: {
+    nav: {
+      home: "Главная",
+      about: "Обо мне",
+      projects: "Проекты",
+      blog: "Блог",
+      certificates: "Сертификаты",
+    },
+    sections: {
+      about: {
+        title: "Обо мне",
+        skills: "Навыки",
+        languages: "Языки программирования",
+        resume: "Резюме",
+        frontend: "Фронтенд",
+        backend: "Бэкенд",
+        databases: "Базы данных",
+        tools: "Инструменты и технологии",
+      },
+      projects: {
+        title: "Проекты",
+        viewProject: "Посмотреть проект",
+        tags: "Теги",
+      },
+      blog: {
+        title: "Публикации",
+        readMore: "Читать статью",
+        publishedOn: "Опубликовано",
+        description: "Последние статьи и технические публикации",
+      },
+      certificates: {
+        title: "Сертификаты и лицензии",
+        viewCredential: "Посмотреть сертификат",
+      },
+    },
+    actions: {
+      downloadCV: "Скачать резюме",
+      downloadPDF: "Скачать PDF",
+    },
+    footer: {
+      allRightsReserved: "Все права защищены.",
+    },
+  },
 };
