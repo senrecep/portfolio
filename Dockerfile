@@ -19,6 +19,9 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
+# Sharp runtime dependencies for Next.js image optimization
+RUN apk add --no-cache vips
+
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
