@@ -28,27 +28,15 @@ export async function middleware(request: NextRequest) {
     request.headers.get("x-client-ip") ||
     "unknown";
 
-  const allHeaders: Record<string, string> = {};
-  request.headers.forEach((value, key) => {
-    if (
-      key.includes("forward") ||
-      key.includes("ip") ||
-      key.includes("cf-") ||
-      key.includes("x-") ||
-      key.includes("real")
-    ) {
-      allHeaders[key] = value;
-    }
-  });
-
-  logger.info({
-    method: request.method,
-    url: request.url,
-    pathname,
-    ip: clientIp,
-    userAgent: request.headers.get("user-agent"),
-    ipHeaders: allHeaders,
-  });
+  if (process.env.NODE_ENV === "development") {
+    logger.info({
+      method: request.method,
+      url: request.url,
+      pathname,
+      ip: clientIp,
+      userAgent: request.headers.get("user-agent"),
+    });
+  }
 
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("X-Frame-Options", "DENY");
