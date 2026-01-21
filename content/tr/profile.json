@@ -201,6 +201,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Claude Code ile Üretim Kalitesinde Yapay Zeka Geliştirme: Kapsamlı Ekosistem Rehberi",
+      "description": "Claude Code'u basit bir soru-cevap aracından, pluginler, özel ajanlar, beceriler, MCP sunucuları ve hooklar ile profesyonel düzeyde bir geliştirme ortamına dönüştürün.",
+      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
+      "date": "21/01/2026",
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+    },
+    {
       "title": "C#'ta Parametre Geçirme Yöntemlerinin Performans Analizi",
       "description": "C# parametre geçirme yöntemlerinin derinlemesine incelemesi: Struct, class, record ve ref tiplerinin karşılaştırmalı performans analizi ve optimizasyon için en iyi pratikler.",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",

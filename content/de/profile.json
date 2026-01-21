@@ -201,6 +201,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Produktionsreife KI-Entwicklung mit Claude Code: Ein umfassender Ökosystem-Leitfaden",
+      "description": "Verwandeln Sie Claude Code von einem einfachen Frage-Antwort-Tool in eine professionelle Entwicklungsumgebung mit Plugins, benutzerdefinierten Agenten, Skills, MCP-Servern und Hooks.",
+      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
+      "date": "21.01.2026",
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+    },
+    {
       "title": "Performanzanalyse von Parameterübergabemethoden in C#",
       "description": "Tiefgehende Analyse der C#-Parameterübergabe: Vergleich von Struct, Class, Record & Ref-Typen mit Benchmarks. Lernen Sie Best Practices für die Optimierung.",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",

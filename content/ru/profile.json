@@ -237,6 +237,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Разработка ИИ производственного уровня с Claude Code: Полное руководство по экосистеме",
+      "description": "Превратите Claude Code из простого инструмента вопросов и ответов в профессиональную среду разработки с плагинами, пользовательскими агентами, навыками, серверами MCP и хуками.",
+      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
+      "date": "21.01.2026",
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+    },
+    {
       "title": "Анализ производительности методов передачи параметров в C#",
       "description": "Глубокий анализ передачи параметров в C#: Сравнение struct, class, record и ref-типов с бенчмарками. Изучите лучшие практики оптимизации.",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",

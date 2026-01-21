@@ -232,6 +232,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Production-Grade AI Development with Claude Code: A Comprehensive Ecosystem Guide",
+      "description": "Transform Claude Code from a simple Q&A tool into a professional-grade development environment with plugins, custom agents, skills, MCP servers, and hooks.",
+      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
+      "date": "01/21/2026",
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+    },
+    {
       "title": "Performance Analysis of Parameter Passing Methods in C#",
       "description": "Deep dive into C# parameter passing: Comparing struct, class, record & ref types with benchmarks. Learn best practices for optimization.",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",

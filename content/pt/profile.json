@@ -232,7 +232,14 @@
   ],
   "blogPosts": [
     {
-      "title": "Performance Analysis of Parameter Passing Methods in C#",
+      "title": "Desenvolvimento de IA de nível de produção com Claude Code: Guia completo do ecossistema",
+      "description": "Transforme o Claude Code de uma simples ferramenta de perguntas e respostas em um ambiente de desenvolvimento profissional com plugins, agentes personalizados, habilidades, servidores MCP e hooks.",
+      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
+      "date": "21/01/2026",
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+    },
+    {
+      "title": "Análise de desempenho de métodos de passagem de parâmetros em C#",
       "description": "Análise aprofundada de passagem de parâmetros em C#: Comparação de tipos struct, class, record e ref com benchmarks. Aprenda as melhores práticas de otimização.",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
       "date": "20/02/2025",

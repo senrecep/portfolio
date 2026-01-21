@@ -232,7 +232,14 @@
   ],
   "blogPosts": [
     {
-      "title": "Performance Analysis of Parameter Passing Methods in C#",
+      "title": "Claude Code를 활용한 프로덕션급 AI 개발: 종합 에코시스템 가이드",
+      "description": "Claude Code를 단순한 Q&A 도구에서 플러그인, 커스텀 에이전트, 스킬, MCP 서버, 훅을 갖춘 전문 개발 환경으로 변환하세요.",
+      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
+      "date": "2026.01.21",
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+    },
+    {
+      "title": "C#의 매개변수 전달 방법 성능 분석",
       "description": "C# 매개변수 전달에 대한 심층 분석: 벤치마크를 통한 struct, class, record, ref 타입 비교. 최적화 모범 사례를 배우세요.",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
       "date": "2025.02.20",

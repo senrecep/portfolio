@@ -232,7 +232,14 @@
   ],
   "blogPosts": [
     {
-      "title": "Performance Analysis of Parameter Passing Methods in C#",
+      "title": "Claude Codeによる本番グレードのAI開発：包括的エコシステムガイド",
+      "description": "Claude Codeを単純なQ&Aツールから、プラグイン、カスタムエージェント、スキル、MCPサーバー、フックを備えたプロフェッショナルな開発環境に変革します。",
+      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
+      "date": "2026/01/21",
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+    },
+    {
+      "title": "C#におけるパラメータ渡し方法のパフォーマンス分析",
       "description": "C#のパラメータ渡しの詳細分析：ベンチマークによるstruct、class、record、refタイプの比較。最適化のベストプラクティスを学ぶ。",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
       "date": "2025/02/20",
