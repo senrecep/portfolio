@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { LordIcon } from "@/components/shared/LordIcon";
 import { languages } from "@/lib/i18n/config";
@@ -374,10 +375,13 @@ export default function OGPreviewPage() {
                   <div className="relative">
                     <div className="absolute -inset-3 bg-blue-500/20 rounded-full blur-xl" />
                     <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl">
-                      <img
+                      <Image
                         src={imageUrl}
                         alt={`${name} - ${position}`}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="300px"
+                        priority
                       />
                     </div>
                   </div>
