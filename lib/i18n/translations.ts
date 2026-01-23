@@ -38,6 +38,12 @@ export type Translations = {
       downloadCV: string;
       downloadPDF: string;
     };
+    contact: {
+      sendEmail: string;
+      sendWhatsApp: string;
+      openMenu: string;
+      closeMenu: string;
+    };
     footer: {
       allRightsReserved: string;
     };
@@ -84,6 +90,12 @@ export const translations: Translations = {
       downloadCV: "Download CV",
       downloadPDF: "Download PDF",
     },
+    contact: {
+      sendEmail: "Send email",
+      sendWhatsApp: "Send WhatsApp message",
+      openMenu: "Open contact menu",
+      closeMenu: "Close menu",
+    },
     footer: {
       allRightsReserved: "All rights reserved.",
     },
@@ -126,6 +138,12 @@ export const translations: Translations = {
     actions: {
       downloadCV: "CV'yi İndir",
       downloadPDF: "PDF İndir",
+    },
+    contact: {
+      sendEmail: "Email gönder",
+      sendWhatsApp: "WhatsApp ile mesaj gönder",
+      openMenu: "İletişim menüsünü aç",
+      closeMenu: "Menüyü kapat",
     },
     footer: {
       allRightsReserved: "Tüm hakları saklıdır.",
@@ -170,6 +188,12 @@ export const translations: Translations = {
       downloadCV: "Lebenslauf herunterladen",
       downloadPDF: "PDF herunterladen",
     },
+    contact: {
+      sendEmail: "E-Mail senden",
+      sendWhatsApp: "WhatsApp-Nachricht senden",
+      openMenu: "Kontaktmenü öffnen",
+      closeMenu: "Menü schließen",
+    },
     footer: {
       allRightsReserved: "Alle Rechte vorbehalten.",
     },
@@ -212,6 +236,12 @@ export const translations: Translations = {
     actions: {
       downloadCV: "Télécharger le CV",
       downloadPDF: "Télécharger le PDF",
+    },
+    contact: {
+      sendEmail: "Envoyer un email",
+      sendWhatsApp: "Envoyer un message WhatsApp",
+      openMenu: "Ouvrir le menu de contact",
+      closeMenu: "Fermer le menu",
     },
     footer: {
       allRightsReserved: "Tous droits réservés.",
@@ -256,6 +286,12 @@ export const translations: Translations = {
       downloadCV: "Descargar CV",
       downloadPDF: "Descargar PDF",
     },
+    contact: {
+      sendEmail: "Enviar correo electrónico",
+      sendWhatsApp: "Enviar mensaje de WhatsApp",
+      openMenu: "Abrir menú de contacto",
+      closeMenu: "Cerrar menú",
+    },
     footer: {
       allRightsReserved: "Todos los derechos reservados.",
     },
@@ -298,6 +334,12 @@ export const translations: Translations = {
     actions: {
       downloadCV: "Download CV",
       downloadPDF: "PDF downloaden",
+    },
+    contact: {
+      sendEmail: "E-mail verzenden",
+      sendWhatsApp: "WhatsApp-bericht verzenden",
+      openMenu: "Contactmenu openen",
+      closeMenu: "Menu sluiten",
     },
     footer: {
       allRightsReserved: "Alle rechten voorbehouden.",
@@ -342,6 +384,12 @@ export const translations: Translations = {
       downloadCV: "Baixar CV",
       downloadPDF: "Baixar PDF",
     },
+    contact: {
+      sendEmail: "Enviar email",
+      sendWhatsApp: "Enviar mensagem do WhatsApp",
+      openMenu: "Abrir menu de contato",
+      closeMenu: "Fechar menu",
+    },
     footer: {
       allRightsReserved: "Todos os direitos reservados.",
     },
@@ -384,6 +432,12 @@ export const translations: Translations = {
     actions: {
       downloadCV: "Scarica CV",
       downloadPDF: "Scarica PDF",
+    },
+    contact: {
+      sendEmail: "Invia email",
+      sendWhatsApp: "Invia messaggio WhatsApp",
+      openMenu: "Apri menu contatti",
+      closeMenu: "Chiudi menu",
     },
     footer: {
       allRightsReserved: "Tutti i diritti riservati.",
@@ -428,6 +482,12 @@ export const translations: Translations = {
       downloadCV: "Pobierz CV",
       downloadPDF: "Pobierz PDF",
     },
+    contact: {
+      sendEmail: "Wyślij email",
+      sendWhatsApp: "Wyślij wiadomość WhatsApp",
+      openMenu: "Otwórz menu kontaktu",
+      closeMenu: "Zamknij menu",
+    },
     footer: {
       allRightsReserved: "Wszelkie prawa zastrzeżone.",
     },
@@ -470,6 +530,12 @@ export const translations: Translations = {
     actions: {
       downloadCV: "履歴書をダウンロード",
       downloadPDF: "PDFをダウンロード",
+    },
+    contact: {
+      sendEmail: "メールを送る",
+      sendWhatsApp: "WhatsAppメッセージを送る",
+      openMenu: "連絡先メニューを開く",
+      closeMenu: "メニューを閉じる",
     },
     footer: {
       allRightsReserved: "無断転載禁止",
@@ -514,6 +580,12 @@ export const translations: Translations = {
       downloadCV: "이력서 다운로드",
       downloadPDF: "PDF 다운로드",
     },
+    contact: {
+      sendEmail: "이메일 보내기",
+      sendWhatsApp: "WhatsApp 메시지 보내기",
+      openMenu: "연락처 메뉴 열기",
+      closeMenu: "메뉴 닫기",
+    },
     footer: {
       allRightsReserved: "모든 권리 보유.",
     },
@@ -557,6 +629,12 @@ export const translations: Translations = {
       downloadCV: "下载简历",
       downloadPDF: "下载 PDF",
     },
+    contact: {
+      sendEmail: "发送邮件",
+      sendWhatsApp: "发送 WhatsApp 消息",
+      openMenu: "打开联系菜单",
+      closeMenu: "关闭菜单",
+    },
     footer: {
       allRightsReserved: "版权所有",
     },
@@ -599,6 +677,12 @@ export const translations: Translations = {
     actions: {
       downloadCV: "Скачать резюме",
       downloadPDF: "Скачать PDF",
+    },
+    contact: {
+      sendEmail: "Отправить email",
+      sendWhatsApp: "Отправить сообщение WhatsApp",
+      openMenu: "Открыть меню контактов",
+      closeMenu: "Закрыть меню",
     },
     footer: {
       allRightsReserved: "Все права защищены.",

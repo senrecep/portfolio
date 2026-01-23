@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactMenuWrapper } from "@/components/shared/ContactMenuWrapper";
 import { defaultLanguage, getLanguageByCode } from "@/lib/i18n/config";
 import {
   buildMetadataWithAbsoluteUrls,
@@ -49,6 +50,11 @@ export async function generateMetadata({
 }
 
 export default async function Layout({ children, params }: LayoutProps) {
-  await params; // Ensure params is resolved
-  return <>{children}</>;
+  const { lang } = await params;
+  return (
+    <>
+      {children}
+      <ContactMenuWrapper lang={lang} />
+    </>
+  );
 }
