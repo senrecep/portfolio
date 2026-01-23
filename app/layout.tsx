@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClientProviders } from "@/components/shared/ClientProviders";
 import { GoogleTagManagerHead } from "@/components/shared/GoogleTagManager";
 import MicrosoftClarity from "@/components/shared/MicrosoftClarity";
+import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 import { defaultLanguage } from "@/lib/i18n/config";
 import { buildMetadataWithAbsoluteUrls } from "@/lib/i18n/metadata-utils";
 import { getSEOMetadata } from "@/lib/i18n/server-content-loader";
@@ -74,6 +75,7 @@ export default function RootLayout({
           gtmId={gtmId}
         >
           {children}
+          <WhatsAppButton />
         </ClientProviders>
       </body>
     </html>
