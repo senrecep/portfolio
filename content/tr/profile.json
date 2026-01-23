@@ -6,6 +6,8 @@
     "about": "Kendiniz hakkında kısa bir açıklama yazın. Uzmanlık alanlarınızı, deneyimlerinizi ve sizi benzersiz kılan özellikleri vurgulayın.",
     "imageUrl": "/images/profile.webp",
     "callsign": "",
+    "email": "",
+    "phoneNumber": "",
     "cv": {
       "url": "/files/cv.pdf",
       "fileName": "Adınız Soyadınız - CV.pdf"

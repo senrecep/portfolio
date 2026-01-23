@@ -6,6 +6,8 @@
     "about": "Write a brief description about yourself. Highlight your expertise, experience, and what makes you unique.",
     "imageUrl": "/images/profile.webp",
     "callsign": "",
+    "email": "",
+    "phoneNumber": "",
     "cv": {
       "url": "/files/cv.pdf",
       "fileName": "Your Name - CV.pdf"
