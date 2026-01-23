@@ -32,6 +32,8 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             quality={75}
             objectFit="cover"
+            priority={index === 0}
+            loadingTimeout={8000}
             onErrorCallback={() => setImageError(true)}
             className="group-hover:scale-105 transition-transform duration-500"
           />
