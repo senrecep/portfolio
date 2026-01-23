@@ -1,13 +1,17 @@
 FROM node:20-alpine AS base
 
 FROM base AS deps
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat vips-dev build-base
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
 RUN npm ci
 
+# Rebuild Sharp for Alpine Linux
+RUN npm rebuild sharp
+
 FROM base AS builder
+RUN apk add --no-cache vips-dev
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
