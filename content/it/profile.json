@@ -234,6 +234,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Strumenti di coding AI: La guida completa a Claude Code, OpenCode e sviluppo moderno",
+      "description": "Da zero alla produzione: Padroneggia lo sviluppo assistito dall'IA con gli strumenti giusti. Impara Claude Code, OpenCode, oh-my-opencode, MCP, skills e tecniche avanzate per lo sviluppo professionale.",
+      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
+      "date": "24/01/2026",
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+    },
+    {
       "title": "Sviluppo IA di livello produzione con Claude Code: Guida completa all'ecosistema",
       "description": "Trasforma Claude Code da un semplice strumento di domande e risposte in un ambiente di sviluppo professionale con plugin, agenti personalizzati, competenze, server MCP e hook.",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",

@@ -203,6 +203,13 @@
   ],
   "blogPosts": [
     {
+      "title": "KI-Coding-Tools: Der vollständige Leitfaden zu Claude Code, OpenCode & moderner Entwicklung",
+      "description": "Von Null zur Produktion: Beherrschen Sie KI-gestützte Entwicklung mit den richtigen Tools. Lernen Sie Claude Code, OpenCode, oh-my-opencode, MCP, Skills und fortgeschrittene Techniken für professionelle Entwicklung.",
+      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
+      "date": "24.01.2026",
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+    },
+    {
       "title": "Produktionsreife KI-Entwicklung mit Claude Code: Ein umfassender Ökosystem-Leitfaden",
       "description": "Verwandeln Sie Claude Code von einem einfachen Frage-Antwort-Tool in eine professionelle Entwicklungsumgebung mit Plugins, benutzerdefinierten Agenten, Skills, MCP-Servern und Hooks.",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",

@@ -234,6 +234,13 @@
   ],
   "blogPosts": [
     {
+      "title": "AI 코딩 도구: Claude Code, OpenCode 및 현대적 개발의 완벽 가이드",
+      "description": "제로에서 프로덕션까지: 올바른 도구로 AI 지원 개발을 마스터하세요. Claude Code, OpenCode, oh-my-opencode, MCP, 스킬 및 전문 개발을 위한 고급 기술을 배웁니다.",
+      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
+      "date": "2026.01.24",
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+    },
+    {
       "title": "Claude Code를 활용한 프로덕션급 AI 개발: 종합 에코시스템 가이드",
       "description": "Claude Code를 단순한 Q&A 도구에서 플러그인, 커스텀 에이전트, 스킬, MCP 서버, 훅을 갖춘 전문 개발 환경으로 변환하세요.",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",

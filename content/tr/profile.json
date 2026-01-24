@@ -203,6 +203,13 @@
   ],
   "blogPosts": [
     {
+      "title": "AI Kodlama Araçları: Claude Code, OpenCode ve Modern Geliştirme için Kapsamlı Rehber",
+      "description": "Sıfırdan üretime: Doğru araçlarla AI destekli geliştirmeyi ustalaşın. Claude Code, OpenCode, oh-my-opencode, MCP, beceriler ve profesyonel geliştirme için ileri teknikler.",
+      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
+      "date": "24/01/2026",
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+    },
+    {
       "title": "Claude Code ile Üretim Kalitesinde Yapay Zeka Geliştirme: Kapsamlı Ekosistem Rehberi",
       "description": "Claude Code'u basit bir soru-cevap aracından, pluginler, özel ajanlar, beceriler, MCP sunucuları ve hooklar ile profesyonel düzeyde bir geliştirme ortamına dönüştürün.",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",

@@ -234,6 +234,13 @@
   ],
   "blogPosts": [
     {
+      "title": "AI 编程工具：Claude Code、OpenCode 和现代开发的完整指南",
+      "description": "从零到生产：使用正确的工具掌握 AI 辅助开发。学习 Claude Code、OpenCode、oh-my-opencode、MCP、技能和专业开发的高级技术。",
+      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
+      "date": "2026/01/24",
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+    },
+    {
       "title": "使用 Claude Code 进行生产级 AI 开发：全面生态系统指南",
       "description": "将 Claude Code 从简单的问答工具转变为具有插件、自定义代理、技能、MCP 服务器和钩子的专业开发环境。",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",

@@ -239,6 +239,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Инструменты кодирования с ИИ: Полное руководство по Claude Code, OpenCode и современной разработке",
+      "description": "От нуля до продакшена: Освойте разработку с поддержкой ИИ с правильными инструментами. Изучите Claude Code, OpenCode, oh-my-opencode, MCP, навыки и продвинутые техники для профессиональной разработки.",
+      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
+      "date": "24.01.2026",
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+    },
+    {
       "title": "Разработка ИИ производственного уровня с Claude Code: Полное руководство по экосистеме",
       "description": "Превратите Claude Code из простого инструмента вопросов и ответов в профессиональную среду разработки с плагинами, пользовательскими агентами, навыками, серверами MCP и хуками.",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",

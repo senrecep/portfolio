@@ -234,6 +234,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Narzędzia do kodowania AI: Kompletny przewodnik po Claude Code, OpenCode i nowoczesnym rozwoju",
+      "description": "Od zera do produkcji: Opanuj rozwój wspomagany przez AI z odpowiednimi narzędziami. Poznaj Claude Code, OpenCode, oh-my-opencode, MCP, umiejętności i zaawansowane techniki profesjonalnego rozwoju.",
+      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
+      "date": "24.01.2026",
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+    },
+    {
       "title": "Rozwój AI klasy produkcyjnej z Claude Code: Kompleksowy przewodnik po ekosystemie",
       "description": "Przekształć Claude Code z prostego narzędzia do pytań i odpowiedzi w profesjonalne środowisko programistyczne z pluginami, niestandardowymi agentami, umiejętnościami, serwerami MCP i hookami.",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",

@@ -234,6 +234,13 @@
   ],
   "blogPosts": [
     {
+      "title": "AIコーディングツール：Claude Code、OpenCode、モダン開発の完全ガイド",
+      "description": "ゼロからプロダクションへ：適切なツールでAI支援開発をマスター。Claude Code、OpenCode、oh-my-opencode、MCP、スキル、プロフェッショナル開発のための高度なテクニックを学びます。",
+      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
+      "date": "2026/01/24",
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+    },
+    {
       "title": "Claude Codeによる本番グレードのAI開発：包括的エコシステムガイド",
       "description": "Claude Codeを単純なQ&Aツールから、プラグイン、カスタムエージェント、スキル、MCPサーバー、フックを備えたプロフェッショナルな開発環境に変革します。",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
