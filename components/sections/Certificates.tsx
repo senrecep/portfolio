@@ -48,11 +48,29 @@ export function Certificates({
         {certificates.map((cert) => (
           <Card
             key={`${cert.title}-${cert.issuer}`}
-            className="flex flex-col w-full"
+            className="flex flex-col w-full group"
           >
             <CardContent className="p-6 flex flex-col flex-1">
               <div className="flex-1">
-                <h3 className="font-heading text-lg mb-2">{cert.title}</h3>
+                <h3 className="font-heading text-lg mb-2 group-hover:text-primary transition-colors">
+                  {cert.credentialUrl ? (
+                    <a
+                      href={cert.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        trackExternalLink(
+                          cert.credentialUrl!,
+                          `Certificate: ${cert.title}`,
+                        )
+                      }
+                    >
+                      {cert.title}
+                    </a>
+                  ) : (
+                    cert.title
+                  )}
+                </h3>
                 <p className="text-sm text-muted-foreground mb-1">
                   {cert.issuer}
                 </p>

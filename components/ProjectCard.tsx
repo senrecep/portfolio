@@ -37,7 +37,25 @@ export function ProjectCard({ project, translations }: ProjectCardProps) {
               />
             </div>
           )}
-          <h3 className="text-xl font-semibold">{project.title}</h3>
+          <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+            {project.projectUrl ? (
+              <a
+                href={project.projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackExternalLink(
+                    project.projectUrl!,
+                    `Project: ${project.title}`,
+                  )
+                }
+              >
+                {project.title}
+              </a>
+            ) : (
+              project.title
+            )}
+          </h3>
         </div>
         <p className="text-muted-foreground mb-4 line-clamp-7 flex-1">
           {project.description}

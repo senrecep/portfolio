@@ -43,7 +43,20 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
       <CardContent className="p-6 flex flex-col flex-1">
         <div className="flex-1">
           <h3 className="font-heading text-lg mb-3 group-hover:text-primary transition-colors">
-            {post.title}
+            {post.blogUrl ? (
+              <a
+                href={post.blogUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackExternalLink(post.blogUrl!, `Blog: ${post.title}`)
+                }
+              >
+                {post.title}
+              </a>
+            ) : (
+              post.title
+            )}
           </h3>
           <p
             className={`text-sm text-muted-foreground ${
