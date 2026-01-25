@@ -82,7 +82,7 @@ export function Skills({ skills, translations }: SkillsProps) {
             return (
               <div
                 key={categoryIndex}
-                className="glass glass-hover rounded-2xl p-6 space-y-4 w-full"
+                className="glass glass-hover rounded-2xl p-6 space-y-4 w-full group/card"
               >
                 {/* Category header with dynamic icon */}
                 <div className="flex items-center space-x-3">
@@ -93,7 +93,7 @@ export function Skills({ skills, translations }: SkillsProps) {
                       className="w-5 h-5"
                     />
                   </div>
-                  <h3 className="font-semibold text-lg text-foreground">
+                  <h3 className="font-semibold text-lg text-foreground group-hover/card:text-primary transition-colors">
                     {category.name}
                   </h3>
                 </div>
@@ -121,7 +121,7 @@ export function Skills({ skills, translations }: SkillsProps) {
                               className="w-4 h-4"
                             />
                           </div>
-                          <span className="text-sm text-foreground font-medium">
+                          <span className="text-sm text-foreground font-medium group-hover:text-primary transition-colors">
                             {skill.name}
                           </span>
                         </div>
