@@ -60,6 +60,7 @@ function CopyButton({
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -74,6 +75,7 @@ function CopyButton({
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -105,6 +107,7 @@ function CopyButton({
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -119,6 +122,7 @@ function CopyButton({
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -194,7 +198,12 @@ export default function OGPreviewPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="flex items-center gap-3 text-muted-foreground">
-          <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+          <svg
+            className="w-5 h-5 animate-spin"
+            fill="none"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <circle
               className="opacity-25"
               cx="12"
@@ -236,6 +245,7 @@ export default function OGPreviewPage() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -259,10 +269,14 @@ export default function OGPreviewPage() {
             <div className="flex flex-wrap items-center gap-4 flex-1">
               {/* Language Select */}
               <div className="flex items-center gap-2">
-                <label className="text-sm text-muted-foreground">
+                <label
+                  htmlFor="lang-select"
+                  className="text-sm text-muted-foreground"
+                >
                   Language
                 </label>
                 <select
+                  id="lang-select"
                   value={selectedLang}
                   onChange={(e) => setSelectedLang(e.target.value)}
                   className="glass-subtle text-foreground px-3 py-2 rounded-lg border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm"
@@ -277,11 +291,15 @@ export default function OGPreviewPage() {
 
               {/* Background Color */}
               <div className="flex items-center gap-2">
-                <label className="text-sm text-muted-foreground">
+                <label
+                  htmlFor="bg-color"
+                  className="text-sm text-muted-foreground"
+                >
                   Background
                 </label>
                 <div className="flex items-center gap-1">
                   <input
+                    id="bg-color"
                     type="color"
                     value={bgColor}
                     onChange={(e) => setBgColor(e.target.value)}
@@ -426,6 +444,7 @@ export default function OGPreviewPage() {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -574,6 +593,7 @@ export default function OGPreviewPage() {
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
+                          aria-hidden="true"
                         >
                           <path
                             strokeLinecap="round"
