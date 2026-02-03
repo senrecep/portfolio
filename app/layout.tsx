@@ -32,6 +32,20 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     ...buildMetadataWithAbsoluteUrls(metadata, siteUrl),
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "48x48" },
+        { url: "/icon.svg", type: "image/svg+xml" },
+        { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      ],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    },
+    manifest: "/manifest.json",
+    appleWebApp: {
+      title: "Recep Şen",
+      capable: true,
+      statusBarStyle: "black-translucent",
+    },
     robots: {
       index: true,
       follow: true,
