@@ -211,7 +211,14 @@
       "title": "DMS — Dokumentenmanagementsystem",
       "description": "Ein vollständiges, unternehmenstaugliches Dokumentenmanagementsystem für Organisationen, die strukturierte Dokumentenerstellung, mehrstufige Genehmigungsworkflows, kontrollierte Verteilung und nachprüfbare Lesebestätigungen benötigen. Umfasst rollenbasierte Zugriffskontrolle, Echtzeit-SSE-Benachrichtigungen mit Redis Pub/Sub, asynchrone E-Mail-Zustellung über BullMQ, automatische Erinnerungen mit Eskalation und eine vollständige Audit-Trail.",
       "projectUrl": "https://github.com/senrecep/dms",
-      "tags": ["Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "Enterprise"],
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Enterprise"
+      ],
       "imageUrl": "/images/project-dms.svg"
     }
   ],

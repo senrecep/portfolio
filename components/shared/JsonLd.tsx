@@ -8,7 +8,10 @@ interface JsonLdProps {
 }
 
 export function JsonLd({ profile, siteUrl, siteName }: JsonLdProps) {
-  const { personalInfo, socialLinks, skills } = profile;
+  const { personalInfo, socialLinks, skills, certificates } = profile;
+
+  const personId = `${siteUrl}/#person`;
+  const websiteId = `${siteUrl}/#website`;
 
   // Extract skill names for knowsAbout
   const skillNames: string[] = [];
@@ -27,10 +30,30 @@ export function JsonLd({ profile, siteUrl, siteName }: JsonLdProps) {
   // Extract social links URLs
   const sameAs = socialLinks?.map((link) => link.url) || [];
 
-  // Person Schema
+  // Build credentials from certificates
+  const hasCredential =
+    certificates && certificates.length > 0
+      ? certificates.map((cert) => ({
+          "@type": "EducationalOccupationalCredential" as const,
+          name: cert.title,
+          credentialCategory: "certificate",
+          recognizedBy: {
+            "@type": "Organization" as const,
+            name: cert.issuer,
+          },
+          ...(cert.credentialUrl ? { url: cert.credentialUrl } : {}),
+        }))
+      : undefined;
+
+  const imageUrl = personalInfo.imageUrl.startsWith("/")
+    ? `${siteUrl}${personalInfo.imageUrl}`
+    : personalInfo.imageUrl;
+
+  // Person Schema — enriched with @id, contact info, credentials
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": personId,
     name: personalInfo.name,
     jobTitle: personalInfo.position,
     worksFor: personalInfo.company
@@ -41,32 +64,54 @@ export function JsonLd({ profile, siteUrl, siteName }: JsonLdProps) {
       : undefined,
     description: personalInfo.about,
     url: siteUrl,
-    image: personalInfo.imageUrl.startsWith("/")
-      ? `${siteUrl}${personalInfo.imageUrl}`
-      : personalInfo.imageUrl,
+    image: imageUrl,
+    email: personalInfo.email || undefined,
+    telephone: personalInfo.phoneNumber || undefined,
     sameAs: sameAs.length > 0 ? sameAs : undefined,
     knowsAbout: skillNames.length > 0 ? skillNames : undefined,
+    hasOccupation: personalInfo.position
+      ? {
+          "@type": "Occupation",
+          name: personalInfo.position,
+        }
+      : undefined,
+    hasCredential,
   };
 
-  // WebSite Schema
+  // ProfilePage Schema — signals E-E-A-T to search engines
+  const profilePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteUrl}/#profilepage`,
+    name: siteName,
+    url: siteUrl,
+    mainEntity: { "@id": personId },
+  };
+
+  // WebSite Schema — with @id cross-reference to Person
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": websiteId,
     name: siteName,
     url: siteUrl,
     inLanguage: languageCodes,
-    author: {
-      "@type": "Person",
-      name: personalInfo.name,
-    },
+    author: { "@id": personId },
   };
 
   return (
     <>
       <script
         type="application/ld+json"
+        // Content is generated from trusted profile data, not user input
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(personSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(profilePageSchema),
         }}
       />
       <script

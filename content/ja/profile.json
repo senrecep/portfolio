@@ -242,7 +242,14 @@
       "title": "DMS — 文書管理システム",
       "description": "構造化された文書作成、多段階承認ワークフロー、管理された配布、監査可能な閲覧確認を必要とする組織向けの、フル機能のエンタープライズグレード文書管理システム。ロールベースのアクセス制御、Redis Pub/Sub駆動のリアルタイムSSE通知、BullMQによる非同期メール配信、エスカレーション機能付き自動リマインダー、完全な監査証跡を含む。",
       "projectUrl": "https://github.com/senrecep/dms",
-      "tags": ["Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "Enterprise"],
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Enterprise"
+      ],
       "imageUrl": "/images/project-dms.svg"
     }
   ],
