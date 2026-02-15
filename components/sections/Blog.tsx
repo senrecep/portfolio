@@ -1,5 +1,3 @@
-"use client";
-
 import { BlogPostCard } from "@/components/BlogPostCard";
 import type { Profile } from "@/lib/i18n/content-loader";
 

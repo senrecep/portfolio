@@ -5,11 +5,17 @@ interface JsonLdProps {
   profile: Profile;
   siteUrl: string;
   siteName: string;
+  lang: string;
 }
 
-export function JsonLd({ profile, siteUrl, siteName }: JsonLdProps) {
-  const { personalInfo, socialLinks, skills, certificates } = profile;
+// Safe: All data comes from static JSON profile files at build time, not user input.
+// JSON.stringify also escapes any special characters, preventing injection.
 
+export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
+  const { personalInfo, socialLinks, skills, certificates, blogPosts } =
+    profile;
+
+  const langUrl = `${siteUrl}/${lang}`;
   const personId = `${siteUrl}/#person`;
   const websiteId = `${siteUrl}/#website`;
 
@@ -27,10 +33,8 @@ export function JsonLd({ profile, siteUrl, siteName }: JsonLdProps) {
     }
   }
 
-  // Extract social links URLs
   const sameAs = socialLinks?.map((link) => link.url) || [];
 
-  // Build credentials from certificates
   const hasCredential =
     certificates && certificates.length > 0
       ? certificates.map((cert) => ({
@@ -49,7 +53,6 @@ export function JsonLd({ profile, siteUrl, siteName }: JsonLdProps) {
     ? `${siteUrl}${personalInfo.imageUrl}`
     : personalInfo.imageUrl;
 
-  // Person Schema — enriched with @id, contact info, credentials
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -60,35 +63,30 @@ export function JsonLd({ profile, siteUrl, siteName }: JsonLdProps) {
       ? {
           "@type": "Organization",
           name: personalInfo.company,
+          url: "https://taptoweb.com",
         }
       : undefined,
     description: personalInfo.about,
-    url: siteUrl,
+    url: langUrl,
     image: imageUrl,
     email: personalInfo.email || undefined,
     telephone: personalInfo.phoneNumber || undefined,
     sameAs: sameAs.length > 0 ? sameAs : undefined,
     knowsAbout: skillNames.length > 0 ? skillNames : undefined,
-    hasOccupation: personalInfo.position
-      ? {
-          "@type": "Occupation",
-          name: personalInfo.position,
-        }
-      : undefined,
     hasCredential,
   };
 
-  // ProfilePage Schema — signals E-E-A-T to search engines
   const profilePageSchema = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "@id": `${siteUrl}/#profilepage`,
     name: siteName,
-    url: siteUrl,
+    url: langUrl,
+    dateCreated: "2025-01-01",
+    dateModified: "2026-02-15",
     mainEntity: { "@id": personId },
   };
 
-  // WebSite Schema — with @id cross-reference to Person
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -99,27 +97,66 @@ export function JsonLd({ profile, siteUrl, siteName }: JsonLdProps) {
     author: { "@id": personId },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: personalInfo.name,
+        item: langUrl,
+      },
+    ],
+  };
+
+  const blogListSchema =
+    blogPosts && blogPosts.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: blogPosts.map((post, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.description,
+              url: post.blogUrl,
+              ...(post.date ? { datePublished: post.date } : {}),
+              author: { "@id": personId },
+              ...(post.imageUrl
+                ? {
+                    image: post.imageUrl.startsWith("/")
+                      ? `${siteUrl}${post.imageUrl}`
+                      : post.imageUrl,
+                  }
+                : {}),
+            },
+          })),
+        }
+      : null;
+
+  const schemas = [
+    personSchema,
+    profilePageSchema,
+    websiteSchema,
+    breadcrumbSchema,
+    ...(blogListSchema ? [blogListSchema] : []),
+  ];
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        // Content is generated from trusted profile data, not user input
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(profilePageSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema),
-        }}
-      />
+      {schemas.map((schema) => (
+        <script
+          key={schema["@type"]}
+          type="application/ld+json"
+          // Safe: content from static build-time JSON, escaped by JSON.stringify
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
     </>
   );
 }

@@ -53,6 +53,12 @@ export default async function Layout({ children, params }: LayoutProps) {
   const { lang } = await params;
   return (
     <>
+      <script
+        // Safe: lang is from generateStaticParams(), not user input
+        dangerouslySetInnerHTML={{
+          __html: `document.documentElement.lang="${lang}"`,
+        }}
+      />
       {children}
       <ContactMenuWrapper lang={lang} />
     </>

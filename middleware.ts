@@ -72,7 +72,9 @@ export async function middleware(request: NextRequest) {
   }
 
   const langPattern = languageCodes.join("|");
-  if (new RegExp(`^/(${langPattern})(?:/|$)`).test(pathname)) {
+  const langMatch = pathname.match(new RegExp(`^/(${langPattern})(?:/|$)`));
+  if (langMatch) {
+    response.headers.set("Content-Language", langMatch[1]);
     response.headers.set(
       "Cache-Control",
       "public, max-age=3600, must-revalidate",

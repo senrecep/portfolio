@@ -3,20 +3,14 @@
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ContentProtection } from "@/components/shared/ContentProtection";
 import ErrorBoundary from "@/components/shared/ErrorBoundary";
-import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
 import { GoogleTagManagerBody } from "@/components/shared/GoogleTagManager";
 
 interface ClientProvidersProps {
   children: React.ReactNode;
-  gaId?: string;
   gtmId?: string;
 }
 
-export function ClientProviders({
-  children,
-  gaId,
-  gtmId,
-}: ClientProvidersProps) {
+export function ClientProviders({ children, gtmId }: ClientProvidersProps) {
   return (
     <ErrorBoundary>
       <ContentProtection />
@@ -30,8 +24,6 @@ export function ClientProviders({
       >
         {children}
       </NextThemesProvider>
-
-      {gaId && <GoogleAnalytics GA_MEASUREMENT_ID={gaId} />}
     </ErrorBoundary>
   );
 }

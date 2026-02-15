@@ -77,18 +77,21 @@ export default function RootLayout({
           as="image"
           type="image/webp"
         />
+        {/* Preconnect to external domains for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {gtmId && <GoogleTagManagerHead GTM_ID={gtmId} />}
         <MicrosoftClarity />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClientProviders
-          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
-          gtmId={gtmId}
-        >
-          {children}
-        </ClientProviders>
+        <ClientProviders gtmId={gtmId}>{children}</ClientProviders>
       </body>
     </html>
   );

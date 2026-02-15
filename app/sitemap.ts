@@ -3,7 +3,7 @@ import { defaultLanguage, languageCodes } from "@/lib/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const lastModified = new Date();
+  const lastModified = new Date("2026-02-15");
 
   // Build alternates object for hreflang with x-default
   const alternates: Record<string, string> = {};

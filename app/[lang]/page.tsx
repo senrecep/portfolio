@@ -70,6 +70,7 @@ export default async function Home({ params }: PageProps) {
         profile={profile}
         siteUrl={siteUrl}
         siteName={metadata.openGraph?.siteName || metadata.title || "Portfolio"}
+        lang={lang}
       />
       <div className="flex flex-col min-h-screen">
         <Header

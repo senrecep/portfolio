@@ -85,6 +85,7 @@ export function Header({
                   sizes="320px"
                   className="hover:scale-105 transition-transform duration-500"
                   priority
+                  fetchPriority="high"
                   objectFit="cover"
                 />
               </div>

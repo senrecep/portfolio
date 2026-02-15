@@ -179,6 +179,9 @@ const withPWA = require("next-pwa")({
 const nextConfig = {
   reactStrictMode: true,
 
+  // Disable X-Powered-By header for security
+  poweredByHeader: false,
+
   // Output standalone build for Docker deployment
   output: "standalone",
 
@@ -200,7 +203,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**",
+        hostname: "is1-ssl.mzstatic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "salary-sim.senrecep.com",
       },
     ],
   },
