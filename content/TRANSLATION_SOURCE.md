@@ -57,7 +57,7 @@ Building high-impact, scalable systems. I turn complex business challenges into 
 
 ### Position
 ```
-Technical Lead
+CTO
 ```
 
 ---

@@ -88,7 +88,7 @@ This document contains terms that should NOT be translated and must remain in th
 
 ## Context for Translators
 
-This is a personal portfolio website for a Software Engineer / Technical Lead. The content should:
+This is a personal portfolio website for a Software Engineer / CTO. The content should:
 - Sound professional and competent
 - Be technically accurate
 - Appeal to international tech recruiters and companies
