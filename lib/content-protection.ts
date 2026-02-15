@@ -5,6 +5,8 @@
  * - Prevents image downloading (right-click, drag)
  * - Blocks developer tools access
  * - Disables text selection (except inputs)
+ *
+ * cspell:ignore khtml contenteditable
  */
 
 export function preventImageDownload(): () => void {
@@ -304,13 +306,29 @@ export function enableDragToScroll(): () => void {
   };
 }
 
-export function initContentProtection(): () => void {
+/**
+ * Initialize content protection features
+ * @param options.enableSecurity - Enable security features (image protection, dev tools blocking, text selection)
+ * @param options.enableDragScroll - Enable drag-to-scroll (default: true)
+ */
+export function initContentProtection(options?: {
+  enableSecurity?: boolean;
+  enableDragScroll?: boolean;
+}): () => void {
+  const { enableSecurity = false, enableDragScroll = true } = options || {};
   const cleanupFunctions: Array<() => void> = [];
 
-  cleanupFunctions.push(preventImageDownload());
-  cleanupFunctions.push(blockDevTools());
-  cleanupFunctions.push(preventTextSelection());
-  cleanupFunctions.push(enableDragToScroll());
+  // Security features (opt-in)
+  if (enableSecurity) {
+    cleanupFunctions.push(preventImageDownload());
+    cleanupFunctions.push(blockDevTools());
+    cleanupFunctions.push(preventTextSelection());
+  }
+
+  // Drag-to-scroll (opt-out)
+  if (enableDragScroll) {
+    cleanupFunctions.push(enableDragToScroll());
+  }
 
   return () => {
     for (const fn of cleanupFunctions) {

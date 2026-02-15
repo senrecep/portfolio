@@ -237,6 +237,13 @@
       "projectUrl": "https://salary-sim.senrecep.com/",
       "tags": ["JavaScript", "Finanza", "Tasse", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
+    },
+    {
+      "title": "DMS — Sistema di Gestione Documentale",
+      "description": "Un sistema di gestione documentale completo di livello enterprise per organizzazioni che necessitano di creazione strutturata di documenti, flussi di approvazione multi-livello, distribuzione controllata e conferme di lettura verificabili. Include controllo degli accessi basato sui ruoli, notifiche SSE in tempo reale alimentate da Redis Pub/Sub, consegna email asincrona tramite BullMQ, promemoria automatici con escalation e un registro di audit completo.",
+      "projectUrl": "https://github.com/senrecep/dms",
+      "tags": ["Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "Enterprise"],
+      "imageUrl": "/images/project-dms.svg"
     }
   ],
   "blogPosts": [

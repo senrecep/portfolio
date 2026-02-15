@@ -237,6 +237,13 @@
       "projectUrl": "https://salary-sim.senrecep.com/",
       "tags": ["JavaScript", "Financiën", "Belasting", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
+    },
+    {
+      "title": "DMS — Documentbeheersysteem",
+      "description": "Een volledig uitgerust, enterprise-grade documentbeheersysteem voor organisaties die gestructureerde documentcreatie, goedkeuringsworkflows met meerdere niveaus, gecontroleerde distributie en controleerbare leesbevestigingen nodig hebben. Omvat rolgebaseerde toegangscontrole, realtime SSE-meldingen aangedreven door Redis Pub/Sub, asynchrone e-mailbezorging via BullMQ, geautomatiseerde herinneringen met escalatie en een volledig audittrail.",
+      "projectUrl": "https://github.com/senrecep/dms",
+      "tags": ["Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "Enterprise"],
+      "imageUrl": "/images/project-dms.svg"
     }
   ],
   "blogPosts": [

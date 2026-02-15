@@ -237,6 +237,13 @@
       "projectUrl": "https://salary-sim.senrecep.com/",
       "tags": ["JavaScript", "金融", "税务", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
+    },
+    {
+      "title": "DMS — 文档管理系统",
+      "description": "一个功能齐全的企业级文档管理系统，适用于需要结构化文档创建、多级审批工作流、受控分发和可审计的阅读确认的组织。包括基于角色的访问控制、由 Redis Pub/Sub 驱动的实时 SSE 通知、通过 BullMQ 进行的异步电子邮件传递、带升级的自动提醒以及完整的审计跟踪。",
+      "projectUrl": "https://github.com/senrecep/dms",
+      "tags": ["Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "Enterprise"],
+      "imageUrl": "/images/project-dms.svg"
     }
   ],
   "blogPosts": [

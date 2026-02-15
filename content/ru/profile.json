@@ -242,6 +242,13 @@
       "projectUrl": "https://salary-sim.senrecep.com/",
       "tags": ["JavaScript", "Финансы", "Налоги", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
+    },
+    {
+      "title": "DMS — Система управления документами",
+      "description": "Полнофункциональная корпоративная система управления документами для организаций, которым требуется структурированное создание документов, многоуровневые процессы согласования, контролируемое распространение и отслеживаемые подтверждения прочтения. Включает ролевой контроль доступа, уведомления SSE в реальном времени на базе Redis Pub/Sub, асинхронную доставку email через BullMQ, автоматические напоминания с эскалацией и полный аудит действий.",
+      "projectUrl": "https://github.com/senrecep/dms",
+      "tags": ["Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "Enterprise"],
+      "imageUrl": "/images/project-dms.svg"
     }
   ],
   "blogPosts": [
