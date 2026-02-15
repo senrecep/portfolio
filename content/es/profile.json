@@ -240,15 +240,15 @@
     },
     {
       "title": "DMS — Sistema de Gestión de Documentos",
-      "description": "Un sistema de gestión de documentos de nivel empresarial con todas las funciones para organizaciones que necesitan creación estructurada de documentos, flujos de trabajo de aprobación multinivel, distribución controlada y confirmaciones de lectura auditables. Incluye control de acceso basado en roles, notificaciones SSE en tiempo real impulsadas por Redis Pub/Sub, entrega de correo electrónico asíncrona vía BullMQ, recordatorios automatizados con escalamiento y un registro de auditoría completo.",
+      "description": "Un sistema de gestión de documentos de nivel empresarial con un ciclo de vida completo de documentos: creación estructurada con historial completo de revisiones, flujos de trabajo de aprobación en dos etapas (preparador → aprobador), distribución dirigida a departamentos y usuarios, y confirmaciones de lectura rastreadas. Incluye notificaciones SSE en tiempo real vía Redis Pub/Sub, entrega de correo electrónico asíncrona mediante BullMQ con recordatorios automatizados y escalamiento, control de acceso basado en roles, arquitectura de eliminación suave y un registro de auditoría completo. Construido con Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) y Redis.",
       "projectUrl": "https://github.com/senrecep/dms",
       "tags": [
         "Next.js",
         "TypeScript",
         "PostgreSQL",
         "Redis",
-        "Docker",
-        "Enterprise"
+        "BullMQ",
+        "Docker"
       ],
       "imageUrl": "/images/project-dms.svg"
     }

@@ -209,15 +209,15 @@
     },
     {
       "title": "DMS — Doküman Yönetim Sistemi",
-      "description": "Yapılandırılmış doküman oluşturma, çok seviyeli onay iş akışları, kontrollü dağıtım ve denetlenebilir okuma onaylarına ihtiyaç duyan kuruluşlar için tam özellikli, kurumsal düzeyde bir doküman yönetim sistemi. Rol tabanlı erişim kontrolü, Redis Pub/Sub ile desteklenen gerçek zamanlı SSE bildirimleri, BullMQ ile asenkron e-posta gönderimi, otomatik hatırlatmalar ve eskalasyon, eksiksiz denetim kaydı içerir.",
+      "description": "Eksiksiz doküman yaşam döngüsüne sahip kurumsal düzeyde bir doküman yönetim sistemi: tam revizyon geçmişi ile yapılandırılmış oluşturma, iki aşamalı onay iş akışları (hazırlayan → onaylayan), departman ve kullanıcılara hedefli dağıtım ve takip edilen okuma onayları. Redis Pub/Sub üzerinden gerçek zamanlı SSE bildirimleri, BullMQ ile otomatik hatırlatmalar ve eskalasyon içeren asenkron e-posta gönderimi, rol tabanlı erişim kontrolü, soft-delete mimarisi ve eksiksiz denetim kaydı özellikleri sunar. Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) ve Redis ile geliştirildi.",
       "projectUrl": "https://github.com/senrecep/dms",
       "tags": [
         "Next.js",
         "TypeScript",
         "PostgreSQL",
         "Redis",
-        "Docker",
-        "Enterprise"
+        "BullMQ",
+        "Docker"
       ],
       "imageUrl": "/images/project-dms.svg"
     }

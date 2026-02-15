@@ -240,15 +240,15 @@
     },
     {
       "title": "DMS — 文書管理システム",
-      "description": "構造化された文書作成、多段階承認ワークフロー、管理された配布、監査可能な閲覧確認を必要とする組織向けの、フル機能のエンタープライズグレード文書管理システム。ロールベースのアクセス制御、Redis Pub/Sub駆動のリアルタイムSSE通知、BullMQによる非同期メール配信、エスカレーション機能付き自動リマインダー、完全な監査証跡を含む。",
+      "description": "完全な文書ライフサイクルを持つエンタープライズグレードの文書管理システム：完全な改訂履歴を持つ構造化された作成、二段階承認ワークフロー（作成者→承認者）、部署とユーザーへのターゲット配布、追跡された閲覧確認。Redis Pub/Sub経由のリアルタイムSSE通知、BullMQを通じた自動リマインダーとエスカレーション付き非同期メール配信、ロールベースのアクセス制御、論理削除アーキテクチャ、完全な監査証跡を特徴とする。Next.js 16、Bun、TypeScript、PostgreSQL（Drizzle ORM）、Redisで構築。",
       "projectUrl": "https://github.com/senrecep/dms",
       "tags": [
         "Next.js",
         "TypeScript",
         "PostgreSQL",
         "Redis",
-        "Docker",
-        "Enterprise"
+        "BullMQ",
+        "Docker"
       ],
       "imageUrl": "/images/project-dms.svg"
     }
