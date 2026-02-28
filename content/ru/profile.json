@@ -260,6 +260,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Перестаньте писать код, начните управлять системами: Настоящий потенциал разработки с ИИ",
+      "description": "Перестаньте воспринимать ИИ как автодополнение и начните думать как CTO. Полное руководство по Claude Code, охватывающее стратегию CLAUDE.md, управление контекстом, хуки, пользовательских агентов, мультиагентную оркестрацию, маршрутизацию моделей и самообучающиеся системы.",
+      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
+      "date": "02/28/2026",
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+    },
+    {
       "title": "Инструменты кодирования с ИИ: Полное руководство по Claude Code, OpenCode и современной разработке",
       "description": "От нуля до продакшена: Освойте разработку с поддержкой ИИ с правильными инструментами. Изучите Claude Code, OpenCode, oh-my-opencode, MCP, навыки и продвинутые техники для профессиональной разработки.",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",

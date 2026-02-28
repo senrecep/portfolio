@@ -255,6 +255,13 @@
   ],
   "blogPosts": [
     {
+      "title": "コードを書くのをやめて、システムを管理しよう：AI駆動開発の本当のポテンシャル",
+      "description": "AIを単なる自動補完ツールとして扱うのをやめ、CTOのように考え始めましょう。CLAUDE.md戦略、コンテキスト管理、フック、カスタムエージェント、マルチエージェントオーケストレーション、モデルルーティング、自己学習システムを網羅したClaude Codeの包括的ガイドです。",
+      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
+      "date": "02/28/2026",
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+    },
+    {
       "title": "AIコーディングツール：Claude Code、OpenCode、モダン開発の完全ガイド",
       "description": "ゼロからプロダクションへ：適切なツールでAI支援開発をマスター。Claude Code、OpenCode、oh-my-opencode、MCP、スキル、プロフェッショナル開発のための高度なテクニックを学びます。",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",

@@ -255,6 +255,13 @@
   ],
   "blogPosts": [
     {
+      "title": "停止编写代码，开始管理系统：AI驱动开发的真正潜力",
+      "description": "停止将AI视为自动补全工具，开始像CTO一样思考。这是一份全面的Claude Code指南，涵盖CLAUDE.md策略、上下文管理、钩子、自定义代理、多代理编排、模型路由和自学习系统。",
+      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
+      "date": "02/28/2026",
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+    },
+    {
       "title": "AI 编程工具：Claude Code、OpenCode 和现代开发的完整指南",
       "description": "从零到生产：使用正确的工具掌握 AI 辅助开发。学习 Claude Code、OpenCode、oh-my-opencode、MCP、技能和专业开发的高级技术。",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",

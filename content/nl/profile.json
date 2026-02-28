@@ -255,6 +255,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Stop met code schrijven, begin met systemen beheren: Het echte potentieel van AI-gestuurde ontwikkeling",
+      "description": "Stop met AI te behandelen als autocomplete en begin te denken als een CTO. Een uitgebreide gids over Claude Code met CLAUDE.md-strategie, contextbeheer, hooks, aangepaste agents, multi-agent orchestratie, modelroutering en zelflerende systemen.",
+      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
+      "date": "02/28/2026",
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+    },
+    {
       "title": "AI Coding Tools: De complete gids voor Claude Code, OpenCode & moderne ontwikkeling",
       "description": "Van nul naar productie: Beheers AI-ondersteunde ontwikkeling met de juiste tools. Leer Claude Code, OpenCode, oh-my-opencode, MCP, skills en geavanceerde technieken voor professionele ontwikkeling.",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",

@@ -248,6 +248,13 @@
   ],
   "blogPosts": [
     {
+      "title": "코드 작성을 멈추고 시스템을 관리하세요: AI 기반 개발의 진정한 잠재력",
+      "description": "AI를 자동 완성 도구로 취급하지 말고 CTO처럼 생각하세요. CLAUDE.md 전략, 컨텍스트 관리, 훅, 커스텀 에이전트, 멀티 에이전트 오케스트레이션, 모델 라우팅, 자기 학습 시스템을 다루는 포괄적인 Claude Code 가이드입니다.",
+      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
+      "date": "02/28/2026",
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+    },
+    {
       "title": "AI 코딩 도구: Claude Code, OpenCode 및 현대적 개발의 완벽 가이드",
       "description": "제로에서 프로덕션까지: 올바른 도구로 AI 지원 개발을 마스터하세요. Claude Code, OpenCode, oh-my-opencode, MCP, 스킬 및 전문 개발을 위한 고급 기술을 배웁니다.",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",

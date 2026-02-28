@@ -255,6 +255,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Deja de escribir código, empieza a gestionar sistemas: El verdadero potencial del desarrollo impulsado por IA",
+      "description": "Deja de tratar la IA como un autocompletado y empieza a pensar como un CTO. Una guía completa sobre Claude Code que cubre la estrategia CLAUDE.md, gestión de contexto, hooks, agentes personalizados, orquestación multi-agente, enrutamiento de modelos y sistemas de autoaprendizaje.",
+      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
+      "date": "02/28/2026",
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+    },
+    {
       "title": "Herramientas de codificación con IA: La guía completa de Claude Code, OpenCode y desarrollo moderno",
       "description": "De cero a producción: Domina el desarrollo asistido por IA con las herramientas correctas. Aprende Claude Code, OpenCode, oh-my-opencode, MCP, skills y técnicas avanzadas para desarrollo profesional.",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",

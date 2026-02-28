@@ -217,6 +217,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Hören Sie auf Code zu schreiben, beginnen Sie Systeme zu verwalten: Das wahre Potenzial KI-gestützter Entwicklung",
+      "description": "Hören Sie auf, KI als Autovervollständigung zu betrachten und beginnen Sie wie ein CTO zu denken. Ein umfassender Claude Code Leitfaden über CLAUDE.md-Strategie, Kontextmanagement, Hooks, benutzerdefinierte Agenten, Multi-Agenten-Orchestrierung, Modell-Routing und selbstlernende Systeme.",
+      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
+      "date": "02/28/2026",
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+    },
+    {
       "title": "KI-Coding-Tools: Der vollständige Leitfaden zu Claude Code, OpenCode & moderner Entwicklung",
       "description": "Von Null zur Produktion: Beherrschen Sie KI-gestützte Entwicklung mit den richtigen Tools. Lernen Sie Claude Code, OpenCode, oh-my-opencode, MCP, Skills und fortgeschrittene Techniken für professionelle Entwicklung.",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",

@@ -224,6 +224,13 @@
   ],
   "blogPosts": [
     {
+      "title": "Kod Yazmayı Bırakın, Sistemi Yönetin: AI Destekli Geliştirmenin Gerçek Potansiyeli",
+      "description": "AI'ı bir otomatik tamamlama aracı olarak görmeyi bırakın ve bir CTO gibi düşünmeye başlayın. CLAUDE.md stratejisi, context yönetimi, hook'lar, özel agent'lar, çoklu agent orkestrasyonu, model yönlendirme ve kendi kendine öğrenen sistemleri kapsayan kapsamlı bir Claude Code rehberi.",
+      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
+      "date": "02/28/2026",
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+    },
+    {
       "title": "AI Kodlama Araçları: Claude Code, OpenCode ve Modern Geliştirme için Kapsamlı Rehber",
       "description": "Sıfırdan üretime: Doğru araçlarla AI destekli geliştirmeyi ustalaşın. Claude Code, OpenCode, oh-my-opencode, MCP, beceriler ve profesyonel geliştirme için ileri teknikler.",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
