@@ -44,3 +44,5 @@ public/workbox-*.js.map
 
 #.omc
 .omc
+
+firebase-debug.log
