@@ -35,7 +35,7 @@
 - Fix approach: Drive from `content/{lang}/metadata.json` or derive from `app/sitemap.ts` `lastModified`
 
 **Hardcoded `lastModified` in sitemap:**
-- Issue: `app/sitemap.ts` uses `const lastModified = new Date("2026-02-15")` — a hardcoded date
+- Issue: `app/sitemap.ts` uses `const lastModified = new Date("2026-02-15")` - a hardcoded date
 - Files: `app/sitemap.ts`
 - Impact: Sitemap always reports the same last-modified date regardless of actual content changes; search engines may deprioritize crawling
 - Fix approach: Derive from git commit date or a field in `content/{lang}/metadata.json`
@@ -49,7 +49,7 @@
 - Recommendations: On Vercel, use `x-vercel-forwarded-for` or extract IP from Vercel's edge context; never trust raw `x-forwarded-for` from untrusted sources
 
 **Content protection is easily bypassed:**
-- Risk: `lib/content-protection.ts` blocks F12/right-click/devtools shortcuts in JavaScript — trivially bypassed by disabling JavaScript, using browser menu, or DevTools protocol
+- Risk: `lib/content-protection.ts` blocks F12/right-click/devtools shortcuts in JavaScript - trivially bypassed by disabling JavaScript, using browser menu, or DevTools protocol
 - Files: `lib/content-protection.ts`, `components/shared/ContentProtection.tsx`
 - Current mitigation: Feature is opt-in (`enableSecurity: false` by default); drag-to-scroll is the primary use
 - Recommendations: Do not rely on this for any actual security; it is a UX courtesy only
@@ -57,7 +57,7 @@
 **Phone number exposed in profile JSON:**
 - Risk: `content/en/profile.json` contains a real phone number (`phoneNumber`) which is served via `/api/og-profile` and embedded in JSON-LD; phone number is publicly indexed
 - Files: `content/en/profile.json`, `components/shared/JsonLd.tsx`, `app/api/og-profile/route.ts`
-- Current mitigation: Intentional — used for WhatsApp contact button
+- Current mitigation: Intentional - used for WhatsApp contact button
 - Recommendations: Acceptable if intentional; document that `phoneNumber` field is public
 
 ## Performance Bottlenecks
@@ -107,7 +107,7 @@
 - Migration plan: Replace with `@ducanh2912/next-pwa` (maintained fork with Next.js 13+ support) or use Next.js native PWA approach
 
 **`shadcn-ui` ^0.9.4 (the CLI package):**
-- Risk: `shadcn-ui` is a CLI tool, not a runtime dependency — it should be in `devDependencies`, not `dependencies`
+- Risk: `shadcn-ui` is a CLI tool, not a runtime dependency - it should be in `devDependencies`, not `dependencies`
 - Impact: Included in production bundle unnecessarily (minor)
 - Migration plan: Move `shadcn-ui` to `devDependencies` in `package.json`
 
@@ -131,19 +131,19 @@
 ## Test Coverage Gaps
 
 **Security utilities (High priority):**
-- What's not tested: `lib/validation.ts` — URL validation, input sanitization; `lib/rate-limit.ts` — rate limiting logic
+- What's not tested: `lib/validation.ts` - URL validation, input sanitization; `lib/rate-limit.ts` - rate limiting logic
 - Files: `lib/validation.ts`, `lib/rate-limit.ts`
 - Risk: Regressions in security-critical code go undetected
 - Priority: High
 
 **i18n config helpers (Medium priority):**
-- What's not tested: `lib/i18n/config.ts` — `isValidLanguage`, `getLanguageByCode`, `formatDate`; `lib/i18n/metadata-utils.ts` — `buildMetadataWithAbsoluteUrls`, `extractKeywordsFromProfile`
+- What's not tested: `lib/i18n/config.ts` - `isValidLanguage`, `getLanguageByCode`, `formatDate`; `lib/i18n/metadata-utils.ts` - `buildMetadataWithAbsoluteUrls`, `extractKeywordsFromProfile`
 - Files: `lib/i18n/config.ts`, `lib/i18n/metadata-utils.ts`
 - Risk: Metadata or hreflang built incorrectly; silent SEO degradation
 - Priority: Medium
 
 **API route handlers (Medium priority):**
-- What's not tested: `app/api/download/route.ts` — domain validation, size limits, content-type enforcement; `app/api/og-profile/route.ts` — language validation
+- What's not tested: `app/api/download/route.ts` - domain validation, size limits, content-type enforcement; `app/api/og-profile/route.ts` - language validation
 - Files: `app/api/download/route.ts`, `app/api/og-profile/route.ts`
 - Risk: Security regressions in file proxy logic
 - Priority: Medium

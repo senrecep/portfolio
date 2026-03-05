@@ -111,7 +111,7 @@
 **Security Wrapper:**
 - Purpose: Composable middleware for API route security
 - Definition: `lib/security-wrapper.ts` - `withSecurity(handler)` HOF
-- Pattern: `export const GET = withSecurity(downloadHandler)` — applies rate limiting, CORS, security headers
+- Pattern: `export const GET = withSecurity(downloadHandler)` - applies rate limiting, CORS, security headers
 
 **cn() Utility:**
 - Purpose: Conditional Tailwind class merging
@@ -142,7 +142,7 @@
 
 ## Error Handling
 
-**Strategy:** Minimal — portfolio is static content; errors are surfaced as empty states or console logs
+**Strategy:** Minimal - portfolio is static content; errors are surfaced as empty states or console logs
 
 **Patterns:**
 - `ErrorBoundary` (`components/shared/ErrorBoundary.tsx`) wraps all client content via `ClientProviders`

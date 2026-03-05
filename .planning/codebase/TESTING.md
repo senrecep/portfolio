@@ -4,14 +4,14 @@
 
 ## Test Framework
 
-**Runner:** None — no automated test framework is installed or configured.
+**Runner:** None - no automated test framework is installed or configured.
 
 No `jest.config.*`, `vitest.config.*`, `playwright.config.*`, or test runner package detected in `package.json`.
 
 **Run Commands:**
 ```bash
-npm run build      # Primary correctness check — must pass before any commit
-npm run check:fix  # Biome lint + format — enforced on all .ts/.tsx/.json/.css files
+npm run build      # Primary correctness check - must pass before any commit
+npm run check:fix  # Biome lint + format - enforced on all .ts/.tsx/.json/.css files
 npm run lint       # Next.js ESLint check
 ```
 
@@ -20,7 +20,7 @@ npm run lint       # Next.js ESLint check
 **Location:** No test files found in the repository (no `*.test.*` or `*.spec.*` files).
 
 **Current verification strategy:**
-- Build success (`npm run build`) serves as the integration test — catches TypeScript errors, missing imports, invalid JSON, and rendering failures across all 13 language static pages
+- Build success (`npm run build`) serves as the integration test - catches TypeScript errors, missing imports, invalid JSON, and rendering failures across all 13 language static pages
 - Biome lint (`npm run check:fix`) catches code quality issues
 - Visual inspection in browser (`npm run dev`)
 
@@ -57,27 +57,27 @@ npm run lint       # Next.js ESLint check
 ## Coverage Gaps
 
 **All application logic is untested by automated tests:**
-- `lib/validation.ts` — sanitizeString, validateURL, validateAndSanitizeInput
-- `lib/rate-limit.ts` — rateLimit, getClientIP
-- `lib/cors.ts` — setCorsHeaders, handleCorsPreflightResponse
-- `lib/analytics.ts` — all tracking helpers
-- `lib/i18n/metadata-utils.ts` — buildMetadataWithAbsoluteUrls, extractKeywordsFromProfile
-- `lib/i18n/config.ts` — isValidLanguage, getLanguageByCode, formatDate
-- `lib/content-protection.ts` — all protection utilities
-- `app/api/download/route.ts` — download handler logic
-- `app/api/og-profile/route.ts` — profile API handler
-- All React components — rendering, conditional logic, event handlers
+- `lib/validation.ts` - sanitizeString, validateURL, validateAndSanitizeInput
+- `lib/rate-limit.ts` - rateLimit, getClientIP
+- `lib/cors.ts` - setCorsHeaders, handleCorsPreflightResponse
+- `lib/analytics.ts` - all tracking helpers
+- `lib/i18n/metadata-utils.ts` - buildMetadataWithAbsoluteUrls, extractKeywordsFromProfile
+- `lib/i18n/config.ts` - isValidLanguage, getLanguageByCode, formatDate
+- `lib/content-protection.ts` - all protection utilities
+- `app/api/download/route.ts` - download handler logic
+- `app/api/og-profile/route.ts` - profile API handler
+- All React components - rendering, conditional logic, event handlers
 
 ## Recommended Test Setup (if adding tests)
 
 **Framework choice:** Vitest (compatible with Vite/Turbopack ecosystem; fast, TypeScript-native)
 
 **Priority areas to test first:**
-1. `lib/validation.ts` — security-critical; pure functions, easy to unit test
-2. `lib/rate-limit.ts` — security-critical; pure functions
-3. `lib/i18n/config.ts` — isValidLanguage, getLanguageByCode
-4. `lib/i18n/metadata-utils.ts` — metadata building logic
-5. API routes via `app/api/download/route.ts` — integration tests with mocked fetch
+1. `lib/validation.ts` - security-critical; pure functions, easy to unit test
+2. `lib/rate-limit.ts` - security-critical; pure functions
+3. `lib/i18n/config.ts` - isValidLanguage, getLanguageByCode
+4. `lib/i18n/metadata-utils.ts` - metadata building logic
+5. API routes via `app/api/download/route.ts` - integration tests with mocked fetch
 
 **Suggested install:**
 ```bash

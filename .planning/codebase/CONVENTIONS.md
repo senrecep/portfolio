@@ -102,7 +102,7 @@ export default async function Home({ params }: PageProps) {
 ## React Conventions
 
 **Server vs Client Components:**
-- Server Components by default — no `"use client"` directive
+- Server Components by default - no `"use client"` directive
 - Add `"use client"` only for: state (`useState`), effects (`useEffect`), event handlers, browser APIs
 - Client Components: `Header`, `Footer`, `LanguageSwitcher`, `FloatingActionMenu`, `CVDownloadButton`, `ThemeToggle`, `Skills`, `Certificates`, `BlogPostCard`, `ProjectCard`, `ContentProtection`, `ClientProviders`, `GoogleTagManager`, `GoogleAnalytics`, `LordIcon`, `NoSSR`, `RadioIcon`
 - Server Components: `JsonLd`, `Blog`, `Projects`, `ContactMenuWrapper`, all pages/layouts
@@ -159,7 +159,7 @@ className={cn(
 - `text-gradient` - gradient text effect
 - `shadow-glow-sm` - glow shadow
 
-**CSS custom properties:** Use design tokens (`--background`, `--foreground`, `--primary`, `--glass-bg`) — never raw color values inline.
+**CSS custom properties:** Use design tokens (`--background`, `--foreground`, `--primary`, `--glass-bg`) - never raw color values inline.
 
 **Responsive design:** Mobile-first (`sm:`, `md:`, `lg:` breakpoints)
 
@@ -197,7 +197,7 @@ if (!skills || skills.length === 0) return null;
 
 ## Logging
 
-**Framework:** Pino (`lib/logger/index.ts`) — available for structured logging
+**Framework:** Pino (`lib/logger/index.ts`) - available for structured logging
 
 **Patterns:**
 - `console.error` for client-side caught exceptions
@@ -212,7 +212,7 @@ if (!skills || skills.length === 0) return null;
 - Non-obvious decisions: brief explanation
 - Known limitations: e.g., "use Redis in production" on the in-memory rate limiter
 
-**JSDoc/TSDoc:** Not used — TypeScript interfaces serve as documentation
+**JSDoc/TSDoc:** Not used - TypeScript interfaces serve as documentation
 
 ## Module Design
 
@@ -220,9 +220,9 @@ if (!skills || skills.length === 0) return null;
 - Named exports for all components and utilities
 - Exception: Next.js pages, layouts, and API route handlers use `export default` / `export const GET`
 
-**Barrel files:** Not used — import directly from the source file path
+**Barrel files:** Not used - import directly from the source file path
 
-**Pure modules:** `lib/` files have no React dependencies — importable from server or client contexts
+**Pure modules:** `lib/` files have no React dependencies - importable from server or client contexts
 
 ## Git Conventions
 
@@ -231,8 +231,8 @@ if (!skills || skills.length === 0) return null;
 **Commits:** Conventional Commits format (`feat:`, `fix:`, `docs:`, `refactor:`, `chore:`)
 
 **Hooks:**
-- `.claude/hooks/conventional-commits.py` — enforces commit message format
-- `.claude/hooks/block-dangerous-git.sh` — blocks destructive git operations
+- `.claude/hooks/conventional-commits.py` - enforces commit message format
+- `.claude/hooks/block-dangerous-git.sh` - blocks destructive git operations
 
 ---
 

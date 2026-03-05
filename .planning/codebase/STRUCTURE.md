@@ -135,13 +135,13 @@ portfolio/
 - Contains: Button, Card, Input, Textarea, DropdownMenu, DynamicIcon
 
 **`content/`:**
-- Purpose: All editable site content — no code changes needed to update profile
+- Purpose: All editable site content - no code changes needed to update profile
 - Contains: 13 language directories × 2 JSON files each (profile + metadata)
-- Generated: No — manually maintained; `scripts/create-languages.ts` scaffolds new languages
+- Generated: No - manually maintained; `scripts/create-languages.ts` scaffolds new languages
 
 **`lib/i18n/`:**
 - Purpose: Complete i18n system: types, loaders, config, UI strings, metadata builders
-- Note: Two translation systems coexist — `translations.ts` for UI chrome, `content/{lang}/` for profile data
+- Note: Two translation systems coexist - `translations.ts` for UI chrome, `content/{lang}/` for profile data
 
 **`lib/`:**
 - Purpose: Shared utilities with no UI dependencies

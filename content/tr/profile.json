@@ -208,7 +208,7 @@
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
-      "title": "QMS — Kalite Yönetim Sistemi",
+      "title": "QMS - Kalite Yönetim Sistemi",
       "description": "İki temel modüle sahip kurumsal düzeyde bir kalite yönetim sistemi: Doküman Yönetimi (DMS) - tam revizyon geçmişi, iki aşamalı onay iş akışları, hedefli dağıtım ve okuma onayları; Düzeltici Faaliyet İstekleri (DFİ/CAR) - ISO 9001 uyumlu 8 adımlı iş akışı, kök neden analizi, ekip ve maliyet takipli düzeltici faaliyet yönetimi ve profesyonel PDF raporlama. Redis Pub/Sub üzerinden gerçek zamanlı SSE bildirimleri, BullMQ ile otomatik hatırlatmalar ve eskalasyon, rol tabanlı erişim kontrolü ve eksiksiz denetim kaydı içerir. Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) ve Redis ile geliştirildi.",
       "projectUrl": "https://github.com/senrecep/qms",
       "tags": [

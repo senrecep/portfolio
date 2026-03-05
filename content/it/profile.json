@@ -239,7 +239,7 @@
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
-      "title": "QMS — Sistema di Gestione della Qualità",
+      "title": "QMS - Sistema di Gestione della Qualità",
       "description": "Un sistema di gestione della qualità di livello enterprise con due moduli principali: Gestione Documentale (DMS) con cronologia completa delle revisioni, flussi di approvazione a due fasi, distribuzione mirata e conferme di lettura tracciate; e Richieste di Azioni Correttive (CAR/DFI) con un workflow ISO 9001 a 8 fasi, analisi delle cause radice, tracciamento delle azioni correttive con team e costi, e report PDF professionali. Include notifiche SSE in tempo reale tramite Redis Pub/Sub, consegna email asincrona attraverso BullMQ con promemoria automatici ed escalation, controllo degli accessi basato sui ruoli e registro di audit completo. Costruito con Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) e Redis.",
       "projectUrl": "https://github.com/senrecep/qms",
       "tags": [

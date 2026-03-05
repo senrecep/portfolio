@@ -7,7 +7,7 @@ Quick workflow:
 - If you do not know the valid folder paths yet, run `oc folder ls --all` first.
 - If you are not sure which docs to read, run `oc search "<query>" --format json` to narrow down candidates.
 - Then run `oc context manifest <folder> --limit 10` (or `oc context manifest . --limit 10` for root/all) and load each `abs_path` into your workspace.
-- Index builds (`oc index build`) may incur external embedding cost; do not auto-trigger by default—ask for approval or let the platform handle it.
+- Index builds (`oc index build`) may incur external embedding cost; do not auto-trigger by default-ask for approval or let the platform handle it.
 - Create or update docs with `oc doc create` / `oc doc set-desc` (keep descriptions fresh for triage).
 - If MCP tools are enabled, call `oc_manifest` / `oc_list_docs` (and optionally `oc_search`) instead of manual CLI steps.
 

@@ -239,7 +239,7 @@
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
-      "title": "QMS — Quality Management System",
+      "title": "QMS - Quality Management System",
       "description": "An enterprise-grade quality management system featuring two core modules: Document Management (DMS) with full revision history, two-stage approval workflows, targeted distribution, and tracked read confirmations; and Corrective Action Requests (CAR/DFI) with an 8-step ISO 9001 workflow, root cause analysis, corrective action tracking with teams and costs, and professional PDF reports. Includes real-time SSE notifications via Redis Pub/Sub, async email delivery through BullMQ with automated reminders and escalation, role-based access control, and a full audit trail. Built with Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM), and Redis.",
       "projectUrl": "https://github.com/senrecep/qms",
       "tags": [
