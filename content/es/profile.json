@@ -239,9 +239,9 @@
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
-      "title": "DMS — Sistema de Gestión de Documentos",
-      "description": "Un sistema de gestión de documentos de nivel empresarial con un ciclo de vida completo de documentos: creación estructurada con historial completo de revisiones, flujos de trabajo de aprobación en dos etapas (preparador → aprobador), distribución dirigida a departamentos y usuarios, y confirmaciones de lectura rastreadas. Incluye notificaciones SSE en tiempo real vía Redis Pub/Sub, entrega de correo electrónico asíncrona mediante BullMQ con recordatorios automatizados y escalamiento, control de acceso basado en roles, arquitectura de eliminación suave y un registro de auditoría completo. Construido con Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) y Redis.",
-      "projectUrl": "https://github.com/senrecep/dms",
+      "title": "QMS — Sistema de Gestión de Calidad",
+      "description": "Un sistema de gestión de calidad de nivel empresarial con dos módulos principales: Gestión de Documentos (DMS) con historial completo de revisiones, flujos de aprobación en dos etapas, distribución dirigida y confirmaciones de lectura rastreadas; y Solicitudes de Acciones Correctivas (CAR/DFI) con un flujo de trabajo ISO 9001 de 8 pasos, análisis de causa raíz, seguimiento de acciones correctivas con equipos y costos, e informes PDF profesionales. Incluye notificaciones SSE en tiempo real vía Redis Pub/Sub, entrega de correo asíncrona mediante BullMQ con recordatorios automatizados y escalamiento, control de acceso basado en roles y registro de auditoría completo. Construido con Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) y Redis.",
+      "projectUrl": "https://github.com/senrecep/qms",
       "tags": [
         "Next.js",
         "TypeScript",
@@ -250,7 +250,7 @@
         "BullMQ",
         "Docker"
       ],
-      "imageUrl": "/images/project-dms.svg"
+      "imageUrl": "/images/project-qms.svg"
     }
   ],
   "blogPosts": [

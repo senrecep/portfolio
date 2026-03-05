@@ -239,9 +239,9 @@
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
-      "title": "DMS — 文書管理システム",
-      "description": "完全な文書ライフサイクルを持つエンタープライズグレードの文書管理システム：完全な改訂履歴を持つ構造化された作成、二段階承認ワークフロー（作成者→承認者）、部署とユーザーへのターゲット配布、追跡された閲覧確認。Redis Pub/Sub経由のリアルタイムSSE通知、BullMQを通じた自動リマインダーとエスカレーション付き非同期メール配信、ロールベースのアクセス制御、論理削除アーキテクチャ、完全な監査証跡を特徴とする。Next.js 16、Bun、TypeScript、PostgreSQL（Drizzle ORM）、Redisで構築。",
-      "projectUrl": "https://github.com/senrecep/dms",
+      "title": "QMS — 品質管理システム",
+      "description": "2つのコアモジュールを持つエンタープライズグレードの品質管理システム：文書管理（DMS） - 完全な改訂履歴、二段階承認ワークフロー、ターゲット配布、追跡された閲覧確認；是正処置要求（CAR/DFI） - ISO 9001準拠の8ステップワークフロー、根本原因分析、チームとコスト追跡付き是正処置管理、プロフェッショナルPDFレポート。Redis Pub/Sub経由のリアルタイムSSE通知、BullMQを通じた自動リマインダーとエスカレーション付き非同期メール配信、ロールベースのアクセス制御、完全な監査証跡を搭載。Next.js 16、Bun、TypeScript、PostgreSQL（Drizzle ORM）、Redisで構築。",
+      "projectUrl": "https://github.com/senrecep/qms",
       "tags": [
         "Next.js",
         "TypeScript",
@@ -250,7 +250,7 @@
         "BullMQ",
         "Docker"
       ],
-      "imageUrl": "/images/project-dms.svg"
+      "imageUrl": "/images/project-qms.svg"
     }
   ],
   "blogPosts": [

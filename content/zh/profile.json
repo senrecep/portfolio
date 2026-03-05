@@ -239,9 +239,9 @@
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
-      "title": "DMS — 文档管理系统",
-      "description": "企业级文档管理系统,具有完整的文档生命周期:结构化创建与完整修订历史、两阶段审批工作流(准备者 → 审批者)、针对部门和用户的定向分发,以及跟踪的阅读确认。功能包括通过 Redis Pub/Sub 实现的实时 SSE 通知、通过 BullMQ 进行的异步电子邮件传递(带自动提醒和升级)、基于角色的访问控制、软删除架构以及完整的审计跟踪。使用 Next.js 16、Bun、TypeScript、PostgreSQL (Drizzle ORM) 和 Redis 构建。",
-      "projectUrl": "https://github.com/senrecep/dms",
+      "title": "QMS — 质量管理系统",
+      "description": "具有两个核心模块的企业级质量管理系统:文档管理(DMS) - 完整修订历史、两阶段审批工作流、定向分发和跟踪的阅读确认;纠正措施请求(CAR/DFI) - 符合 ISO 9001 的 8 步工作流、根本原因分析、带团队和成本跟踪的纠正措施管理以及专业 PDF 报告。包括通过 Redis Pub/Sub 实现的实时 SSE 通知、通过 BullMQ 进行的异步电子邮件传递(带自动提醒和升级)、基于角色的访问控制以及完整的审计跟踪。使用 Next.js 16、Bun、TypeScript、PostgreSQL (Drizzle ORM) 和 Redis 构建。",
+      "projectUrl": "https://github.com/senrecep/qms",
       "tags": [
         "Next.js",
         "TypeScript",
@@ -250,7 +250,7 @@
         "BullMQ",
         "Docker"
       ],
-      "imageUrl": "/images/project-dms.svg"
+      "imageUrl": "/images/project-qms.svg"
     }
   ],
   "blogPosts": [

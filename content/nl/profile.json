@@ -239,9 +239,9 @@
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
-      "title": "DMS — Documentbeheersysteem",
-      "description": "Een enterprise-grade documentbeheersysteem met een complete documentlevenscyclus: gestructureerde creatie met volledige revisiegeschiedenis, tweestaps goedkeuringsworkflows (opsteller → goedkeurder), gerichte distributie naar afdelingen en gebruikers, en gevolgde leesbevestigingen. Functies omvatten realtime SSE-meldingen via Redis Pub/Sub, asynchrone e-mailbezorging via BullMQ met geautomatiseerde herinneringen en escalatie, rolgebaseerde toegangscontrole, soft-delete architectuur en een volledig audittrail. Gebouwd met Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) en Redis.",
-      "projectUrl": "https://github.com/senrecep/dms",
+      "title": "QMS — Kwaliteitsmanagementsysteem",
+      "description": "Een enterprise-grade kwaliteitsmanagementsysteem met twee kernmodules: Documentbeheer (DMS) met volledige revisiegeschiedenis, tweestaps goedkeuringsworkflows, gerichte distributie en gevolgde leesbevestigingen; en Corrigerende Maatregelen (CAR/DFI) met een 8-staps ISO 9001-workflow, oorzaakanalyse, opvolging van corrigerende maatregelen met teams en kosten, en professionele PDF-rapporten. Omvat realtime SSE-meldingen via Redis Pub/Sub, asynchrone e-mailbezorging via BullMQ met geautomatiseerde herinneringen en escalatie, rolgebaseerde toegangscontrole en een volledig audittrail. Gebouwd met Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) en Redis.",
+      "projectUrl": "https://github.com/senrecep/qms",
       "tags": [
         "Next.js",
         "TypeScript",
@@ -250,7 +250,7 @@
         "BullMQ",
         "Docker"
       ],
-      "imageUrl": "/images/project-dms.svg"
+      "imageUrl": "/images/project-qms.svg"
     }
   ],
   "blogPosts": [
