@@ -12,6 +12,7 @@ interface BlogPostCardProps {
   post: BlogPost;
   index: number;
   lang: string;
+  internalUrl?: string | null;
   translations: {
     readMore: string;
   };
@@ -21,13 +22,19 @@ export function BlogPostCard({
   post,
   index,
   lang,
+  internalUrl: internalUrlProp,
   translations,
 }: BlogPostCardProps) {
   const [imageError, setImageError] = useState(false);
 
   const shouldShowImage = post.imageUrl && !imageError;
   const isLocalImage = post.imageUrl?.startsWith("/");
-  const internalUrl = post.slug ? `/${lang}/blog/${post.slug}` : null;
+  const internalUrl =
+    internalUrlProp !== undefined
+      ? internalUrlProp
+      : post.slug
+        ? `/${lang}/blog/${post.slug}`
+        : null;
 
   return (
     <Card className="overflow-hidden flex flex-col w-full group">

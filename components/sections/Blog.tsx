@@ -1,5 +1,6 @@
 import { BlogPostCard } from "@/components/BlogPostCard";
 import type { Profile } from "@/lib/i18n/content-loader";
+import { resolveCanonicalBlogUrl } from "@/lib/blog";
 
 interface BlogProps {
   profile: Profile;
@@ -43,6 +44,9 @@ export function Blog({ profile, lang, translations: t }: BlogProps) {
             post={post}
             index={index}
             lang={lang}
+            internalUrl={
+              post.slug ? resolveCanonicalBlogUrl(post.slug, lang) : null
+            }
             translations={{
               readMore: t.readMore,
             }}

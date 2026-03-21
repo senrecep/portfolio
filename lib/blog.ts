@@ -74,6 +74,18 @@ export function getBlogPost(slug: string, lang?: string): BlogPost | null {
   return null;
 }
 
+// Resolve the canonical URL for a blog post, using the actual language the file exists in
+export function resolveCanonicalBlogUrl(slug: string, lang: string): string {
+  const candidates =
+    lang === DEFAULT_LANG ? [DEFAULT_LANG] : [lang, DEFAULT_LANG];
+  for (const l of candidates) {
+    if (fs.existsSync(path.join(getBlogDirForLang(l), `${slug}.md`))) {
+      return `/${l}/blog/${slug}`;
+    }
+  }
+  return `/${DEFAULT_LANG}/blog/${slug}`;
+}
+
 // Get all blog posts for a given language (with English fallback)
 export function getAllBlogPosts(lang?: string): BlogPostMeta[] {
   const effectiveLang = lang || DEFAULT_LANG;
