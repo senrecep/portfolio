@@ -53,7 +53,8 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith("/api") ||
     pathname.startsWith("/og-preview") ||
     pathname === "/sitemap.xml" ||
-    pathname === "/robots.txt"
+    pathname === "/robots.txt" ||
+    pathname === "/llms.txt"
   ) {
     if (pathname.startsWith("/api")) {
       response.headers.set(
@@ -89,6 +90,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon\\.ico|icon\\.png|icon\\.svg|apple-icon\\.png|manifest\\.json|web-app-manifest-.*\\.png|files/|images/|sitemap\\.xml|robots\\.txt).*)",
+    "/((?!_next/static|_next/image|favicon\\.ico|icon\\.png|icon\\.svg|apple-icon\\.png|manifest\\.json|web-app-manifest-.*\\.png|files/|images/|sitemap\\.xml|robots\\.txt|llms\\.txt).*)",
   ],
 };
