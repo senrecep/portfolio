@@ -40,6 +40,10 @@ ${blogLines}
 
 - Email: ${personalInfo.email}
 ${socialLines}
+
+## Full Profile
+
+- [Complete AI Context](${siteUrl}/llms-full.txt): Comprehensive professional profile for AI deep-context consumption
 `;
 
   return new Response(content, {

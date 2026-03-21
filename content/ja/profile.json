@@ -208,11 +208,7 @@
       "title": "Easyapp",
       "description": "15万人以上のユーザーにサービスを提供するマイクロサービスベースのプラットフォームのアーキテクチャと開発をリード。AI駆動のコスト最適化と資本効率の高いオンデマンドインフラを実装。",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "AI",
-        "モバイル",
-        "No-Code"
-      ],
+      "tags": ["AI", "モバイル", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -220,11 +216,7 @@
       "title": "Aspire Microservice Starter Template",
       "description": "Aspire Frameworkでマイクロサービスを作成するためのテンプレート。",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
+      "tags": [".NET", "Aspire", "Microservices"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -232,12 +224,7 @@
       "title": "CSharpEssentials",
       "description": "Result Pattern、Any Pattern、Maybe Patternなどの一般的なデザインパターンを実装するためのフレームワークを含む、必須のビルディングブロックを提供することでC#開発を簡素化。",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "関数型プログラミング"
-      ],
+      "tags": ["C#", ".NET", "Design Patterns", "関数型プログラミング"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -245,13 +232,7 @@
       "title": "ポートフォリオテンプレート",
       "description": "無制限の言語サポート、ダーク/ライトテーマ、あらゆる職業に対応できる完全カスタマイズ可能なセクションを備えた、高速でSEO最適化されたポートフォリオテンプレート。Next.js 15とReact 19で構築。MITライセンス。",
       "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "オープンソース"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "オープンソース"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -259,13 +240,7 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "トルコで最も包括的な給与比較シミュレーター。SGK被雇用者（4/a）とBağ-Kur自営業者（4/b）の手取り収入を比較。総支給/手取り給与、税金、保険料、雇用主コストの計算。",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "ファイナンス",
-        "税金",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "ファイナンス", "税金", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -291,42 +266,48 @@
       "description": "AIを単なる自動補完ツールとして扱うのをやめ、CTOのように考え始めましょう。CLAUDE.md戦略、コンテキスト管理、フック、カスタムエージェント、マルチエージェントオーケストレーション、モデルルーティング、自己学習システムを網羅したClaude Codeの包括的ガイドです。",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
       "date": "02/28/2026",
-      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp",
+      "slug": "stop-writing-code-start-managing-systems"
     },
     {
       "title": "AIコーディングツール：Claude Code、OpenCode、モダン開発の完全ガイド",
       "description": "ゼロからプロダクションへ：適切なツールでAI支援開発をマスター。Claude Code、OpenCode、oh-my-opencode、MCP、スキル、プロフェッショナル開発のための高度なテクニックを学びます。",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
       "date": "2026/01/24",
-      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp",
+      "slug": "ai-coding-tools-complete-guide"
     },
     {
       "title": "Claude Codeによる本番グレードのAI開発：包括的エコシステムガイド",
       "description": "Claude Codeを単純なQ&Aツールから、プラグイン、カスタムエージェント、スキル、MCPサーバー、フックを備えたプロフェッショナルな開発環境に変革します。",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
       "date": "2026/01/21",
-      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp",
+      "slug": "production-grade-ai-development-claude-code"
     },
     {
       "title": "C#におけるパラメータ渡し方法のパフォーマンス分析",
       "description": "C#のパラメータ渡しの詳細分析：ベンチマークによるstruct、class、record、refタイプの比較。最適化のベストプラクティスを学ぶ。",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
       "date": "2025/02/20",
-      "imageUrl": "/images/parameters.webp"
+      "imageUrl": "/images/parameters.webp",
+      "slug": "performance-analysis-parameter-passing-csharp"
     },
     {
       "title": "The Modern Way to Manage C# Business Rules: Rule Engine Pattern",
       "description": "Result Patternを通じて集中管理、高いテスト可能性、最適なパフォーマンスを提供するビジネスルール管理のための最新のC#パターン。",
       "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
       "date": "2025/02/04",
-      "imageUrl": "/images/rule-engine.webp"
+      "imageUrl": "/images/rule-engine.webp",
+      "slug": "modern-way-manage-csharp-business-rules"
     },
     {
       "title": "Google Cloud Secret Manager Integration for Your .NET Applications",
       "description": "プレフィックスフィルタリング、リージョン固有の設定、JSON/rawシークレットサポートなどの機能を備えたGoogle Cloud Secret Manager統合用の.NETライブラリ。",
       "blogUrl": "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027",
       "date": "2025/01/30",
-      "imageUrl": "/images/dotnet-secret-manager.webp"
+      "imageUrl": "/images/dotnet-secret-manager.webp",
+      "slug": "google-cloud-secret-manager-dotnet"
     },
     {
       "title": "Blockchain Based E-Voting System",

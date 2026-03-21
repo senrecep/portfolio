@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,16 +11,18 @@ import type { BlogPost } from "@/lib/i18n/content-loader";
 interface BlogPostCardProps {
   post: BlogPost;
   index: number;
+  lang: string;
   translations: {
     readMore: string;
   };
 }
 
-export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
+export function BlogPostCard({ post, index, lang, translations }: BlogPostCardProps) {
   const [imageError, setImageError] = useState(false);
 
   const shouldShowImage = post.imageUrl && !imageError;
   const isLocalImage = post.imageUrl?.startsWith("/");
+  const internalUrl = post.slug ? `/${lang}/blog/${post.slug}` : null;
 
   return (
     <Card className="overflow-hidden flex flex-col w-full group">
@@ -43,7 +46,9 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
       <CardContent className="p-6 flex flex-col flex-1">
         <div className="flex-1">
           <h3 className="font-heading text-lg mb-3 group-hover:text-primary transition-colors">
-            {post.blogUrl ? (
+            {internalUrl ? (
+              <Link href={internalUrl}>{post.title}</Link>
+            ) : post.blogUrl ? (
               <a
                 href={post.blogUrl}
                 target="_blank"
@@ -70,7 +75,14 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
           <span className="text-sm text-muted-foreground glass-subtle rounded-full px-3 py-1">
             {post.date}
           </span>
-          {post.blogUrl && (
+          {internalUrl ? (
+            <Link
+              href={internalUrl}
+              className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-all duration-200 whitespace-nowrap"
+            >
+              {translations.readMore}
+            </Link>
+          ) : post.blogUrl ? (
             <a
               href={post.blogUrl}
               target="_blank"
@@ -83,7 +95,7 @@ export function BlogPostCard({ post, index, translations }: BlogPostCardProps) {
               {translations.readMore}
               <ExternalLink className="h-4 w-4 ml-1.5 flex-shrink-0 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
             </a>
-          )}
+          ) : null}
         </div>
       </CardContent>
     </Card>

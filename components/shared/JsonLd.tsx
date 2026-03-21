@@ -106,6 +106,14 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
     url: siteUrl,
     inLanguage: lang,
     author: { "@id": personId },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteUrl}/{search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   const faqSchema = {
@@ -117,7 +125,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         name: "What technologies does Recep Sen specialize in?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen specializes in .NET/C#, microservices architecture, Domain-Driven Design (DDD), TypeScript, Next.js, PostgreSQL, Redis, RabbitMQ, Docker, Kubernetes, and agentic AI systems.",
+          text: "Recep Sen specializes in .NET/C# for backend systems, with deep expertise in microservices architecture and Domain-Driven Design (DDD). On the data layer, he works with PostgreSQL, Redis, RabbitMQ, MongoDB, and Elasticsearch. For cloud infrastructure, he uses Google Cloud Platform, Docker, and Kubernetes. On the frontend, he works with TypeScript, Next.js, and React. He also works extensively with agentic AI systems, LLM integration, vector databases, and AI workflow automation.",
         },
       },
       {
@@ -125,7 +133,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         name: "What is the scale of the Easyapp platform that Recep Sen built?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen led the architecture and development of Easyapp.ai, a no-code mobile app builder serving 250,000+ users. He designed a 28-service microservices platform with AI-driven cost optimization and capital-efficient on-demand infrastructure.",
+          text: "Recep Sen led the full architecture and development of Easyapp.ai from inception, a no-code mobile app builder that reached 250,000+ users. He designed a 28-service microservices platform that processes millions of app-building requests. The platform uses AI-driven cost optimization to run capital-efficiently using on-demand infrastructure, significantly reducing operating costs compared to always-on architectures. He served as CTO at Taptoweb, the company behind Easyapp, overseeing the full technology organization and system architecture.",
         },
       },
       {
@@ -133,7 +141,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         name: "What open-source projects has Recep Sen built?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen has built several open-source projects including CSharpEssentials (a C# library implementing the Result Pattern, Any Pattern, and Maybe Pattern), an Aspire Microservice Starter Template for .NET, and an open-source Next.js portfolio template (MIT licensed).",
+          text: "Recep Sen has built several notable open-source projects available on GitHub. CSharpEssentials is a C# library implementing the Result Pattern, Any Pattern, and Maybe Pattern, with over 59,000 NuGet package downloads across 16 packages. He also created an Aspire Microservice Starter Template that provides a production-ready foundation for .NET microservices using the .NET Aspire orchestration framework. Additionally, he maintains an open-source Next.js portfolio template (MIT licensed) used by developers worldwide.",
         },
       },
       {
@@ -141,7 +149,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         name: "Where does Recep Sen work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen is CTO at Taptoweb, where he leads technology and system architecture.",
+          text: "Recep Sen is CTO at Taptoweb, a technology company building no-code mobile app solutions. In this role, he leads all technical decisions, system architecture, and engineering team direction. He has been with Taptoweb since 2022, growing the platform from early-stage to 250,000+ users. His work spans backend systems, cloud infrastructure, mobile platforms, and agentic AI integrations.",
         },
       },
       {
@@ -149,7 +157,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         name: "What is Recep Sen's background in AI development?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen works with agentic AI frameworks such as AutoGen, LLM integration and fine-tuning, vector databases, semantic caching systems, and AI workflow automation. He has written extensively about AI-powered development tools including Claude Code.",
+          text: "Recep Sen works with agentic AI frameworks, having published comprehensive guides on Claude Code, OpenCode, and multi-agent orchestration systems. He has hands-on experience with LLM integration and fine-tuning, vector databases, semantic caching systems, and AI workflow automation. His practical AI work includes building AI-driven cost optimization systems for large-scale infrastructure and developing production AI workflows across multiple enterprise projects. He has written extensively on AI-powered development, with articles on Claude Code ecosystems, multi-agent systems, and AI development best practices.",
         },
       },
     ],
@@ -166,6 +174,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         name: easyappProject.title,
         description: easyappProject.description,
         url: easyappProject.projectUrl,
+        downloadUrl: "https://apps.apple.com/app/easyapp/id6477803836",
         applicationCategory: "MobileApplication",
         operatingSystem: "iOS, Android",
         author: { "@id": personId },
@@ -204,11 +213,21 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         }
       : null;
 
+  const taptowebSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://taptoweb.com/#organization",
+    name: "Taptoweb",
+    url: "https://taptoweb.com",
+    ...(personalInfo.companyUrl ? { sameAs: [personalInfo.companyUrl] } : {}),
+  };
+
   const schemas = [
     personSchema,
     profilePageSchema,
     websiteSchema,
     faqSchema,
+    taptowebSchema,
     ...(softwareAppSchema ? [softwareAppSchema] : []),
     ...(blogListSchema ? [blogListSchema] : []),
   ];

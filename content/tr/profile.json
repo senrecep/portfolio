@@ -177,11 +177,7 @@
       "title": "Easyapp",
       "description": "250.000+ kullanıcıya hizmet veren mikroservis tabanlı platformun mimarisi ve geliştirilmesini yönettim. Yapay zeka destekli maliyet optimizasyonu ve sermaye etkin, talep üzerine altyapı uyguladım.",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "Yapay Zeka",
-        "Mobil",
-        "Kodsuz"
-      ],
+      "tags": ["Yapay Zeka", "Mobil", "Kodsuz"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -189,11 +185,7 @@
       "title": "Aspire Mikroservis Başlangıç Şablonu",
       "description": "Aspire Framework ile mikroservis oluşturmak için bir şablon.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Mikroservisler"
-      ],
+      "tags": [".NET", "Aspire", "Mikroservisler"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -201,12 +193,7 @@
       "title": "CSharpEssentials",
       "description": "Result Pattern, Any Pattern ve Maybe Pattern gibi yaygın tasarım desenlerini uygulama çerçevesi dahil olmak üzere temel yapı taşları sağlayarak C# geliştirmeyi basitleştirir.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Tasarım Desenleri",
-        "Fonksiyonel Programlama"
-      ],
+      "tags": ["C#", ".NET", "Tasarım Desenleri", "Fonksiyonel Programlama"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -214,13 +201,7 @@
       "title": "Portfolyo Şablonu",
       "description": "Sınırsız dil desteği, açık/koyu tema ve her meslek için özelleştirilebilir bölümler sunan hızlı, SEO optimize portfolyo şablonu. Next.js 15 ve React 19 ile geliştirildi. MIT lisanslı.",
       "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "Açık Kaynak"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "Açık Kaynak"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -228,13 +209,7 @@
       "title": "Kariyer ve Maaş Karşılaştırma Simülatörü",
       "description": "Türkiye'nin en kapsamlı maaş karşılaştırma simülatörü. SGK'lı maaşlı çalışan (4/a) ile Bağ-Kur'lı şahıs şirketi (4/b) net gelir karşılaştırması. Brüt/Net maaş, vergi, prim, işveren maliyeti hesaplama. 2026 TES Reform simülasyonu, Genç Girişimci desteği, Hizmet İhracatı istisnası. Aylık/Yıllık mod, TRY/USD para birimi desteği.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "Finans",
-        "Vergi",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "Finans", "Vergi", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -260,42 +235,48 @@
       "description": "AI'ı bir otomatik tamamlama aracı olarak görmeyi bırakın ve bir CTO gibi düşünmeye başlayın. CLAUDE.md stratejisi, context yönetimi, hook'lar, özel agent'lar, çoklu agent orkestrasyonu, model yönlendirme ve kendi kendine öğrenen sistemleri kapsayan kapsamlı bir Claude Code rehberi.",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
       "date": "02/28/2026",
-      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp",
+      "slug": "stop-writing-code-start-managing-systems"
     },
     {
       "title": "AI Kodlama Araçları: Claude Code, OpenCode ve Modern Geliştirme için Kapsamlı Rehber",
       "description": "Sıfırdan üretime: Doğru araçlarla AI destekli geliştirmeyi ustalaşın. Claude Code, OpenCode, oh-my-opencode, MCP, beceriler ve profesyonel geliştirme için ileri teknikler.",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
       "date": "24/01/2026",
-      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp",
+      "slug": "ai-coding-tools-complete-guide"
     },
     {
       "title": "Claude Code ile Üretim Kalitesinde Yapay Zeka Geliştirme: Kapsamlı Ekosistem Rehberi",
       "description": "Claude Code'u basit bir soru-cevap aracından, pluginler, özel ajanlar, beceriler, MCP sunucuları ve hooklar ile profesyonel düzeyde bir geliştirme ortamına dönüştürün.",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
       "date": "21/01/2026",
-      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp",
+      "slug": "production-grade-ai-development-claude-code"
     },
     {
       "title": "C#'ta Parametre Geçirme Yöntemlerinin Performans Analizi",
       "description": "C# parametre geçirme yöntemlerinin derinlemesine incelemesi: Struct, class, record ve ref tiplerinin karşılaştırmalı performans analizi ve optimizasyon için en iyi pratikler.",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
       "date": "20/02/2025",
-      "imageUrl": "/images/parameters.webp"
+      "imageUrl": "/images/parameters.webp",
+      "slug": "performance-analysis-parameter-passing-csharp"
     },
     {
       "title": "C# İş Kurallarını Yönetmenin Modern Yolu: Kural Motoru Deseni",
       "description": "Result pattern ile merkezi kontrol, yüksek test edilebilirlik ve optimal performans sunan modern bir C# deseni",
       "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
       "date": "04/02/2025",
-      "imageUrl": "/images/rule-engine.webp"
+      "imageUrl": "/images/rule-engine.webp",
+      "slug": "modern-way-manage-csharp-business-rules"
     },
     {
       "title": ".NET Uygulamalarınız için Google Cloud Secret Manager Entegrasyonu",
       "description": "Önek filtreleme, bölgeye özel yapılandırma ve JSON/raw secret desteği gibi özellikler sunan .NET kütüphanesi",
       "blogUrl": "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027",
       "date": "30/01/2025",
-      "imageUrl": "/images/dotnet-secret-manager.webp"
+      "imageUrl": "/images/dotnet-secret-manager.webp",
+      "slug": "google-cloud-secret-manager-dotnet"
     },
     {
       "title": "Blok Zinciri Tabanlı E-Oylama Sistemi",

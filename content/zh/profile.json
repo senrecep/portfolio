@@ -208,11 +208,7 @@
       "title": "Easyapp",
       "description": "领导了一个服务超过15万用户的微服务平台的架构和开发。实施了AI驱动的成本优化和资本高效的按需基础设施。",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "AI",
-        "移动端",
-        "No-Code"
-      ],
+      "tags": ["AI", "移动端", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -220,11 +216,7 @@
       "title": "Aspire Microservice Starter Template",
       "description": "使用 Aspire Framework 创建微服务的模板。",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
+      "tags": [".NET", "Aspire", "Microservices"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -232,12 +224,7 @@
       "title": "CSharpEssentials",
       "description": "通过提供必要的构建块来简化 C# 开发，包括用于实现常见设计模式（如 Result Pattern、Any Pattern 和 Maybe Pattern）的框架。",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "函数式编程"
-      ],
+      "tags": ["C#", ".NET", "Design Patterns", "函数式编程"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -245,13 +232,7 @@
       "title": "作品集模板",
       "description": "快速、SEO 优化的作品集模板，支持无限语言、深色/浅色主题，以及适用于任何职业的完全可定制部分。使用 Next.js 15 和 React 19 构建。MIT 许可。",
       "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "开源"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "开源"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -259,13 +240,7 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "土耳其最全面的薪资比较模拟器。比较 SGK 雇员（4/a）和 Bağ-Kur 自雇人员（4/b）的净收入。总工资/净工资、税款、保费、雇主成本计算。",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "金融",
-        "税务",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "金融", "税务", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -291,42 +266,48 @@
       "description": "停止将AI视为自动补全工具，开始像CTO一样思考。这是一份全面的Claude Code指南，涵盖CLAUDE.md策略、上下文管理、钩子、自定义代理、多代理编排、模型路由和自学习系统。",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
       "date": "02/28/2026",
-      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp",
+      "slug": "stop-writing-code-start-managing-systems"
     },
     {
       "title": "AI 编程工具：Claude Code、OpenCode 和现代开发的完整指南",
       "description": "从零到生产：使用正确的工具掌握 AI 辅助开发。学习 Claude Code、OpenCode、oh-my-opencode、MCP、技能和专业开发的高级技术。",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
       "date": "2026/01/24",
-      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp",
+      "slug": "ai-coding-tools-complete-guide"
     },
     {
       "title": "使用 Claude Code 进行生产级 AI 开发：全面生态系统指南",
       "description": "将 Claude Code 从简单的问答工具转变为具有插件、自定义代理、技能、MCP 服务器和钩子的专业开发环境。",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
       "date": "2026/01/21",
-      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp",
+      "slug": "production-grade-ai-development-claude-code"
     },
     {
       "title": "C# 参数传递方法的性能分析",
       "description": "深入分析 C# 参数传递：通过基准测试比较 struct、class、record 和 ref 类型。学习优化最佳实践。",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
       "date": "2025/02/20",
-      "imageUrl": "/images/parameters.webp"
+      "imageUrl": "/images/parameters.webp",
+      "slug": "performance-analysis-parameter-passing-csharp"
     },
     {
       "title": "The Modern Way to Manage C# Business Rules: Rule Engine Pattern",
       "description": "一种现代 C# 模式，用于管理业务规则，通过 Result Pattern 提供集中控制、高可测试性和最佳性能。",
       "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
       "date": "2025/02/04",
-      "imageUrl": "/images/rule-engine.webp"
+      "imageUrl": "/images/rule-engine.webp",
+      "slug": "modern-way-manage-csharp-business-rules"
     },
     {
       "title": "Google Cloud Secret Manager Integration for Your .NET Applications",
       "description": "一个用于 Google Cloud Secret Manager 集成的 .NET 库，具有前缀过滤、区域特定配置和 JSON/raw 密钥支持等功能。",
       "blogUrl": "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027",
       "date": "2025/01/30",
-      "imageUrl": "/images/dotnet-secret-manager.webp"
+      "imageUrl": "/images/dotnet-secret-manager.webp",
+      "slug": "google-cloud-secret-manager-dotnet"
     },
     {
       "title": "Blockchain Based E-Voting System",

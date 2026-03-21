@@ -3,6 +3,7 @@ import type { Profile } from "@/lib/i18n/content-loader";
 
 interface BlogProps {
   profile: Profile;
+  lang: string;
   translations: {
     title: string;
     description: string;
@@ -10,7 +11,7 @@ interface BlogProps {
   };
 }
 
-export function Blog({ profile, translations: t }: BlogProps) {
+export function Blog({ profile, lang, translations: t }: BlogProps) {
   // If there are no blog posts, don't render anything
   if (!profile.blogPosts?.length) {
     return null;
@@ -41,6 +42,7 @@ export function Blog({ profile, translations: t }: BlogProps) {
             key={index}
             post={post}
             index={index}
+            lang={lang}
             translations={{
               readMore: t.readMore,
             }}

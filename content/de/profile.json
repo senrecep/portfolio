@@ -177,11 +177,7 @@
       "title": "Easyapp",
       "description": "Leitete die Architektur und Entwicklung einer mikroservice-basierten Plattform für über 250.000 Nutzer. Implementierte KI-gesteuerte Kostenoptimierung und eine kapitaleffiziente, bedarfsgerechte Infrastruktur.",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "KI",
-        "Mobile",
-        "No-Code"
-      ],
+      "tags": ["KI", "Mobile", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -189,11 +185,7 @@
       "title": "Aspire Microservice Starter Template",
       "description": "Eine Vorlage für die Erstellung eines Microservice mit dem Aspire Framework.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
+      "tags": [".NET", "Aspire", "Microservices"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -201,12 +193,7 @@
       "title": "CSharpEssentials",
       "description": "Vereinfacht die C#-Entwicklung durch die Bereitstellung wesentlicher Bausteine, einschließlich eines Frameworks zur Implementierung gängiger Entwurfsmuster wie Result Pattern, Any Pattern und Maybe Pattern.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "Funktionale Programmierung"
-      ],
+      "tags": ["C#", ".NET", "Design Patterns", "Funktionale Programmierung"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -214,13 +201,7 @@
       "title": "Portfolio-Vorlage",
       "description": "Eine schnelle, SEO-optimierte Portfolio-Vorlage mit unbegrenzter Sprachunterstützung, Dunkel/Hell-Themen und vollständig anpassbaren Bereichen für jeden Beruf. Erstellt mit Next.js 15 und React 19. MIT-lizenziert.",
       "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "Open Source"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -228,13 +209,7 @@
       "title": "Karriere- und Gehaltsvergleichssimulator",
       "description": "Umfassendster Gehaltsvergleichssimulator der Türkei. Vergleich des Nettoeinkommens zwischen SGK-Angestellten (4/a) und Bağ-Kur-Selbstständigen (4/b). Brutto-/Nettogehalt, Steuern, Prämien und Arbeitgeberkostenberechnungen. 2026 TES-Reform-Simulation, Unterstützung für junge Unternehmer, Dienstleistungsexportbefreiung. Monatlicher/Jährlicher Modus, TRY/USD-Währungsumrechnung.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "Finanzen",
-        "Steuern",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "Finanzen", "Steuern", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -260,42 +235,48 @@
       "description": "Hören Sie auf, KI als Autovervollständigung zu betrachten und beginnen Sie wie ein CTO zu denken. Ein umfassender Claude Code Leitfaden über CLAUDE.md-Strategie, Kontextmanagement, Hooks, benutzerdefinierte Agenten, Multi-Agenten-Orchestrierung, Modell-Routing und selbstlernende Systeme.",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
       "date": "02/28/2026",
-      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp"
+      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp",
+      "slug": "stop-writing-code-start-managing-systems"
     },
     {
       "title": "KI-Coding-Tools: Der vollständige Leitfaden zu Claude Code, OpenCode & moderner Entwicklung",
       "description": "Von Null zur Produktion: Beherrschen Sie KI-gestützte Entwicklung mit den richtigen Tools. Lernen Sie Claude Code, OpenCode, oh-my-opencode, MCP, Skills und fortgeschrittene Techniken für professionelle Entwicklung.",
       "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
       "date": "24.01.2026",
-      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp",
+      "slug": "ai-coding-tools-complete-guide"
     },
     {
       "title": "Produktionsreife KI-Entwicklung mit Claude Code: Ein umfassender Ökosystem-Leitfaden",
       "description": "Verwandeln Sie Claude Code von einem einfachen Frage-Antwort-Tool in eine professionelle Entwicklungsumgebung mit Plugins, benutzerdefinierten Agenten, Skills, MCP-Servern und Hooks.",
       "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
       "date": "21.01.2026",
-      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp"
+      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp",
+      "slug": "production-grade-ai-development-claude-code"
     },
     {
       "title": "Performanzanalyse von Parameterübergabemethoden in C#",
       "description": "Tiefgehende Analyse der C#-Parameterübergabe: Vergleich von Struct, Class, Record & Ref-Typen mit Benchmarks. Lernen Sie Best Practices für die Optimierung.",
       "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
       "date": "20.02.2025",
-      "imageUrl": "/images/parameters.webp"
+      "imageUrl": "/images/parameters.webp",
+      "slug": "performance-analysis-parameter-passing-csharp"
     },
     {
       "title": "Der moderne Weg zum Verwalten von C# Geschäftsregeln: Rule Engine Pattern",
       "description": "Ein modernes C#-Pattern für die Verwaltung von Geschäftsregeln, das zentrale Kontrolle, hohe Testbarkeit und optimale Leistung durch das Result Pattern bietet",
       "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
       "date": "04.02.2025",
-      "imageUrl": "/images/rule-engine.webp"
+      "imageUrl": "/images/rule-engine.webp",
+      "slug": "modern-way-manage-csharp-business-rules"
     },
     {
       "title": "Google Cloud Secret Manager Integration für Ihre .NET Anwendungen",
       "description": "Eine .NET-Bibliothek für die Google Cloud Secret Manager-Integration mit Funktionen wie Präfix-Filterung, regionsspezifischer Konfiguration und JSON/Raw-Secret-Unterstützung",
       "blogUrl": "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027",
       "date": "30.01.2025",
-      "imageUrl": "/images/dotnet-secret-manager.webp"
+      "imageUrl": "/images/dotnet-secret-manager.webp",
+      "slug": "google-cloud-secret-manager-dotnet"
     },
     {
       "title": "Blockchain-basiertes E-Voting-System",

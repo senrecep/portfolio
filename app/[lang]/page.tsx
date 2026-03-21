@@ -84,6 +84,7 @@ export default async function Home({ params }: PageProps) {
           {hasBlogPosts && (
             <Blog
               profile={profile}
+              lang={lang}
               translations={{
                 title: t.sections.blog.title,
                 description: t.sections.blog.description || "",

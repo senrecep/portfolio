@@ -1,7 +1,7 @@
 "use client";
 
-import Script from "next/script";
 import Link from "next/link";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 
 const CONSENT_KEY = "cookie-consent";

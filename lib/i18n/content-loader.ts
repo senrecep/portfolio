@@ -15,6 +15,7 @@ export interface BlogPost {
   blogUrl: string;
   date: string;
   imageUrl?: string;
+  slug?: string;
 }
 
 export interface Skill {

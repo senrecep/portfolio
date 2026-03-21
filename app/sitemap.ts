@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllBlogSlugs } from "@/lib/blog";
 import { defaultLanguage, languageCodes } from "@/lib/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -51,5 +52,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   }));
 
-  return [...languageRoutes, ...resumeRoutes, ...privacyRoutes];
+  // Blog listing routes for all languages
+  const blogAlternates: Record<string, string> = {};
+  for (const lang of languageCodes) {
+    blogAlternates[lang] = `${siteUrl}/${lang}/blog`;
+  }
+  blogAlternates["x-default"] = `${siteUrl}/${defaultLanguage}/blog`;
+
+  const blogListRoutes = languageCodes.map((lang) => ({
+    url: `${siteUrl}/${lang}/blog`,
+    lastModified,
+    alternates: { languages: blogAlternates },
+  }));
+
+  // Individual blog post routes for all languages
+  const blogSlugs = getAllBlogSlugs();
+  const blogPostRoutes = blogSlugs.flatMap((slug) => {
+    const postAlternates: Record<string, string> = {};
+    for (const lang of languageCodes) {
+      postAlternates[lang] = `${siteUrl}/${lang}/blog/${slug}`;
+    }
+    postAlternates["x-default"] = `${siteUrl}/${defaultLanguage}/blog/${slug}`;
+
+    return languageCodes.map((lang) => ({
+      url: `${siteUrl}/${lang}/blog/${slug}`,
+      lastModified,
+      alternates: { languages: postAlternates },
+    }));
+  });
+
+  return [
+    ...languageRoutes,
+    ...resumeRoutes,
+    ...privacyRoutes,
+    ...blogListRoutes,
+    ...blogPostRoutes,
+  ];
 }
