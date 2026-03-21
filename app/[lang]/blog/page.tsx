@@ -49,6 +49,12 @@ export default async function BlogPage({ params }: PageProps) {
         language={lang}
       />
       <main className="container mx-auto px-4 py-12 flex-1">
+        <Link
+          href={`/${lang}`}
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
+        >
+          &larr; Home
+        </Link>
         <div className="mb-10">
           <h1 className="text-4xl font-bold tracking-tight mb-3">
             {t.sections.blog.title}
