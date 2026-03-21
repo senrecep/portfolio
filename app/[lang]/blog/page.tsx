@@ -32,7 +32,7 @@ export async function generateMetadata({
 
 export default async function BlogPage({ params }: PageProps) {
   const { lang } = await params;
-  const posts = getAllBlogPosts();
+  const posts = getAllBlogPosts(lang);
 
   return (
     <div className="container mx-auto px-4 py-12">

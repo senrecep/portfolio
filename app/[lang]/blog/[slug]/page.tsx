@@ -14,15 +14,17 @@ export const dynamic = "force-static";
 export const revalidate = false;
 
 export async function generateStaticParams() {
-  const slugs = getAllBlogSlugs();
-  return languageCodes.flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
+  return languageCodes.flatMap((lang) => {
+    const slugs = getAllBlogSlugs(lang);
+    return slugs.map((slug) => ({ lang, slug }));
+  });
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { lang, slug } = await params;
-  const post = getBlogPost(slug);
+  const post = getBlogPost(slug, lang);
   if (!post) return {};
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   return {
@@ -41,7 +43,7 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { lang, slug } = await params;
-  const post = getBlogPost(slug);
+  const post = getBlogPost(slug, lang);
 
   if (!post) {
     notFound();

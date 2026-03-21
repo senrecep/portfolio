@@ -17,7 +17,12 @@ interface BlogPostCardProps {
   };
 }
 
-export function BlogPostCard({ post, index, lang, translations }: BlogPostCardProps) {
+export function BlogPostCard({
+  post,
+  index,
+  lang,
+  translations,
+}: BlogPostCardProps) {
   const [imageError, setImageError] = useState(false);
 
   const shouldShowImage = post.imageUrl && !imageError;
