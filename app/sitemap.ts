@@ -3,7 +3,7 @@ import { defaultLanguage, languageCodes } from "@/lib/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const lastModified = new Date("2026-02-15");
+  const lastModified = new Date();
 
   // Build alternates object for hreflang with x-default
   const alternates: Record<string, string> = {};
@@ -36,5 +36,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   }));
 
-  return [...languageRoutes, ...resumeRoutes];
+  // Privacy policy routes for all languages
+  const privacyAlternates: Record<string, string> = {};
+  for (const lang of languageCodes) {
+    privacyAlternates[lang] = `${siteUrl}/${lang}/privacy`;
+  }
+  privacyAlternates["x-default"] = `${siteUrl}/${defaultLanguage}/privacy`;
+
+  const privacyRoutes = languageCodes.map((lang) => ({
+    url: `${siteUrl}/${lang}/privacy`,
+    lastModified,
+    alternates: {
+      languages: privacyAlternates,
+    },
+  }));
+
+  return [...languageRoutes, ...resumeRoutes, ...privacyRoutes];
 }

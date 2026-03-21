@@ -1,16 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import { trackExternalLink } from "@/lib/analytics";
 import type { Profile } from "@/lib/i18n/content-loader";
 
 interface FooterProps {
   profile: Profile;
+  lang?: string;
   translations: {
     allRightsReserved: string;
   };
 }
 
-export function Footer({ profile, translations }: FooterProps) {
+export function Footer({ profile, lang, translations }: FooterProps) {
   const handleSocialClick = (linkName: string, url: string) => {
     // Fire-and-forget analytics tracking for external social links
     try {
@@ -42,11 +44,21 @@ export function Footer({ profile, translations }: FooterProps) {
                 </a>
               ))}
             </div>
-            {/* Copyright */}
-            <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} {profile.personalInfo.name}.{" "}
-              {translations.allRightsReserved}
-            </p>
+            {/* Copyright + Privacy */}
+            <div className="flex flex-col items-center md:items-end gap-1">
+              <p className="text-muted-foreground text-sm">
+                © {new Date().getFullYear()} {profile.personalInfo.name}.{" "}
+                {translations.allRightsReserved}
+              </p>
+              {lang && (
+                <Link
+                  href={`/${lang}/privacy`}
+                  className="text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </div>

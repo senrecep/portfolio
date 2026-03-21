@@ -1,0 +1,36 @@
+# Recep Sen - Personal Portfolio
+
+> CTO and software architect specializing in microservices, .NET, TypeScript, and
+> AI-driven development. Currently leading technology at Taptoweb.
+> Building products serving 250,000+ users.
+
+## About
+
+Recep Sen is a software engineer and CTO based in Turkey. Areas of expertise include
+microservices architecture, C# and .NET ecosystems, TypeScript, system design, DevOps,
+and AI development tooling. He designed a 28-service microservices platform powering
+Easyapp.ai, a no-code mobile app builder with 250,000+ users.
+
+## Pages
+
+- [Homepage](https://senrecep.com/en): Full profile, projects, skills, and blog listing
+- [Resume / CV](https://senrecep.com/en/resume): CV and professional history
+
+## Projects
+
+- [Easyapp](https://easyapp.ai): AI-powered no-code mobile platform, 250,000+ users
+- [Aspire Microservice Starter](https://github.com/senrecep/Aspire): .NET Aspire microservice template
+- [CSharpEssentials](https://github.com/senrecep/CSharpEssentials): C# design patterns library
+- [Portfolio Template](https://github.com/senrecep/portfolio): Open-source Next.js portfolio (MIT)
+- [Career Salary Simulator](https://salary-sim.senrecep.com/): Turkey salary comparison tool
+
+## Writing
+
+All articles: https://medium.com/@senrecep
+Topics: software architecture, AI development tools, production engineering, clean code.
+
+## Contact
+
+- Email: me@senrecep.com
+- LinkedIn: https://www.linkedin.com/in/senrecep/
+- GitHub: https://github.com/senrecep

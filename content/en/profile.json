@@ -3,7 +3,8 @@
     "name": "Recep Şen",
     "position": "CTO",
     "company": "Taptoweb",
-    "about": "Building high-impact, scalable systems. I turn complex business challenges into elegant technical solutions that serve hundreds of thousands of users.",
+    "companyUrl": "https://taptoweb.com",
+    "about": "CTO at Taptoweb, where I designed a 28-service microservices platform powering Easyapp.ai - a no-code mobile app builder with 250,000+ users. I specialize in .NET/C#, Domain-Driven Design, and agentic AI systems.",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -205,41 +206,72 @@
   "projects": [
     {
       "title": "Easyapp",
+      "year": "2022",
       "description": "Led the architecture and development of a microservices-based platform serving 250,000+ users. Implemented AI-driven cost optimization and a capital-efficient, on-demand infrastructure.",
       "projectUrl": "https://easyapp.ai",
-      "tags": ["AI", "Mobile", "No-Code"],
+      "tags": [
+        "AI",
+        "Mobile",
+        "No-Code"
+      ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp"
     },
     {
       "title": "Aspire Microservice Starter Template",
+      "year": "2024",
       "description": "A template for creating a microservice with the Aspire Framework.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png"
     },
     {
       "title": "CSharpEssentials",
+      "year": "2023",
       "description": "Simplifies C# development by providing essential building blocks, including a framework for implementing common design patterns such as the Result Pattern, Any Pattern, and Maybe Pattern.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "Functional Programming"],
+      "tags": [
+        "C#",
+        ".NET",
+        "Design Patterns",
+        "Functional Programming"
+      ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
     },
     {
       "title": "Portfolio Template",
+      "year": "2025",
       "description": "A fast, SEO-optimized portfolio template with unlimited language support, dark/light themes, and fully customizable sections for any profession. Built with Next.js 15 and React 19. MIT licensed.",
       "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "i18n",
+        "Open Source"
+      ],
       "imageUrl": "/images/project-portfolio.webp"
     },
     {
       "title": "Career & Salary Comparison Simulator",
+      "year": "2025",
       "description": "Turkey's most comprehensive salary comparison simulator. Compare net income between SGK salaried employees (4/a) and Bağ-Kur self-employed (4/b). Gross/Net salary, tax, premium, employer cost calculations. 2026 TES Reform simulation, Young Entrepreneur support, Service Export exemption. Monthly/Yearly mode, TRY/USD currency support.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "Finance", "Tax", "SGK", "Bağ-Kur"],
+      "tags": [
+        "JavaScript",
+        "Finance",
+        "Tax",
+        "SGK",
+        "Bağ-Kur"
+      ],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
       "title": "QMS - Quality Management System",
+      "year": "2024",
       "description": "An enterprise-grade quality management system featuring two core modules: Document Management (DMS) with full revision history, two-stage approval workflows, targeted distribution, and tracked read confirmations; and Corrective Action Requests (CAR/DFI) with an 8-step ISO 9001 workflow, root cause analysis, corrective action tracking with teams and costs, and professional PDF reports. Includes real-time SSE notifications via Redis Pub/Sub, async email delivery through BullMQ with automated reminders and escalation, role-based access control, and a full audit trail. Built with Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM), and Redis.",
       "projectUrl": "https://github.com/senrecep/qms",
       "tags": [

@@ -121,6 +121,7 @@ export default async function Home({ params }: PageProps) {
         </main>
         <Footer
           profile={profile}
+          lang={lang}
           translations={{
             allRightsReserved: t.footer.allRightsReserved,
           }}

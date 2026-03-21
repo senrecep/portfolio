@@ -3,7 +3,8 @@
     "name": "Recep Şen",
     "position": "CTO",
     "company": "Taptoweb",
-    "about": "高インパクトでスケーラブルなシステムを構築。複雑なビジネス課題を、数十万人のユーザーに対応するエレガントな技術ソリューションに変換します。",
+    "companyUrl": "https://taptoweb.com",
+    "about": "Taptowebでは、25万人以上のユーザーを持つノーコードモバイルアプリビルダー「Easyapp.ai」を支える28サービスのマイクロサービスプラットフォームを設計したCTOです。.NET/C#、ドメイン駆動設計、エージェンティックAIシステムを専門としています。",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -207,36 +208,66 @@
       "title": "Easyapp",
       "description": "15万人以上のユーザーにサービスを提供するマイクロサービスベースのプラットフォームのアーキテクチャと開発をリード。AI駆動のコスト最適化と資本効率の高いオンデマンドインフラを実装。",
       "projectUrl": "https://easyapp.ai",
-      "tags": ["AI", "モバイル", "No-Code"],
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp"
+      "tags": [
+        "AI",
+        "モバイル",
+        "No-Code"
+      ],
+      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
+      "year": "2022"
     },
     {
       "title": "Aspire Microservice Starter Template",
       "description": "Aspire Frameworkでマイクロサービスを作成するためのテンプレート。",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png"
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
       "description": "Result Pattern、Any Pattern、Maybe Patternなどの一般的なデザインパターンを実装するためのフレームワークを含む、必須のビルディングブロックを提供することでC#開発を簡素化。",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "関数型プログラミング"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
+      "tags": [
+        "C#",
+        ".NET",
+        "Design Patterns",
+        "関数型プログラミング"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
+      "year": "2023"
     },
     {
       "title": "ポートフォリオテンプレート",
       "description": "無制限の言語サポート、ダーク/ライトテーマ、あらゆる職業に対応できる完全カスタマイズ可能なセクションを備えた、高速でSEO最適化されたポートフォリオテンプレート。Next.js 15とReact 19で構築。MITライセンス。",
       "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "オープンソース"],
-      "imageUrl": "/images/project-portfolio.webp"
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "i18n",
+        "オープンソース"
+      ],
+      "imageUrl": "/images/project-portfolio.webp",
+      "year": "2025"
     },
     {
       "title": "Career & Salary Comparison Simulator",
       "description": "トルコで最も包括的な給与比較シミュレーター。SGK被雇用者（4/a）とBağ-Kur自営業者（4/b）の手取り収入を比較。総支給/手取り給与、税金、保険料、雇用主コストの計算。",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "ファイナンス", "税金", "SGK", "Bağ-Kur"],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png"
+      "tags": [
+        "JavaScript",
+        "ファイナンス",
+        "税金",
+        "SGK",
+        "Bağ-Kur"
+      ],
+      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
+      "year": "2025"
     },
     {
       "title": "QMS - 品質管理システム",
@@ -250,7 +281,8 @@
         "BullMQ",
         "Docker"
       ],
-      "imageUrl": "/images/project-qms.svg"
+      "imageUrl": "/images/project-qms.svg",
+      "year": "2024"
     }
   ],
   "blogPosts": [

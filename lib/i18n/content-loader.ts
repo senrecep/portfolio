@@ -6,6 +6,7 @@ export interface Project {
   projectUrl: string;
   tags: string[];
   imageUrl?: string;
+  year?: string;
 }
 
 export interface BlogPost {
@@ -52,6 +53,7 @@ export interface Profile {
     name: string;
     position: string;
     company: string;
+    companyUrl?: string;
     about: string;
     imageUrl: string;
     callsign?: string;

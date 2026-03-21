@@ -3,7 +3,8 @@
     "name": "Recep Şen",
     "position": "CTO",
     "company": "Taptoweb",
-    "about": "Construyendo sistemas escalables de alto impacto. Transformo desafíos empresariales complejos en soluciones técnicas elegantes que sirven a cientos de miles de usuarios.",
+    "companyUrl": "https://taptoweb.com",
+    "about": "CTO en Taptoweb, donde diseñé una plataforma de microservicios de 28 servicios que impulsa Easyapp.ai - un constructor de aplicaciones móviles sin código con más de 250.000 usuarios. Me especializo en .NET/C#, Domain-Driven Design y sistemas de IA agéntica.",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -207,36 +208,66 @@
       "title": "Easyapp",
       "description": "Lideré la arquitectura y desarrollo de una plataforma basada en microservicios que sirve a más de 250.000 usuarios. Implementé optimización de costos impulsada por IA e infraestructura bajo demanda eficiente en capital.",
       "projectUrl": "https://easyapp.ai",
-      "tags": ["IA", "Móvil", "No-Code"],
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp"
+      "tags": [
+        "IA",
+        "Móvil",
+        "No-Code"
+      ],
+      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
+      "year": "2022"
     },
     {
       "title": "Aspire Microservice Starter Template",
       "description": "Una plantilla para crear un microservicio con el Framework Aspire.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png"
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
       "description": "Simplifica el desarrollo en C# proporcionando bloques de construcción esenciales, incluyendo un framework para implementar patrones de diseño comunes como el Result Pattern, Any Pattern y Maybe Pattern.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "Programación Funcional"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
+      "tags": [
+        "C#",
+        ".NET",
+        "Design Patterns",
+        "Programación Funcional"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
+      "year": "2023"
     },
     {
       "title": "Plantilla de Portafolio",
       "description": "Una plantilla de portafolio rápida y optimizada para SEO con soporte ilimitado de idiomas, temas oscuro/claro y secciones totalmente personalizables para cualquier profesión. Construida con Next.js 15 y React 19. Licencia MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
-      "imageUrl": "/images/project-portfolio.webp"
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "i18n",
+        "Open Source"
+      ],
+      "imageUrl": "/images/project-portfolio.webp",
+      "year": "2025"
     },
     {
       "title": "Career & Salary Comparison Simulator",
       "description": "El simulador de comparación de salarios más completo de Turquía. Compare el ingreso neto entre empleados asalariados SGK (4/a) y autónomos Bağ-Kur (4/b). Cálculos de salario bruto/neto, impuestos, primas y costos del empleador.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "Finanzas", "Impuestos", "SGK", "Bağ-Kur"],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png"
+      "tags": [
+        "JavaScript",
+        "Finanzas",
+        "Impuestos",
+        "SGK",
+        "Bağ-Kur"
+      ],
+      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
+      "year": "2025"
     },
     {
       "title": "QMS - Sistema de Gestión de Calidad",
@@ -250,7 +281,8 @@
         "BullMQ",
         "Docker"
       ],
-      "imageUrl": "/images/project-qms.svg"
+      "imageUrl": "/images/project-qms.svg",
+      "year": "2024"
     }
   ],
   "blogPosts": [

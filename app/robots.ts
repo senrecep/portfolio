@@ -40,6 +40,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/og-preview", "/_next/"],
       },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+        disallow: ["/api/", "/og-preview", "/_next/"],
+      },
       // AI Crawlers - Anthropic (Claude)
       {
         userAgent: "anthropic-ai",

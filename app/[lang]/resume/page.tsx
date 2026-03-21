@@ -102,6 +102,7 @@ export default async function ResumePage({ params }: PageProps) {
         </main>
         <Footer
           profile={profile}
+          lang={lang}
           translations={{
             allRightsReserved: t.footer.allRightsReserved,
           }}
@@ -148,6 +149,7 @@ export default async function ResumePage({ params }: PageProps) {
         </main>
         <Footer
           profile={profile}
+          lang={lang}
           translations={{
             allRightsReserved: t.footer.allRightsReserved,
           }}
