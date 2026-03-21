@@ -1,7 +1,6 @@
 "use client";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { ContentProtection } from "@/components/shared/ContentProtection";
 import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 interface ClientProvidersProps {
@@ -11,7 +10,6 @@ interface ClientProvidersProps {
 export function ClientProviders({ children }: ClientProvidersProps) {
   return (
     <ErrorBoundary>
-      <ContentProtection />
       <NextThemesProvider
         attribute="class"
         defaultTheme="system"
