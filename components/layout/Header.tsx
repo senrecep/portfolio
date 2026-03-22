@@ -47,7 +47,7 @@ export function Header({
             </h1>
             {callsign && (
               <div className="inline-flex items-center gap-2 text-lg md:text-xl text-muted-foreground font-mono glass-subtle rounded-full px-4 py-2">
-                <RadioIcon color="currentColor" size={24} />
+                <RadioIcon size={24} />
                 {callsign}
               </div>
             )}
