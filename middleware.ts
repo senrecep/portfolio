@@ -48,9 +48,13 @@ export async function middleware(request: NextRequest) {
   );
 
   response.headers.set("Vary", "Accept-Encoding");
+  const isDev = process.env.NODE_ENV === "development";
+  const scriptSrc = isDev
+    ? "'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms"
+    : "'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms";
   response.headers.set(
     "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://clarity.ms; frame-src 'none'; object-src 'none';",
+    `default-src 'self'; script-src ${scriptSrc}; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://clarity.ms; frame-src 'none'; object-src 'none';`,
   );
   response.headers.set(
     "Permissions-Policy",
