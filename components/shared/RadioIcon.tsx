@@ -26,8 +26,7 @@ export function RadioIcon({
 
   // @lordicon/react colorize only accepts hex colors — CSS keywords like
   // "currentColor" are not supported in canvas/lottie rendering.
-  const color =
-    !mounted || resolvedTheme === "dark" ? "#9ca3af" : "#6b7280";
+  const color = !mounted || resolvedTheme === "dark" ? "#9ca3af" : "#6b7280";
 
   return (
     <LordIcon
