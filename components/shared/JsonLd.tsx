@@ -11,8 +11,14 @@ interface JsonLdProps {
 // JSON.stringify also escapes any special characters, preventing injection.
 
 export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
-  const { personalInfo, socialLinks, skills, certificates, blogPosts } =
-    profile;
+  const {
+    personalInfo,
+    socialLinks,
+    skills,
+    certificates,
+    blogPosts,
+    projects,
+  } = profile;
 
   const langUrl = `${siteUrl}/${lang}`;
   const personId = `${siteUrl}/#person`;
@@ -155,6 +161,30 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
     ],
   };
 
+  const portfolioProject = projects?.find(
+    (p) => p.projectUrl === "https://github.com/senrecep/portfolio",
+  );
+
+  const softwareAppSchema = portfolioProject
+    ? {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: portfolioProject.title,
+        description: portfolioProject.description,
+        url: portfolioProject.projectUrl,
+        codeRepository: portfolioProject.projectUrl,
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Web",
+        author: { "@id": personId },
+        license: "https://opensource.org/licenses/MIT",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
+      }
+    : null;
+
   const localBlogSlugs = new Set([
     "ai-coding-tools-complete-guide",
     "google-cloud-secret-manager-dotnet",
@@ -207,6 +237,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
     profilePageSchema,
     websiteSchema,
     faqSchema,
+    ...(softwareAppSchema ? [softwareAppSchema] : []),
     ...(blogListSchema ? [blogListSchema] : []),
   ];
 
