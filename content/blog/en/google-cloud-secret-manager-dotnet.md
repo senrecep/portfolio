@@ -5,6 +5,17 @@ date: "2025-01-30"
 slug: "google-cloud-secret-manager-dotnet"
 mediumUrl: "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027"
 imageUrl: "/images/dotnet-secret-manager.webp"
+keywords: ["Google Cloud Secret Manager", ".NET", "CSharpEssentials", "secrets management", "IConfiguration", "GCP", "microservices", "environment configuration"]
+author: "Recep Sen"
+modifiedDate: "2025-01-30"
+category: "Tutorial"
+faq:
+  - q: "Why use Google Cloud Secret Manager instead of environment variables in .NET?"
+    a: "Google Cloud Secret Manager provides centralized, auditable, and versioned secret storage that works seamlessly across multiple environments and microservices. Unlike environment variables, secrets can be rotated, access-controlled via IAM, and updated without redeploying applications."
+  - q: "What is prefix-based filtering in CSharpEssentials.GcpSecretManager?"
+    a: "Prefix filtering allows you to load only secrets whose names start with a specific prefix, such as your application name. This avoids loading unrelated secrets from a shared GCP project, improving startup performance and reducing unnecessary secret access."
+  - q: "How does the library integrate with .NET's IConfiguration system?"
+    a: "The library implements a custom IConfigurationProvider that pulls secrets from Google Cloud Secret Manager and exposes them through the standard IConfiguration interface. This means you can access secrets exactly like appsettings.json values using dependency injection and options patterns."
 ---
 
 Hello 👋
@@ -50,7 +61,15 @@ builder.Configuration.AddGcpSecretManager();
 ```
 
 ```
-{  "GoogleSecretManager": {    "Projects": [      {        "ProjectId": "your-project-id"      }    ]  }}
+{
+  "GoogleSecretManager": {
+    "Projects": [
+      {
+        "ProjectId": "your-project-id"
+      }
+    ]
+  }
+}
 ```
 
 **When should you use it?**
@@ -63,7 +82,26 @@ builder.Configuration.AddGcpSecretManager();
 **2\. Microservice Architecture Scenario**
 
 ```
-{  "GoogleSecretManager": {    "Projects": [      {        "ProjectId": "payment-service-prod",        "PrefixFilters": ["payment_"],        "Region": "europe-west1"      },      {        "ProjectId": "user-service-prod",        "PrefixFilters": ["user_"],        "Region": "europe-west1"      }    ]  }}
+{
+  "GoogleSecretManager": {
+    "Projects": [
+      {
+        "ProjectId": "payment-service-prod",
+        "PrefixFilters": [
+          "payment_"
+        ],
+        "Region": "europe-west1"
+      },
+      {
+        "ProjectId": "user-service-prod",
+        "PrefixFilters": [
+          "user_"
+        ],
+        "Region": "europe-west1"
+      }
+    ]
+  }
+}
 ```
 
 **When should you use it?**
@@ -77,7 +115,26 @@ builder.Configuration.AddGcpSecretManager();
 **3\. Multi-Region Application Scenario**
 
 ```
-{  "GoogleSecretManager": {    "Projects": [      {        "ProjectId": "my-app-prod",        "Region": "europe-west1",        "PrefixFilters": ["eu_"]      },      {        "ProjectId": "my-app-prod",        "Region": "us-central1",        "PrefixFilters": ["us_"]      }    ]  }}
+{
+  "GoogleSecretManager": {
+    "Projects": [
+      {
+        "ProjectId": "my-app-prod",
+        "Region": "europe-west1",
+        "PrefixFilters": [
+          "eu_"
+        ]
+      },
+      {
+        "ProjectId": "my-app-prod",
+        "Region": "us-central1",
+        "PrefixFilters": [
+          "us_"
+        ]
+      }
+    ]
+  }
+}
 ```
 
 **When should you use it?**
@@ -91,7 +148,16 @@ builder.Configuration.AddGcpSecretManager();
 **4\. Development/Staging/Production Scenario**
 
 ```
-builder.Configuration.AddGcpSecretManager(options =>{    options.BatchSize = 10;    options.PageSize = 300;    options.AddProject(new ProjectSecretConfiguration    {        ProjectId = "my-app-" + environment,        PrefixFilters = [$"{environment}_"]    });});
+builder.Configuration.AddGcpSecretManager(options =>{
+    options.BatchSize = 10;
+    options.PageSize = 300;
+    options.AddProject(new ProjectSecretConfiguration    {
+    ProjectId = "my-app-" + environment,    PrefixFilters = [$"{
+    environment
+}_"]
+});
+});
+    
 ```
 
 **When should you use it?**
@@ -104,7 +170,31 @@ builder.Configuration.AddGcpSecretManager(options =>{    options.BatchSize = 10;
 **5\. JSON and Raw Secret Scenario**
 
 ```
-{  "GoogleSecretManager": {    "Projects": [      {        "ProjectId": "my-app-prod",        "SecretIds": ["app-config", "service-account", "ssl-cert"],        "PrefixFilters": ["app_", "creds_"],        "RawSecretIds": ["service-account", "ssl-cert"],        "RawSecretPrefixes": ["creds_"]      }    ]  }}
+{
+  "GoogleSecretManager": {
+    "Projects": [
+      {
+        "ProjectId": "my-app-prod",
+        "SecretIds": [
+          "app-config",
+          "service-account",
+          "ssl-cert"
+        ],
+        "PrefixFilters": [
+          "app_",
+          "creds_"
+        ],
+        "RawSecretIds": [
+          "service-account",
+          "ssl-cert"
+        ],
+        "RawSecretPrefixes": [
+          "creds_"
+        ]
+      }
+    ]
+  }
+}
 ```
 
 **What are RawSecretIds and RawSecretPrefixes for?**

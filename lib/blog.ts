@@ -11,6 +11,13 @@ export interface BlogPost {
   imageUrl: string;
   content: string;
   lang: string;
+  keywords?: string[];
+  author?: string;
+  modifiedDate?: string;
+  category?: string;
+  faq?: { q: string; a: string }[];
+  readingTime?: number;
+  wordCount?: number;
 }
 
 export interface BlogPostMeta {
@@ -21,6 +28,13 @@ export interface BlogPostMeta {
   mediumUrl: string;
   imageUrl: string;
   lang: string;
+  keywords?: string[];
+  author?: string;
+  modifiedDate?: string;
+  category?: string;
+  faq?: { q: string; a: string }[];
+  readingTime?: number;
+  wordCount?: number;
 }
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
@@ -60,11 +74,20 @@ export function getBlogPost(slug: string, lang?: string): BlogPost | null {
       const filePath = path.join(getBlogDirForLang(l), `${slug}.md`);
       const rawContent = fs.readFileSync(filePath, "utf-8");
       const { data, content } = matter(rawContent);
+      const wordCount = content.split(/\s+/).length;
+      const readingTime = Math.ceil(wordCount / 200);
       return {
         ...(data as Omit<BlogPostMeta, "lang" | "slug">),
         content,
         slug,
         lang: l,
+        keywords: (data.keywords as string[]) ?? [],
+        author: (data.author as string) ?? "Recep Sen",
+        modifiedDate: data.modifiedDate as string | undefined,
+        category: (data.category as string) ?? "Technology",
+        faq: (data.faq as { q: string; a: string }[]) ?? [],
+        wordCount,
+        readingTime,
       };
     } catch {
       // Try next candidate

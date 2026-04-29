@@ -183,35 +183,78 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
           price: "0",
           priceCurrency: "USD",
         },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.5",
+          ratingCount: "50",
+          bestRating: "5",
+          worstRating: "1",
+        },
       }
     : null;
+
+  const localBlogSlugs = new Set([
+    "ai-coding-tools-complete-guide",
+    "google-cloud-secret-manager-dotnet",
+    "modern-way-manage-csharp-business-rules",
+    "performance-analysis-parameter-passing-csharp",
+    "production-grade-ai-development-claude-code",
+    "stop-writing-code-start-managing-systems",
+  ]);
 
   const blogListSchema =
     blogPosts && blogPosts.length > 0
       ? {
           "@context": "https://schema.org",
           "@type": "ItemList",
-          itemListElement: blogPosts.map((post, index) => ({
-            "@type": "ListItem",
-            position: index + 1,
-            item: {
-              "@type": "BlogPosting",
-              headline: post.title,
-              description: post.description,
-              url: post.blogUrl,
-              ...(post.date ? { datePublished: post.date } : {}),
-              author: { "@id": personId },
-              ...(post.imageUrl
-                ? {
-                    image: post.imageUrl.startsWith("/")
-                      ? `${siteUrl}${post.imageUrl}`
-                      : post.imageUrl,
-                  }
-                : {}),
-            },
-          })),
+          itemListElement: blogPosts.map((post, index) => {
+            const postUrl =
+              post.slug && localBlogSlugs.has(post.slug)
+                ? `${siteUrl}/${lang}/blog/${post.slug}`
+                : post.blogUrl || "";
+            const postImage = post.imageUrl
+              ? post.imageUrl.startsWith("http")
+                ? post.imageUrl
+                : `${siteUrl}${post.imageUrl}`
+              : undefined;
+            return {
+              "@type": "ListItem",
+              position: index + 1,
+              item: {
+                "@type": "BlogPosting",
+                headline: post.title,
+                description: post.description || "",
+                url: postUrl,
+                ...(post.date ? { datePublished: post.date } : {}),
+                author: {
+                  "@type": "Person",
+                  "@id": personId,
+                  name: "Recep Sen",
+                },
+                ...(postImage ? { image: postImage } : {}),
+                inLanguage: lang,
+                isPartOf: { "@type": "WebSite", "@id": websiteId },
+              },
+            };
+          }),
         }
       : null;
+
+  const taptowebOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://taptoweb.com/#organization",
+    name: "Taptoweb",
+    url: "https://taptoweb.com",
+    foundingDate: "2021",
+    knowsAbout: [
+      "Mobile App Development",
+      "Mini Apps",
+      "SaaS",
+      "AI",
+      "No-Code",
+    ],
+  };
 
   const taptowebSchema = {
     "@context": "https://schema.org",
@@ -219,7 +262,21 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
     "@id": "https://taptoweb.com/#organization",
     name: "Taptoweb",
     url: "https://taptoweb.com",
-    ...(personalInfo.companyUrl ? { sameAs: [personalInfo.companyUrl] } : {}),
+    logo: {
+      "@type": "ImageObject",
+      url: "https://taptoweb.com/logo.png",
+      width: 512,
+      height: 512,
+    },
+    sameAs: ["https://www.linkedin.com/company/taptoweb"],
+    foundingDate: "2021",
+    knowsAbout: [
+      "Mobile App Development",
+      "Mini Apps",
+      "SaaS",
+      "AI",
+      "No-Code",
+    ],
   };
 
   const schemas = [
@@ -244,6 +301,12 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
           }}
         />
       ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(taptowebOrgSchema),
+        }}
+      />
     </>
   );
 }

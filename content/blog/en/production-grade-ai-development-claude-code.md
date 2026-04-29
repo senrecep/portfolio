@@ -5,6 +5,17 @@ date: "2026-01-21"
 slug: "production-grade-ai-development-claude-code"
 mediumUrl: "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744"
 imageUrl: "/images/production-grade-ai-development-with-claude-code.webp"
+keywords: ["Claude Code", "AI development", "plugins", "MCP servers", "custom agents", "hooks", "oh-my-claudecode", "production AI"]
+author: "Recep Sen"
+modifiedDate: "2026-01-21"
+category: "AI"
+faq:
+  - q: "What are Claude Code plugins and how do they extend functionality?"
+    a: "Claude Code plugins are npm packages that add new agents, skills, hooks, and MCP server integrations to your Claude Code installation. They are installed globally and auto-loaded at session start, giving you reusable capabilities like security auditing, browser automation, or multi-agent orchestration without writing custom code."
+  - q: "What is oh-my-claudecode and why should I use it?"
+    a: "oh-my-claudecode (OMC) is a multi-agent orchestration plugin for Claude Code that adds specialist agents (executor, planner, architect, reviewer), team workflows, task tracking, and skill management. It transforms Claude Code from a solo assistant into a coordinated AI team that can parallelize work and maintain state across sessions."
+  - q: "How do hooks make Claude Code development more reliable?"
+    a: "Hooks run deterministic shell commands at specific lifecycle points (before/after tool use, session start, prompt submit). They act as safety nets that automatically lint code after edits, scan for secrets, enforce architecture rules, or run tests — ensuring consistent quality without relying on the AI to remember to do these steps."
 ---
 
 The Claude Code ecosystem: A development environment powered by Plugins, Skills, Hooks, MCP, and Prompts
@@ -72,19 +83,57 @@ ESLint,Biome and Prettier already handle this. Using Claude as a linter just fil
 **I use progressive disclosure for an effective CLAUDE.md structure:
 
 ```
-CLAUDE.md (70-100 lines)            → Always read├── docs/claude/architecture.md     → Referenced when needed├── docs/claude/patterns.md         → Referenced when needed├── .specify/memory/constitution.md → Non-negotiable rules└── SCRATCHPAD.md                   → Inter-session memory
+CLAUDE.md (70-100 lines)            → Always read
+├── docs/claude/architecture.md     → Referenced when needed
+├── docs/claude/patterns.md         → Referenced when needed
+├── .specify/memory/constitution.md → Non-negotiable rules
+└── SCRATCHPAD.md                   → Inter-session memory
 ```
 
 **Backend CLAUDE.md Example (Clean Architecture + CQRS)**
 
 ```
-# CLAUDE.md> **New to this project?** Run `./scripts/setup-claude.sh`## WHAT - Project Overview.NET 9.0 microservices ecosystem. Clean Architecture + CQRS.### Layer Structure (each service)Core/Domain/       → Entities, Enums (NO EF dependencies - keeps domain pure)Core/Application/  → CQRS handlers, DTOs (business logic lives here)Infrastructure/    → EF Core, Repos (implements Application interfaces)Presentation/      → WebApi (thin layer, delegates to Application)## WHY - Architecture Decisions- **CQRS Split**: Separates reads/writes because we had performance issues mixing them- **Layer Isolation**: Domain has NO infrastructure deps because we had bugs from EF tracking leaking into business logic- **DI per Layer**: Each layer has ServiceRegistration.cs because scattered registrations caused missing dependency bugs## HOW - Code Style (with WHY)- `_camelCase` for private fields → distinguishes from parameters- `sealed` on public classes → prevents unintended inheritance, better performance- Explicit types (avoid `var`) → we had bugs from wrong type inference## What NOT To Do (Claude Tendencies)- **Don't over-engineer**: No extra abstractions I didn't ask for- **Don't add files**: If task can be done in existing file, do it there- **Don't add error handling for impossible scenarios**: Trust internal code
+# CLAUDE.md
+> **New to this project?** Run `./scripts/setup-claude.sh`
+## WHAT - Project Overview.NET 9.0 microservices ecosystem. Clean Architecture + CQRS.
+### Layer Structure (each service)
+Core/Domain/       → Entities, Enums (NO EF dependencies - keeps domain pure)
+Core/Application/  → CQRS handlers, DTOs (business logic lives here)
+Infrastructure/    → EF Core, Repos (implements Application interfaces)
+Presentation/      → WebApi (thin layer, delegates to Application)
+## WHY - Architecture Decisions
+- **CQRS Split**: Separates reads/writes because we had performance issues mixing them
+- **Layer Isolation**: Domain has NO infrastructure deps because we had bugs from EF tracking leaking into business logic
+- **DI per Layer**: Each layer has ServiceRegistration.cs because scattered registrations caused missing dependency bugs
+## HOW - Code Style (with WHY)
+- `_camelCase` for private fields → distinguishes from parameters
+- `sealed` on public classes → prevents unintended inheritance, better performance
+- Explicit types (avoid `var`) → we had bugs from wrong type inference
+## What NOT To Do (Claude Tendencies)
+- **Don't over-engineer**: No extra abstractions I didn't ask for
+- **Don't add files**: If task can be done in existing file, do it there
+- **Don't add error handling for impossible scenarios**: Trust internal code
 ```
 
 **Mobile CLAUDE.md Example (NX Monorepo + React Native)**
 
 ```
-# Mobile Project## WHAT - Project Overview**NX monorepo** for mobile application supporting iOS, Android, and Web.### Tech Stack- TypeScript 5.8, React Native 0.79, React 18- UI: Tamagui 1.132- State: RTK Query- Backend: Firebase, RevenueCat## WHY - Architecture DecisionsThis project follows a **library-first architecture**. Every feature lives in `libs/`as a self-contained library. This enables parallel development, clear boundaries,and easier testing.## HOW - Code Conventions (with WHY)- Use Tamagui primitives (`Box`, `Text`) not React Native (`View`, `Text`)  → *because Tamagui provides cross-platform consistency*- Use theme tokens for colors/spacing  → *because hardcoded values break when theme changes*- Memoize with `useCallback`/`useMemo`  → *because re-renders cause performance issues on mobile*
+# Mobile Project
+## WHAT - Project Overview
+**NX monorepo** for mobile application supporting iOS, Android, and Web.
+### Tech Stack
+- TypeScript 5.8, React Native 0.79, React 18
+- UI: Tamagui 1.132
+- State: RTK Query
+- Backend: Firebase, RevenueCat
+## WHY - Architecture Decisions
+This project follows a **library-first architecture**. Every feature lives in `libs/`
+as a self-contained library. This enables parallel development, clear boundaries,
+and easier testing.
+## HOW - Code Conventions (with WHY)
+- Use Tamagui primitives (`Box`, `Text`) not React Native (`View`, `Text`)  → *because Tamagui provides cross-platform consistency*
+- Use theme tokens for colors/spacing  → *because hardcoded values break when theme changes*
+- Memoize with `useCallback`/`useMemo`  → *because re-renders cause performance issues on mobile*
 ```
 
 ### The Power of WHY Explanations
@@ -100,7 +149,17 @@ When Claude knows “why,” it makes better decisions even in edge cases. If yo
 The `~/.claude/CLAUDE.md` file contains global instructions that apply across all projects. For example, I define frequently used CLI tools here:
 
 ```
-## JSON Tools AvailableI have the following CLI tools installed for JSON processing:- **jq** - JSON query and transformation (`jq '.key' file.json`)- **fx** - Interactive JSON explorer (`fx data.json` or pipe with `| fx`)- **jless** - Terminal JSON viewer with vim-like navigation- **gron** - Makes JSON grep-friendly (`gron file.json | grep "key"`)When working with JSON files:- Use `jless` for quick inspection of large files- Use `gron | grep` to find specific values- Use `fx` for interactive exploration and JavaScript transformations- Use `jq` for complex queries and transformations
+## JSON Tools Available
+I have the following CLI tools installed for JSON processing:
+- **jq** - JSON query and transformation (`jq '.key' file.json`)
+- **fx** - Interactive JSON explorer (`fx data.json` or pipe with `| fx`)
+- **jless** - Terminal JSON viewer with vim-like navigation
+- **gron** - Makes JSON grep-friendly (`gron file.json | grep "key"`)
+When working with JSON files:
+- Use `jless` for quick inspection of large files
+- Use `gron | grep` to find specific values
+- Use `fx` for interactive exploration and JavaScript transformations
+- Use `jq` for complex queries and transformations
 ```
 
 **Why a global CLAUDE.md?** Instead of defining the same tools repeatedly in every project, I define them once in the global file and use them across all projects. Claude knows which tools it can use when working with JSON files and selects the appropriate one.
@@ -117,7 +176,12 @@ On large projects, the **Orchestrator + Subagents** combination works far more e
 ### CLAUDE.md Golden Rules
 
 ```
-| Rule                       | Why                                              ||----------------------------|--------------------------------------------------|| **< 100 lines**            | Long files fill up context                       || **Explain WHY**            | Claude makes better decisions when it knows "why"|| **Add NOT TO DO**          | Prevent Claude's known tendencies                || **Progressive disclosure** | Reference details in separate files              |
+| Rule                       | Why                                               |
+| -------------------------- | ------------------------------------------------- |
+| **< 100 lines**            | Long files fill up context                        |
+| **Explain WHY**            | Claude makes better decisions when it knows "why" |
+| **Add NOT TO DO**          | Prevent Claude's known tendencies                 |
+| **Progressive disclosure** | Reference details in separate files               |
 ```
 
 ### **Six Areas Every Effective CLAUDE.md Covers**
@@ -127,13 +191,23 @@ The WHAT/WHY/HOW structure defines _how_ to present information, while the six a
 Through trial and error, I noticed that well-functioning CLAUDE.md files share a common structure. Each one covers these six areas:
 
 ```
-| Area                  | What to Include                                        ||-----------------------|--------------------------------------------------------|| **Commands**          | Executable commands with flags (`npm test --coverage`) || **Testing**           | Test framework, patterns, coverage expectations        || **Project Structure** | Key directories and their purposes                     || **Code Style**        | Examples of good code, not just descriptions           || **Git Workflow**      | Branch naming, commit format, PR process               || **Boundaries**        | What the AI should never touch  
+| Area                  | What to Include                                        |
+| --------------------- | ------------------------------------------------------ |
+| **Commands**          | Executable commands with flags (`npm test --coverage`) |
+| **Testing**           | Test framework, patterns, coverage expectations        |
+| **Project Structure** | Key directories and their purposes                     |
+| **Code Style**        | Examples of good code, not just descriptions           |
+| **Git Workflow**      | Branch naming, commit format, PR process               |
+| **Boundaries**        | What the AI should never touch                         |
 ```
 
 **I use a three-tier approach for boundaries:**
 
 ```
-## Boundaries- ✅ **Always:** Run tests before commits, follow naming conventions- ⚠️ **Ask first:** Database migrations, new dependencies- 🚫 **Never:** Commit secrets, edit lock files, delete tests
+## Boundaries
+- ✅ **Always:** Run tests before commits, follow naming conventions
+- ⚠️ **Ask first:** Database migrations, new dependencies
+- 🚫 **Never:** Commit secrets, edit lock files, delete tests
 ```
 
 **The most important thing I learned:** Instead of writing three paragraphs _describing_ your style, include one code snippet _showing_ it. Claude learns far better from examples. Also, put commands at the top of your file — Claude references them frequently.
@@ -148,7 +222,11 @@ Through trial and error, I noticed that well-functioning CLAUDE.md files share a
 ### The 20–40% Rule
 
 ```
-| Metric                          | Value          ||---------------------------------|----------------|| Opus 4.5 Context                | 200,000 tokens || **Quality degradation begins**  | **20-40%**     || Critical degradation            | 60%+           |
+| Metric                         | Value          |
+| ------------------------------ | -------------- |
+| Opus 4.5 Context               | 200,000 tokens |
+| **Quality degradation begins** | **20-40%**     |
+| Critical degradation           | 60%+           |
 ```
 
 Most developers assume context works fine until it’s 100% full. The reality is that **quality loss begins around 20–40%**. After 60%, Claude:
@@ -161,7 +239,16 @@ Most developers assume context works fine until it’s 100% full. The reality is
 ### **The “One Conversation = One Feature” Principle**
 
 ```
-❌ WRONG: Everything in one conversation├── Build auth system├── Change database schema├── Update UI components└── (Context exploded, quality dropped)✅ RIGHT: Focused conversationsSession 1: Auth planning → Decisions to SCRATCHPADSession 2: Login implementationSession 3: Error handlingSession 4: Profile page
+❌ WRONG: Everything in one conversation
+├── Build auth system
+├── Change database schema
+├── Update UI components
+└── (Context exploded, quality dropped)
+✅ RIGHT: Focused conversations
+Session 1: Auth planning → Decisions to SCRATCHPAD
+Session 2: Login implementation
+Session 3: Error handling
+Session 4: Profile page
 ```
 
 ### The Copy-Paste Reset Technique
@@ -180,7 +267,12 @@ When context bloats:
 ### Red Flags — When to Clear?
 
 ```
-| Signal                        | Action                         ||-------------------------------|--------------------------------|| Claude keeps repeating itself | `/clear`                       || Forgetting previous context   | Write to SCRATCHPAD, `/clear`  || Editing wrong files           | Clear context                  || Noticeable quality drop       | `/compact` + `/clear`          |
+| Signal                        | Action                        |
+| ----------------------------- | ----------------------------- |
+| Claude keeps repeating itself | `/clear`                      |
+| Forgetting previous context   | Write to SCRATCHPAD, `/clear` |
+| Editing wrong files           | Clear context                 |
+| Noticeable quality drop       | `/compact` + `/clear`         |
 ```
 
 ## Section 3: External Memory Systems
@@ -192,7 +284,14 @@ Claude is stateless. Every conversation starts from scratch. So how do we carry 
 A `SCRATCHPAD.md` file at the project root:
 
 ```
-# Scratchpad - External Memory## Current Task[Currently active task]## Key Decisions Made| Decision | Why | Date ||----------|-----|------|| JWT (not session) | Mobile-first, offline support | 2024-01-15 |## Files Modified- file1.cs - Added X- file2.cs - Refactored Y## Notes for Next Session[Important notes for the next session]
+# Scratchpad - External Memory
+## Current Task[Currently active task]
+## Key Decisions Made
+| Decision | Why | Date |
+|----------|-----|------|
+| JWT (not session) | Mobile-first, offline support | 2024-01-15 |
+## Files Modified- file1.cs - Added X- file2.cs - Refactored Y
+## Notes for Next Session[Important notes for the next session]
 ```
 
 **Workflow:**
@@ -205,7 +304,14 @@ A `SCRATCHPAD.md` file at the project root:
 **Alternative: progress.txt Pattern** — A more minimal approach for autonomous loops (like Ralph):
 
 ```
-# progress.txt## Completed- [x] Auth module - JWT implementation- [x] User service - CRUD endpoints## Current- [ ] Payment integration - Stripe setup## Decisions- Used repository pattern for data access (testability)## Next Session Notes- Stripe webhook signature verification pending
+# progress.txt
+## Completed
+- [x] Auth module - JWT implementation
+- [x] User service - CRUD endpoints
+## Current
+- [ ] Payment integration - Stripe setup
+## Decisions- Used repository pattern for data access (testability)
+## Next Session Notes- Stripe webhook signature verification pending
 ```
 
 This pattern is especially powerful when combined with `git commit`: progress.txt is updated and committed at the end of each iteration. Future iterations have full context through the git history + progress.txt combination.
@@ -221,7 +327,16 @@ npm install -g @aicontextlab/cli/opencontext-context  /opencontext-search   /ope
 My global MCP configuration (`~/.claude/mcp.json`):
 
 ```
-{  "mcpServers": {    "opencontext": {      "command": "oc",      "args": ["mcp"]    }  }}
+{
+  "mcpServers": {
+    "opencontext": {
+      "command": "oc",
+      "args": [
+        "mcp"
+      ]
+    }
+  }
+}
 ```
 
 ### Claude Code Indexer — Persistent Memory That Understands Your Codebase
@@ -247,7 +362,10 @@ Claude Code Indexer is a multi-language code indexing tool that works with a **g
 **Why I use it:** Claude doesn’t need to rediscover the codebase every session. Analyses from previous sessions, established patterns, and architectural insights are preserved. This saves significant time, especially on large projects.
 
 ```
-mcp__claude-code-indexer__index_codebase      mcp__claude-code-indexer__search_code         mcp__claude-code-indexer__get_coding_patterns mcp__claude-code-indexer__store_llm_memory    
+mcp__claude-code-indexer__index_codebase
+mcp__claude-code-indexer__search_code
+mcp__claude-code-indexer__get_coding_patterns
+mcp__claude-code-indexer__store_llm_memory
 ```
 
 ## Section 4: Plugin Ecosystem — Supercharged Development
@@ -257,7 +375,14 @@ The real power of Claude Code lies in plugins. Here’s the distribution of plug
 ### LSP Plugins (Language Server Protocol)
 
 ```
-| Plugin           | Language   | Why Critical                         ||------------------|------------|--------------------------------------|| `csharp-lsp`     | C#         | Type errors, IntelliSense in backend || `typescript-lsp` | TypeScript | Type-aware suggestions in mobile     || `pyright-lsp`    | Python     | For scripts and automation           || `gopls-lsp`      | Go         | CLI tool development                 || `kotlin-lsp`     | Kotlin     | Android native development           || `lua-lsp`        | Lua        | Neovim config, game scripting        |
+| Plugin           | Language   | Why Critical                         |
+| ---------------- | ---------- | ------------------------------------ |
+| `csharp-lsp`     | C#         | Type errors, IntelliSense in backend |
+| `typescript-lsp` | TypeScript | Type-aware suggestions in mobile     |
+| `pyright-lsp`    | Python     | For scripts and automation           |
+| `gopls-lsp`      | Go         | CLI tool development                 |
+| `kotlin-lsp`     | Kotlin     | Android native development           |
+| `lua-lsp`        | Lua        | Neovim config, game scripting        |
 ```
 
 **Without LSP** Claude sees code as just text. **With LSP** it detects type errors, missing imports, unused variables — everything.
@@ -265,31 +390,59 @@ The real power of Claude Code lies in plugins. Here’s the distribution of plug
 ### Development Workflow Plugins
 
 ```
-| Plugin              | Description                  | Use Case                             ||---------------------|------------------------------|--------------------------------------|| `commit-commands`   | `/commit`, `/commit-push-pr` | Git workflow automation              || `code-review`       | Code review                  | Pre-PR quality check                 || `pr-review-toolkit` | Detailed PR review agents    | Silent failure hunting, type analysis|| `feature-dev`       | Guided feature development   | Complex feature implementation       || `code-simplifier`   | Code simplification          | Refactoring                          || `security-guidance` | Security best practices      | Vulnerability scanning               |
+| Plugin              | Description                  | Use Case                              |
+| ------------------- | ---------------------------- | ------------------------------------- |
+| `commit-commands`   | `/commit`, `/commit-push-pr` | Git workflow automation               |
+| `code-review`       | Code review                  | Pre-PR quality check                  |
+| `pr-review-toolkit` | Detailed PR review agents    | Silent failure hunting, type analysis |
+| `feature-dev`       | Guided feature development   | Complex feature implementation        |
+| `code-simplifier`   | Code simplification          | Refactoring                           |
+| `security-guidance` | Security best practices      | Vulnerability scanning                |
 ```
 
 ### Integration Plugins
 
 ```
-| Plugin      | Integration     | Use                          ||-------------|-----------------|------------------------------|| `github`    | GitHub          | Issues, PRs, Actions         || `atlassian` | Jira/Confluence | Task tracking, documentation || `Notion`    | Notion          | Knowledge base               || `firebase`  | Firebase        | Auth, Firestore, hosting     || `linear`    | Linear          | Issue tracking               || `figma`     | Figma           | Design-to-code               |
+| Plugin      | Integration     | Use                          |
+| ----------- | --------------- | ---------------------------- |
+| `github`    | GitHub          | Issues, PRs, Actions         |
+| `atlassian` | Jira/Confluence | Task tracking, documentation |
+| `Notion`    | Notion          | Knowledge base               |
+| `firebase`  | Firebase        | Auth, Firestore, hosting     |
+| `linear`    | Linear          | Issue tracking               |
+| `figma`     | Figma           | Design-to-code               |
 ```
 
 ### Semantic Analysis & Documentation
 
 ```
-| Plugin            | Use                                        ||-------------------|--------------------------------------------|| `serena`          | Semantic code analysis, symbol navigation  || `context7`        | Library documentation lookup               || `greptile`        | Cross-repo semantic search                 || `document-skills` | PDF, spreadsheet, documentation generation |
+| Plugin            | Use                                        |
+| ----------------- | ------------------------------------------ |
+| `serena`          | Semantic code analysis, symbol navigation  |
+| `context7`        | Library documentation lookup               |
+| `greptile`        | Cross-repo semantic search                 |
+| `document-skills` | PDF, spreadsheet, documentation generation |
 ```
 
 ### Browser Automation
 
 ```
-| Plugin        | Use                                    ||---------------|----------------------------------------|| `playwright`  | Browser testing, E2E automation        || `dev-browser` | Claude-controlled browser for testing  |
+| Plugin        | Use                                   |
+| ------------- | ------------------------------------- |
+| `playwright`  | Browser testing, E2E automation       |
+| `dev-browser` | Claude-controlled browser for testing |
 ```
 
 ### Productivity & UI
 
 ```
-| Plugin                  | Use                        ||-------------------------|----------------------------|| `claude-hud`            | Status line enhancement    || `hookify`               | Custom hooks creation      || `learning-output-style` | Educational output mode    || `design-and-refine`     | Iterative design workflow  || `claude-stt`            | Speech-to-text input       |
+| Plugin                  | Use                       |
+| ----------------------- | ------------------------- |
+| `claude-hud`            | Status line enhancement   |
+| `hookify`               | Custom hooks creation     |
+| `learning-output-style` | Educational output mode   |
+| `design-and-refine`     | Iterative design workflow |
+| `claude-stt`            | Speech-to-text input      |
 ```
 
 ## Section 5: Custom Agents — Project and Domain-Specific AI Assistants
@@ -352,7 +505,17 @@ An agent is a Claude instance specialized for a specific task. It’s defined by
 ### Agent File Structure
 
 ```
----name: c-sharp-prodescription: Write idiomatic C# code with modern language features.tools: Read, Write, Edit, Bashmodel: sonnet---You are a C# and .NET expert specializing in modern, performant enterprise applications.## Focus Areas- Modern C# features (C# 12/13) - primary constructors, collection expressions- Async/await patterns, Task Parallel Library- Clean Architecture, CQRS, Mediator patterns## Approach1. Leverage C# language features for concise, expressive code2. Apply SOLID principles and Domain-Driven Design3. Use async/await properly - avoid blocking calls
+---name: c-sharp-prodescription: Write idiomatic C
+# code with modern language features.tools: Read, Write, Edit, Bashmodel: sonnet---You are a C
+# and .NET expert specializing in modern, performant enterprise applications.
+## Focus Areas- Modern C
+# features (C
+# 12/13) - primary constructors, collection expressions- Async/await patterns, Task Parallel Library- Clean Architecture, CQRS, Mediator patterns
+## Approach
+1. Leverage C
+# language features for concise, expressive code
+2. Apply SOLID principles and Domain-Driven Design
+3. Use async/await properly - avoid blocking calls
 ```
 
 ### Defining Boundaries: The Three-Tier Approach
@@ -362,7 +525,10 @@ An agent is a Claude instance specialized for a specific task. It’s defined by
 My first agents only had a “don’t do” list. But Claude sometimes became overly cautious because it didn’t know what it _could_ do. Now I use a three-tier system:
 
 ```
-## Boundaries- ✅ **Always do:** Write to `tests/`, run tests before commits, follow naming conventions- ⚠️ **Ask first:** Database schema changes, adding dependencies, modifying CI/CD config- 🚫 **Never do:** Commit secrets, edit `node_modules/`, remove failing tests
+## Boundaries
+- ✅ **Always do:** Write to `tests/`, run tests before commits, follow naming conventions
+- ⚠️ **Ask first:** Database schema changes, adding dependencies, modifying CI/CD config
+- 🚫 **Never do:** Commit secrets, edit `node_modules/`, remove failing tests
 ```
 
 The advantage of this approach:
@@ -374,7 +540,10 @@ The advantage of this approach:
 For example, here’s how I define boundaries for my `test-agent`:
 
 ```
-## Boundaries- ✅ **Always:** Write to `tests/`, use existing test patterns, run `npm test` to verify- ⚠️ **Ask first:** Adding new test dependencies, changing test configuration- 🚫 **Never:** Modify source code in `src/`, remove failing tests, skip test verification
+## Boundaries
+- ✅ **Always:** Write to `tests/`, use existing test patterns, run `npm test` to verify
+- ⚠️ **Ask first:** Adding new test dependencies, changing test configuration
+- 🚫 **Never:** Modify source code in `src/`, remove failing tests, skip test verification
 ```
 
 ### The Agent Template I Use
@@ -382,7 +551,25 @@ For example, here’s how I define boundaries for my `test-agent`:
 When creating a new agent, I follow this structure:
 
 ```
----name: your-agent-namedescription: [One-sentence description of what this agent does]tools: Read, Write, Edit, Bashmodel: sonnet---You are an expert [role] for this project.## Your Role- You specialize in [specific domain]- You understand [relevant patterns/technologies]- Your output: [what you produce]## Project Knowledge- **Tech Stack:** [technologies with versions]- **Key Directories:**  - `src/` – [what's here]  - `tests/` – [what's here]## Commands You Can Use- **Build:** `npm run build`- **Test:** `npm test`- **Lint:** `npm run lint --fix`## Boundaries- ✅ **Always:** [safe actions]- ⚠️ **Ask first:** [risky but sometimes needed]- 🚫 **Never:** [destructive actions]
+---
+name: your-agent-name
+description: [One-sentence description of what this agent does]
+tools: Read, Write, Edit, Bash
+model: sonnet
+---
+You are an expert [role] for this project.
+## Your Role- You specialize in [specific domain]- You understand [relevant patterns/technologies]- Your output: [what you produce]
+## Project Knowledge
+- **Tech Stack:** [technologies with versions]
+- **Key Directories:**  - `src/` – [what's here]  - `tests/` – [what's here]
+## Commands You Can Use
+- **Build:** `npm run build`
+- **Test:** `npm test`
+- **Lint:** `npm run lint --fix`
+## Boundaries
+- ✅ **Always:** [safe actions]
+- ⚠️ **Ask first:** [risky but sometimes needed]
+- 🚫 **Never:** [destructive actions]
 ```
 
 ## Section 6: Skills — Reusable Knowledge and Workflows
@@ -398,7 +585,12 @@ npx ctx7 skills search [term]   npx ctx7 skills install [skill]
 ### The Difference Between Skill and Agent
 
 ```
-| Agent                    | Skill                       ||--------------------------|-----------------------------|| Autonomous task executor | Reusable knowledge/workflow || Runs as subagent         | Runs in main conversation   || Has tool restrictions    | Uses all available tools    || Task-focused             | Knowledge-focused           |
+| Agent                    | Skill                       |
+| ------------------------ | --------------------------- |
+| Autonomous task executor | Reusable knowledge/workflow |
+| Runs as subagent         | Runs in main conversation   |
+| Has tool restrictions    | Uses all available tools    |
+| Task-focused             | Knowledge-focused           |
 ```
 
 ### Why I Create Custom Skills
@@ -463,7 +655,17 @@ Model Context Protocol — A protocol that adds external tools to Claude.
 **In the mobile project** (`.mcp.json`):
 
 ```
-{  "mcpServers": {    "nx-mcp": {      "type": "stdio",      "command": "npx",      "args": ["nx-mcp"]    }  }}
+{
+  "mcpServers": {
+    "nx-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "nx-mcp"
+      ]
+    }
+  }
+}
 ```
 
 ### Global MCP
@@ -471,13 +673,42 @@ Model Context Protocol — A protocol that adds external tools to Claude.
 `~/.claude/mcp.json`:
 
 ```
-{  "mcpServers": {    "context7": {      "command": "npx",      "args": ["-y", "@anthropic/context7-mcp"],      "description": "Documentation lookup for libraries"    },    "serena": {      "command": "uvx",      "args": ["serena-mcp"],      "description": "Semantic code analysis"    },    "opencontext": {      "command": "oc",      "args": ["mcp"]    }  }}
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/context7-mcp"
+      ],
+      "description": "Documentation lookup for libraries"
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "serena-mcp"
+      ],
+      "description": "Semantic code analysis"
+    },
+    "opencontext": {
+      "command": "oc",
+      "args": [
+        "mcp"
+      ]
+    }
+  }
+}
 ```
 
 ### MCP Use Cases
 
 ```
-| MCP Server    | Use                                      ||---------------|------------------------------------------|| `context7`    | Library documentation lookup             || `serena`      | Semantic code navigation, symbol finding || `nx-mcp`      | NX workspace analysis                    || `opencontext` | Cross-project knowledge base             |
+| MCP Server    | Use                                      |
+| ------------- | ---------------------------------------- |
+| `context7`    | Library documentation lookup             |
+| `serena`      | Semantic code navigation, symbol finding |
+| `nx-mcp`      | NX workspace analysis                    |
+| `opencontext` | Cross-project knowledge base             |
 ```
 
 ## Section 8: Hooks — Automation and Continuous Learning
@@ -485,7 +716,13 @@ Model Context Protocol — A protocol that adds external tools to Claude.
 ### Hook Types
 
 ```
-| Hook               | When It Runs               ||--------------------|----------------------------|| `PreToolUse`       | Before a tool is called    || `PostToolUse`      | After a tool is called     || `SessionStart`     | At session start           || `UserPromptSubmit` | When user sends a message  || `Stop`             | When agent stops           |
+| Hook               | When It Runs              |
+| ------------------ | ------------------------- |
+| `PreToolUse`       | Before a tool is called   |
+| `PostToolUse`      | After a tool is called    |
+| `SessionStart`     | At session start          |
+| `UserPromptSubmit` | When user sends a message |
+| `Stop`             | When agent stops          |
 ```
 
 ### Claudeception Activator Hook
@@ -493,7 +730,20 @@ Model Context Protocol — A protocol that adds external tools to Claude.
 In my global settings (`~/.claude/settings.json`):
 
 ```
-{  "hooks": {    "UserPromptSubmit": [      {        "hooks": [          {            "type": "command",            "command": "~/.claude/hooks/claudeception-activator.sh"          }        ]      }    ]  }}
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/claudeception-activator.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 
 **What does this hook do?** It reminds Claude with every prompt:
@@ -509,7 +759,21 @@ In my global settings (`~/.claude/settings.json`):
 Running ESLint after every file edit:
 
 ```
-{  "hooks": {    "PostToolUse": [      {        "matcher": "Edit|Write",        "hooks": [          {            "type": "command",            "command": "bash -c 'if [[ \"$CLAUDE_FILE_PATH\" =~ \\.(ts|tsx)$ ]]; then npx eslint --fix \"$CLAUDE_FILE_PATH\" 2>/dev/null || true; fi'"          }        ]      }    ]  }}
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'if [[ \"$CLAUDE_FILE_PATH\" =~ \\.(ts|tsx)$ ]]; then npx eslint --fix \"$CLAUDE_FILE_PATH\" 2>/dev/null || true; fi'"
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 
 ## Section 9: Browser Automation — Testing and Verification
@@ -519,7 +783,10 @@ Running ESLint after every file edit:
 A plugin that enables Claude to control the browser:
 
 ```
-# Use case examples"Open localhost:3000 and verify the signup flow works""Go to the settings page and figure out why the save button isn't working""Test the checkout process end-to-end"
+# Use case examples
+"Open localhost:3000 and verify the signup flow works"
+"Go to the settings page and figure out why the save button isn't working"
+"Test the checkout process end-to-end"
 ```
 
 **Features:**
@@ -533,7 +800,12 @@ A plugin that enables Claude to control the browser:
 A command-line tool for headless browser automation:
 
 ```
-agent-browser open <url>        agent-browser snapshot -i       agent-browser click @e1         agent-browser fill @e2 "text"   agent-browser screenshot        agent-browser close             
+agent-browser open <url>
+agent-browser snapshot -i
+agent-browser click @e1
+agent-browser fill @e2 "text"
+agent-browser screenshot
+agent-browser close
 ```
 
 **Workflow:**
@@ -558,7 +830,11 @@ This command runs Claude Code inside a container — your project files are moun
 A 5-step workflow for complex features:
 
 ```
-/speckit.specify "Feature description"  /speckit.clarify                        /speckit.plan                           /speckit.tasks                          /speckit.implement                      
+/speckit.specify "Feature description"
+/speckit.clarify
+/speckit.plan
+/speckit.tasks
+/speckit.implement
 ```
 
 ### Constitution
@@ -566,13 +842,38 @@ A 5-step workflow for complex features:
 A file that defines project principles — non-negotiable rules:
 
 ```
-# .specify/memory/constitution.md## Non-Negotiable Principles### I. Clean Architecture & Layer SeparationEvery service MUST follow the four-layer structure with strict dependency rules:- **Domain Layer**: Entities, Enums. MUST NOT reference EF Core.- **Application Layer**: CQRS handlers, DTOs. MUST only depend on Domain.- **Infrastructure Layer**: EF Core, Repositories.- **Presentation Layer**: WebApi, Controllers. Thin layer.### II. CQRS Pattern EnforcementAll data operations MUST follow Command-Query Responsibility Segregation.### III. Build-Test-Commit Workflow (NON-NEGOTIABLE)No code changes may be committed without passing verification:1. **Build**: `dotnet build` MUST succeed with zero errors2. **Test**: Relevant tests MUST pass3. **Commit**: Only after build and tests pass### IV. Code Style Standards- Private fields: `_camelCase`- Interfaces: `IPascalCase`- File-scoped namespaces- Explicit types (avoid `var`)- Public classes: `sealed` unless designed for inheritance### V. Simplicity & YAGNI- Only make changes directly requested- Do not add features beyond scope- Three similar lines > premature abstraction- Delete unused code completely
+# .specify/memory/constitution.md
+## Non-Negotiable Principles
+### I. Clean Architecture & Layer SeparationEvery service MUST follow the four-layer structure with strict dependency rules:
+- **Domain Layer**: Entities, Enums. MUST NOT reference EF Core.
+- **Application Layer**: CQRS handlers, DTOs. MUST only depend on Domain.
+- **Infrastructure Layer**: EF Core, Repositories.
+- **Presentation Layer**: WebApi, Controllers. Thin layer.
+### II. CQRS Pattern EnforcementAll data operations MUST follow Command-Query Responsibility Segregation.
+### III. Build-Test-Commit Workflow (NON-NEGOTIABLE)
+No code changes may be committed without passing verification:
+1. **Build**: `dotnet build` MUST succeed with zero errors
+2. **Test**: Relevant tests MUST pass
+3. **Commit**: Only after build and tests pass
+### IV. Code Style Standards
+- Private fields: `_camelCase`
+- Interfaces: `IPascalCase`
+- File-scoped namespaces
+- Explicit types (avoid `var`)
+- Public classes: `sealed` unless designed for inheritance
+### V. Simplicity & YAGNI- Only make changes directly requested- Do not add features beyond scope- Three similar lines 
+> premature abstraction- Delete unused code completely
 ```
 
 ### When to Use Speckit?
 
 ```
-| Situation            | Approach                    ||----------------------|-----------------------------|| Simple bug fix       | Do directly                 || Small feature        | Plan mode (Shift+Tab)       || Complex feature      | `/speckit.specify` workflow || Multi-service change | Definitely Speckit          |
+| Situation            | Approach                    |
+| -------------------- | --------------------------- |
+| Simple bug fix       | Do directly                 |
+| Small feature        | Plan mode (Shift+Tab)       |
+| Complex feature      | `/speckit.specify` workflow |
+| Multi-service change | Definitely Speckit          |
 ```
 
 ## Section 11: Custom Commands
@@ -582,13 +883,27 @@ Define frequently used workflows as commands.
 **/git-pr — Commit, Push, PR**
 
 ```
-# .claude/commands/git-pr.mdCommit staged changes, push to remote, and create a pull request.## Steps1. Run `git status` to see changes2. Run `git diff --staged` to review staged changes3. Run `git log -3 --oneline` for recent commit style4. Create commit with semantic message5. Push to remote with `-u` flag6. Create PR using `gh pr create`## Commit Formattype(scope): descriptionCo-Authored-By: Claude <noreply@anthropic.com>
+# .claude/commands/git-pr.mdCommit staged changes, push to remote, and create a pull request.
+## Steps
+1. Run `git status` to see changes
+2. Run `git diff --staged` to review staged changes
+3. Run `git log -3 --oneline` for recent commit style
+4. Create commit with semantic message
+5. Push to remote with `-u` flag
+6. Create PR using `gh pr create`
+## Commit Formattype(scope): descriptionCo-Authored-By: Claude <noreply@anthropic.com>
 ```
 
 **/git-fix-issue — Fetch and Fix Issue**
 
 ```
-# .claude/commands/git-fix-issue.md---args: issue_number---Fetch GitHub issue and implement the fix.## Steps1. Fetch issue: `gh issue view $ARGUMENTS`2. Create branch: `git checkout -b fix/issue-{number}`3. Analyze and implement fix4. Run tests5. Commit with `fixes #{number}` reference
+# .claude/commands/git-fix-issue.md---args: issue_number---Fetch GitHub issue and implement the fix.
+## Steps
+1. Fetch issue: `gh issue view $ARGUMENTS`
+2. Create branch: `git checkout -b fix/issue-{number}`
+3. Analyze and implement fix
+4. Run tests
+5. Commit with `fixes #{number}` reference
 ```
 
 ## Section 12: Team Onboarding
@@ -596,13 +911,35 @@ Define frequently used workflows as commands.
 ### Project-Local vs Global
 
 ```
-| Component               | Location     | Scope   | Git? ||-------------------------|--------------|---------|------|| CLAUDE.md               | Project root | Project | ✅   || .claude/agents/         | Project      | Project | ✅   || .claude/commands/       | Project      | Project | ✅   || .claude/skills/         | Project      | Project | ✅   || .mcp.json               | Project root | Project | ✅   || .specify/               | Project      | Project | ✅   || ~/.claude/plugins/      | Home         | Global  | ❌   || ~/.claude/mcp.json      | Home         | Global  | ❌   || ~/.claude/hooks/        | Home         | Global  | ❌   || ~/.claude/settings.json | Home         | Global  | ❌   |
+| Component               | Location     | Scope   | Git? |
+| ----------------------- | ------------ | ------- | ---- |
+| CLAUDE.md               | Project root | Project | ✅    |
+| .claude/agents/         | Project      | Project | ✅    |
+| .claude/commands/       | Project      | Project | ✅    |
+| .claude/skills/         | Project      | Project | ✅    |
+| .mcp.json               | Project root | Project | ✅    |
+| .specify/               | Project      | Project | ✅    |
+| ~/.claude/plugins/      | Home         | Global  | ❌    |
+| ~/.claude/mcp.json      | Home         | Global  | ❌    |
+| ~/.claude/hooks/        | Home         | Global  | ❌    |
+| ~/.claude/settings.json | Home         | Global  | ❌    |
 ```
 
 ### Setup Script
 
 ```
-#!/bin/bashCRITICAL_PLUGINS=(    "csharp-lsp@claude-plugins-official"    "typescript-lsp@claude-plugins-official"    "context7@claude-plugins-official"    "serena@claude-plugins-official"    "commit-commands@claude-plugins-official"    "code-review@claude-plugins-official"    "github@claude-plugins-official"    "playwright@claude-plugins-official")for plugin in "${CRITICAL_PLUGINS[@]}"; do    claude plugins install "$plugin"doneecho "Claude Code setup complete!"
+#!/bin/bash
+CRITICAL_PLUGINS=(    "csharp-lsp@claude-plugins-official"    
+"typescript-lsp@claude-plugins-official"    "context7@claude-plugins-official"    
+"serena@claude-plugins-official"    "commit-commands@claude-plugins-official"    
+"code-review@claude-plugins-official"    "github@claude-plugins-official"    
+"playwright@claude-plugins-official"
+)
+for plugin in "${CRITICAL_PLUGINS[@]}"; do
+    claude plugins install "$plugin"
+done
+echo "Claude Code setup complete!"
+
 ```
 
 ### Onboarding Checklist
@@ -697,7 +1034,15 @@ One of the biggest productivity gains comes from leveraging community resources.
 [**aitmpl.com**](https://www.aitmpl.com/) — The complete Claude Code template marketplace.
 
 ```
-| Category       | What You'll Find                                           ||----------------|------------------------------------------------------------|| **Agents**     | Pre-built agents for code review, debugging, architecture  || **Commands**   | Ready-to-use git workflows, deployment scripts             || **Settings**   | Optimized settings.json configurations                     || **Hooks**      | Auto-lint, CI triggers, learning hooks                     || **MCPs**       | Model Context Protocol server configurations               || **Skills**     | Reusable knowledge modules                                 || **Templates**  | Complete project setups (React, Next.js, .NET, etc.)       |
+| Category      | What You'll Find                                          |
+| ------------- | --------------------------------------------------------- |
+| **Agents**    | Pre-built agents for code review, debugging, architecture |
+| **Commands**  | Ready-to-use git workflows, deployment scripts            |
+| **Settings**  | Optimized settings.json configurations                    |
+| **Hooks**     | Auto-lint, CI triggers, learning hooks                    |
+| **MCPs**      | Model Context Protocol server configurations              |
+| **Skills**    | Reusable knowledge modules                                |
+| **Templates** | Complete project setups (React, Next.js, .NET, etc.)      |
 ```
 
 **Why it matters:** Instead of writing every agent and command from scratch, start with battle-tested templates. The platform includes 30+ company stacks (OpenAI, Stripe, AWS, GitHub) — configurations proven in production.
@@ -717,7 +1062,12 @@ npx skills add <owner/repo>
 ```
 
 ```
-| Feature              | Details                                          ||----------------------|--------------------------------------------------|| **Skills Count**     | 200+ and growing                                 || **Supported Agents** | 15+ (Claude Code, Cursor, Copilot, Gemini, etc.) || **Contributors**     | Vercel, Anthropic, Expo, community developers    || **Installation**     | Single command via npx                           |
+| Feature              | Details                                          |
+| -------------------- | ------------------------------------------------ |
+| **Skills Count**     | 200+ and growing                                 |
+| **Supported Agents** | 15+ (Claude Code, Cursor, Copilot, Gemini, etc.) |
+| **Contributors**     | Vercel, Anthropic, Expo, community developers    |
+| **Installation**     | Single command via npx                           |
 ```
 
 **Popular skills include:**
@@ -810,7 +1160,13 @@ Then it creates a customized Claude ecosystem that respects your existing patter
 ### The Gist Contains
 
 ```
-| Section    | Purpose                                                       ||------------|---------------------------------------------------------------|| **Part A** | New project setup flow with checklist                         || **Part B** | Existing project setup flow with checklist                    || **Part C** | Core templates (CLAUDE.md, agents, commands)                  || **Part D** | Plugin & tool installation guides                             || **Part E** | Instructions for Claude (scenario detection, error handling)  |
+| Section    | Purpose                                                      |
+| ---------- | ------------------------------------------------------------ |
+| **Part A** | New project setup flow with checklist                        |
+| **Part B** | Existing project setup flow with checklist                   |
+| **Part C** | Core templates (CLAUDE.md, agents, commands)                 |
+| **Part D** | Plugin & tool installation guides                            |
+| **Part E** | Instructions for Claude (scenario detection, error handling) |
 ```
 
 ### Cross-Platform Support
@@ -824,7 +1180,13 @@ The gist includes automatic handling for:
 ### Why Use the Gist?
 
 ```
-| Manual Setup           | Gist-Assisted Setup           ||------------------------|-------------------------------|| Read entire article    | Skim article for concepts     || Remember all steps     | Claude tracks checklist       || Copy-paste templates   | Claude customizes templates   || Debug setup issues     | Claude handles errors         || ~1-2 hours             | ~10-15 minutes                |
+| Manual Setup         | Gist-Assisted Setup         |
+| -------------------- | --------------------------- |
+| Read entire article  | Skim article for concepts   |
+| Remember all steps   | Claude tracks checklist     |
+| Copy-paste templates | Claude customizes templates |
+| Debug setup issues   | Claude handles errors       |
+| ~1-2 hours           | ~10-15 minutes              |
 ```
 
 The article explains WHY. The gist tells Claude WHAT to do. Together, they give you a production-grade setup in minutes.

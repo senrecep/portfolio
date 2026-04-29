@@ -1,9 +1,19 @@
 import profile from "@/content/en/profile.json";
+import { getAllBlogPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
+const LOCAL_SLUGS = new Set([
+  "ai-coding-tools-complete-guide",
+  "google-cloud-secret-manager-dotnet",
+  "modern-way-manage-csharp-business-rules",
+  "performance-analysis-parameter-passing-csharp",
+  "production-grade-ai-development-claude-code",
+  "stop-writing-code-start-managing-systems",
+]);
+
 export function GET() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://senrecep.dev";
+  const siteUrl = "https://senrecep.com";
   const {
     personalInfo,
     skills,
@@ -37,12 +47,28 @@ export function GET() {
     })
     .join("\n\n");
 
-  const blogSection = blogPosts
-    .map((b) => {
+  const localPosts = getAllBlogPosts("en");
+  const profileSlugs = new Set(
+    blogPosts.map((b) => (b as { slug?: string }).slug).filter(Boolean),
+  );
+
+  const blogSection = [
+    ...blogPosts.map((b) => {
       const date = b.date ? ` (${b.date})` : "";
-      return `### ${b.title}${date}\n- URL: ${b.blogUrl}\n- Summary: ${b.description}`;
-    })
-    .join("\n\n");
+      const slug = (b as { slug?: string }).slug;
+      const url =
+        slug && LOCAL_SLUGS.has(slug)
+          ? `${siteUrl}/en/blog/${slug}`
+          : b.blogUrl;
+      return `### ${b.title}${date}\n- URL: ${url}\n- Summary: ${b.description}`;
+    }),
+    ...localPosts
+      .filter((p) => !profileSlugs.has(p.slug))
+      .map((p) => {
+        const date = p.date ? ` (${p.date})` : "";
+        return `### ${p.title}${date}\n- URL: ${siteUrl}/en/blog/${p.slug}\n- Summary: ${p.description}`;
+      }),
+  ].join("\n\n");
 
   const certificatesSection = certificates
     .map((c) => {

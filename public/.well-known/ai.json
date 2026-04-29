@@ -1,0 +1,30 @@
+{
+  "name": "Recep Şen",
+  "type": "person",
+  "url": "https://senrecep.com",
+  "description": "Software Engineer & CTO at Taptoweb. Creator of Easyapp (250,000+ users). Specializes in .NET, microservices, and AI-assisted development.",
+  "aiReadableResources": [
+    {
+      "url": "https://senrecep.com/llms.txt",
+      "description": "Concise AI-readable profile overview"
+    },
+    {
+      "url": "https://senrecep.com/llms-full.txt",
+      "description": "Detailed AI-readable professional profile"
+    },
+    {
+      "url": "https://senrecep.com/sitemap.xml",
+      "description": "Full site map"
+    },
+    { "url": "https://senrecep.com/feed.xml", "description": "Blog RSS feed" }
+  ],
+  "allowedPaths": ["/"],
+  "disallowedPaths": [],
+  "policies": {
+    "scraping": "allowed",
+    "training": "allowed",
+    "attributionRequired": true
+  },
+  "preferredCitation": "Recep Şen, Software Engineer & CTO (https://senrecep.com)",
+  "updatedAt": "2026-04-29"
+}

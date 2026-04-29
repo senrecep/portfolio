@@ -1,8 +1,18 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import {
+  Children,
+  createContext,
+  isValidElement,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
+// Context to reliably detect block code (code inside pre) vs inline code
+const IsBlockCodeContext = createContext(false);
 
 function slugify(text: string): string {
   return text
@@ -92,6 +102,203 @@ function HeadingWithAnchor({ level, children }: HeadingProps) {
   );
 }
 
+function isMarkdownTable(content: string): boolean {
+  const lines = content
+    .trim()
+    .split("\n")
+    .filter((line) => line.trim().length > 0);
+  if (lines.length < 2) return false;
+  const tableLines = lines.filter(
+    (line) => line.trim().startsWith("|") && line.trim().includes("|"),
+  );
+  return tableLines.length >= Math.ceil(lines.length * 0.7);
+}
+
+interface ParsedTable {
+  headers: string[];
+  rows: string[][];
+}
+
+function parseMarkdownTable(content: string): ParsedTable {
+  const lines = content
+    .trim()
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+
+  const headers: string[] = [];
+  const rows: string[][] = [];
+
+  for (const line of lines) {
+    if (!line.startsWith("|")) continue;
+    // Skip separator rows (e.g., | --- | :---: | ---: |)
+    if (/^\|[\s\-:]+\|/.test(line)) continue;
+
+    const cells = line
+      .split("|")
+      .slice(1, -1) // remove leading and trailing empty strings from split
+      .map((cell) => cell.trim());
+
+    if (headers.length === 0) {
+      headers.push(...cells);
+    } else {
+      rows.push(cells);
+    }
+  }
+
+  return { headers, rows };
+}
+
+function MarkdownTable({ content }: { content: string }) {
+  const { headers, rows } = parseMarkdownTable(content);
+
+  return (
+    <div className="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-700">
+      <table className="w-full text-sm text-left border-collapse">
+        <thead>
+          <tr className="bg-zinc-100 dark:bg-zinc-800">
+            {headers.map((header, i) => (
+              <th
+                key={i}
+                className="px-4 py-3 font-semibold text-zinc-700 dark:text-zinc-200 whitespace-nowrap border-b border-zinc-200 dark:border-zinc-700"
+              >
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, rowIdx) => (
+            <tr
+              key={rowIdx}
+              className={
+                rowIdx % 2 === 0
+                  ? "bg-white dark:bg-zinc-900"
+                  : "bg-zinc-50 dark:bg-zinc-800/50"
+              }
+            >
+              {row.map((cell, cellIdx) => (
+                <td
+                  key={cellIdx}
+                  className="px-4 py-2.5 text-zinc-600 dark:text-zinc-300 border-b border-zinc-100 dark:border-zinc-800 font-mono whitespace-nowrap"
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function CopyButton({ content }: { content: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = useCallback(() => {
+    navigator.clipboard?.writeText(content).catch(() => {});
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, [content]);
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label="Copy code"
+      className="absolute top-3 right-3 flex items-center gap-1.5 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity rounded-md px-2 py-1 text-xs text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 z-10"
+    >
+      {copied ? (
+        <>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          Copied!
+        </>
+      ) : (
+        <>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+          </svg>
+          Copy
+        </>
+      )}
+    </button>
+  );
+}
+
+interface BlockCodeProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+function BlockCode({ children, className }: BlockCodeProps) {
+  const content =
+    typeof children === "string" ? children : String(children ?? "");
+
+  if (!className && isMarkdownTable(content)) {
+    return <MarkdownTable content={content} />;
+  }
+
+  const langMatch = /language-(\w+)/.exec(className || "");
+  const language = langMatch ? langMatch[1] : null;
+
+  return (
+    <span className="relative block group">
+      {language && (
+        <span className="absolute top-3 right-[4.5rem] text-xs text-zinc-500 font-mono select-none pointer-events-none z-10">
+          {language}
+        </span>
+      )}
+      <CopyButton content={content} />
+      <code className="block min-w-max px-5 py-4 text-sm text-zinc-300 font-mono leading-relaxed whitespace-pre">
+        {children}
+      </code>
+    </span>
+  );
+}
+
+interface CodeProps {
+  children?: React.ReactNode;
+  className?: string;
+}
+
+function Code({ children, className }: CodeProps) {
+  const isBlock = useContext(IsBlockCodeContext);
+  if (!isBlock) {
+    return (
+      <code className="bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 px-1.5 py-0.5 rounded text-[0.875em] font-mono">
+        {children}
+      </code>
+    );
+  }
+  return <BlockCode className={className}>{children}</BlockCode>;
+}
+
 interface BlogContentProps {
   content: string;
 }
@@ -114,28 +321,95 @@ export function BlogContent({ content }: BlogContentProps) {
           h4: ({ children }) => (
             <HeadingWithAnchor level={4}>{children}</HeadingWithAnchor>
           ),
-          pre: ({ children }) => (
-            <div className="not-prose my-6">
-              <pre className="bg-zinc-950 dark:bg-zinc-900 border border-zinc-800 dark:border-zinc-700 rounded-xl overflow-x-auto">
-                {children}
-              </pre>
-            </div>
-          ),
-          code: ({ children, className }) => {
-            const isInline = !String(children).endsWith("\n") && !className;
-            if (isInline) {
+          pre: ({ children }) => {
+            // Inspect children to detect table content before rendering
+            let codeContent = "";
+            let codeClassName = "";
+            Children.forEach(children, (child) => {
+              if (isValidElement(child)) {
+                const props = child.props as {
+                  children?: React.ReactNode;
+                  className?: string;
+                };
+                codeContent =
+                  typeof props.children === "string"
+                    ? props.children
+                    : codeContent;
+                codeClassName = props.className || "";
+              }
+            });
+
+            const isTable = !codeClassName && isMarkdownTable(codeContent);
+
+            if (isTable) {
+              // Table: no dark wrapper, MarkdownTable provides its own styling
               return (
-                <code className="bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 px-1.5 py-0.5 rounded text-[0.875em] font-mono">
+                <IsBlockCodeContext.Provider value={true}>
                   {children}
-                </code>
+                </IsBlockCodeContext.Provider>
               );
             }
+
             return (
-              <code className="block p-5 text-sm text-zinc-300 font-mono leading-relaxed whitespace-pre">
-                {children}
-              </code>
+              <IsBlockCodeContext.Provider value={true}>
+                <div className="not-prose my-6">
+                  <pre className="bg-zinc-950 dark:bg-zinc-900 border border-zinc-800 dark:border-zinc-700 rounded-xl overflow-x-auto">
+                    {children}
+                  </pre>
+                </div>
+              </IsBlockCodeContext.Provider>
             );
           },
+          code: Code,
+          a: ({ href, children, ...props }) => {
+            const isExternal =
+              href?.startsWith("http") || href?.startsWith("//");
+            return (
+              <a
+                href={href}
+                {...(isExternal && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
+                className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+                {...props}
+              >
+                {children}
+              </a>
+            );
+          },
+          img: ({ src, alt, ...props }) => {
+            if (!src) return null;
+            return (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={src}
+                alt={alt || ""}
+                loading="lazy"
+                className="rounded-lg my-6 w-full h-auto"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
+                {...props}
+              />
+            );
+          },
+          blockquote: ({ children }) => (
+            <blockquote className="border-l-4 border-primary/50 pl-4 my-6 italic text-muted-foreground">
+              {children}
+            </blockquote>
+          ),
+          ul: ({ children }) => (
+            <ul className="list-disc list-outside ml-6 my-4 space-y-1">
+              {children}
+            </ul>
+          ),
+          ol: ({ children }) => (
+            <ol className="list-decimal list-outside ml-6 my-4 space-y-1">
+              {children}
+            </ol>
+          ),
+          li: ({ children }) => <li className="leading-relaxed">{children}</li>,
         }}
       >
         {content}

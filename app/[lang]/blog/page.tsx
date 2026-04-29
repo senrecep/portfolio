@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
@@ -13,6 +13,8 @@ interface PageProps {
   params: Promise<{ lang: string }>;
 }
 
+const siteUrl = "https://senrecep.com";
+
 export const dynamic = "force-static";
 export const revalidate = false;
 
@@ -25,12 +27,34 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   const t = translations[lang];
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+  const languageAlternates = Object.fromEntries(
+    languageCodes.map((loc) => [loc, `${siteUrl}/${loc}/blog`]),
+  );
+
   return {
     title: `${t.sections.blog.title} - Recep Sen`,
     description: t.sections.blog.description,
     alternates: {
       canonical: `${siteUrl}/${lang}/blog`,
+      languages: {
+        ...languageAlternates,
+        "x-default": `${siteUrl}/en/blog`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      title: `${t.sections.blog.title} - Recep Sen`,
+      description: t.sections.blog.description,
+      url: `${siteUrl}/${lang}/blog`,
+      siteName: "Recep Sen",
+      locale: lang,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${t.sections.blog.title} - Recep Sen`,
+      description: t.sections.blog.description,
+      creator: "@senrecep0",
     },
   };
 }

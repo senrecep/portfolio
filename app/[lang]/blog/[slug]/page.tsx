@@ -14,6 +14,8 @@ interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
 }
 
+const siteUrl = "https://senrecep.com";
+
 export const dynamic = "force-static";
 export const revalidate = false;
 
@@ -30,17 +32,61 @@ export async function generateMetadata({
   const { lang, slug } = await params;
   const post = getBlogPost(slug, lang);
   if (!post) return {};
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+  const canonicalLang = post.lang === "neutral" ? lang : post.lang;
+  const canonicalUrl = `${siteUrl}/${canonicalLang}/blog/${slug}`;
+
+  const languageAlternates = Object.fromEntries(
+    languageCodes.map((loc) => [loc, `${siteUrl}/${loc}/blog/${slug}`]),
+  );
+
   return {
     title: `${post.title} - Recep Sen`,
     description: post.description,
+    keywords: post.keywords,
+    authors: [{ name: post.author || "Recep Sen" }],
     alternates: {
-      canonical: `${siteUrl}/${post.lang}/blog/${slug}`,
+      canonical: canonicalUrl,
+      languages: {
+        ...languageAlternates,
+        "x-default": `${siteUrl}/en/blog/${slug}`,
+      },
     },
     openGraph: {
+      type: "article",
       title: post.title,
       description: post.description,
-      images: post.imageUrl ? [{ url: post.imageUrl }] : [],
+      url: canonicalUrl,
+      siteName: "Recep Sen",
+      publishedTime: post.date,
+      modifiedTime: post.modifiedDate || post.date,
+      authors: [post.author || "Recep Sen"],
+      images: post.imageUrl
+        ? [
+            {
+              url: post.imageUrl.startsWith("http")
+                ? post.imageUrl
+                : `${siteUrl}${post.imageUrl}`,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : [],
+      locale: lang,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      creator: "@senrecep0",
+      images: post.imageUrl
+        ? [
+            post.imageUrl.startsWith("http")
+              ? post.imageUrl
+              : `${siteUrl}${post.imageUrl}`,
+          ]
+        : [],
     },
   };
 }
@@ -55,6 +101,120 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const profile = await getProfile(lang);
   const t = translations[lang];
+
+  const canonicalLang = post.lang === "neutral" ? lang : post.lang;
+  const canonicalUrl = `${siteUrl}/${canonicalLang}/blog/${slug}`;
+
+  const techCategories = [
+    "Tutorial",
+    "Guide",
+    "How-To",
+    "Technology",
+    "Development",
+    "AI",
+  ];
+  const articleType =
+    post.category && techCategories.includes(post.category)
+      ? "TechArticle"
+      : "Article";
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": articleType,
+    "@id": `${siteUrl}/${lang}/blog/${slug}#article`,
+    headline: post.title,
+    description: post.description,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl,
+    },
+    author: {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: post.author || "Recep Sen",
+      url: siteUrl,
+    },
+    datePublished: post.date,
+    dateModified: post.modifiedDate || post.date,
+    publisher: {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Recep Sen",
+      url: siteUrl,
+    },
+    ...(post.imageUrl && {
+      image: {
+        "@type": "ImageObject",
+        url: post.imageUrl.startsWith("http")
+          ? post.imageUrl
+          : `${siteUrl}${post.imageUrl}`,
+        width: 1200,
+        height: 630,
+      },
+    }),
+    ...(post.keywords &&
+      post.keywords.length > 0 && {
+        keywords: post.keywords.join(", "),
+      }),
+    ...(post.wordCount && { wordCount: post.wordCount }),
+    ...(post.category && { articleSection: post.category }),
+    inLanguage: lang,
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "Recep Sen",
+      url: siteUrl,
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "article > p:first-of-type"],
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${siteUrl}/${lang}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${siteUrl}/${lang}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: canonicalUrl,
+      },
+    ],
+  };
+
+  const faqSchema =
+    post.faq && post.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: [".faq-question"],
+          },
+          mainEntity: post.faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a,
+            },
+          })),
+        }
+      : null;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -85,10 +245,18 @@ export default async function BlogPostPage({ params }: PageProps) {
         )}
 
         <header className="mb-8">
-          <time className="text-sm text-muted-foreground">
+          <time dateTime={post.date} className="text-sm text-muted-foreground">
             {formatDate(post.date, lang)}
           </time>
-          <h1 className="mt-2 text-3xl font-bold leading-tight">{post.title}</h1>
+          {post.readingTime && (
+            <span className="text-sm text-muted-foreground">
+              {" "}
+              · {post.readingTime} min read
+            </span>
+          )}
+          <h1 className="mt-2 text-3xl font-bold leading-tight">
+            {post.title}
+          </h1>
           <p className="mt-3 text-muted-foreground">{post.description}</p>
           <div className="mt-4">
             <a
@@ -109,6 +277,22 @@ export default async function BlogPostPage({ params }: PageProps) {
         lang={lang}
         translations={{ allRightsReserved: t.footer.allRightsReserved }}
       />
+
+      {/* Security: static build-time JSON escaped by JSON.stringify, no user input */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
     </div>
   );
 }

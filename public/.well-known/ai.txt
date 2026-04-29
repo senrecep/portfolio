@@ -1,0 +1,23 @@
+# Recep Sen - Software Engineer Portfolio
+
+> Personal portfolio of Recep Şen, CTO at Taptoweb, software engineer specializing in .NET, microservices, and AI-assisted development. Creator of Easyapp, serving 250,000+ users.
+
+## Contact
+- Website: https://senrecep.com
+- Email: hello@senrecep.com
+- Organization: Taptoweb
+
+## AI-readable resources
+- [llms.txt](https://senrecep.com/llms.txt) - Concise AI-readable profile overview
+- [llms-full.txt](https://senrecep.com/llms-full.txt) - Detailed AI-readable professional profile
+- [Sitemap](https://senrecep.com/sitemap.xml)
+- [RSS Feed](https://senrecep.com/feed.xml)
+
+## Policies
+- scraping: allowed
+- training: allowed
+- attributionRequired: true
+
+## Preferred citation
+Recep Şen, Software Engineer & CTO (https://senrecep.com)
+updated: 2026-04-29

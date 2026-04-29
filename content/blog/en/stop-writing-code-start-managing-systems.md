@@ -5,6 +5,17 @@ date: "2026-02-28"
 slug: "stop-writing-code-start-managing-systems"
 mediumUrl: "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de"
 imageUrl: "/images/stop-writing-code-start-managing-systems.webp"
+keywords: ["AI-powered development", "Claude Code", "multi-agent workflows", "context window", "CLAUDE.md strategy", "software engineering mindset", "AI orchestration", "developer productivity"]
+author: "Recep Sen"
+modifiedDate: "2026-02-28"
+category: "AI"
+faq:
+  - q: "What does 'stop writing code, start managing systems' mean in practice?"
+    a: "It means shifting from manually typing code to directing AI agents that write, test, and review code on your behalf. Instead of being a code author, you become a system architect who defines constraints, reviews outputs, and orchestrates multiple AI agents working in parallel — like a CTO managing an engineering team."
+  - q: "How should I manage context window usage in Claude Code to avoid quality degradation?"
+    a: "Keep one conversation focused on one task, run /compact when context usage exceeds 40%, and use SCRATCHPAD.md to persist critical information between sessions. Delegate large exploration tasks to subagents since their context is independent from the main session, and keep CLAUDE.md concise to avoid wasting context on static instructions."
+  - q: "What is the Plan → Execute → Verify loop and why is it important?"
+    a: "The Plan → Execute → Verify loop is a structured workflow where you first have the AI plan the approach (in read-only plan mode), then execute the implementation, then verify results with tests and linting before accepting the work. This prevents runaway AI changes, makes errors catchable early, and produces more predictable, reviewable outputs."
 ---
 
 **Bu makaleyi Turkce okuyun:** [Kod Yazmayi Birakin, Sistemi Yonetin: AI Destekli Gelistirmenin Gercek Potansiyeli](https://medium.com/%40senrecep/kod-yazmay%C4%B1-b%C4%B1rak%C4%B1n-sistemi-y%C3%B6netin-ai-destekli-geli%C5%9Ftirmenin-ger%C3%A7ek-potansiyeli-64cab2c7305c)

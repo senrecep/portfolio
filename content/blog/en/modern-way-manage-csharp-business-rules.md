@@ -5,6 +5,17 @@ date: "2025-02-04"
 slug: "modern-way-manage-csharp-business-rules"
 mediumUrl: "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700"
 imageUrl: "/images/rule-engine.webp"
+keywords: ["C# business rules", "Rule Engine Pattern", "Result Pattern", "CSharpEssentials", "domain validation", "clean architecture", "error handling", "testability"]
+author: "Recep Sen"
+modifiedDate: "2025-02-04"
+category: "Tutorial"
+faq:
+  - q: "What is the Rule Engine Pattern in C# and when should I use it?"
+    a: "The Rule Engine Pattern centralizes all business validation logic into discrete, composable rule objects instead of scattering if/else chains across your codebase. It is ideal for domains with many business rules — such as finance, e-commerce, or healthcare — where rules change frequently and testability is critical."
+  - q: "How does the Result Pattern improve error handling compared to exceptions?"
+    a: "The Result Pattern returns success or failure as a first-class value rather than throwing exceptions for expected business errors. This eliminates performance overhead from exception unwinding, makes error paths explicit in the type system, and produces consistent, predictable error messages across the application."
+  - q: "What types of rules does the CSharpEssentials Rule Engine support?"
+    a: "The library supports sequential linear rules (chain of responsibility), logical AND/OR combinators, and async variants for all rule types. Rules can be defined as classes, records, structs, or readonly record structs, giving you full flexibility to match your performance and immutability requirements."
 ---
 
 In the modern software world, managing business rules is becoming increasingly critical. Especially in sectors like finance, e-commerce, and healthcare, managing, maintaining, and testing hundreds or even thousands of business rules has become a significant challenge. Scattered implementation of these rules leads to many problems such as duplicate code, inconsistent error messages, and testability issues.
@@ -60,7 +71,10 @@ In this article, we’ll explore a modern and effective way to manage business r
 The Rule Engine supports both OOP and functional programming approaches. You can define rules using the following structures:
 
 ```
-public sealed class UserRule : IRule<User> { }public sealed record UserRule : IRule<User> { }public struct UserRule : IRule<User> { }public readonly record struct UserRule : IRule<User> { }
+public sealed class UserRule : IRule<User> { }
+public sealed record UserRule : IRule<User> { }
+public struct UserRule : IRule<User> { }
+public readonly record struct UserRule : IRule<User> { }
 ```
 
 Advantages of using \`readonly record struct\`:  
@@ -77,28 +91,81 @@ Advantages of using \`readonly record struct\`:
 **Rules that perform a single validation:
 
 ```
-IRule<TContext>                 IRule<TContext, TResult>       IAsyncRule<TContext>           IAsyncRule<TContext, TResult>  internal readonly record struct AdultRule : IRule<User>{    public Result Evaluate(User context) =>        context.Age >= 18            ? Result.Success()            : Error.Validation("USER.NOT_ADULT", "User must be 18 or older");}
+IRule<TContext>
+IRule<TContext, TResult>
+IAsyncRule<TContext>
+
+IAsyncRule<TContext, TResult>
+
+internal readonly record struct AdultRule : IRule<User>{
+    public Result Evaluate(User context) =>
+        context.Age >= 18
+            ? Result.Success()
+            : Error.Validation("USER.NOT_ADULT", "User must be 18 or older");
+}
 ```
 
 **3.2. Linear Rules  
 **Chain of rules that follow each other:
 
 ```
-ILinearRule<TContext>           ILinearRule<TContext, TResult>   ILinearAsyncRule<TContext>       ILinearAsyncRule<TContext, TResult>internal readonly record struct EmailFormatRule : ILinearRule<string>{    public IRuleBase<string>? Next => new DomainRule();        public Result Evaluate(string email) =>        email.Contains('@')            ? Result.Success()            : Error.Validation("EMAIL.INVALID_FORMAT", "Email must contain @");}
+ILinearRule<TContext>
+ILinearRule<TContext, TResult>
+ILinearAsyncRule<TContext>
+
+ILinearAsyncRule<TContext, TResult>
+
+internal readonly record struct EmailFormatRule : ILinearRule<string>{
+    public IRuleBase<string>? Next => new DomainRule();
+    public Result Evaluate(string email) =>
+        email.Contains('@')
+            ? Result.Success()
+            : Error.Validation("EMAIL.INVALID_FORMAT", "Email must contain @");
+}
 ```
 
 **3.3. Logical Rules  
 **Rules that can be combined with AND/OR operators:
 
 ```
-IAndRule<TContext>              IAndRule<TContext, TResult>     IAndAsyncRule<TContext>IAndAsyncRule<TContext, TResult>IOrRule<TContext>               IOrRule<TContext, TResult>IOrAsyncRule<TContext>IOrAsyncRule<TContext, TResult>internal readonly record struct PaymentMethodRule : IOrRule<Payment>{    public IRuleBase<Payment>[] Rules =>     [        new CreditCardRule(),        new BankTransferRule(),        new CryptoRule()    ];}
+IAndRule<TContext>
+IAndRule<TContext, TResult>
+IAndAsyncRule<TContext>
+IAndAsyncRule<TContext, TResult>
+IOrRule<TContext>
+
+IOrRule<TContext, TResult>
+IOrAsyncRule<TContext>
+IOrAsyncRule<TContext, TResult>
+
+internal readonly record struct PaymentMethodRule : IOrRule<Payment>{
+    public IRuleBase<Payment>[] Rules =>
+    [
+        new CreditCardRule(),
+        new BankTransferRule(),
+        new CryptoRule()
+    ];
+}
 ```
 
 **3.4. Conditional Rules  
 **Rules that can branch based on the result:
 
 ```
-IConditionalRule<TContext>      IConditionalRule<TContext, TResult>IConditionalAsyncRule<TContext>IConditionalAsyncRule<TContext, TResult>internal readonly record struct CardTypeRule : IConditionalRule<CreditCard>{    public IRuleBase<CreditCard>? Success => new AmexRule();    public IRuleBase<CreditCard>? Failure => new MasterCardRule();    public Result Evaluate(CreditCard context) =>        context.Number.Length == 15            ? Result.Success()               : Result.Failure();  }
+IConditionalRule<TContext>
+
+IConditionalRule<TContext, TResult>
+IConditionalAsyncRule<TContext>
+IConditionalAsyncRule<TContext, TResult>
+
+internal readonly record struct CardTypeRule : IConditionalRule<CreditCard>{
+    public IRuleBase<CreditCard>? Success => new AmexRule();
+    public IRuleBase<CreditCard>? Failure => new MasterCardRule();
+    public Result Evaluate(CreditCard context) =>
+        context.Number.Length == 15
+            ? Result.Success()
+            : Result.Failure();
+}
 ```
 
 **🚀 Implementation Examples**
@@ -106,13 +173,56 @@ IConditionalRule<TContext>      IConditionalRule<TContext, TResult>IConditionalA
 **1\. E-Commerce Order Validation**
 
 ```
-public readonly record struct OrderValidationRule : IAndRule<Order>{    private readonly IStockService _stockService;    private readonly IPaymentService _paymentService;    public OrderValidationRule(IStockService stockService, IPaymentService paymentService)    {        _stockService = stockService;        _paymentService = paymentService;    }    public IRuleBase<Order>[] Rules =>    [        new OrderAmountRule(minimumAmount: 50),                   new StockAvailabilityRule(_stockService),                 new PaymentMethodValidationRule(_paymentService),         new ShippingAddressRule(),                                new UserValidationRule()                              ];}
+public readonly record struct OrderValidationRule : IAndRule<Order>{
+    private readonly IStockService _stockService;
+    private readonly IPaymentService _paymentService;
+    public OrderValidationRule(IStockService stockService, IPaymentService paymentService)
+    {
+        _stockService = stockService;
+        _paymentService = paymentService;
+    }
+    public IRuleBase<Order>[] Rules =>
+    [
+        new OrderAmountRule(minimumAmount: 50),
+        new StockAvailabilityRule(_stockService),
+        new PaymentMethodValidationRule(_paymentService),
+        new ShippingAddressRule(),
+        new UserValidationRule()
+    ];
+}
 ```
 
 **2\. Finance: Credit Application**
 
 ```
-public readonly record struct CreditApplicationRule : ILinearRule<CreditApplication>{    private readonly ICreditScoreService _creditScoreService;    private readonly IBlacklistService _blacklistService;    public CreditApplicationRule(ICreditScoreService creditScoreService, IBlacklistService blacklistService)    {        _creditScoreService = creditScoreService;        _blacklistService = blacklistService;    }    public IRuleBase<CreditApplication>? Next => new CreditScoreRule(_creditScoreService);    public async ValueTask<Result> EvaluateAsync(CreditApplication application)    {                var blacklistResult = await _blacklistService.CheckAsync(application.UserId);        if (blacklistResult.IsBlacklisted)            return Error.Validation("CREDIT.BLACKLISTED", "User is blacklisted");                if (application.Age < 18)            return Error.Validation("CREDIT.UNDERAGE", "Must be 18 or older");                if (application.MonthlyIncome < 5000)            return Error.Validation(                code: "CREDIT.LOW_INCOME",                description: "Insufficient monthly income",                metadata: new ErrorMetadata(                    ("MinimumIncome", 5000),                    ("ActualIncome", application.MonthlyIncome)                )            );        return Result.Success();    }}
+public readonly record struct CreditApplicationRule : ILinearRule<CreditApplication>{
+    private readonly ICreditScoreService _creditScoreService;
+    private readonly IBlacklistService _blacklistService;
+    public CreditApplicationRule(ICreditScoreService creditScoreService, IBlacklistService blacklistService)
+    {
+        _creditScoreService = creditScoreService;
+        _blacklistService = blacklistService;
+    }
+    public IRuleBase<CreditApplication>? Next => new CreditScoreRule(_creditScoreService);
+    public async ValueTask<Result> EvaluateAsync(CreditApplication application)
+    {
+        var blacklistResult = await _blacklistService.CheckAsync(application.UserId);
+        if (blacklistResult.IsBlacklisted)
+            return Error.Validation("CREDIT.BLACKLISTED", "User is blacklisted");
+        if (application.Age < 18)
+            return Error.Validation("CREDIT.UNDERAGE", "Must be 18 or older");
+        if (application.MonthlyIncome < 5000)
+            return Error.Validation(
+                code: "CREDIT.LOW_INCOME",
+                description: "Insufficient monthly income",
+                metadata: new ErrorMetadata(
+                    ("MinimumIncome", 5000),
+                    ("ActualIncome", application.MonthlyIncome)
+                )
+            );
+        return Result.Success();
+    }
+}
 ```
 
 **🎯 Best Practices**
@@ -123,7 +233,28 @@ public readonly record struct CreditApplicationRule : ILinearRule<CreditApplicat
     **Define error objects in a central place instead of creating them in methods:
 
 ```
-internal static class UserErrors   {       public static Error NotAdult => Error.Validation(           code: "USER.NOT_ADULT",           description: "User is not adult"       );       public static Error InvalidSalary(decimal minSalary, decimal actualSalary) => Error.Validation(           code: "USER.INVALID_SALARY",           description: "User has insufficient salary",           metadata: new ErrorMetadata(               new KeyValuePair<string, object?>("MinSalary", minSalary),               new KeyValuePair<string, object?>("ActualSalary", actualSalary)           )       );   }      public Result Evaluate(User context)   {       if (context.Age < 18)           return UserErrors.NotAdult;       if (context.Salary < 5000)           return UserErrors.InvalidSalary(5000, context.Salary);       return Result.Success();   }
+internal static class UserErrors{
+    public static Error NotAdult => Error.Validation(
+        code: "USER.NOT_ADULT",
+        description: "User is not adult"
+    );
+    public static Error InvalidSalary(decimal minSalary, decimal actualSalary) => Error.Validation(
+        code: "USER.INVALID_SALARY",
+        description: "User has insufficient salary",
+        metadata: new ErrorMetadata(
+            new KeyValuePair<string, object?>("MinSalary", minSalary),
+            new KeyValuePair<string, object?>("ActualSalary", actualSalary)
+        )
+    );
+}
+public Result Evaluate(User context)
+{
+    if (context.Age < 18)
+        return UserErrors.NotAdult;
+    if (context.Salary < 5000)
+        return UserErrors.InvalidSalary(5000, context.Salary);
+    return Result.Success();
+}
 ```
 
 Advantages of this approach:  
@@ -165,27 +296,89 @@ Advantages of this approach:
 **Cases where all rules must succeed:
 
 ```
-Result result = RuleEngine.And(    rules: [        UserRules.ActiveCheck,        UserRules.AdultCheck,        UserRules.SalaryCheck,        UserRules.CoupleCheck    ],    context: user);Result result = RuleEngine.And(    rules: [        input => input % 2 == 0,          input => input % 3 == 0       ],    context: 120);
+Result result = RuleEngine.And(
+    rules: [
+        UserRules.ActiveCheck,
+        UserRules.AdultCheck,
+        UserRules.SalaryCheck,
+        UserRules.CoupleCheck
+    ],
+    context: user);
+Result result = RuleEngine.And(
+    rules: [
+        input => input % 2 == 0,
+        input => input % 3 == 0
+    ],
+    context: 120);
+
 ```
 
 **OR Rules  
 **Cases where at least one rule must succeed:
 
 ```
-Result result = RuleEngine.Or(    rules: [        PaymentRules.CreditCardCheck,        PaymentRules.BankTransferCheck    ],    context: payment);Result result = RuleEngine.Or(    rules: [        input => input > 0,              input => input % 2 == 0      ],    context: 120);
+Result result = RuleEngine.Or(
+    rules: [
+        PaymentRules.CreditCardCheck,
+        PaymentRules.BankTransferCheck
+    ],
+    context: payment);
+Result result = RuleEngine.Or(
+    rules: [
+        input => input > 0,
+        input => input % 2 == 0
+    ],
+    context: 120);
+
 ```
 
 **Linear Rules  
 **Cases requiring sequential validation:
 
 ```
-Result result = RuleEngine.Linear(    rules: [        EmailRules.EmptyCheck,        EmailRules.AtSignCheck,        EmailRules.LocalPartCheck,        EmailRules.DomainCheck    ],    context: email);Result result1 = RuleEngine.Linear(    rules: [        input => input > 0,             input => input < 100,           input => input % 2 == 0,        input => input % 3 == 0     ],    context: 120);Result result2 = RuleEngine.Linear(    rules: [        input => input > 0             ? Result.Success()             : Error.Validation("input_greater_than_0"),        input => input < 100             ? Result.Success()             : Error.Validation("input_less_than_100"),        input => input % 2 == 0             ? Result.Success()             : Error.Validation("input_even"),        input => input % 3 == 0             ? Result.Success()             : Error.Validation("input_multiple_of_3")    ],    context: 120);
+Result result = RuleEngine.Linear(
+    rules: [
+        EmailRules.EmptyCheck,
+        EmailRules.AtSignCheck,
+        EmailRules.LocalPartCheck,
+        EmailRules.DomainCheck
+    ],
+    context: email);
+Result result1 = RuleEngine.Linear(
+    rules: [
+        input => input > 0,
+        input => input < 100,
+        input => input % 2 == 0,
+        input => input % 3 == 0
+    ],
+    context: 120);
+Result result2 = RuleEngine.Linear(
+    rules: [
+        input => input > 0
+            ? Result.Success()
+            : Error.Validation("input_greater_than_0"),
+        input => input < 100
+            ? Result.Success()
+            : Error.Validation("input_less_than_100"),
+        input => input % 2 == 0
+            ? Result.Success()
+            : Error.Validation("input_even"),
+        input => input % 3 == 0
+            ? Result.Success()
+            : Error.Validation("input_multiple_of_3")
+    ],
+    context: 120);
+
 ```
 
 **Conditional Rules**
 
 ```
-Result result = RuleEngine.If(    rule: input => input > 0,            success: input => input < 100,       failure: input => input % 2 == 0,    context: 120);
+Result result = RuleEngine.If(
+    rule: input => input > 0,
+    success: input => input < 100,
+    failure: input => input % 2 == 0,
+    context: 120);
 ```
 
 **🎯 Rule Types and Function Signatures**
@@ -195,31 +388,46 @@ Result result = RuleEngine.If(    rule: input => input > 0,            success: 
 **1.1. Simple Rules**
 
 ```
-IRule<TContext>                  IRule<TContext, TResult>         IAsyncRule<TContext>             IAsyncRule<TContext, TResult>    
+IRule<TContext>
+IRule<TContext, TResult>
+IAsyncRule<TContext>
+IAsyncRule<TContext, TResult>
 ```
 
 **1.2. Linear Rules**
 
 ```
-ILinearRule<TContext>            ILinearRule<TContext, TResult>   ILinearAsyncRule<TContext>       ILinearAsyncRule<TContext, TResult> 
+ILinearRule<TContext>
+ILinearRule<TContext, TResult>
+ILinearAsyncRule<TContext>
+ILinearAsyncRule<TContext, TResult>
 ```
 
 **1.3. OR Rules**
 
 ```
-IOrRule<TContext>                IOrRule<TContext, TResult>       IOrAsyncRule<TContext>           IOrAsyncRule<TContext, TResult>  
+IOrRule<TContext>
+IOrRule<TContext, TResult>
+IOrAsyncRule<TContext>
+IOrAsyncRule<TContext, TResult>
 ```
 
 **1.4. AND Rules**
 
 ```
-IAndRule<TContext>               IAndRule<TContext, TResult>      IAndAsyncRule<TContext>          IAndAsyncRule<TContext, TResult> 
+IAndRule<TContext>
+IAndRule<TContext, TResult>
+IAndAsyncRule<TContext>
+IAndAsyncRule<TContext, TResult>
 ```
 
 **1.5. Conditional Rules**
 
 ```
-IConditionalRule<TContext>       IConditionalRule<TContext, TResult> IConditionalAsyncRule<TContext>  IConditionalAsyncRule<TContext, TResult> 
+IConditionalRule<TContext>
+IConditionalRule<TContext, TResult>
+IConditionalAsyncRule<TContext>
+IConditionalAsyncRule<TContext, TResult>
 ```
 
 **2\. Functional Approach Signatures**
@@ -227,13 +435,17 @@ IConditionalRule<TContext>       IConditionalRule<TContext, TResult> IConditiona
 **2.1. Simple Function Signatures**
 
 ```
-Func<TContext, Result>                    Func<TContext, CancellationToken, Result> Func<TContext, CancellationToken, ValueTask<Result>> 
+Func<TContext, Result>
+Func<TContext, CancellationToken, Result>
+Func<TContext, CancellationToken, ValueTask<Result>>
 ```
 
 **2.2. Generic Result Returning Functions**
 
 ```
-Func<TContext, Result<TResult>>                    Func<TContext, CancellationToken, Result<TResult>> Func<TContext, CancellationToken, ValueTask<Result<TResult>>> 
+Func<TContext, Result<TResult>>
+Func<TContext, CancellationToken, Result<TResult>>
+Func<TContext, CancellationToken, ValueTask<Result<TResult>>>
 ```
 
 This rich type system allows you to:  

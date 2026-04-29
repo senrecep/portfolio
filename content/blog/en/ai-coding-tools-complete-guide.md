@@ -5,6 +5,17 @@ date: "2026-01-24"
 slug: "ai-coding-tools-complete-guide"
 mediumUrl: "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1"
 imageUrl: "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
+keywords: ["Claude Code", "OpenCode", "AI coding tools", "CLAUDE.md", "MCP", "context management", "AI-assisted development", "code generation"]
+author: "Recep Sen"
+modifiedDate: "2026-01-24"
+category: "AI"
+faq:
+  - q: "What is the difference between Claude Code and OpenCode?"
+    a: "Claude Code is Anthropic's terminal-based AI assistant that supports subagents, hooks, and a rich plugin ecosystem but only works with Claude models. OpenCode is an open-source alternative supporting 75+ AI providers including local models via Ollama, offering more model flexibility but with fewer built-in orchestration features."
+  - q: "What is CLAUDE.md and why is it important?"
+    a: "CLAUDE.md is a project-level configuration file that acts as persistent memory for the AI coding tool. It defines project conventions, boundaries, commands, and context so the AI understands your codebase without needing repeated explanations. Keeping it under 100 lines is recommended to avoid bloating the context window."
+  - q: "How do MCP servers extend AI coding tools?"
+    a: "Model Context Protocol (MCP) servers expose external APIs, databases, and tools directly to the AI. This means you can give Claude Code or OpenCode real-time access to GitHub, databases, documentation, or custom business logic without copy-pasting information manually."
 ---
 
 ## Introduction: The AI Coding Revolution
@@ -41,10 +52,10 @@ Unlike web-based AI (ChatGPT, Claude.ai), these tools integrate directly with yo
 
 ## The Two Major Players (January 2026)
 
-| Tool | Developer | Model Support | Cost |
-|---|---|---|---|
-| **Claude Code** | Anthropic (official) | Claude only | $17-200/month |
-| **OpenCode** | Community (open-source) | 75+ providers | Free + API costs |
+| Tool            | Developer               | Model Support | Cost             |
+| --------------- | ----------------------- | ------------- | ---------------- |
+| **Claude Code** | Anthropic (official)    | Claude only   | $17-200/month    |
+| **OpenCode**    | Community (open-source) | 75+ providers | Free + API costs |
 
 ## Five Limitations You Should Know
 
@@ -124,12 +135,12 @@ After 60% context usage, AI:
 
 ### Red Flags
 
-| Signal | Action |
-|---|---|
-| AI repeats itself | `/clear` |
+| Signal                   | Action                 |
+| ------------------------ | ---------------------- |
+| AI repeats itself        | `/clear`               |
 | Forgets previous context | SCRATCHPAD -> `/clear` |
-| Edits wrong files | Clear context |
-| Quality drop | `/compact` + `/clear` |
+| Edits wrong files        | Clear context          |
+| Quality drop             | `/compact` + `/clear`  |
 
 ### MCP (Model Context Protocol)
 
@@ -137,12 +148,12 @@ A standard for connecting AI tools to external services (databases, APIs, docume
 
 **Critical**: Claude Code and OpenCode use **different MCP formats**:
 
-| Feature | Claude Code | OpenCode |
-|---|---|---|
-| Key | `mcpServers` | `mcp` |
-| Command | `"command": "x"` + `"args"` | `"command": ["x", "y"]` |
-| Type | Not required | `"type": "local"` required |
-| Toggle | N/A | `"enabled": true/false` |
+| Feature | Claude Code                 | OpenCode                   |
+| ------- | --------------------------- | -------------------------- |
+| Key     | `mcpServers`                | `mcp`                      |
+| Command | `"command": "x"` + `"args"` | `"command": ["x", "y"]`    |
+| Type    | Not required                | `"type": "local"` required |
+| Toggle  | N/A                         | `"enabled": true/false`    |
 
 **Claude Code (`~/.claude/mcp.json`):**
 
@@ -177,12 +188,12 @@ Skills are instruction sets that extend AI capabilities. They're **shared betwee
 
 **Directory search order (OpenCode):**
 
-| Priority | Directory | Shared with Claude Code? |
-|---|---|---|
-| 1 | `.opencode/skills/` | No |
-| 2 | `.claude/skills/` | Yes |
-| 3 | `~/.config/opencode/skills/` | No |
-| 4 | `~/.claude/skills/` | Yes |
+| Priority | Directory                    | Shared with Claude Code? |
+| -------- | ---------------------------- | ------------------------ |
+| 1        | `.opencode/skills/`          | No                       |
+| 2        | `.claude/skills/`            | Yes                      |
+| 3        | `~/.config/opencode/skills/` | No                       |
+| 4        | `~/.claude/skills/`          | Yes                      |
 
 **Key insight**: This is **provider-agnostic** - works the same whether you use Claude, GPT, Gemini, or GLM.
 
@@ -308,22 +319,22 @@ oh-my-opencode transforms OpenCode into a multi-agent orchestration system.
 
 **Subscription Levels Explained**
 
-| Flag | Requirement | Effect |
-|---|---|---|
+| Flag             | Requirement          | Effect                     |
+| ---------------- | -------------------- | -------------------------- |
 | `--claude=max20` | Claude Pro/Max + 20x | Full Sisyphus orchestrator |
-| `--claude=yes` | Claude Pro/Max | Standard Sisyphus |
-| `--claude=no` | No Claude | Sisyphus may fail |
-| `--openai=yes` | ChatGPT Plus | GPT-5.2 for Oracle |
+| `--claude=yes`   | Claude Pro/Max       | Standard Sisyphus          |
+| `--claude=no`    | No Claude            | Sisyphus may fail          |
+| `--openai=yes`   | ChatGPT Plus         | GPT-5.2 for Oracle         |
 
 ### Agent System
 
-| Agent | Model | Purpose |
-|---|---|---|
-| **Sisyphus** | Claude Opus 4.5 | Main orchestrator |
-| **Oracle** | Claude Opus 4.5 / GPT-5.2 | Debugging, architecture |
-| **Librarian** | GLM-4.7 (free) | Code search, context |
-| **Frontend** | Claude Opus 4.5 | UI/UX engineering |
-| **Document Writer** | Claude Opus 4.5 | Documentation |
+| Agent               | Model                     | Purpose                 |
+| ------------------- | ------------------------- | ----------------------- |
+| **Sisyphus**        | Claude Opus 4.5           | Main orchestrator       |
+| **Oracle**          | Claude Opus 4.5 / GPT-5.2 | Debugging, architecture |
+| **Librarian**       | GLM-4.7 (free)            | Code search, context    |
+| **Frontend**        | Claude Opus 4.5           | UI/UX engineering       |
+| **Document Writer** | Claude Opus 4.5           | Documentation           |
 
 ### Ultrawork Mode
 
@@ -341,26 +352,26 @@ ulw: implement authentication with tests and documentation
 
 Based on community benchmarks with Opus 4.5:
 
-| Metric | Claude Code | OpenCode |
-|---|---|---|
-| Same task completion | 14 min | 27 min |
-| Token usage | ~191k | ~278k |
-| Speed | 2x faster | - |
-| Cost | 30% cheaper | - |
+| Metric               | Claude Code | OpenCode |
+| -------------------- | ----------- | -------- |
+| Same task completion | 14 min      | 27 min   |
+| Token usage          | ~191k       | ~278k    |
+| Speed                | 2x faster   | -        |
+| Cost                 | 30% cheaper | -        |
 
 **Note**: OpenCode's UX is widely praised as superior.
 
 ### Feature Comparison
 
-| Feature | Claude Code | OpenCode |
-|---|---|---|
-| Model options | Claude only | 75+ providers |
-| Local models | No | Yes (Ollama) |
-| Context management | Excellent | Good |
-| Subagents | Built-in | Not native |
-| Remote workspaces | No | Yes |
-| GitHub integration | Yes | Limited |
-| Web interface | Yes | No |
+| Feature            | Claude Code | OpenCode      |
+| ------------------ | ----------- | ------------- |
+| Model options      | Claude only | 75+ providers |
+| Local models       | No          | Yes (Ollama)  |
+| Context management | Excellent   | Good          |
+| Subagents          | Built-in    | Not native    |
+| Remote workspaces  | No          | Yes           |
+| GitHub integration | Yes         | Limited       |
+| Web interface      | Yes         | No            |
 
 ### Quality Observations
 
@@ -380,11 +391,11 @@ Based on community benchmarks with Opus 4.5:
 
 ### Quick Decision Matrix
 
-| If You Want... | Choose |
-|---|---|
-| Official support + stability | **Claude Code** |
-| Free + model flexibility | **OpenCode** |
-| Maximum automation | **oh-my-opencode** |
+| If You Want...               | Choose             |
+| ---------------------------- | ------------------ |
+| Official support + stability | **Claude Code**    |
+| Free + model flexibility     | **OpenCode**       |
+| Maximum automation           | **oh-my-opencode** |
 
 ### Scenario-Based Recommendations
 
@@ -422,21 +433,21 @@ Why:
 
 ### What's Automatically Shared
 
-| Directory | Claude Code | OpenCode |
-|---|---|---|
-| `~/.claude/skills/` | Reads | Reads |
-| `~/.config/opencode/skills/` | No | Reads |
-| `.claude/skills/` | Reads | Reads |
+| Directory                    | Claude Code | OpenCode |
+| ---------------------------- | ----------- | -------- |
+| `~/.claude/skills/`          | Reads       | Reads    |
+| `~/.config/opencode/skills/` | No          | Reads    |
+| `.claude/skills/`            | Reads       | Reads    |
 
 **Result**: Skills in `~/.claude/skills/` work with both tools automatically.
 
 ### What Needs Manual Sync
 
-| Config | Claude Code | OpenCode | Note |
-|---|---|---|---|
-| MCP Servers | `mcp.json` | `opencode.json` | Format conversion required |
-| Commands | `.claude/commands/` | `.opencode/command/` | Rename directory |
-| Agents | `.claude/agents/` | `.opencode/agent/` | Different frontmatter |
+| Config      | Claude Code         | OpenCode             | Note                       |
+| ----------- | ------------------- | -------------------- | -------------------------- |
+| MCP Servers | `mcp.json`          | `opencode.json`      | Format conversion required |
+| Commands    | `.claude/commands/` | `.opencode/command/` | Rename directory           |
+| Agents      | `.claude/agents/`   | `.opencode/agent/`   | Different frontmatter      |
 
 ## Part 8: Advanced Topics
 
@@ -486,13 +497,13 @@ Never use on:
 
 Claude Code supports event-based automation through hooks:
 
-| Hook | When It Runs |
-|---|---|
-| `PreToolUse` | Before a tool is called |
-| `PostToolUse` | After a tool is called |
-| `SessionStart` | At session start |
+| Hook               | When It Runs              |
+| ------------------ | ------------------------- |
+| `PreToolUse`       | Before a tool is called   |
+| `PostToolUse`      | After a tool is called    |
+| `SessionStart`     | At session start          |
 | `UserPromptSubmit` | When user sends a message |
-| `Stop` | When agent stops |
+| `Stop`             | When agent stops          |
 
 **Example: Auto-lint after edits**
 
@@ -518,12 +529,12 @@ Claude Code supports event-based automation through hooks:
 
 ### OpenCode: No Native Hook System
 
-| Feature | Claude Code | OpenCode |
-|---|---|---|
-| Event hooks | Yes (5 hook types) | No |
-| Continuous learning | Yes (Claudeception) | Manual only |
-| Auto-lint | Yes (PostToolUse) | External tools |
-| Session memory | Yes (Hooks + Skills) | Skills only (stateless) |
+| Feature             | Claude Code          | OpenCode                |
+| ------------------- | -------------------- | ----------------------- |
+| Event hooks         | Yes (5 hook types)   | No                      |
+| Continuous learning | Yes (Claudeception)  | Manual only             |
+| Auto-lint           | Yes (PostToolUse)    | External tools          |
+| Session memory      | Yes (Hooks + Skills) | Skills only (stateless) |
 
 **Workaround for OpenCode:** Use external automation (shell scripts, make targets) or wait for community plugins.
 
@@ -546,13 +557,13 @@ npx ctx7 skills install better-icons
 
 ### Command Comparison
 
-| Task | Claude Code | OpenCode |
-|---|---|---|
-| Start | `claude` | `opencode` |
-| Clear context | `/clear` | `/clear` |
-| Compact | `/compact` | N/A |
-| Plan mode | `Shift+Tab` | Similar |
-| Commit | `/commit` | `/commit` |
+| Task          | Claude Code | OpenCode   |
+| ------------- | ----------- | ---------- |
+| Start         | `claude`    | `opencode` |
+| Clear context | `/clear`    | `/clear`   |
+| Compact       | `/compact`  | N/A        |
+| Plan mode     | `Shift+Tab` | Similar    |
+| Commit        | `/commit`   | `/commit`  |
 
 ### Directory Structure
 

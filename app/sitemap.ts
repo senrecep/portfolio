@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllBlogSlugs } from "@/lib/blog";
+import { getAllBlogSlugs, getBlogPost } from "@/lib/blog";
 import { defaultLanguage, languageCodes } from "@/lib/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const languageRoutes = languageCodes.map((lang) => ({
     url: `${siteUrl}/${lang}`,
     lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 1.0,
     alternates: {
       languages: alternates,
     },
@@ -32,6 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const resumeRoutes = languageCodes.map((lang) => ({
     url: `${siteUrl}/${lang}/resume`,
     lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
     alternates: {
       languages: resumeAlternates,
     },
@@ -47,6 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const privacyRoutes = languageCodes.map((lang) => ({
     url: `${siteUrl}/${lang}/privacy`,
     lastModified,
+    changeFrequency: "yearly" as const,
+    priority: 0.5,
     alternates: {
       languages: privacyAlternates,
     },
@@ -62,12 +68,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogListRoutes = languageCodes.map((lang) => ({
     url: `${siteUrl}/${lang}/blog`,
     lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
     alternates: { languages: blogAlternates },
   }));
 
   // Individual blog post routes for all languages
   const blogSlugs = getAllBlogSlugs();
   const blogPostRoutes = blogSlugs.flatMap((slug) => {
+    const post = getBlogPost(slug, defaultLanguage);
+    const postLastModified = post
+      ? new Date(post.modifiedDate || post.date)
+      : lastModified;
+
     const postAlternates: Record<string, string> = {};
     for (const lang of languageCodes) {
       postAlternates[lang] = `${siteUrl}/${lang}/blog/${slug}`;
@@ -76,7 +89,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return languageCodes.map((lang) => ({
       url: `${siteUrl}/${lang}/blog/${slug}`,
-      lastModified,
+      lastModified: postLastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
       alternates: { languages: postAlternates },
     }));
   });
@@ -87,5 +102,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...privacyRoutes,
     ...blogListRoutes,
     ...blogPostRoutes,
+    {
+      url: `${siteUrl}/llms.txt`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
+      url: `${siteUrl}/llms-full.txt`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
   ];
 }
