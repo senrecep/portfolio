@@ -1,13 +1,13 @@
 {
-  "name": "Your Name",
+  "name": "Recep Şen",
   "type": "person",
-  "url": "https://yourdomain.com",
-  "description": "[Your Position] at [Your Company]. Brief description of your expertise and what makes you unique.",
+  "url": "https://senrecep.com",
+  "description": "CTO at Taptoweb. .NET, microservices, AI-assisted development, and cloud architecture expert building scalable enterprise software.",
   "aiReadableResources": [
-    { "url": "https://yourdomain.com/llms.txt", "description": "Concise AI-readable profile overview" },
-    { "url": "https://yourdomain.com/llms-full.txt", "description": "Detailed AI-readable professional profile" },
-    { "url": "https://yourdomain.com/sitemap.xml", "description": "Full site map" },
-    { "url": "https://yourdomain.com/feed.xml", "description": "Blog RSS feed" }
+    { "url": "https://senrecep.com/llms.txt", "description": "Concise AI-readable profile overview" },
+    { "url": "https://senrecep.com/llms-full.txt", "description": "Detailed AI-readable professional profile" },
+    { "url": "https://senrecep.com/sitemap.xml", "description": "Full site map" },
+    { "url": "https://senrecep.com/feed.xml", "description": "Blog RSS feed" }
   ],
   "allowedPaths": ["/"],
   "disallowedPaths": [],
@@ -16,6 +16,6 @@
     "training": "allowed",
     "attributionRequired": true
   },
-  "preferredCitation": "Your Name, [Your Position] (https://yourdomain.com)",
-  "updatedAt": "2026-01-01"
+  "preferredCitation": "Recep Şen, CTO at Taptoweb (https://senrecep.com)",
+  "updatedAt": "2026-04-29"
 }
