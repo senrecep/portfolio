@@ -211,7 +211,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "salary-sim.senrecep.com",
+        hostname: "placehold.co",
       },
     ],
   },
