@@ -232,6 +232,7 @@
       "title": "포트폴리오 템플릿",
       "description": "무제한 언어 지원, 다크/라이트 테마, 모든 직업에 맞게 완전히 커스터마이즈 가능한 섹션을 갖춘 빠르고 SEO 최적화된 포트폴리오 템플릿. Next.js 15와 React 19로 구축. MIT 라이선스.",
       "projectUrl": "https://github.com/senrecep/portfolio",
+      "featured": true,
       "tags": ["Next.js", "React", "TypeScript", "i18n", "오픈 소스"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"

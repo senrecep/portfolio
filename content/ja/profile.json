@@ -232,6 +232,7 @@
       "title": "ポートフォリオテンプレート",
       "description": "無制限の言語サポート、ダーク/ライトテーマ、あらゆる職業に対応できる完全カスタマイズ可能なセクションを備えた、高速でSEO最適化されたポートフォリオテンプレート。Next.js 15とReact 19で構築。MITライセンス。",
       "projectUrl": "https://github.com/senrecep/portfolio",
+      "featured": true,
       "tags": ["Next.js", "React", "TypeScript", "i18n", "オープンソース"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"

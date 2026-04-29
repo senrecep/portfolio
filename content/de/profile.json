@@ -201,6 +201,7 @@
       "title": "Portfolio-Vorlage",
       "description": "Eine schnelle, SEO-optimierte Portfolio-Vorlage mit unbegrenzter Sprachunterstützung, Dunkel/Hell-Themen und vollständig anpassbaren Bereichen für jeden Beruf. Erstellt mit Next.js 15 und React 19. MIT-lizenziert.",
       "projectUrl": "https://github.com/senrecep/portfolio",
+      "featured": true,
       "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"

@@ -232,6 +232,7 @@
       "title": "Plantilla de Portafolio",
       "description": "Una plantilla de portafolio rápida y optimizada para SEO con soporte ilimitado de idiomas, temas oscuro/claro y secciones totalmente personalizables para cualquier profesión. Construida con Next.js 15 y React 19. Licencia MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
+      "featured": true,
       "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"

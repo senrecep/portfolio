@@ -232,6 +232,7 @@
       "title": "Template de Portfólio",
       "description": "Um template de portfólio rápido e otimizado para SEO com suporte ilimitado a idiomas, temas escuro/claro e seções totalmente personalizáveis para qualquer profissão. Construído com Next.js 15 e React 19. Licença MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
+      "featured": true,
       "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"

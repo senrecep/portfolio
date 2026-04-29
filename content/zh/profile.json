@@ -232,6 +232,7 @@
       "title": "作品集模板",
       "description": "快速、SEO 优化的作品集模板，支持无限语言、深色/浅色主题，以及适用于任何职业的完全可定制部分。使用 Next.js 15 和 React 19 构建。MIT 许可。",
       "projectUrl": "https://github.com/senrecep/portfolio",
+      "featured": true,
       "tags": ["Next.js", "React", "TypeScript", "i18n", "开源"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"

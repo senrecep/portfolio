@@ -201,6 +201,7 @@
       "title": "Portfolyo Şablonu",
       "description": "Sınırsız dil desteği, açık/koyu tema ve her meslek için özelleştirilebilir bölümler sunan hızlı, SEO optimize portfolyo şablonu. Next.js 15 ve React 19 ile geliştirildi. MIT lisanslı.",
       "projectUrl": "https://github.com/senrecep/portfolio",
+      "featured": true,
       "tags": ["Next.js", "React", "TypeScript", "i18n", "Açık Kaynak"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"

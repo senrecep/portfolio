@@ -237,6 +237,7 @@
       "title": "Шаблон портфолио",
       "description": "Быстрый, SEO-оптимизированный шаблон портфолио с неограниченной языковой поддержкой, тёмной/светлой темами и полностью настраиваемыми разделами для любой профессии. Создан на Next.js 15 и React 19. Лицензия MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
+      "featured": true,
       "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
