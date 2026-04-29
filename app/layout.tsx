@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     manifest: "/manifest.json",
     appleWebApp: {
-      title: "Recep Şen",
+      title: "Your Name",
       capable: true,
       statusBarStyle: "black-translucent",
     },

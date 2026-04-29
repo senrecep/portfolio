@@ -1,22 +1,13 @@
 {
-  "name": "Recep Şen",
+  "name": "Your Name",
   "type": "person",
-  "url": "https://senrecep.com",
-  "description": "Software Engineer & CTO at Taptoweb. Creator of Easyapp (250,000+ users). Specializes in .NET, microservices, and AI-assisted development.",
+  "url": "https://yourdomain.com",
+  "description": "[Your Position] at [Your Company]. Brief description of your expertise and what makes you unique.",
   "aiReadableResources": [
-    {
-      "url": "https://senrecep.com/llms.txt",
-      "description": "Concise AI-readable profile overview"
-    },
-    {
-      "url": "https://senrecep.com/llms-full.txt",
-      "description": "Detailed AI-readable professional profile"
-    },
-    {
-      "url": "https://senrecep.com/sitemap.xml",
-      "description": "Full site map"
-    },
-    { "url": "https://senrecep.com/feed.xml", "description": "Blog RSS feed" }
+    { "url": "https://yourdomain.com/llms.txt", "description": "Concise AI-readable profile overview" },
+    { "url": "https://yourdomain.com/llms-full.txt", "description": "Detailed AI-readable professional profile" },
+    { "url": "https://yourdomain.com/sitemap.xml", "description": "Full site map" },
+    { "url": "https://yourdomain.com/feed.xml", "description": "Blog RSS feed" }
   ],
   "allowedPaths": ["/"],
   "disallowedPaths": [],
@@ -25,6 +16,6 @@
     "training": "allowed",
     "attributionRequired": true
   },
-  "preferredCitation": "Recep Şen, Software Engineer & CTO (https://senrecep.com)",
-  "updatedAt": "2026-04-29"
+  "preferredCitation": "Your Name, [Your Position] (https://yourdomain.com)",
+  "updatedAt": "2026-01-01"
 }

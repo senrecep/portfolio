@@ -13,7 +13,8 @@ interface PageProps {
   params: Promise<{ lang: string }>;
 }
 
-const siteUrl = "https://senrecep.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -33,7 +34,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: `${t.sections.blog.title} - Recep Sen`,
+    title: `${t.sections.blog.title} - Your Name`,
     description: t.sections.blog.description,
     alternates: {
       canonical: `${siteUrl}/${lang}/blog`,
@@ -44,17 +45,17 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      title: `${t.sections.blog.title} - Recep Sen`,
+      title: `${t.sections.blog.title} - Your Name`,
       description: t.sections.blog.description,
       url: `${siteUrl}/${lang}/blog`,
-      siteName: "Recep Sen",
+      siteName: "Your Name",
       locale: lang,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${t.sections.blog.title} - Recep Sen`,
+      title: `${t.sections.blog.title} - Your Name`,
       description: t.sections.blog.description,
-      creator: "@senrecep0",
+      creator: "@yourusername",
     },
   };
 }

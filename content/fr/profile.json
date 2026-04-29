@@ -1,17 +1,16 @@
 {
   "personalInfo": {
-    "name": "Recep Şen",
-    "position": "CTO",
-    "company": "Taptoweb",
-    "companyUrl": "https://taptoweb.com",
-    "about": "CTO chez Taptoweb, où j'ai conçu une plateforme microservices à 28 services alimentant Easyapp.ai - un constructeur d'applications mobiles no-code avec plus de 250 000 utilisateurs. Je me spécialise en .NET/C#, Domain-Driven Design et systèmes IA agentiques.",
+    "name": "Your Name",
+    "position": "Software Engineer",
+    "company": "Your Company",
+    "companyUrl": "https://your-company.com",
+    "about": "Brief description of yourself and what you do. Highlight your main expertise, achievements, and what makes you unique as a software engineer.",
     "imageUrl": "/images/profile.webp",
-    "callsign": "TB1REC",
-    "email": "me@senrecep.com",
-    "phoneNumber": "+905319649002",
+    "email": "you@example.com",
+    "phoneNumber": "+10000000000",
     "cv": {
       "url": "/files/cv.pdf",
-      "fileName": "Recep Şen - CV.pdf"
+      "fileName": "Your Name - CV.pdf"
     }
   },
   "skills": [
@@ -174,165 +173,85 @@
   ],
   "certificates": [
     {
-      "title": "Dive Into Refactoring",
-      "issuer": "Refactoring.Guru",
-      "issueDate": "Déc. 2024",
-      "credentialId": "#000053812",
-      "credentialUrl": "https://drive.google.com/file/d/1nkuUA7nszo4cnkOL3ZbMU5x7Bxlyjl8F/view?usp=sharing"
+      "title": "Professional Certification Name",
+      "issuer": "Certification Body",
+      "issueDate": "Jan. 2025",
+      "credentialId": "CERT-001",
+      "credentialUrl": "https://your-certification-url.com"
     },
     {
-      "title": "Pragmatic Clean Architecture",
-      "issuer": "Milan Jovanovic Tech",
-      "issueDate": "Déc. 2024",
-      "credentialId": "cert_y7sc2384",
-      "credentialUrl": "https://drive.google.com/file/d/1ywBRKVFl-GlfeduOWuIe7M36ikBB0Qp2/view?usp=sharing"
+      "title": "Advanced Course Certificate",
+      "issuer": "Online Learning Platform",
+      "issueDate": "Juin 2024",
+      "credentialId": "CERT-002",
+      "credentialUrl": "https://your-certification-url.com"
     },
     {
-      "title": "Golang 101",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "Sept. 2023"
-    },
-    {
-      "title": "Centralized log management with Graylog",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "Fév. 2023"
-    },
-    {
-      "title": "CCNA-1",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "Jan. 2020"
+      "title": "Foundational Technology Certificate",
+      "issuer": "Technology Institute",
+      "issueDate": "Déc. 2023"
     }
   ],
   "projects": [
     {
-      "title": "Easyapp",
-      "description": "Direction de l'architecture et du développement d'une plateforme basée sur les microservices servant plus de 150 000 utilisateurs. Mise en œuvre d'une optimisation des coûts pilotée par l'IA et d'une infrastructure à la demande économique.",
-      "projectUrl": "https://easyapp.ai",
-      "tags": ["IA", "Mobile", "No-Code"],
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
-      "year": "2022"
+      "title": "Sample SaaS Product",
+      "year": "2024",
+      "description": "A brief description of your main product or service. Highlight key metrics like user count or impact.",
+      "projectUrl": "https://your-project.com",
+      "tags": ["Next.js", "TypeScript", "SaaS"],
+      "imageUrl": "https://placehold.co/400x400?text=Project+1"
     },
     {
-      "title": "Aspire Microservice Starter Template",
-      "description": "Un modèle pour créer un microservice avec le Framework Aspire.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
+      "title": "Open Source Library",
+      "year": "2023",
+      "description": "An open-source library or tool you built. Mention downloads, stars, or community impact.",
+      "projectUrl": "https://github.com/yourusername/your-library",
+      "tags": ["Open Source", "NuGet", "npm"],
+      "imageUrl": "https://placehold.co/400x400?text=Project+2"
     },
     {
-      "title": "CSharpEssentials",
-      "description": "Simplifie le développement C# en fournissant des blocs de construction essentiels, incluant un framework pour implémenter des design patterns courants tels que le Result Pattern, le Any Pattern et le Maybe Pattern.",
-      "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "Programmation Fonctionnelle"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
-      "year": "2023"
-    },
-    {
-      "title": "Modèle de Portfolio",
-      "description": "Un modèle de portfolio rapide et optimisé SEO avec support illimité de langues, thèmes sombre/clair et sections entièrement personnalisables pour toute profession. Construit avec Next.js 15 et React 19. Licence MIT.",
-      "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
-      "imageUrl": "/images/project-portfolio.webp",
-      "year": "2025"
-    },
-    {
-      "title": "Career & Salary Comparison Simulator",
-      "description": "Le simulateur de comparaison de salaires le plus complet de Turquie. Comparez le revenu net entre les employés salariés SGK (4/a) et les travailleurs indépendants Bağ-Kur (4/b). Calculs de salaire brut/net, impôts, cotisations et coûts employeur.",
-      "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "Finance", "Fiscalité", "SGK", "Bağ-Kur"],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
-      "year": "2025"
-    },
-    {
-      "title": "QMS - Système de Management de la Qualité",
-      "description": "Un système de management de la qualité de niveau entreprise avec deux modules principaux : Gestion Documentaire (DMS) avec historique complet des révisions, workflows d'approbation en deux étapes, distribution ciblée et confirmations de lecture suivies ; et Demandes d'Actions Correctives (CAR/DFI) avec un workflow ISO 9001 en 8 étapes, analyse des causes racines, suivi des actions correctives avec équipes et coûts, et rapports PDF professionnels. Comprend des notifications SSE en temps réel via Redis Pub/Sub, livraison d'e-mails asynchrone via BullMQ avec rappels automatisés et escalade, contrôle d'accès basé sur les rôles et piste d'audit complète. Construit avec Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) et Redis.",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
+      "title": "Portfolio Website",
+      "year": "2025",
+      "description": "This portfolio template - a modern, SEO-optimized and AI-discoverable portfolio built with Next.js 15.",
+      "projectUrl": "https://github.com/yourusername/portfolio",
+      "tags": ["Next.js", "TypeScript", "TailwindCSS"],
+      "imageUrl": "https://placehold.co/400x400?text=Portfolio"
     }
   ],
   "blogPosts": [
     {
-      "title": "Arrêtez d'écrire du code, commencez à gérer des systèmes : Le véritable potentiel du développement assisté par l'IA",
-      "description": "Arrêtez de traiter l'IA comme un simple outil d'autocomplétion et commencez à penser comme un CTO. Un guide complet sur Claude Code couvrant la stratégie CLAUDE.md, la gestion du contexte, les hooks, les agents personnalisés, l'orchestration multi-agents, le routage de modèles et les systèmes auto-apprenants.",
-      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
-      "date": "02/28/2026",
-      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp",
-      "slug": "stop-writing-code-start-managing-systems"
+      "title": "Your First Blog Post Title",
+      "description": "A brief summary of your first blog post. Keep it to 1-2 sentences.",
+      "blogUrl": "https://medium.com/@yourusername/your-first-post",
+      "imageUrl": "/images/blog-post-1.webp",
+      "date": "2026-01-01",
+      "slug": "sample-blog-post"
     },
     {
-      "title": "Outils de codage IA : Le guide complet de Claude Code, OpenCode et du développement moderne",
-      "description": "De zéro à la production : Maîtrisez le développement assisté par IA avec les bons outils. Apprenez Claude Code, OpenCode, oh-my-opencode, MCP, skills et techniques avancées pour le développement professionnel.",
-      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
-      "date": "24/01/2026",
-      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp",
-      "slug": "ai-coding-tools-complete-guide"
-    },
-    {
-      "title": "Développement IA de qualité production avec Claude Code : Guide complet de l'écosystème",
-      "description": "Transformez Claude Code d'un simple outil de questions-réponses en un environnement de développement professionnel avec des plugins, des agents personnalisés, des compétences, des serveurs MCP et des hooks.",
-      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
-      "date": "21/01/2026",
-      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp",
-      "slug": "production-grade-ai-development-claude-code"
-    },
-    {
-      "title": "Analyse des performances des méthodes de passage de paramètres en C#",
-      "description": "Analyse approfondie du passage de paramètres en C# : Comparaison des types struct, class, record et ref avec des benchmarks. Découvrez les meilleures pratiques d'optimisation.",
-      "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
-      "date": "20/02/2025",
-      "imageUrl": "/images/parameters.webp",
-      "slug": "performance-analysis-parameter-passing-csharp"
-    },
-    {
-      "title": "The Modern Way to Manage C# Business Rules: Rule Engine Pattern",
-      "description": "Un pattern C# moderne pour gérer les règles métier offrant un contrôle centralisé, une haute testabilité et des performances optimales via le Result Pattern.",
-      "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
-      "date": "04/02/2025",
-      "imageUrl": "/images/rule-engine.webp",
-      "slug": "modern-way-manage-csharp-business-rules"
-    },
-    {
-      "title": "Google Cloud Secret Manager Integration for Your .NET Applications",
-      "description": "Une bibliothèque .NET pour l'intégration de Google Cloud Secret Manager avec des fonctionnalités comme le filtrage par préfixe, la configuration spécifique à la région et le support JSON/brut.",
-      "blogUrl": "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027",
-      "date": "30/01/2025",
-      "imageUrl": "/images/dotnet-secret-manager.webp",
-      "slug": "google-cloud-secret-manager-dotnet"
-    },
-    {
-      "title": "Blockchain Based E-Voting System",
-      "description": "Cette recherche propose le développement d'un système de vote en ligne sécurisé et rapide utilisant la technologie blockchain. Ce système offre non seulement un faible délai de traitement et un haut niveau de sécurité, mais simplifie également la vérification de l'intégrité des données.",
-      "blogUrl": "https://www.researchgate.net/publication/365993522_4_International_New_York_Academic_Research_Congress_Full-Text_Book",
-      "date": "23/01/2022",
-      "imageUrl": "/images/blockchain-research.webp"
+      "title": "Your Second Blog Post Title",
+      "description": "A brief summary of your second blog post about technology or your expertise.",
+      "blogUrl": "https://medium.com/@yourusername/your-second-post",
+      "imageUrl": "/images/blog-post-2.webp",
+      "date": "2026-02-01",
+      "slug": "sample-seo-guide"
     }
   ],
   "socialLinks": [
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/senrecep/"
+      "url": "https://linkedin.com/in/yourusername"
     },
     {
       "name": "GitHub",
-      "url": "https://github.com/senrecep"
+      "url": "https://github.com/yourusername"
     },
     {
       "name": "Medium",
-      "url": "https://medium.com/@senrecep"
+      "url": "https://medium.com/@yourusername"
     },
     {
       "name": "X",
-      "url": "https://x.com/senrecep0"
+      "url": "https://x.com/yourusername"
     }
   ]
 }

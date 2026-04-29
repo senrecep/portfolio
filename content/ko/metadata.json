@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - 소프트웨어 엔지니어",
+  "title": "Your Name - 소프트웨어 엔지니어",
   "description": "고영향력의 확장 가능한 시스템을 구축합니다. 복잡한 비즈니스 과제를 수십만 명의 사용자에게 서비스를 제공하는 우아한 기술 솔루션으로 전환합니다.",
   "callsign": "TB1REC",
   "keywords": [
@@ -7,8 +7,8 @@
     "백엔드 개발",
     "풀스택",
     "개발자",
-    "easyapp",
-    "taptoweb",
+    "portfolio",
+    "open source",
     "dotnet",
     "마이크로서비스",
     "노코드 플랫폼 개발자",
@@ -17,25 +17,25 @@
     "아마추어 무선"
   ],
   "openGraph": {
-    "title": "Recep Şen - 소프트웨어 엔지니어",
+    "title": "Your Name - 소프트웨어 엔지니어",
     "description": "고영향력의 확장 가능한 시스템을 구축합니다. 복잡한 비즈니스 과제를 수십만 명의 사용자에게 서비스를 제공하는 우아한 기술 솔루션으로 전환합니다.",
-    "siteName": "Recep Şen 포트폴리오",
+    "siteName": "Your Name 포트폴리오",
     "images": [
       {
         "url": "/images/og-banner.ko.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
+        "alt": "Your Name - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
       }
     ]
   },
   "twitter": {
     "card": "summary_large_image",
-    "site": "@senrecep0",
-    "creator": "@senrecep0",
+    "site": "@yourusername",
+    "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.ko.webp",
-      "alt": "Recep Şen - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
+      "alt": "Your Name - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
     }
   }
 }

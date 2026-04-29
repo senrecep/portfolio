@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Ingénieur Logiciel",
+  "title": "Your Name - Ingénieur Logiciel",
   "description": "Création de systèmes évolutifs à fort impact. Je transforme des défis commerciaux complexes en solutions techniques élégantes qui servent des centaines de milliers d'utilisateurs.",
   "callsign": "TB1REC",
   "keywords": [
@@ -7,8 +7,8 @@
     "développement backend",
     "full stack",
     "développeur",
-    "easyapp",
-    "taptoweb",
+    "portfolio",
+    "open source",
     "dotnet",
     "microservices",
     "développeur plateforme no code",
@@ -17,25 +17,25 @@
     "radio amateur"
   ],
   "openGraph": {
-    "title": "Recep Şen - Ingénieur Logiciel",
+    "title": "Your Name - Ingénieur Logiciel",
     "description": "Création de systèmes évolutifs à fort impact. Je transforme des défis commerciaux complexes en solutions techniques élégantes qui servent des centaines de milliers d'utilisateurs.",
-    "siteName": "Portfolio Recep Şen",
+    "siteName": "Portfolio Your Name",
     "images": [
       {
         "url": "/images/og-banner.fr.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Ingénieur Logiciel | Aperçu du portfolio"
+        "alt": "Your Name - Ingénieur Logiciel | Aperçu du portfolio"
       }
     ]
   },
   "twitter": {
     "card": "summary_large_image",
-    "site": "@senrecep0",
-    "creator": "@senrecep0",
+    "site": "@yourusername",
+    "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.fr.webp",
-      "alt": "Recep Şen - Ingénieur Logiciel | Aperçu du portfolio"
+      "alt": "Your Name - Ingénieur Logiciel | Aperçu du portfolio"
     }
   }
 }

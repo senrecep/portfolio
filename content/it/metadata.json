@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Ingegnere del Software",
+  "title": "Your Name - Ingegnere del Software",
   "description": "Costruisco sistemi scalabili ad alto impatto. Trasformo sfide aziendali complesse in soluzioni tecniche eleganti che servono centinaia di migliaia di utenti.",
   "callsign": "TB1REC",
   "keywords": [
@@ -7,8 +7,8 @@
     "sviluppo backend",
     "full stack",
     "sviluppatore",
-    "easyapp",
-    "taptoweb",
+    "portfolio",
+    "open source",
     "dotnet",
     "microservices",
     "sviluppatore piattaforma no code",
@@ -17,25 +17,25 @@
     "radioamatore"
   ],
   "openGraph": {
-    "title": "Recep Şen - Ingegnere del Software",
+    "title": "Your Name - Ingegnere del Software",
     "description": "Costruisco sistemi scalabili ad alto impatto. Trasformo sfide aziendali complesse in soluzioni tecniche eleganti che servono centinaia di migliaia di utenti.",
-    "siteName": "Portfolio Recep Şen",
+    "siteName": "Portfolio Your Name",
     "images": [
       {
         "url": "/images/og-banner.it.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Ingegnere del Software | Anteprima portfolio"
+        "alt": "Your Name - Ingegnere del Software | Anteprima portfolio"
       }
     ]
   },
   "twitter": {
     "card": "summary_large_image",
-    "site": "@senrecep0",
-    "creator": "@senrecep0",
+    "site": "@yourusername",
+    "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.it.webp",
-      "alt": "Recep Şen - Ingegnere del Software | Anteprima portfolio"
+      "alt": "Your Name - Ingegnere del Software | Anteprima portfolio"
     }
   }
 }

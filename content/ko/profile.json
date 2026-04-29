@@ -1,17 +1,16 @@
 {
   "personalInfo": {
-    "name": "Recep Şen",
-    "position": "CTO",
-    "company": "Taptoweb",
-    "companyUrl": "https://taptoweb.com",
-    "about": "Taptoweb의 CTO로서, 250,000명 이상의 사용자를 보유한 노코드 모바일 앱 빌더 Easyapp.ai를 구동하는 28개 서비스 마이크로서비스 플랫폼을 설계했습니다. .NET/C#, 도메인 주도 설계, 에이전틱 AI 시스템을 전문으로 합니다.",
+    "name": "Your Name",
+    "position": "Software Engineer",
+    "company": "Your Company",
+    "companyUrl": "https://your-company.com",
+    "about": "Brief description of yourself and what you do. Highlight your main expertise, achievements, and what makes you unique as a software engineer.",
     "imageUrl": "/images/profile.webp",
-    "callsign": "TB1REC",
-    "email": "me@senrecep.com",
-    "phoneNumber": "+905319649002",
+    "email": "you@example.com",
+    "phoneNumber": "+10000000000",
     "cv": {
       "url": "/files/cv.pdf",
-      "fileName": "Recep Şen - CV.pdf"
+      "fileName": "Your Name - CV.pdf"
     }
   },
   "skills": [
@@ -174,165 +173,85 @@
   ],
   "certificates": [
     {
-      "title": "Dive Into Refactoring",
-      "issuer": "Refactoring.Guru",
-      "issueDate": "2024년 12월",
-      "credentialId": "#000053812",
-      "credentialUrl": "https://drive.google.com/file/d/1nkuUA7nszo4cnkOL3ZbMU5x7Bxlyjl8F/view?usp=sharing"
+      "title": "Professional Certification Name",
+      "issuer": "Certification Body",
+      "issueDate": "2025년 1월",
+      "credentialId": "CERT-001",
+      "credentialUrl": "https://your-certification-url.com"
     },
     {
-      "title": "Pragmatic Clean Architecture",
-      "issuer": "Milan Jovanovic Tech",
-      "issueDate": "2024년 12월",
-      "credentialId": "cert_y7sc2384",
-      "credentialUrl": "https://drive.google.com/file/d/1ywBRKVFl-GlfeduOWuIe7M36ikBB0Qp2/view?usp=sharing"
+      "title": "Advanced Course Certificate",
+      "issuer": "Online Learning Platform",
+      "issueDate": "2024년 6월",
+      "credentialId": "CERT-002",
+      "credentialUrl": "https://your-certification-url.com"
     },
     {
-      "title": "Golang 101",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "2023년 9월"
-    },
-    {
-      "title": "Centralized log management with Graylog",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "2023년 2월"
-    },
-    {
-      "title": "CCNA-1",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "2020년 1월"
+      "title": "Foundational Technology Certificate",
+      "issuer": "Technology Institute",
+      "issueDate": "2023년 12월"
     }
   ],
   "projects": [
     {
-      "title": "Easyapp",
-      "description": "15만 명 이상의 사용자에게 서비스를 제공하는 마이크로서비스 기반 플랫폼의 아키텍처와 개발을 주도했습니다. AI 기반 비용 최적화와 자본 효율적인 온디맨드 인프라를 구현했습니다.",
-      "projectUrl": "https://easyapp.ai",
-      "tags": ["AI", "모바일", "No-Code"],
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
-      "year": "2022"
+      "title": "Sample SaaS Product",
+      "year": "2024",
+      "description": "A brief description of your main product or service. Highlight key metrics like user count or impact.",
+      "projectUrl": "https://your-project.com",
+      "tags": ["Next.js", "TypeScript", "SaaS"],
+      "imageUrl": "https://placehold.co/400x400?text=Project+1"
     },
     {
-      "title": "Aspire Microservice Starter Template",
-      "description": "Aspire Framework로 마이크로서비스를 생성하기 위한 템플릿.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
+      "title": "Open Source Library",
+      "year": "2023",
+      "description": "An open-source library or tool you built. Mention downloads, stars, or community impact.",
+      "projectUrl": "https://github.com/yourusername/your-library",
+      "tags": ["Open Source", "NuGet", "npm"],
+      "imageUrl": "https://placehold.co/400x400?text=Project+2"
     },
     {
-      "title": "CSharpEssentials",
-      "description": "Result Pattern, Any Pattern, Maybe Pattern과 같은 일반적인 디자인 패턴을 구현하기 위한 프레임워크를 포함한 필수 빌딩 블록을 제공하여 C# 개발을 단순화합니다.",
-      "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "함수형 프로그래밍"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
-      "year": "2023"
-    },
-    {
-      "title": "포트폴리오 템플릿",
-      "description": "무제한 언어 지원, 다크/라이트 테마, 모든 직업에 맞게 완전히 커스터마이즈 가능한 섹션을 갖춘 빠르고 SEO 최적화된 포트폴리오 템플릿. Next.js 15와 React 19로 구축. MIT 라이선스.",
-      "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "오픈 소스"],
-      "imageUrl": "/images/project-portfolio.webp",
-      "year": "2025"
-    },
-    {
-      "title": "Career & Salary Comparison Simulator",
-      "description": "터키에서 가장 포괄적인 급여 비교 시뮬레이터. SGK 직장인(4/a)과 Bağ-Kur 자영업자(4/b) 간의 순수입을 비교합니다. 총급여/순급여, 세금, 보험료, 고용주 비용 계산.",
-      "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "금융", "세금", "SGK", "Bağ-Kur"],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
-      "year": "2025"
-    },
-    {
-      "title": "QMS - 품질 관리 시스템",
-      "description": "두 가지 핵심 모듈을 갖춘 엔터프라이즈급 품질 관리 시스템: 문서 관리(DMS) - 전체 개정 이력, 2단계 승인 워크플로우, 타겟 배포, 추적된 읽기 확인; 시정 조치 요청(CAR/DFI) - ISO 9001 준수 8단계 워크플로우, 근본 원인 분석, 팀 및 비용 추적이 포함된 시정 조치 관리, 전문 PDF 보고서. Redis Pub/Sub을 통한 실시간 SSE 알림, BullMQ를 통한 자동 알림 및 에스컬레이션 포함 비동기 이메일 전송, 역할 기반 접근 제어, 완전한 감사 추적 기능을 제공합니다. Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM), Redis로 구축되었습니다.",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
+      "title": "Portfolio Website",
+      "year": "2025",
+      "description": "This portfolio template - a modern, SEO-optimized and AI-discoverable portfolio built with Next.js 15.",
+      "projectUrl": "https://github.com/yourusername/portfolio",
+      "tags": ["Next.js", "TypeScript", "TailwindCSS"],
+      "imageUrl": "https://placehold.co/400x400?text=Portfolio"
     }
   ],
   "blogPosts": [
     {
-      "title": "코드 작성을 멈추고 시스템을 관리하세요: AI 기반 개발의 진정한 잠재력",
-      "description": "AI를 자동 완성 도구로 취급하지 말고 CTO처럼 생각하세요. CLAUDE.md 전략, 컨텍스트 관리, 훅, 커스텀 에이전트, 멀티 에이전트 오케스트레이션, 모델 라우팅, 자기 학습 시스템을 다루는 포괄적인 Claude Code 가이드입니다.",
-      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
-      "date": "02/28/2026",
-      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp",
-      "slug": "stop-writing-code-start-managing-systems"
+      "title": "Your First Blog Post Title",
+      "description": "A brief summary of your first blog post. Keep it to 1-2 sentences.",
+      "blogUrl": "https://medium.com/@yourusername/your-first-post",
+      "imageUrl": "/images/blog-post-1.webp",
+      "date": "2026-01-01",
+      "slug": "sample-blog-post"
     },
     {
-      "title": "AI 코딩 도구: Claude Code, OpenCode 및 현대적 개발의 완벽 가이드",
-      "description": "제로에서 프로덕션까지: 올바른 도구로 AI 지원 개발을 마스터하세요. Claude Code, OpenCode, oh-my-opencode, MCP, 스킬 및 전문 개발을 위한 고급 기술을 배웁니다.",
-      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
-      "date": "2026.01.24",
-      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp",
-      "slug": "ai-coding-tools-complete-guide"
-    },
-    {
-      "title": "Claude Code를 활용한 프로덕션급 AI 개발: 종합 에코시스템 가이드",
-      "description": "Claude Code를 단순한 Q&A 도구에서 플러그인, 커스텀 에이전트, 스킬, MCP 서버, 훅을 갖춘 전문 개발 환경으로 변환하세요.",
-      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
-      "date": "2026.01.21",
-      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp",
-      "slug": "production-grade-ai-development-claude-code"
-    },
-    {
-      "title": "C#의 매개변수 전달 방법 성능 분석",
-      "description": "C# 매개변수 전달에 대한 심층 분석: 벤치마크를 통한 struct, class, record, ref 타입 비교. 최적화 모범 사례를 배우세요.",
-      "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
-      "date": "2025.02.20",
-      "imageUrl": "/images/parameters.webp",
-      "slug": "performance-analysis-parameter-passing-csharp"
-    },
-    {
-      "title": "The Modern Way to Manage C# Business Rules: Rule Engine Pattern",
-      "description": "Result Pattern을 통해 중앙 집중식 제어, 높은 테스트 가능성, 최적의 성능을 제공하는 비즈니스 규칙 관리를 위한 최신 C# 패턴.",
-      "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
-      "date": "2025.02.04",
-      "imageUrl": "/images/rule-engine.webp",
-      "slug": "modern-way-manage-csharp-business-rules"
-    },
-    {
-      "title": "Google Cloud Secret Manager Integration for Your .NET Applications",
-      "description": "접두사 필터링, 지역별 구성, JSON/raw 시크릿 지원 등의 기능을 갖춘 Google Cloud Secret Manager 통합을 위한 .NET 라이브러리.",
-      "blogUrl": "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027",
-      "date": "2025.01.30",
-      "imageUrl": "/images/dotnet-secret-manager.webp",
-      "slug": "google-cloud-secret-manager-dotnet"
-    },
-    {
-      "title": "Blockchain Based E-Voting System",
-      "description": "이 연구는 블록체인 기술을 사용한 안전하고 빠른 온라인 투표 시스템 개발을 제안합니다. 이 시스템은 낮은 처리 지연, 높은 보안 수준, 데이터 무결성 검증 간소화를 제공합니다.",
-      "blogUrl": "https://www.researchgate.net/publication/365993522_4_International_New_York_Academic_Research_Congress_Full-Text_Book",
-      "date": "2022.01.23",
-      "imageUrl": "/images/blockchain-research.webp"
+      "title": "Your Second Blog Post Title",
+      "description": "A brief summary of your second blog post about technology or your expertise.",
+      "blogUrl": "https://medium.com/@yourusername/your-second-post",
+      "imageUrl": "/images/blog-post-2.webp",
+      "date": "2026-02-01",
+      "slug": "sample-seo-guide"
     }
   ],
   "socialLinks": [
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/senrecep/"
+      "url": "https://linkedin.com/in/yourusername"
     },
     {
       "name": "GitHub",
-      "url": "https://github.com/senrecep"
+      "url": "https://github.com/yourusername"
     },
     {
       "name": "Medium",
-      "url": "https://medium.com/@senrecep"
+      "url": "https://medium.com/@yourusername"
     },
     {
       "name": "X",
-      "url": "https://x.com/senrecep0"
+      "url": "https://x.com/yourusername"
     }
   ]
 }

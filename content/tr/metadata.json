@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Yazılım Mühendisi",
+  "title": "Your Name - Yazılım Mühendisi",
   "description": "Yüksek etki yaratan, ölçeklenebilir sistemler inşa ediyorum. Karmaşık iş problemlerini, yüz binlerce kullanıcıya hizmet eden zarif ve etkili teknik çözümlere dönüştürüyorum.",
   "callsign": "TB1REC",
   "keywords": [
@@ -7,8 +7,8 @@
     "backend geliştirme",
     "full stack",
     "geliştirici",
-    "easyapp",
-    "taptoweb",
+    "portfolio",
+    "open source",
     "dotnet",
     "mikroservisler",
     "no code platform geliştirici",
@@ -18,25 +18,25 @@
     "ham radio"
   ],
   "openGraph": {
-    "title": "Recep Şen - Yazılım Mühendisi",
+    "title": "Your Name - Yazılım Mühendisi",
     "description": "Yüksek etki yaratan, ölçeklenebilir sistemler inşa ediyorum. Karmaşık iş problemlerini, yüz binlerce kullanıcıya hizmet eden zarif ve etkili teknik çözümlere dönüştürüyorum.",
-    "siteName": "Recep Şen Portfolio",
+    "siteName": "Your Name Portfolio",
     "images": [
       {
         "url": "/images/og-banner.tr.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Yazılım Mühendisi | Portfolyo önizleme görseli"
+        "alt": "Your Name - Yazılım Mühendisi | Portfolyo önizleme görseli"
       }
     ]
   },
   "twitter": {
     "card": "summary_large_image",
-    "site": "@senrecep0",
-    "creator": "@senrecep0",
+    "site": "@yourusername",
+    "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.tr.webp",
-      "alt": "Recep Şen - Yazılım Mühendisi | Portfolyo önizleme görseli"
+      "alt": "Your Name - Yazılım Mühendisi | Portfolyo önizleme görseli"
     }
   }
 }

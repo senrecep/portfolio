@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Inżynier Oprogramowania",
+  "title": "Your Name - Inżynier Oprogramowania",
   "description": "Buduję skalowalne systemy o wysokim wpływie. Przekształcam złożone wyzwania biznesowe w eleganckie rozwiązania techniczne obsługujące setki tysięcy użytkowników.",
   "callsign": "TB1REC",
   "keywords": [
@@ -7,8 +7,8 @@
     "rozwój backend",
     "full stack",
     "programista",
-    "easyapp",
-    "taptoweb",
+    "portfolio",
+    "open source",
     "dotnet",
     "microservices",
     "programista platformy no code",
@@ -17,25 +17,25 @@
     "krótkofalowiec"
   ],
   "openGraph": {
-    "title": "Recep Şen - Inżynier Oprogramowania",
+    "title": "Your Name - Inżynier Oprogramowania",
     "description": "Buduję skalowalne systemy o wysokim wpływie. Przekształcam złożone wyzwania biznesowe w eleganckie rozwiązania techniczne obsługujące setki tysięcy użytkowników.",
-    "siteName": "Portfolio Recep Şen",
+    "siteName": "Portfolio Your Name",
     "images": [
       {
         "url": "/images/og-banner.pl.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Inżynier Oprogramowania | Podgląd portfolio"
+        "alt": "Your Name - Inżynier Oprogramowania | Podgląd portfolio"
       }
     ]
   },
   "twitter": {
     "card": "summary_large_image",
-    "site": "@senrecep0",
-    "creator": "@senrecep0",
+    "site": "@yourusername",
+    "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.pl.webp",
-      "alt": "Recep Şen - Inżynier Oprogramowania | Podgląd portfolio"
+      "alt": "Your Name - Inżynier Oprogramowania | Podgląd portfolio"
     }
   }
 }

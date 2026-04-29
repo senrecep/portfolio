@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Software Engineer",
+  "title": "Your Name - Software Engineer",
   "description": "Ich entwickle wirkungsvolle, skalierbare Systeme und verwandle komplexe geschäftliche Herausforderungen in elegante technische Lösungen für hunderttausende von Nutzern.",
   "callsign": "TB1REC",
   "keywords": [
@@ -7,8 +7,8 @@
     "backend entwicklung",
     "full stack",
     "entwickler",
-    "easyapp",
-    "taptoweb",
+    "portfolio",
+    "open source",
     "dotnet",
     "microservices",
     "no code platform entwickler",
@@ -18,25 +18,25 @@
     "ham radio"
   ],
   "openGraph": {
-    "title": "Recep Şen - Software Engineer",
+    "title": "Your Name - Software Engineer",
     "description": "Ich entwickle wirkungsvolle, skalierbare Systeme und verwandle komplexe geschäftliche Herausforderungen in elegante technische Lösungen für hunderttausende von Nutzern.",
-    "siteName": "Recep Şen Portfolio",
+    "siteName": "Your Name Portfolio",
     "images": [
       {
         "url": "/images/og-banner.de.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Software Engineer | Portfolio Vorschaubild"
+        "alt": "Your Name - Software Engineer | Portfolio Vorschaubild"
       }
     ]
   },
   "twitter": {
     "card": "summary_large_image",
-    "site": "@senrecep0",
-    "creator": "@senrecep0",
+    "site": "@yourusername",
+    "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.de.webp",
-      "alt": "Recep Şen - Software Engineer | Portfolio Vorschaubild"
+      "alt": "Your Name - Software Engineer | Portfolio Vorschaubild"
     }
   }
 }

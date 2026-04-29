@@ -1,17 +1,16 @@
 {
   "personalInfo": {
-    "name": "Recep Şen",
-    "position": "CTO",
-    "company": "Taptoweb",
-    "companyUrl": "https://taptoweb.com",
-    "about": "Taptoweb'de CTO olarak, 250.000'den fazla kullanıcıya sahip kodsuz mobil uygulama oluşturucu Easyapp.ai'yi destekleyen 28 servisli mikroservis platformunu tasarladım. .NET/C#, Domain-Driven Design ve agentic AI sistemleri konularında uzmanım.",
+    "name": "Your Name",
+    "position": "Software Engineer",
+    "company": "Your Company",
+    "companyUrl": "https://your-company.com",
+    "about": "Brief description of yourself and what you do. Highlight your main expertise, achievements, and what makes you unique as a software engineer.",
     "imageUrl": "/images/profile.webp",
-    "callsign": "TB1REC",
-    "email": "me@senrecep.com",
-    "phoneNumber": "+905319649002",
+    "email": "you@example.com",
+    "phoneNumber": "+10000000000",
     "cv": {
       "url": "/files/cv.pdf",
-      "fileName": "Recep Şen - CV.pdf"
+      "fileName": "Your Name - CV.pdf"
     }
   },
   "skills": [
@@ -56,26 +55,26 @@
       "icon": "code",
       "items": [
         {
-          "name": ".NET ve C#",
+          "name": ".NET & C#",
           "level": "Uzman",
           "levelType": "expert",
           "icon": "code-2"
         },
         {
-          "name": "Mikroservisler ve Domain-Driven Design (DDD)",
+          "name": "Microservices & Domain-Driven Design (DDD)",
           "level": "Uzman",
           "levelType": "expert",
           "icon": "blocks"
         },
         {
-          "name": "Node.js ve Nest.js",
+          "name": "Node.js & Nest.js",
           "level": "Yetkin",
           "levelType": "proficient",
           "icon": "server"
         },
         {
           "name": "Go (Golang)",
-          "level": "Aşina",
+          "level": "Tanıdık",
           "levelType": "familiar",
           "icon": "code-2"
         }
@@ -118,7 +117,7 @@
       ]
     },
     {
-      "name": "Cloud Native ve DevOps",
+      "name": "Cloud Native & DevOps",
       "icon": "cloud",
       "items": [
         {
@@ -172,167 +171,87 @@
       ]
     }
   ],
+  "certificates": [
+    {
+      "title": "Professional Certification Name",
+      "issuer": "Certification Body",
+      "issueDate": "Oca 2025",
+      "credentialId": "CERT-001",
+      "credentialUrl": "https://your-certification-url.com"
+    },
+    {
+      "title": "Advanced Course Certificate",
+      "issuer": "Online Learning Platform",
+      "issueDate": "Haz 2024",
+      "credentialId": "CERT-002",
+      "credentialUrl": "https://your-certification-url.com"
+    },
+    {
+      "title": "Foundational Technology Certificate",
+      "issuer": "Technology Institute",
+      "issueDate": "Ara 2023"
+    }
+  ],
   "projects": [
     {
-      "title": "Easyapp",
-      "description": "250.000+ kullanıcıya hizmet veren mikroservis tabanlı platformun mimarisi ve geliştirilmesini yönettim. Yapay zeka destekli maliyet optimizasyonu ve sermaye etkin, talep üzerine altyapı uyguladım.",
-      "projectUrl": "https://easyapp.ai",
-      "tags": ["Yapay Zeka", "Mobil", "Kodsuz"],
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
-      "year": "2022"
+      "title": "Sample SaaS Product",
+      "year": "2024",
+      "description": "A brief description of your main product or service. Highlight key metrics like user count or impact.",
+      "projectUrl": "https://your-project.com",
+      "tags": ["Next.js", "TypeScript", "SaaS"],
+      "imageUrl": "https://placehold.co/400x400?text=Project+1"
     },
     {
-      "title": "Aspire Mikroservis Başlangıç Şablonu",
-      "description": "Aspire Framework ile mikroservis oluşturmak için bir şablon.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Mikroservisler"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
+      "title": "Open Source Library",
+      "year": "2023",
+      "description": "An open-source library or tool you built. Mention downloads, stars, or community impact.",
+      "projectUrl": "https://github.com/yourusername/your-library",
+      "tags": ["Open Source", "NuGet", "npm"],
+      "imageUrl": "https://placehold.co/400x400?text=Project+2"
     },
     {
-      "title": "CSharpEssentials",
-      "description": "Result Pattern, Any Pattern ve Maybe Pattern gibi yaygın tasarım desenlerini uygulama çerçevesi dahil olmak üzere temel yapı taşları sağlayarak C# geliştirmeyi basitleştirir.",
-      "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Tasarım Desenleri", "Fonksiyonel Programlama"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
-      "year": "2023"
-    },
-    {
-      "title": "Portfolyo Şablonu",
-      "description": "Sınırsız dil desteği, açık/koyu tema ve her meslek için özelleştirilebilir bölümler sunan hızlı, SEO optimize portfolyo şablonu. Next.js 15 ve React 19 ile geliştirildi. MIT lisanslı.",
-      "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "Açık Kaynak"],
-      "imageUrl": "/images/project-portfolio.webp",
-      "year": "2025"
-    },
-    {
-      "title": "Kariyer ve Maaş Karşılaştırma Simülatörü",
-      "description": "Türkiye'nin en kapsamlı maaş karşılaştırma simülatörü. SGK'lı maaşlı çalışan (4/a) ile Bağ-Kur'lı şahıs şirketi (4/b) net gelir karşılaştırması. Brüt/Net maaş, vergi, prim, işveren maliyeti hesaplama. 2026 TES Reform simülasyonu, Genç Girişimci desteği, Hizmet İhracatı istisnası. Aylık/Yıllık mod, TRY/USD para birimi desteği.",
-      "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "Finans", "Vergi", "SGK", "Bağ-Kur"],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
-      "year": "2025"
-    },
-    {
-      "title": "QMS - Kalite Yönetim Sistemi",
-      "description": "İki temel modüle sahip kurumsal düzeyde bir kalite yönetim sistemi: Doküman Yönetimi (DMS) - tam revizyon geçmişi, iki aşamalı onay iş akışları, hedefli dağıtım ve okuma onayları; Düzeltici Faaliyet İstekleri (DFİ/CAR) - ISO 9001 uyumlu 8 adımlı iş akışı, kök neden analizi, ekip ve maliyet takipli düzeltici faaliyet yönetimi ve profesyonel PDF raporlama. Redis Pub/Sub üzerinden gerçek zamanlı SSE bildirimleri, BullMQ ile otomatik hatırlatmalar ve eskalasyon, rol tabanlı erişim kontrolü ve eksiksiz denetim kaydı içerir. Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) ve Redis ile geliştirildi.",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
+      "title": "Portfolio Website",
+      "year": "2025",
+      "description": "This portfolio template - a modern, SEO-optimized and AI-discoverable portfolio built with Next.js 15.",
+      "projectUrl": "https://github.com/yourusername/portfolio",
+      "tags": ["Next.js", "TypeScript", "TailwindCSS"],
+      "imageUrl": "https://placehold.co/400x400?text=Portfolio"
     }
   ],
   "blogPosts": [
     {
-      "title": "Kod Yazmayı Bırakın, Sistemi Yönetin: AI Destekli Geliştirmenin Gerçek Potansiyeli",
-      "description": "AI'ı bir otomatik tamamlama aracı olarak görmeyi bırakın ve bir CTO gibi düşünmeye başlayın. CLAUDE.md stratejisi, context yönetimi, hook'lar, özel agent'lar, çoklu agent orkestrasyonu, model yönlendirme ve kendi kendine öğrenen sistemleri kapsayan kapsamlı bir Claude Code rehberi.",
-      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
-      "date": "02/28/2026",
-      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp",
-      "slug": "stop-writing-code-start-managing-systems"
+      "title": "Your First Blog Post Title",
+      "description": "A brief summary of your first blog post. Keep it to 1-2 sentences.",
+      "blogUrl": "https://medium.com/@yourusername/your-first-post",
+      "imageUrl": "/images/blog-post-1.webp",
+      "date": "2026-01-01",
+      "slug": "sample-blog-post"
     },
     {
-      "title": "AI Kodlama Araçları: Claude Code, OpenCode ve Modern Geliştirme için Kapsamlı Rehber",
-      "description": "Sıfırdan üretime: Doğru araçlarla AI destekli geliştirmeyi ustalaşın. Claude Code, OpenCode, oh-my-opencode, MCP, beceriler ve profesyonel geliştirme için ileri teknikler.",
-      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
-      "date": "24/01/2026",
-      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp",
-      "slug": "ai-coding-tools-complete-guide"
-    },
-    {
-      "title": "Claude Code ile Üretim Kalitesinde Yapay Zeka Geliştirme: Kapsamlı Ekosistem Rehberi",
-      "description": "Claude Code'u basit bir soru-cevap aracından, pluginler, özel ajanlar, beceriler, MCP sunucuları ve hooklar ile profesyonel düzeyde bir geliştirme ortamına dönüştürün.",
-      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
-      "date": "21/01/2026",
-      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp",
-      "slug": "production-grade-ai-development-claude-code"
-    },
-    {
-      "title": "C#'ta Parametre Geçirme Yöntemlerinin Performans Analizi",
-      "description": "C# parametre geçirme yöntemlerinin derinlemesine incelemesi: Struct, class, record ve ref tiplerinin karşılaştırmalı performans analizi ve optimizasyon için en iyi pratikler.",
-      "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
-      "date": "20/02/2025",
-      "imageUrl": "/images/parameters.webp",
-      "slug": "performance-analysis-parameter-passing-csharp"
-    },
-    {
-      "title": "C# İş Kurallarını Yönetmenin Modern Yolu: Kural Motoru Deseni",
-      "description": "Result pattern ile merkezi kontrol, yüksek test edilebilirlik ve optimal performans sunan modern bir C# deseni",
-      "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
-      "date": "04/02/2025",
-      "imageUrl": "/images/rule-engine.webp",
-      "slug": "modern-way-manage-csharp-business-rules"
-    },
-    {
-      "title": ".NET Uygulamalarınız için Google Cloud Secret Manager Entegrasyonu",
-      "description": "Önek filtreleme, bölgeye özel yapılandırma ve JSON/raw secret desteği gibi özellikler sunan .NET kütüphanesi",
-      "blogUrl": "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027",
-      "date": "30/01/2025",
-      "imageUrl": "/images/dotnet-secret-manager.webp",
-      "slug": "google-cloud-secret-manager-dotnet"
-    },
-    {
-      "title": "Blok Zinciri Tabanlı E-Oylama Sistemi",
-      "description": "Bu araştırma, blok zinciri teknolojisi kullanarak güvenli ve hızlı bir çevrimiçi oylama sistemi geliştirilmesini önermektedir. Bu sistem, düşük işlem gecikmesi ve yüksek güvenlik seviyesi sunmanın yanı sıra, birden fazla seçim merkezi arasında veri bütünlüğünün doğrulanmasını da basitleştirmektedir.",
-      "blogUrl": "https://www.researchgate.net/publication/365993522_4_International_New_York_Academic_Research_Congress_Full-Text_Book",
-      "date": "23/01/2022",
-      "imageUrl": "/images/blockchain-research.webp"
+      "title": "Your Second Blog Post Title",
+      "description": "A brief summary of your second blog post about technology or your expertise.",
+      "blogUrl": "https://medium.com/@yourusername/your-second-post",
+      "imageUrl": "/images/blog-post-2.webp",
+      "date": "2026-02-01",
+      "slug": "sample-seo-guide"
     }
   ],
   "socialLinks": [
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/senrecep/"
+      "url": "https://linkedin.com/in/yourusername"
     },
     {
       "name": "GitHub",
-      "url": "https://github.com/senrecep"
+      "url": "https://github.com/yourusername"
     },
     {
       "name": "Medium",
-      "url": "https://medium.com/@senrecep"
+      "url": "https://medium.com/@yourusername"
     },
     {
       "name": "X",
-      "url": "https://x.com/senrecep0"
-    }
-  ],
-  "certificates": [
-    {
-      "title": "Dive Into Refactoring",
-      "issuer": "Refactoring.Guru",
-      "issueDate": "Dec 2024",
-      "credentialId": "#000053812",
-      "credentialUrl": "https://drive.google.com/file/d/1nkuUA7nszo4cnkOL3ZbMU5x7Bxlyjl8F/view?usp=sharing"
-    },
-    {
-      "title": "Pragmatic Clean Architecture",
-      "issuer": "Milan Jovanovic Tech",
-      "issueDate": "Dec 2024",
-      "credentialId": "cert_y7sc2384",
-      "credentialUrl": "https://drive.google.com/file/d/1ywBRKVFl-GlfeduOWuIe7M36ikBB0Qp2/view?usp=sharing"
-    },
-    {
-      "title": "Golang 101",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "Sep 2023"
-    },
-    {
-      "title": "Centralized log management with Graylog",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "Feb 2023"
-    },
-    {
-      "title": "CCNA-1",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "Jan 2020"
+      "url": "https://x.com/yourusername"
     }
   ]
 }

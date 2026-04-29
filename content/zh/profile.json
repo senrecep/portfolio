@@ -1,17 +1,16 @@
 {
   "personalInfo": {
-    "name": "Recep Şen",
-    "position": "CTO",
-    "company": "Taptoweb",
-    "companyUrl": "https://taptoweb.com",
-    "about": "担任Taptoweb的CTO，设计了为Easyapp.ai提供支持的28服务微服务平台——一个拥有25万+用户的无代码移动应用构建器。专注于.NET/C#、领域驱动设计和智能AI系统。",
+    "name": "Your Name",
+    "position": "Software Engineer",
+    "company": "Your Company",
+    "companyUrl": "https://your-company.com",
+    "about": "Brief description of yourself and what you do. Highlight your main expertise, achievements, and what makes you unique as a software engineer.",
     "imageUrl": "/images/profile.webp",
-    "callsign": "TB1REC",
-    "email": "me@senrecep.com",
-    "phoneNumber": "+905319649002",
+    "email": "you@example.com",
+    "phoneNumber": "+10000000000",
     "cv": {
       "url": "/files/cv.pdf",
-      "fileName": "Recep Şen - CV.pdf"
+      "fileName": "Your Name - CV.pdf"
     }
   },
   "skills": [
@@ -174,165 +173,85 @@
   ],
   "certificates": [
     {
-      "title": "Dive Into Refactoring",
-      "issuer": "Refactoring.Guru",
-      "issueDate": "2024年12月",
-      "credentialId": "#000053812",
-      "credentialUrl": "https://drive.google.com/file/d/1nkuUA7nszo4cnkOL3ZbMU5x7Bxlyjl8F/view?usp=sharing"
+      "title": "Professional Certification Name",
+      "issuer": "Certification Body",
+      "issueDate": "2025年1月",
+      "credentialId": "CERT-001",
+      "credentialUrl": "https://your-certification-url.com"
     },
     {
-      "title": "Pragmatic Clean Architecture",
-      "issuer": "Milan Jovanovic Tech",
-      "issueDate": "2024年12月",
-      "credentialId": "cert_y7sc2384",
-      "credentialUrl": "https://drive.google.com/file/d/1ywBRKVFl-GlfeduOWuIe7M36ikBB0Qp2/view?usp=sharing"
+      "title": "Advanced Course Certificate",
+      "issuer": "Online Learning Platform",
+      "issueDate": "2024年6月",
+      "credentialId": "CERT-002",
+      "credentialUrl": "https://your-certification-url.com"
     },
     {
-      "title": "Golang 101",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "2023年9月"
-    },
-    {
-      "title": "Centralized log management with Graylog",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "2023年2月"
-    },
-    {
-      "title": "CCNA-1",
-      "issuer": "Mustafa Akgül Özgür Yazılım Kampı",
-      "issueDate": "2020年1月"
+      "title": "Foundational Technology Certificate",
+      "issuer": "Technology Institute",
+      "issueDate": "2023年12月"
     }
   ],
   "projects": [
     {
-      "title": "Easyapp",
-      "description": "领导了一个服务超过15万用户的微服务平台的架构和开发。实施了AI驱动的成本优化和资本高效的按需基础设施。",
-      "projectUrl": "https://easyapp.ai",
-      "tags": ["AI", "移动端", "No-Code"],
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
-      "year": "2022"
+      "title": "Sample SaaS Product",
+      "year": "2024",
+      "description": "A brief description of your main product or service. Highlight key metrics like user count or impact.",
+      "projectUrl": "https://your-project.com",
+      "tags": ["Next.js", "TypeScript", "SaaS"],
+      "imageUrl": "https://placehold.co/400x400?text=Project+1"
     },
     {
-      "title": "Aspire Microservice Starter Template",
-      "description": "使用 Aspire Framework 创建微服务的模板。",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
+      "title": "Open Source Library",
+      "year": "2023",
+      "description": "An open-source library or tool you built. Mention downloads, stars, or community impact.",
+      "projectUrl": "https://github.com/yourusername/your-library",
+      "tags": ["Open Source", "NuGet", "npm"],
+      "imageUrl": "https://placehold.co/400x400?text=Project+2"
     },
     {
-      "title": "CSharpEssentials",
-      "description": "通过提供必要的构建块来简化 C# 开发，包括用于实现常见设计模式（如 Result Pattern、Any Pattern 和 Maybe Pattern）的框架。",
-      "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "函数式编程"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
-      "year": "2023"
-    },
-    {
-      "title": "作品集模板",
-      "description": "快速、SEO 优化的作品集模板，支持无限语言、深色/浅色主题，以及适用于任何职业的完全可定制部分。使用 Next.js 15 和 React 19 构建。MIT 许可。",
-      "projectUrl": "https://github.com/senrecep/portfolio",
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "开源"],
-      "imageUrl": "/images/project-portfolio.webp",
-      "year": "2025"
-    },
-    {
-      "title": "Career & Salary Comparison Simulator",
-      "description": "土耳其最全面的薪资比较模拟器。比较 SGK 雇员（4/a）和 Bağ-Kur 自雇人员（4/b）的净收入。总工资/净工资、税款、保费、雇主成本计算。",
-      "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "金融", "税务", "SGK", "Bağ-Kur"],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
-      "year": "2025"
-    },
-    {
-      "title": "QMS - 质量管理系统",
-      "description": "具有两个核心模块的企业级质量管理系统:文档管理(DMS) - 完整修订历史、两阶段审批工作流、定向分发和跟踪的阅读确认;纠正措施请求(CAR/DFI) - 符合 ISO 9001 的 8 步工作流、根本原因分析、带团队和成本跟踪的纠正措施管理以及专业 PDF 报告。包括通过 Redis Pub/Sub 实现的实时 SSE 通知、通过 BullMQ 进行的异步电子邮件传递(带自动提醒和升级)、基于角色的访问控制以及完整的审计跟踪。使用 Next.js 16、Bun、TypeScript、PostgreSQL (Drizzle ORM) 和 Redis 构建。",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
+      "title": "Portfolio Website",
+      "year": "2025",
+      "description": "This portfolio template - a modern, SEO-optimized and AI-discoverable portfolio built with Next.js 15.",
+      "projectUrl": "https://github.com/yourusername/portfolio",
+      "tags": ["Next.js", "TypeScript", "TailwindCSS"],
+      "imageUrl": "https://placehold.co/400x400?text=Portfolio"
     }
   ],
   "blogPosts": [
     {
-      "title": "停止编写代码，开始管理系统：AI驱动开发的真正潜力",
-      "description": "停止将AI视为自动补全工具，开始像CTO一样思考。这是一份全面的Claude Code指南，涵盖CLAUDE.md策略、上下文管理、钩子、自定义代理、多代理编排、模型路由和自学习系统。",
-      "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
-      "date": "02/28/2026",
-      "imageUrl": "/images/stop-writing-code-start-managing-systems.webp",
-      "slug": "stop-writing-code-start-managing-systems"
+      "title": "Your First Blog Post Title",
+      "description": "A brief summary of your first blog post. Keep it to 1-2 sentences.",
+      "blogUrl": "https://medium.com/@yourusername/your-first-post",
+      "imageUrl": "/images/blog-post-1.webp",
+      "date": "2026-01-01",
+      "slug": "sample-blog-post"
     },
     {
-      "title": "AI 编程工具：Claude Code、OpenCode 和现代开发的完整指南",
-      "description": "从零到生产：使用正确的工具掌握 AI 辅助开发。学习 Claude Code、OpenCode、oh-my-opencode、MCP、技能和专业开发的高级技术。",
-      "blogUrl": "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1",
-      "date": "2026/01/24",
-      "imageUrl": "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp",
-      "slug": "ai-coding-tools-complete-guide"
-    },
-    {
-      "title": "使用 Claude Code 进行生产级 AI 开发：全面生态系统指南",
-      "description": "将 Claude Code 从简单的问答工具转变为具有插件、自定义代理、技能、MCP 服务器和钩子的专业开发环境。",
-      "blogUrl": "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744",
-      "date": "2026/01/21",
-      "imageUrl": "/images/production-grade-ai-development-with-claude-code.webp",
-      "slug": "production-grade-ai-development-claude-code"
-    },
-    {
-      "title": "C# 参数传递方法的性能分析",
-      "description": "深入分析 C# 参数传递：通过基准测试比较 struct、class、record 和 ref 类型。学习优化最佳实践。",
-      "blogUrl": "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624",
-      "date": "2025/02/20",
-      "imageUrl": "/images/parameters.webp",
-      "slug": "performance-analysis-parameter-passing-csharp"
-    },
-    {
-      "title": "The Modern Way to Manage C# Business Rules: Rule Engine Pattern",
-      "description": "一种现代 C# 模式，用于管理业务规则，通过 Result Pattern 提供集中控制、高可测试性和最佳性能。",
-      "blogUrl": "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700",
-      "date": "2025/02/04",
-      "imageUrl": "/images/rule-engine.webp",
-      "slug": "modern-way-manage-csharp-business-rules"
-    },
-    {
-      "title": "Google Cloud Secret Manager Integration for Your .NET Applications",
-      "description": "一个用于 Google Cloud Secret Manager 集成的 .NET 库，具有前缀过滤、区域特定配置和 JSON/raw 密钥支持等功能。",
-      "blogUrl": "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027",
-      "date": "2025/01/30",
-      "imageUrl": "/images/dotnet-secret-manager.webp",
-      "slug": "google-cloud-secret-manager-dotnet"
-    },
-    {
-      "title": "Blockchain Based E-Voting System",
-      "description": "本研究提出使用区块链技术开发安全快速的在线投票系统。该系统提供低处理延迟、高安全级别，并简化数据完整性验证。",
-      "blogUrl": "https://www.researchgate.net/publication/365993522_4_International_New_York_Academic_Research_Congress_Full-Text_Book",
-      "date": "2022/01/23",
-      "imageUrl": "/images/blockchain-research.webp"
+      "title": "Your Second Blog Post Title",
+      "description": "A brief summary of your second blog post about technology or your expertise.",
+      "blogUrl": "https://medium.com/@yourusername/your-second-post",
+      "imageUrl": "/images/blog-post-2.webp",
+      "date": "2026-02-01",
+      "slug": "sample-seo-guide"
     }
   ],
   "socialLinks": [
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/senrecep/"
+      "url": "https://linkedin.com/in/yourusername"
     },
     {
       "name": "GitHub",
-      "url": "https://github.com/senrecep"
+      "url": "https://github.com/yourusername"
     },
     {
       "name": "Medium",
-      "url": "https://medium.com/@senrecep"
+      "url": "https://medium.com/@yourusername"
     },
     {
       "name": "X",
-      "url": "https://x.com/senrecep0"
+      "url": "https://x.com/yourusername"
     }
   ]
 }

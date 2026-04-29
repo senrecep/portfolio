@@ -2,12 +2,12 @@ import { getAllBlogPosts, getAvailableLanguagesForSlug } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
-const siteUrl = "https://senrecep.com";
-const siteTitle = "Recep Şen - Blog";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const siteTitle = "Your Name - Blog";
 const siteDescription =
-  "Technical blog by Recep Şen on .NET, microservices, AI development, and software engineering.";
-const authorName = "Recep Şen";
-const authorEmail = "me@senrecep.com";
+  "Technical blog by Your Name on software engineering, development, and technology.";
+const authorName = "Your Name";
+const authorEmail = "you@example.com";
 
 function escapeXml(unsafe: string): string {
   return unsafe

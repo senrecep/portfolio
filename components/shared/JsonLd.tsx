@@ -70,7 +70,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
           name: personalInfo.company,
           ...(personalInfo.companyUrl
             ? { url: personalInfo.companyUrl }
-            : { url: "https://taptoweb.com" }),
+            : {}),
         }
       : undefined,
     description: personalInfo.about,
@@ -116,52 +116,39 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
     },
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What technologies does Recep Sen specialize in?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Recep Sen specializes in .NET/C# for backend systems, with deep expertise in microservices architecture and Domain-Driven Design (DDD). On the data layer, he works with PostgreSQL, Redis, RabbitMQ, MongoDB, and Elasticsearch. For cloud infrastructure, he uses Google Cloud Platform, Docker, and Kubernetes. On the frontend, he works with TypeScript, Next.js, and React. He also works extensively with agentic AI systems, LLM integration, vector databases, and AI workflow automation.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is the scale of the Easyapp platform that Recep Sen built?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Recep Sen led the full architecture and development of Easyapp.ai from inception, a no-code mobile app builder that reached 250,000+ users. He designed a 28-service microservices platform that processes millions of app-building requests. The platform uses AI-driven cost optimization to run capital-efficiently using on-demand infrastructure, significantly reducing operating costs compared to always-on architectures. He served as CTO at Taptoweb, the company behind Easyapp, overseeing the full technology organization and system architecture.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What open-source projects has Recep Sen built?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Recep Sen has built several notable open-source projects available on GitHub. CSharpEssentials is a C# library implementing the Result Pattern, Any Pattern, and Maybe Pattern, with over 59,000 NuGet package downloads across 16 packages. He also created an Aspire Microservice Starter Template that provides a production-ready foundation for .NET microservices using the .NET Aspire orchestration framework. Additionally, he maintains an open-source Next.js portfolio template (MIT licensed) used by developers worldwide.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Where does Recep Sen work?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Recep Sen is CTO at Taptoweb, a technology company building no-code mobile app solutions. In this role, he leads all technical decisions, system architecture, and engineering team direction. He has been with Taptoweb since 2022, growing the platform from early-stage to 250,000+ users. His work spans backend systems, cloud infrastructure, mobile platforms, and agentic AI integrations.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is Recep Sen's background in AI development?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Recep Sen works with agentic AI frameworks, having published comprehensive guides on Claude Code, OpenCode, and multi-agent orchestration systems. He has hands-on experience with LLM integration and fine-tuning, vector databases, semantic caching systems, and AI workflow automation. His practical AI work includes building AI-driven cost optimization systems for large-scale infrastructure and developing production AI workflows across multiple enterprise projects. He has written extensively on AI-powered development, with articles on Claude Code ecosystems, multi-agent systems, and AI development best practices.",
-        },
-      },
-    ],
-  };
+  const faqSchema =
+    skillNames.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: `What technologies does ${personalInfo.name} specialize in?`,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: `${personalInfo.name} specializes in ${skillNames.slice(0, 8).join(", ")}, and more. See the full skills list on the portfolio.`,
+              },
+            },
+            {
+              "@type": "Question",
+              name: `Where does ${personalInfo.name} work?`,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: `${personalInfo.name} works as ${personalInfo.position}${personalInfo.company ? ` at ${personalInfo.company}` : ""}.`,
+              },
+            },
+            {
+              "@type": "Question",
+              name: `How can I contact ${personalInfo.name}?`,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: `You can reach ${personalInfo.name} via email at ${personalInfo.email || "the contact details on this portfolio"}.`,
+              },
+            },
+          ],
+        }
+      : null;
 
   const easyappProject = projects?.find(
     (p) => p.projectUrl === "https://easyapp.ai",
@@ -193,14 +180,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
       }
     : null;
 
-  const localBlogSlugs = new Set([
-    "ai-coding-tools-complete-guide",
-    "google-cloud-secret-manager-dotnet",
-    "modern-way-manage-csharp-business-rules",
-    "performance-analysis-parameter-passing-csharp",
-    "production-grade-ai-development-claude-code",
-    "stop-writing-code-start-managing-systems",
-  ]);
+  const localBlogSlugs = new Set(["sample-blog-post", "sample-seo-guide"]);
 
   const blogListSchema =
     blogPosts && blogPosts.length > 0
@@ -229,7 +209,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
                 author: {
                   "@type": "Person",
                   "@id": personId,
-                  name: "Recep Sen",
+                  name: personalInfo.name,
                 },
                 ...(postImage ? { image: postImage } : {}),
                 inLanguage: lang,
@@ -240,51 +220,11 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         }
       : null;
 
-  const taptowebOrgSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://taptoweb.com/#organization",
-    name: "Taptoweb",
-    url: "https://taptoweb.com",
-    foundingDate: "2021",
-    knowsAbout: [
-      "Mobile App Development",
-      "Mini Apps",
-      "SaaS",
-      "AI",
-      "No-Code",
-    ],
-  };
-
-  const taptowebSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://taptoweb.com/#organization",
-    name: "Taptoweb",
-    url: "https://taptoweb.com",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://taptoweb.com/logo.png",
-      width: 512,
-      height: 512,
-    },
-    sameAs: ["https://www.linkedin.com/company/taptoweb"],
-    foundingDate: "2021",
-    knowsAbout: [
-      "Mobile App Development",
-      "Mini Apps",
-      "SaaS",
-      "AI",
-      "No-Code",
-    ],
-  };
-
   const schemas = [
     personSchema,
     profilePageSchema,
     websiteSchema,
-    faqSchema,
-    taptowebSchema,
+    ...(faqSchema ? [faqSchema] : []),
     ...(softwareAppSchema ? [softwareAppSchema] : []),
     ...(blogListSchema ? [blogListSchema] : []),
   ];
@@ -301,12 +241,6 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
           }}
         />
       ))}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(taptowebOrgSchema),
-        }}
-      />
     </>
   );
 }

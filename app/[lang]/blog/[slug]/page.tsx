@@ -18,7 +18,8 @@ interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
 }
 
-const siteUrl = "https://senrecep.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -46,10 +47,10 @@ export async function generateMetadata({
   );
 
   return {
-    title: `${post.title} - Recep Sen`,
+    title: `${post.title} - Your Name`,
     description: post.description,
     keywords: post.keywords,
-    authors: [{ name: post.author || "Recep Sen" }],
+    authors: [{ name: post.author || "Your Name" }],
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -62,10 +63,10 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       url: canonicalUrl,
-      siteName: "Recep Sen",
+      siteName: "Your Name",
       publishedTime: post.date,
       modifiedTime: post.modifiedDate || post.date,
-      authors: [post.author || "Recep Sen"],
+      authors: [post.author || "Your Name"],
       images: post.imageUrl
         ? [
             {
@@ -84,7 +85,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      creator: "@senrecep0",
+      creator: "@yourusername",
       images: post.imageUrl
         ? [
             post.imageUrl.startsWith("http")
@@ -136,7 +137,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     author: {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: post.author || "Recep Sen",
+      name: post.author || "Your Name",
       url: siteUrl,
     },
     datePublished: post.date,
@@ -144,7 +145,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     publisher: {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: "Recep Sen",
+      name: "Your Name",
       url: siteUrl,
     },
     ...(post.imageUrl && {
@@ -167,7 +168,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     isPartOf: {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "Recep Sen",
+      name: "Your Name",
       url: siteUrl,
     },
     speakable: {
