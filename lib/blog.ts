@@ -109,6 +109,19 @@ export function resolveCanonicalBlogUrl(slug: string, lang: string): string {
   return `/${DEFAULT_LANG}/blog/${slug}`;
 }
 
+// Returns language codes that have an actual markdown file for this slug
+export function getAvailableLanguagesForSlug(slug: string): string[] {
+  try {
+    const entries = fs.readdirSync(BLOG_DIR, { withFileTypes: true });
+    const langDirs = entries.filter((e) => e.isDirectory()).map((e) => e.name);
+    return langDirs.filter((lang) =>
+      fs.existsSync(path.join(BLOG_DIR, lang, `${slug}.md`)),
+    );
+  } catch {
+    return [DEFAULT_LANG];
+  }
+}
+
 // Get all blog posts for a given language (with English fallback)
 export function getAllBlogPosts(lang?: string): BlogPostMeta[] {
   const effectiveLang = lang || DEFAULT_LANG;

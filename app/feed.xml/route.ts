@@ -1,6 +1,4 @@
-import fs from "node:fs";
-import path from "node:path";
-import { getAllBlogPosts } from "@/lib/blog";
+import { getAllBlogPosts, getAvailableLanguagesForSlug } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
@@ -18,26 +16,6 @@ function escapeXml(unsafe: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
-}
-
-/**
- * Scans content/blog/ directory at build time to find which
- * language subdirectories contain a file for the given slug.
- * Returns ["en"] as fallback if scanning fails.
- */
-function getAvailableLanguagesForSlug(slug: string): string[] {
-  const blogContentDir = path.join(process.cwd(), "content", "blog");
-  try {
-    const entries = fs.readdirSync(blogContentDir, { withFileTypes: true });
-    const langDirs = entries
-      .filter((e) => e.isDirectory())
-      .map((e) => e.name);
-    return langDirs.filter((lang) =>
-      fs.existsSync(path.join(blogContentDir, lang, `${slug}.md`)),
-    );
-  } catch {
-    return ["en"];
-  }
 }
 
 export function GET(): Response {

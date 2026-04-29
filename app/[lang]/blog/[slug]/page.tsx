@@ -4,7 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { getAllBlogSlugs, getBlogPost } from "@/lib/blog";
+import {
+  getAllBlogSlugs,
+  getAvailableLanguagesForSlug,
+  getBlogPost,
+} from "@/lib/blog";
 import { formatDate, languageCodes } from "@/lib/i18n/config";
 import { getProfile } from "@/lib/i18n/server-content-loader";
 import { translations } from "@/lib/i18n/translations";
@@ -36,8 +40,9 @@ export async function generateMetadata({
   const canonicalLang = post.lang === "neutral" ? lang : post.lang;
   const canonicalUrl = `${siteUrl}/${canonicalLang}/blog/${slug}`;
 
+  const availableLangs = getAvailableLanguagesForSlug(slug);
   const languageAlternates = Object.fromEntries(
-    languageCodes.map((loc) => [loc, `${siteUrl}/${loc}/blog/${slug}`]),
+    availableLangs.map((loc) => [loc, `${siteUrl}/${loc}/blog/${slug}`]),
   );
 
   return {
