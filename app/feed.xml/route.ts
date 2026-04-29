@@ -7,7 +7,7 @@ const siteTitle = "Recep Şen - Blog";
 const siteDescription =
   "Technical blog by Recep Şen on .NET, microservices, AI development, and software engineering.";
 const authorName = "Recep Şen";
-const authorEmail = "hello@senrecep.com";
+const authorEmail = "me@senrecep.com";
 
 function escapeXml(unsafe: string): string {
   return unsafe
