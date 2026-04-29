@@ -3,17 +3,10 @@ import { getAllBlogPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
-const LOCAL_SLUGS = new Set([
-  "ai-coding-tools-complete-guide",
-  "google-cloud-secret-manager-dotnet",
-  "modern-way-manage-csharp-business-rules",
-  "performance-analysis-parameter-passing-csharp",
-  "production-grade-ai-development-claude-code",
-  "stop-writing-code-start-managing-systems",
-]);
+const LOCAL_SLUGS = new Set(["sample-blog-post", "sample-seo-guide"]);
 
 export function GET() {
-  const siteUrl = "https://senrecep.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
   const { personalInfo, projects, blogPosts, socialLinks } = profile;
 
   const projectLines = projects

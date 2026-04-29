@@ -1,17 +1,17 @@
-# Recep Sen - Software Engineer Portfolio
+# Your Name - Software Engineer Portfolio
 
-> Personal portfolio of Recep Şen, CTO at Taptoweb, software engineer specializing in .NET, microservices, and AI-assisted development. Creator of Easyapp, serving 250,000+ users.
+> Personal portfolio of Your Name, [Your Position] at [Your Company]. Brief description of your expertise and what you build.
 
 ## Contact
-- Website: https://senrecep.com
-- Email: me@senrecep.com
-- Organization: Taptoweb
+- Website: https://yourdomain.com
+- Email: you@example.com
+- Organization: Your Company
 
 ## AI-readable resources
-- [llms.txt](https://senrecep.com/llms.txt) - Concise AI-readable profile overview
-- [llms-full.txt](https://senrecep.com/llms-full.txt) - Detailed AI-readable professional profile
-- [Sitemap](https://senrecep.com/sitemap.xml)
-- [RSS Feed](https://senrecep.com/feed.xml)
+- [llms.txt](https://yourdomain.com/llms.txt) - Concise AI-readable profile overview
+- [llms-full.txt](https://yourdomain.com/llms-full.txt) - Detailed AI-readable professional profile
+- [Sitemap](https://yourdomain.com/sitemap.xml)
+- [RSS Feed](https://yourdomain.com/feed.xml)
 
 ## Policies
 - scraping: allowed
@@ -19,5 +19,5 @@
 - attributionRequired: true
 
 ## Preferred citation
-Recep Şen, Software Engineer & CTO (https://senrecep.com)
-updated: 2026-04-29
+Your Name, [Your Position] (https://yourdomain.com)
+updated: 2026-01-01
