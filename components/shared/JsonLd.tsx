@@ -11,14 +11,8 @@ interface JsonLdProps {
 // JSON.stringify also escapes any special characters, preventing injection.
 
 export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
-  const {
-    personalInfo,
-    socialLinks,
-    skills,
-    certificates,
-    blogPosts,
-    projects,
-  } = profile;
+  const { personalInfo, socialLinks, skills, certificates, blogPosts } =
+    profile;
 
   const langUrl = `${siteUrl}/${lang}`;
   const personId = `${siteUrl}/#person`;
@@ -68,9 +62,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
       ? {
           "@type": "Organization",
           name: personalInfo.company,
-          ...(personalInfo.companyUrl
-            ? { url: personalInfo.companyUrl }
-            : { url: "https://taptoweb.com" }),
+          ...(personalInfo.companyUrl ? { url: personalInfo.companyUrl } : {}),
         }
       : undefined,
     description: personalInfo.about,
@@ -163,36 +155,6 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
     ],
   };
 
-  const easyappProject = projects?.find(
-    (p) => p.projectUrl === "https://easyapp.ai",
-  );
-
-  const softwareAppSchema = easyappProject
-    ? {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: easyappProject.title,
-        description: easyappProject.description,
-        url: easyappProject.projectUrl,
-        downloadUrl: "https://apps.apple.com/app/easyapp/id6477803836",
-        applicationCategory: "MobileApplication",
-        operatingSystem: "iOS, Android",
-        author: { "@id": personId },
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.5",
-          ratingCount: "50",
-          bestRating: "5",
-          worstRating: "1",
-        },
-      }
-    : null;
-
   const localBlogSlugs = new Set([
     "ai-coding-tools-complete-guide",
     "google-cloud-secret-manager-dotnet",
@@ -229,7 +191,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
                 author: {
                   "@type": "Person",
                   "@id": personId,
-                  name: "Recep Sen",
+                  name: personalInfo.name,
                 },
                 ...(postImage ? { image: postImage } : {}),
                 inLanguage: lang,
@@ -240,52 +202,11 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         }
       : null;
 
-  const taptowebOrgSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://taptoweb.com/#organization",
-    name: "Taptoweb",
-    url: "https://taptoweb.com",
-    foundingDate: "2021",
-    knowsAbout: [
-      "Mobile App Development",
-      "Mini Apps",
-      "SaaS",
-      "AI",
-      "No-Code",
-    ],
-  };
-
-  const taptowebSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://taptoweb.com/#organization",
-    name: "Taptoweb",
-    url: "https://taptoweb.com",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://taptoweb.com/logo.png",
-      width: 512,
-      height: 512,
-    },
-    sameAs: ["https://www.linkedin.com/company/taptoweb"],
-    foundingDate: "2021",
-    knowsAbout: [
-      "Mobile App Development",
-      "Mini Apps",
-      "SaaS",
-      "AI",
-      "No-Code",
-    ],
-  };
-
   const schemas = [
     personSchema,
     profilePageSchema,
     websiteSchema,
     faqSchema,
-    taptowebSchema,
-    ...(softwareAppSchema ? [softwareAppSchema] : []),
     ...(blogListSchema ? [blogListSchema] : []),
   ];
 
@@ -301,12 +222,6 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
           }}
         />
       ))}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(taptowebOrgSchema),
-        }}
-      />
     </>
   );
 }
