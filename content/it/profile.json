@@ -4,8 +4,8 @@
     "position": "Software Engineer",
     "company": "Your Company",
     "companyUrl": "https://your-company.com",
-    "about": "Brief description of yourself and what you do. Highlight your main expertise, achievements, and what makes you unique as a software engineer.",
-    "imageUrl": "/images/profile.webp",
+    "about": "Breve descrizione di te stesso e di ciò che fai. Metti in evidenza la tua competenza principale, i tuoi risultati e ciò che offri agli utenti.",
+    "imageUrl": "https://placehold.co/400x400?text=Profile+Photo",
     "email": "you@example.com",
     "phoneNumber": "+10000000000",
     "cv": {
@@ -15,181 +15,42 @@
   },
   "skills": [
     {
-      "name": "IA, Agenti & Automazione",
-      "icon": "brain",
+      "name": "Frontend",
       "items": [
-        {
-          "name": "Agentic AI Frameworks (es. AutoGen)",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "bot"
-        },
-        {
-          "name": "Integrazione & Fine-Tuning LLM",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "sparkles"
-        },
-        {
-          "name": "Vector DBs & Sistemi di Cache Semantica",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "search"
-        },
-        {
-          "name": "Workflow IA & Automazione",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "workflow"
-        },
-        {
-          "name": "Strategie di Ottimizzazione Costi Automatizzate",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "trending-down"
-        }
+        { "name": "React", "level": "Advanced" },
+        { "name": "TypeScript", "level": "Advanced" },
+        { "name": "Tailwind CSS", "level": "Intermediate" }
       ]
     },
     {
-      "name": "Architettura & Backend",
-      "icon": "code",
+      "name": "Backend",
       "items": [
-        {
-          "name": ".NET & C#",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "code-2"
-        },
-        {
-          "name": "Microservices & Domain-Driven Design (DDD)",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "blocks"
-        },
-        {
-          "name": "Node.js & Nest.js",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "server"
-        },
-        {
-          "name": "Go (Golang)",
-          "level": "Familiare",
-          "levelType": "familiar",
-          "icon": "code-2"
-        }
+        { "name": "Node.js", "level": "Advanced" },
+        { "name": "PostgreSQL", "level": "Intermediate" },
+        { "name": "REST APIs", "level": "Advanced" }
       ]
     },
     {
-      "name": "Dati & Messaggistica",
-      "icon": "database",
+      "name": "Tools & DevOps",
       "items": [
-        {
-          "name": "PostgreSQL",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "database"
-        },
-        {
-          "name": "Redis",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "zap"
-        },
-        {
-          "name": "RabbitMQ",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "message-square"
-        },
-        {
-          "name": "MongoDB",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "leaf"
-        },
-        {
-          "name": "Elasticsearch",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "search"
-        }
-      ]
-    },
-    {
-      "name": "Cloud Native & DevOps",
-      "icon": "cloud",
-      "items": [
-        {
-          "name": "Google Cloud Platform (GCP)",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "cloud"
-        },
-        {
-          "name": "Docker & Containerizzazione",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "container"
-        },
-        {
-          "name": "Architettura Pipeline CI/CD",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "git-branch"
-        },
-        {
-          "name": "Kubernetes (K8s)",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "ship"
-        }
-      ]
-    },
-    {
-      "name": "Frontend & Livello API",
-      "icon": "monitor",
-      "items": [
-        {
-          "name": "TypeScript",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "code"
-        },
-        {
-          "name": "Next.js",
-          "level": "Competente",
-          "levelType": "proficient",
-          "icon": "triangle"
-        },
-        {
-          "name": "Progettazione API",
-          "level": "Esperto",
-          "levelType": "expert",
-          "icon": "share-2"
-        }
+        { "name": "Git", "level": "Advanced" },
+        { "name": "Docker", "level": "Intermediate" },
+        { "name": "CI/CD", "level": "Intermediate" }
       ]
     }
   ],
   "certificates": [
     {
-      "title": "Professional Certification Name",
+      "title": "Sample Certification 1",
       "issuer": "Certification Body",
-      "issueDate": "Gen. 2025",
-      "credentialId": "CERT-001",
-      "credentialUrl": "https://your-certification-url.com"
+      "issueDate": "2024-01",
+      "credentialUrl": "https://example.com/credential/1"
     },
     {
-      "title": "Advanced Course Certificate",
-      "issuer": "Online Learning Platform",
-      "issueDate": "Giu. 2024",
-      "credentialId": "CERT-002",
-      "credentialUrl": "https://your-certification-url.com"
-    },
-    {
-      "title": "Foundational Technology Certificate",
-      "issuer": "Technology Institute",
-      "issueDate": "Dic. 2023"
+      "title": "Sample Certification 2",
+      "issuer": "Certification Body",
+      "issueDate": "2023-06",
+      "credentialUrl": "https://example.com/credential/2"
     }
   ],
   "projects": [
@@ -198,7 +59,11 @@
       "year": "2024",
       "description": "A brief description of your main product or service. Highlight key metrics like user count or impact.",
       "projectUrl": "https://your-project.com",
-      "tags": ["Next.js", "TypeScript", "SaaS"],
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "SaaS"
+      ],
       "imageUrl": "https://placehold.co/400x400?text=Project+1"
     },
     {
@@ -206,7 +71,11 @@
       "year": "2023",
       "description": "An open-source library or tool you built. Mention downloads, stars, or community impact.",
       "projectUrl": "https://github.com/yourusername/your-library",
-      "tags": ["Open Source", "NuGet", "npm"],
+      "tags": [
+        "Open Source",
+        "NuGet",
+        "npm"
+      ],
       "imageUrl": "https://placehold.co/400x400?text=Project+2"
     },
     {
@@ -214,7 +83,11 @@
       "year": "2025",
       "description": "This portfolio template - a modern, SEO-optimized and AI-discoverable portfolio built with Next.js 15.",
       "projectUrl": "https://github.com/yourusername/portfolio",
-      "tags": ["Next.js", "TypeScript", "TailwindCSS"],
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS"
+      ],
       "imageUrl": "https://placehold.co/400x400?text=Portfolio"
     }
   ],

@@ -23,7 +23,7 @@
     "siteName": "Your Name Portfolio",
     "images": [
       {
-        "url": "/images/og-banner.tr.webp",
+        "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
         "width": 1200,
         "height": 630,
         "alt": "Your Name - Yazılım Mühendisi | Portfolyo önizleme görseli"
@@ -35,7 +35,7 @@
     "site": "@yourusername",
     "creator": "@yourusername",
     "images": {
-      "url": "/images/og-banner.tr.webp",
+      "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
       "alt": "Your Name - Yazılım Mühendisi | Portfolyo önizleme görseli"
     }
   }
