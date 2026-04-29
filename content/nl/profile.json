@@ -5,7 +5,7 @@
     "company": "Your Company",
     "companyUrl": "https://yourcompany.com",
     "about": "Korte beschrijving van uzelf en wat u doet. Benadruk uw belangrijkste expertise, prestaties en wat u gebruikers biedt.",
-    "imageUrl": "https://placehold.co/400x400?text=Profile+Photo",
+    "imageUrl": "/images/profile.png",
     "email": "you@example.com",
     "phoneNumber": "+10000000000",
     "cv": {
@@ -91,7 +91,7 @@
         "TypeScript",
         "SaaS"
       ],
-      "imageUrl": "https://placehold.co/400x400?text=Project+1"
+      "imageUrl": "/images/project-1.png"
     },
     {
       "title": "Open Source Library",
@@ -103,7 +103,7 @@
         "NuGet",
         "npm"
       ],
-      "imageUrl": "https://placehold.co/400x400?text=Project+2"
+      "imageUrl": "/images/project-2.png"
     },
     {
       "title": "Portfolio Website",
@@ -115,7 +115,7 @@
         "TypeScript",
         "TailwindCSS"
       ],
-      "imageUrl": "https://placehold.co/400x400?text=Portfolio"
+      "imageUrl": "/images/project-3.png"
     }
   ],
   "blogPosts": [
@@ -123,7 +123,7 @@
       "title": "Your First Blog Post Title",
       "description": "A brief summary of your first blog post. Keep it to 1-2 sentences.",
       "blogUrl": "https://medium.com/@yourusername/your-first-post",
-      "imageUrl": "/images/blog-post-1.webp",
+      "imageUrl": "/images/blog-post-1.png",
       "date": "2026-01-01",
       "slug": "sample-blog-post"
     },
@@ -131,7 +131,7 @@
       "title": "Your Second Blog Post Title",
       "description": "A brief summary of your second blog post about technology or your expertise.",
       "blogUrl": "https://medium.com/@yourusername/your-second-post",
-      "imageUrl": "/images/blog-post-2.webp",
+      "imageUrl": "/images/blog-post-2.png",
       "date": "2026-02-01",
       "slug": "sample-seo-guide"
     }
