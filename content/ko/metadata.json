@@ -1,31 +1,26 @@
 {
-  "title": "Your Name - 소프트웨어 엔지니어",
-  "description": "고영향력의 확장 가능한 시스템을 구축합니다. 복잡한 비즈니스 과제를 수십만 명의 사용자에게 서비스를 제공하는 우아한 기술 솔루션으로 전환합니다.",
+  "title": "Your Name - Your Position",
+  "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
   "callsign": "TB1REC",
   "keywords": [
-    "소프트웨어 엔지니어",
-    "백엔드 개발",
-    "풀스택",
-    "개발자",
     "portfolio",
-    "open source",
-    "dotnet",
-    "마이크로서비스",
-    "노코드 플랫폼 개발자",
-    "포트폴리오",
-    "TB1REC",
-    "아마추어 무선"
+    "developer",
+    "software",
+    "web development",
+    "your name",
+    "resume",
+    "projects"
   ],
   "openGraph": {
-    "title": "Your Name - 소프트웨어 엔지니어",
-    "description": "고영향력의 확장 가능한 시스템을 구축합니다. 복잡한 비즈니스 과제를 수십만 명의 사용자에게 서비스를 제공하는 우아한 기술 솔루션으로 전환합니다.",
+    "title": "Your Name - Your Position",
+    "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
     "siteName": "Your Name 포트폴리오",
     "images": [
       {
         "url": "/images/og-banner.ko.png",
         "width": 1200,
         "height": 630,
-        "alt": "Your Name - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
@@ -35,7 +30,7 @@
     "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.ko.png",
-      "alt": "Your Name - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }

@@ -4,7 +4,7 @@ description: "Learn how to optimize your portfolio for AI systems and search eng
 date: "2026-02-01"
 slug: "sample-seo-guide"
 mediumUrl: "https://medium.com/@yourusername/sample-seo-guide"
-imageUrl: "/images/blog-sample-2.webp"
+imageUrl: "/images/blog-sample-2.png"
 keywords: ["seo", "geo", "ai discoverability", "llms.txt", "structured data", "portfolio"]
 author: "Your Name"
 modifiedDate: "2026-02-01"

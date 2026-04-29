@@ -1,31 +1,26 @@
 {
-  "title": "Your Name - Ingénieur Logiciel",
-  "description": "Création de systèmes évolutifs à fort impact. Je transforme des défis commerciaux complexes en solutions techniques élégantes qui servent des centaines de milliers d'utilisateurs.",
+  "title": "Your Name - Your Position",
+  "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
   "callsign": "TB1REC",
   "keywords": [
-    "ingénieur logiciel",
-    "développement backend",
-    "full stack",
-    "développeur",
     "portfolio",
-    "open source",
-    "dotnet",
-    "microservices",
-    "développeur plateforme no code",
-    "portfolio",
-    "TB1REC",
-    "radio amateur"
+    "developer",
+    "software",
+    "web development",
+    "your name",
+    "resume",
+    "projects"
   ],
   "openGraph": {
-    "title": "Your Name - Ingénieur Logiciel",
-    "description": "Création de systèmes évolutifs à fort impact. Je transforme des défis commerciaux complexes en solutions techniques élégantes qui servent des centaines de milliers d'utilisateurs.",
+    "title": "Your Name - Your Position",
+    "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
     "siteName": "Portfolio Your Name",
     "images": [
       {
         "url": "/images/og-banner.fr.png",
         "width": 1200,
         "height": 630,
-        "alt": "Your Name - Ingénieur Logiciel | Aperçu du portfolio"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
@@ -35,7 +30,7 @@
     "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.fr.png",
-      "alt": "Your Name - Ingénieur Logiciel | Aperçu du portfolio"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }

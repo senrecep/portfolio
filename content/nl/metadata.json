@@ -1,31 +1,26 @@
 {
-  "title": "Your Name - Software Engineer",
-  "description": "Het bouwen van schaalbare systemen met hoge impact. Ik transformeer complexe zakelijke uitdagingen in elegante technische oplossingen die honderdduizenden gebruikers bedienen.",
+  "title": "Your Name - Your Position",
+  "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
   "callsign": "TB1REC",
   "keywords": [
-    "software engineer",
-    "backend ontwikkeling",
-    "full stack",
-    "ontwikkelaar",
     "portfolio",
-    "open source",
-    "dotnet",
-    "microservices",
-    "no code platform ontwikkelaar",
-    "portfolio",
-    "TB1REC",
-    "radioamateur"
+    "developer",
+    "software",
+    "web development",
+    "your name",
+    "resume",
+    "projects"
   ],
   "openGraph": {
-    "title": "Your Name - Software Engineer",
-    "description": "Het bouwen van schaalbare systemen met hoge impact. Ik transformeer complexe zakelijke uitdagingen in elegante technische oplossingen die honderdduizenden gebruikers bedienen.",
+    "title": "Your Name - Your Position",
+    "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
     "siteName": "Your Name Portfolio",
     "images": [
       {
         "url": "/images/og-banner.nl.png",
         "width": 1200,
         "height": 630,
-        "alt": "Your Name - Software Engineer | Portfolio voorbeeldafbeelding"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
@@ -35,7 +30,7 @@
     "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.nl.png",
-      "alt": "Your Name - Software Engineer | Portfolio voorbeeldafbeelding"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }

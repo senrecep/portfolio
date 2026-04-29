@@ -1,32 +1,26 @@
 {
-  "title": "Your Name - Yazılım Mühendisi",
-  "description": "Yüksek etki yaratan, ölçeklenebilir sistemler inşa ediyorum. Karmaşık iş problemlerini, yüz binlerce kullanıcıya hizmet eden zarif ve etkili teknik çözümlere dönüştürüyorum.",
+  "title": "Your Name - Your Position",
+  "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
   "callsign": "TB1REC",
   "keywords": [
-    "yazılım mühendisi",
-    "backend geliştirme",
-    "full stack",
-    "geliştirici",
     "portfolio",
-    "open source",
-    "dotnet",
-    "mikroservisler",
-    "no code platform geliştirici",
-    "portfolyo",
-    "TB1REC",
-    "amatör radio",
-    "ham radio"
+    "developer",
+    "software",
+    "web development",
+    "your name",
+    "resume",
+    "projects"
   ],
   "openGraph": {
-    "title": "Your Name - Yazılım Mühendisi",
-    "description": "Yüksek etki yaratan, ölçeklenebilir sistemler inşa ediyorum. Karmaşık iş problemlerini, yüz binlerce kullanıcıya hizmet eden zarif ve etkili teknik çözümlere dönüştürüyorum.",
+    "title": "Your Name - Your Position",
+    "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
     "siteName": "Your Name Portfolio",
     "images": [
       {
         "url": "/images/og-banner.tr.png",
         "width": 1200,
         "height": 630,
-        "alt": "Your Name - Yazılım Mühendisi | Portfolyo önizleme görseli"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
@@ -36,7 +30,7 @@
     "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.tr.png",
-      "alt": "Your Name - Yazılım Mühendisi | Portfolyo önizleme görseli"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }

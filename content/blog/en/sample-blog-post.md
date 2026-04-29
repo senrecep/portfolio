@@ -4,7 +4,7 @@ description: "A comprehensive guide to building your first Next.js 15 applicatio
 date: "2026-01-01"
 slug: "sample-blog-post"
 mediumUrl: "https://medium.com/@yourusername/sample-blog-post"
-imageUrl: "/images/blog-sample-1.webp"
+imageUrl: "/images/blog-sample-1.png"
 keywords: ["next.js", "react", "typescript", "web development", "app router"]
 author: "Your Name"
 modifiedDate: "2026-01-01"

@@ -1,31 +1,26 @@
 {
-  "title": "Your Name - Ingegnere del Software",
-  "description": "Costruisco sistemi scalabili ad alto impatto. Trasformo sfide aziendali complesse in soluzioni tecniche eleganti che servono centinaia di migliaia di utenti.",
+  "title": "Your Name - Your Position",
+  "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
   "callsign": "TB1REC",
   "keywords": [
-    "ingegnere del software",
-    "sviluppo backend",
-    "full stack",
-    "sviluppatore",
     "portfolio",
-    "open source",
-    "dotnet",
-    "microservices",
-    "sviluppatore piattaforma no code",
-    "portfolio",
-    "TB1REC",
-    "radioamatore"
+    "developer",
+    "software",
+    "web development",
+    "your name",
+    "resume",
+    "projects"
   ],
   "openGraph": {
-    "title": "Your Name - Ingegnere del Software",
-    "description": "Costruisco sistemi scalabili ad alto impatto. Trasformo sfide aziendali complesse in soluzioni tecniche eleganti che servono centinaia di migliaia di utenti.",
+    "title": "Your Name - Your Position",
+    "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
     "siteName": "Portfolio Your Name",
     "images": [
       {
         "url": "/images/og-banner.it.png",
         "width": 1200,
         "height": 630,
-        "alt": "Your Name - Ingegnere del Software | Anteprima portfolio"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
@@ -35,7 +30,7 @@
     "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.it.png",
-      "alt": "Your Name - Ingegnere del Software | Anteprima portfolio"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }

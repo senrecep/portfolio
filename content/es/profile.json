@@ -1,9 +1,9 @@
 {
   "personalInfo": {
     "name": "Your Name",
-    "position": "Software Engineer",
+    "position": "Your Position",
     "company": "Your Company",
-    "companyUrl": "https://your-company.com",
+    "companyUrl": "https://yourcompany.com",
     "about": "Breve descripción de ti mismo y lo que haces. Destaca tu experiencia principal, logros y lo que aportas a los usuarios.",
     "imageUrl": "https://placehold.co/400x400?text=Profile+Photo",
     "email": "you@example.com",
@@ -17,25 +17,52 @@
     {
       "name": "Frontend",
       "items": [
-        { "name": "React", "level": "Advanced" },
-        { "name": "TypeScript", "level": "Advanced" },
-        { "name": "Tailwind CSS", "level": "Intermediate" }
+        {
+          "name": "React",
+          "level": "Advanced"
+        },
+        {
+          "name": "TypeScript",
+          "level": "Advanced"
+        },
+        {
+          "name": "Tailwind CSS",
+          "level": "Intermediate"
+        }
       ]
     },
     {
       "name": "Backend",
       "items": [
-        { "name": "Node.js", "level": "Advanced" },
-        { "name": "PostgreSQL", "level": "Intermediate" },
-        { "name": "REST APIs", "level": "Advanced" }
+        {
+          "name": "Node.js",
+          "level": "Advanced"
+        },
+        {
+          "name": "PostgreSQL",
+          "level": "Intermediate"
+        },
+        {
+          "name": "REST APIs",
+          "level": "Advanced"
+        }
       ]
     },
     {
       "name": "Tools & DevOps",
       "items": [
-        { "name": "Git", "level": "Advanced" },
-        { "name": "Docker", "level": "Intermediate" },
-        { "name": "CI/CD", "level": "Intermediate" }
+        {
+          "name": "Git",
+          "level": "Advanced"
+        },
+        {
+          "name": "Docker",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CI/CD",
+          "level": "Intermediate"
+        }
       ]
     }
   ],

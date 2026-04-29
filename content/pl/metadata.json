@@ -1,31 +1,26 @@
 {
-  "title": "Your Name - Inżynier Oprogramowania",
-  "description": "Buduję skalowalne systemy o wysokim wpływie. Przekształcam złożone wyzwania biznesowe w eleganckie rozwiązania techniczne obsługujące setki tysięcy użytkowników.",
+  "title": "Your Name - Your Position",
+  "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
   "callsign": "TB1REC",
   "keywords": [
-    "inżynier oprogramowania",
-    "rozwój backend",
-    "full stack",
-    "programista",
     "portfolio",
-    "open source",
-    "dotnet",
-    "microservices",
-    "programista platformy no code",
-    "portfolio",
-    "TB1REC",
-    "krótkofalowiec"
+    "developer",
+    "software",
+    "web development",
+    "your name",
+    "resume",
+    "projects"
   ],
   "openGraph": {
-    "title": "Your Name - Inżynier Oprogramowania",
-    "description": "Buduję skalowalne systemy o wysokim wpływie. Przekształcam złożone wyzwania biznesowe w eleganckie rozwiązania techniczne obsługujące setki tysięcy użytkowników.",
+    "title": "Your Name - Your Position",
+    "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
     "siteName": "Portfolio Your Name",
     "images": [
       {
         "url": "/images/og-banner.pl.png",
         "width": 1200,
         "height": 630,
-        "alt": "Your Name - Inżynier Oprogramowania | Podgląd portfolio"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
@@ -35,7 +30,7 @@
     "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.pl.png",
-      "alt": "Your Name - Inżynier Oprogramowania | Podgląd portfolio"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }

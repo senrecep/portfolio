@@ -1,26 +1,25 @@
 {
-  "title": "Your Name - Software Engineer",
-  "description": "Building high-impact, scalable systems. I turn complex business challenges into elegant technical solutions.",
+  "title": "Your Name - Your Position",
+  "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
   "keywords": [
-    "software engineer",
-    "backend development",
-    "full stack",
-    "developer",
     "portfolio",
-    "typescript",
-    "nextjs",
-    "microservices"
+    "developer",
+    "software",
+    "web development",
+    "your name",
+    "resume",
+    "projects"
   ],
   "openGraph": {
-    "title": "Your Name - Software Engineer",
-    "description": "Building high-impact, scalable systems. I turn complex business challenges into elegant technical solutions.",
+    "title": "Your Name - Your Position",
+    "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
     "siteName": "Your Name Portfolio",
     "images": [
       {
         "url": "/images/og-banner.en.png",
         "width": 1200,
         "height": 630,
-        "alt": "Your Name - Software Engineer | Portfolio preview banner"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
@@ -30,7 +29,7 @@
     "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.en.png",
-      "alt": "Your Name - Software Engineer | Portfolio preview banner"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }

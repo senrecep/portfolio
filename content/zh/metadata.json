@@ -1,31 +1,26 @@
 {
-  "title": "Your Name - 软件工程师",
-  "description": "构建高影响力、可扩展的系统。我将复杂的业务挑战转化为服务数十万用户的优雅技术解决方案。",
+  "title": "Your Name - Your Position",
+  "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
   "callsign": "TB1REC",
   "keywords": [
-    "软件工程师",
-    "后端开发",
-    "全栈",
-    "开发者",
     "portfolio",
-    "open source",
-    "dotnet",
-    "微服务",
-    "无代码平台开发者",
-    "作品集",
-    "TB1REC",
-    "业余无线电"
+    "developer",
+    "software",
+    "web development",
+    "your name",
+    "resume",
+    "projects"
   ],
   "openGraph": {
-    "title": "Your Name - 软件工程师",
-    "description": "构建高影响力、可扩展的系统。我将复杂的业务挑战转化为服务数十万用户的优雅技术解决方案。",
+    "title": "Your Name - Your Position",
+    "description": "Add your personal description here. Highlight your expertise, key projects, and the value you bring to clients or employers.",
     "siteName": "Your Name 作品集",
     "images": [
       {
         "url": "/images/og-banner.zh.png",
         "width": 1200,
         "height": 630,
-        "alt": "Your Name - 软件工程师 | 作品集预览图"
+        "alt": "Your Name - Your Position | Portfolio preview"
       }
     ]
   },
@@ -35,7 +30,7 @@
     "creator": "@yourusername",
     "images": {
       "url": "/images/og-banner.zh.png",
-      "alt": "Your Name - 软件工程师 | 作品集预览图"
+      "alt": "Your Name - Your Position | Portfolio preview"
     }
   }
 }
