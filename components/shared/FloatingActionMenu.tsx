@@ -27,7 +27,7 @@ export function FloatingActionMenu({
   const hasMultiple = hasEmail && hasPhone;
 
   // Format phone number for WhatsApp (remove + and spaces)
-  const formattedPhone = phoneNumber?.replace(/[+\s]/g, "") || "";
+  const formattedPhone = phoneNumber?.replaceAll(/[+\s]/g, "") || "";
 
   // If no contact methods, don't render anything
   if (!hasEmail && !hasPhone) return null;

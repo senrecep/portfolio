@@ -85,12 +85,14 @@ export function CookieBanner({ gtmId, clarityId }: CookieBannerProps) {
             </p>
             <div className="flex gap-2 shrink-0">
               <button
+                type="button"
                 onClick={decline}
                 className="text-sm px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
               >
                 Decline
               </button>
               <button
+                type="button"
                 onClick={accept}
                 className="text-sm px-4 py-1.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
               >

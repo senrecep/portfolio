@@ -18,7 +18,7 @@ export function LanguageSwitcher() {
   const currentLanguage = getLanguageByCode(currentLang);
 
   const getTargetPath = (langCode: string) => {
-    return pathname.replace(`/${currentLang}`, `/${langCode}`);
+    return pathname.replaceAll(`/${currentLang}`, `/${langCode}`);
   };
 
   return (
