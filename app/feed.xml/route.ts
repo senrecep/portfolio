@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import { getAllBlogPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
@@ -18,21 +20,55 @@ function escapeXml(unsafe: string): string {
     .replace(/'/g, "&apos;");
 }
 
+/**
+ * Scans content/blog/ directory at build time to find which
+ * language subdirectories contain a file for the given slug.
+ * Returns ["en"] as fallback if scanning fails.
+ */
+function getAvailableLanguagesForSlug(slug: string): string[] {
+  const blogContentDir = path.join(process.cwd(), "content", "blog");
+  try {
+    const entries = fs.readdirSync(blogContentDir, { withFileTypes: true });
+    const langDirs = entries
+      .filter((e) => e.isDirectory())
+      .map((e) => e.name);
+    return langDirs.filter((lang) =>
+      fs.existsSync(path.join(blogContentDir, lang, `${slug}.md`)),
+    );
+  } catch {
+    return ["en"];
+  }
+}
+
 export function GET(): Response {
   const posts = getAllBlogPosts("en");
 
   const items = posts
     .map((post) => {
-      const postUrl = `${siteUrl}/en/blog/${post.slug}`;
+      const canonicalUrl = `${siteUrl}/en/blog/${post.slug}`;
       const pubDate = new Date(post.date).toUTCString();
+      const availableLangs = getAvailableLanguagesForSlug(post.slug);
+
+      // Only emit hreflang links when the post truly exists in multiple languages
+      const hreflangLinks =
+        availableLangs.length > 1
+          ? [
+              ...availableLangs.map(
+                (lang) =>
+                  `      <atom:link rel="alternate" hreflang="${lang}" href="${siteUrl}/${lang}/blog/${post.slug}"/>`,
+              ),
+              `      <atom:link rel="alternate" hreflang="x-default" href="${canonicalUrl}"/>`,
+            ].join("\n")
+          : "";
 
       return `    <item>
       <title>${escapeXml(post.title)}</title>
-      <link>${postUrl}</link>
-      <guid isPermaLink="true">${postUrl}</guid>
+      <link>${canonicalUrl}</link>
+      <guid isPermaLink="true">${canonicalUrl}</guid>
       <description>${escapeXml(post.description || "")}</description>
       <pubDate>${pubDate}</pubDate>
       <author>${escapeXml(authorEmail)} (${escapeXml(authorName)})</author>
+      <category>${escapeXml(post.category || "Technology")}</category>${hreflangLinks ? `\n${hreflangLinks}` : ""}
     </item>`;
     })
     .join("\n");
