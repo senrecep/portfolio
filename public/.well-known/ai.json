@@ -4,9 +4,18 @@
   "url": "https://senrecep.com",
   "description": "CTO at Taptoweb. .NET, microservices, AI-assisted development, and cloud architecture expert building scalable enterprise software.",
   "aiReadableResources": [
-    { "url": "https://senrecep.com/llms.txt", "description": "Concise AI-readable profile overview" },
-    { "url": "https://senrecep.com/llms-full.txt", "description": "Detailed AI-readable professional profile" },
-    { "url": "https://senrecep.com/sitemap.xml", "description": "Full site map" },
+    {
+      "url": "https://senrecep.com/llms.txt",
+      "description": "Concise AI-readable profile overview"
+    },
+    {
+      "url": "https://senrecep.com/llms-full.txt",
+      "description": "Detailed AI-readable professional profile"
+    },
+    {
+      "url": "https://senrecep.com/sitemap.xml",
+      "description": "Full site map"
+    },
     { "url": "https://senrecep.com/feed.xml", "description": "Blog RSS feed" }
   ],
   "allowedPaths": ["/"],
