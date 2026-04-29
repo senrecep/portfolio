@@ -22,7 +22,7 @@
     "siteName": "Your Name 作品集",
     "images": [
       {
-        "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
+        "url": "/images/og-banner.zh.png",
         "width": 1200,
         "height": 630,
         "alt": "Your Name - 软件工程师 | 作品集预览图"
@@ -34,7 +34,7 @@
     "site": "@yourusername",
     "creator": "@yourusername",
     "images": {
-      "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
+      "url": "/images/og-banner.zh.png",
       "alt": "Your Name - 软件工程师 | 作品集预览图"
     }
   }

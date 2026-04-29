@@ -22,7 +22,7 @@
     "siteName": "Portfolio Your Name",
     "images": [
       {
-        "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
+        "url": "/images/og-banner.pl.png",
         "width": 1200,
         "height": 630,
         "alt": "Your Name - Inżynier Oprogramowania | Podgląd portfolio"
@@ -34,7 +34,7 @@
     "site": "@yourusername",
     "creator": "@yourusername",
     "images": {
-      "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
+      "url": "/images/og-banner.pl.png",
       "alt": "Your Name - Inżynier Oprogramowania | Podgląd portfolio"
     }
   }

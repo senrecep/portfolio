@@ -22,7 +22,7 @@
     "siteName": "Portfolio Your Name",
     "images": [
       {
-        "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
+        "url": "/images/og-banner.pt.png",
         "width": 1200,
         "height": 630,
         "alt": "Your Name - Engenheiro de Software | Imagem de visualização do portfólio"
@@ -34,7 +34,7 @@
     "site": "@yourusername",
     "creator": "@yourusername",
     "images": {
-      "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
+      "url": "/images/og-banner.pt.png",
       "alt": "Your Name - Engenheiro de Software | Imagem de visualização do portfólio"
     }
   }

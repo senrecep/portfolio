@@ -23,7 +23,7 @@
     "siteName": "Портфолио Реджепа Шена",
     "images": [
       {
-        "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
+        "url": "/images/og-banner.ru.png",
         "width": 1200,
         "height": 630,
         "alt": "Реджеп Шен - Инженер-программист | Баннер портфолио"
@@ -35,7 +35,7 @@
     "site": "@yourusername",
     "creator": "@yourusername",
     "images": {
-      "url": "https://placehold.co/1200x630?text=Your+Name+-+Portfolio",
+      "url": "/images/og-banner.ru.png",
       "alt": "Реджеп Шен - Инженер-программист | Баннер портфолио"
     }
   }
