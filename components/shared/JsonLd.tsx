@@ -161,9 +161,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
     ],
   };
 
-  const portfolioProject = projects?.find(
-    (p) => p.projectUrl === "https://github.com/senrecep/portfolio",
-  );
+  const portfolioProject = projects?.find((p) => p.featured === true);
 
   const softwareAppSchema = portfolioProject
     ? {
