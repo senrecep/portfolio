@@ -139,7 +139,13 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/og-preview", "/_next/"],
       },
     ],
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: [
+      `${siteUrl}/sitemap.xml`,
+      `${siteUrl}/llms.txt`,
+      `${siteUrl}/llms-full.txt`,
+      `${siteUrl}/.well-known/ai.txt`,
+      `${siteUrl}/.well-known/ai.json`,
+    ],
     host: siteUrl,
   };
 }

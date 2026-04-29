@@ -67,7 +67,9 @@ export async function middleware(request: NextRequest) {
     pathname === "/sitemap.xml" ||
     pathname === "/robots.txt" ||
     pathname === "/llms.txt" ||
-    pathname === "/llms-full.txt"
+    pathname === "/llms-full.txt" ||
+    pathname === "/feed.xml" ||
+    pathname.startsWith("/.well-known")
   ) {
     if (pathname.startsWith("/api")) {
       response.headers.set(
@@ -103,6 +105,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon\\.ico|icon\\.png|icon\\.svg|apple-icon\\.png|manifest\\.json|web-app-manifest-.*\\.png|files/|images/|sitemap\\.xml|robots\\.txt|llms\\.txt|llms-full\\.txt).*)",
+    "/((?!_next/static|_next/image|favicon\\.ico|icon\\.png|icon\\.svg|apple-icon\\.png|manifest\\.json|web-app-manifest-.*\\.png|files/|images/|sitemap\\.xml|robots\\.txt|llms\\.txt|llms-full\\.txt|feed\\.xml|\\.well-known).*)",
   ],
 };
