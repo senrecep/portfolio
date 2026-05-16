@@ -86,11 +86,7 @@
       "year": "2024",
       "description": "A brief description of your main product or service. Highlight key metrics like user count or impact.",
       "projectUrl": "https://your-project.com",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "SaaS"
-      ],
+      "tags": ["Next.js", "TypeScript", "SaaS"],
       "imageUrl": "/images/project-1.png"
     },
     {
@@ -98,11 +94,7 @@
       "year": "2023",
       "description": "An open-source library or tool you built. Mention downloads, stars, or community impact.",
       "projectUrl": "https://github.com/yourusername/your-library",
-      "tags": [
-        "Open Source",
-        "NuGet",
-        "npm"
-      ],
+      "tags": ["Open Source", "NuGet", "npm"],
       "imageUrl": "/images/project-2.png"
     },
     {
@@ -110,11 +102,7 @@
       "year": "2025",
       "description": "This portfolio template - a modern, SEO-optimized and AI-discoverable portfolio built with Next.js 15.",
       "projectUrl": "https://github.com/yourusername/portfolio",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "TailwindCSS"
-      ],
+      "tags": ["Next.js", "TypeScript", "TailwindCSS"],
       "imageUrl": "/images/project-3.png"
     }
   ],

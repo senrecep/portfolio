@@ -49,9 +49,7 @@ export function GET() {
       const date = b.date ? ` (${b.date})` : "";
       const slug = (b as { slug?: string }).slug;
       const url =
-        slug && localSlugs.has(slug)
-          ? `${siteUrl}/en/blog/${slug}`
-          : b.blogUrl;
+        slug && localSlugs.has(slug) ? `${siteUrl}/en/blog/${slug}` : b.blogUrl;
       return `### ${b.title}${date}\n- URL: ${url}\n- Summary: ${b.description}`;
     }),
     ...localPosts

@@ -69,9 +69,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
       ? {
           "@type": "Organization",
           name: personalInfo.company,
-          ...(personalInfo.companyUrl
-            ? { url: personalInfo.companyUrl }
-            : {}),
+          ...(personalInfo.companyUrl ? { url: personalInfo.companyUrl } : {}),
         }
       : undefined,
     description: personalInfo.about,

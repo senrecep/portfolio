@@ -13,8 +13,7 @@ interface PageProps {
   params: Promise<{ lang: string }>;
 }
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
 
 export const dynamic = "force-static";
 export const revalidate = false;

@@ -4,9 +4,18 @@
   "url": "https://yourdomain.com",
   "description": "[Your Position] at [Your Company]. Brief description of your expertise and what makes you unique.",
   "aiReadableResources": [
-    { "url": "https://yourdomain.com/llms.txt", "description": "Concise AI-readable profile overview" },
-    { "url": "https://yourdomain.com/llms-full.txt", "description": "Detailed AI-readable professional profile" },
-    { "url": "https://yourdomain.com/sitemap.xml", "description": "Full site map" },
+    {
+      "url": "https://yourdomain.com/llms.txt",
+      "description": "Concise AI-readable profile overview"
+    },
+    {
+      "url": "https://yourdomain.com/llms-full.txt",
+      "description": "Detailed AI-readable professional profile"
+    },
+    {
+      "url": "https://yourdomain.com/sitemap.xml",
+      "description": "Full site map"
+    },
     { "url": "https://yourdomain.com/feed.xml", "description": "Blog RSS feed" }
   ],
   "allowedPaths": ["/"],
