@@ -3,8 +3,6 @@ import { getAllBlogPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
-const LOCAL_SLUGS = new Set(["sample-blog-post", "sample-seo-guide"]);
-
 export function GET() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
   const { personalInfo, projects, blogPosts, socialLinks } = profile;
@@ -14,14 +12,13 @@ export function GET() {
     .join("\n");
 
   const localPosts = getAllBlogPosts("en");
+  const localSlugs = new Set(localPosts.map((p) => p.slug));
 
   const blogLines = blogPosts
     .map((b) => {
       const slug = (b as { slug?: string }).slug;
       const url =
-        slug && LOCAL_SLUGS.has(slug)
-          ? `${siteUrl}/en/blog/${slug}`
-          : b.blogUrl;
+        slug && localSlugs.has(slug) ? `${siteUrl}/en/blog/${slug}` : b.blogUrl;
       return `- [${b.title}](${url}): ${b.description}`;
     })
     .join("\n");

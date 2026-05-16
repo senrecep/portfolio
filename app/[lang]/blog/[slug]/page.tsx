@@ -9,7 +9,7 @@ import {
   getAvailableLanguagesForSlug,
   getBlogPost,
 } from "@/lib/blog";
-import { formatDate, languageCodes } from "@/lib/i18n/config";
+import { formatDate, languageCodes, languages } from "@/lib/i18n/config";
 import { getProfile } from "@/lib/i18n/server-content-loader";
 import { translations } from "@/lib/i18n/translations";
 import { BlogContent } from "./BlogContent";
@@ -107,6 +107,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const profile = await getProfile(lang);
   const t = translations[lang];
+
+  const availableLangs = getAvailableLanguagesForSlug(slug);
+  const otherLangs = availableLangs.filter((l) => l !== lang);
 
   const canonicalLang = post.lang === "neutral" ? lang : post.lang;
   const canonicalUrl = `${siteUrl}/${canonicalLang}/blog/${slug}`;
@@ -250,6 +253,29 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         )}
 
+        {otherLangs.length > 0 && (
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6 p-3 rounded-lg border border-border bg-muted/30">
+            <span>🌐</span>
+            <span>
+              {otherLangs.map((l, i) => {
+                const langInfo = languages.find((lg) => lg.code === l);
+                return (
+                  <span key={l}>
+                    {i > 0 && ", "}
+                    <Link
+                      href={`/${l}/blog/${slug}`}
+                      className="font-medium text-primary hover:underline"
+                      hrefLang={l}
+                    >
+                      {langInfo?.nativeName ?? l}
+                    </Link>
+                  </span>
+                );
+              })}
+            </span>
+          </div>
+        )}
+
         <header className="mb-8">
           <time dateTime={post.date} className="text-sm text-muted-foreground">
             {formatDate(post.date, lang)}
@@ -264,16 +290,18 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.title}
           </h1>
           <p className="mt-3 text-muted-foreground">{post.description}</p>
-          <div className="mt-4">
-            <a
-              href={post.mediumUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Originally published on Medium &rarr;
-            </a>
-          </div>
+          {post.mediumUrl && (
+            <div className="mt-4">
+              <a
+                href={post.mediumUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Originally published on Medium &rarr;
+              </a>
+            </div>
+          )}
         </header>
 
         <BlogContent content={post.content} />

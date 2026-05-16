@@ -3,8 +3,6 @@ import { getAllBlogPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
-const LOCAL_SLUGS = new Set(["sample-blog-post", "sample-seo-guide"]);
-
 export function GET() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
   const {
@@ -41,6 +39,7 @@ export function GET() {
     .join("\n\n");
 
   const localPosts = getAllBlogPosts("en");
+  const localSlugs = new Set(localPosts.map((p) => p.slug));
   const profileSlugs = new Set(
     blogPosts.map((b) => (b as { slug?: string }).slug).filter(Boolean),
   );
@@ -50,7 +49,7 @@ export function GET() {
       const date = b.date ? ` (${b.date})` : "";
       const slug = (b as { slug?: string }).slug;
       const url =
-        slug && LOCAL_SLUGS.has(slug)
+        slug && localSlugs.has(slug)
           ? `${siteUrl}/en/blog/${slug}`
           : b.blogUrl;
       return `### ${b.title}${date}\n- URL: ${url}\n- Summary: ${b.description}`;
