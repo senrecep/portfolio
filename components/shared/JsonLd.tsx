@@ -1,3 +1,4 @@
+import { getAllBlogPosts } from "@/lib/blog";
 import type { Profile } from "@/lib/i18n/content-loader";
 
 interface JsonLdProps {
