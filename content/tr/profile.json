@@ -232,6 +232,14 @@
   ],
   "blogPosts": [
     {
+      "title": "Fonksiyon İmzanız Yalan Söylüyor: TypeScript'te Hataları Değer Olarak Yönetmek",
+      "description": "TypeScript'te try/catch'in neden yetersiz kaldığını, Railway Oriented Programming ile hataları değer olarak yönetmenin avantajlarını ve tsentials kütüphanesinin Result<T>, Maybe<T>, RuleEngine gibi araçlarıyla pragmatik fonksiyonel programlamayı keşfedin.",
+      "blogUrl": "",
+      "date": "16/05/2026",
+      "imageUrl": "/images/your-function-signature-is-lying.webp",
+      "slug": "your-function-signature-is-lying"
+    },
+    {
       "title": "Kod Yazmayı Bırakın, Sistemi Yönetin: AI Destekli Geliştirmenin Gerçek Potansiyeli",
       "description": "AI'ı bir otomatik tamamlama aracı olarak görmeyi bırakın ve bir CTO gibi düşünmeye başlayın. CLAUDE.md stratejisi, context yönetimi, hook'lar, özel agent'lar, çoklu agent orkestrasyonu, model yönlendirme ve kendi kendine öğrenen sistemleri kapsayan kapsamlı bir Claude Code rehberi.",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",

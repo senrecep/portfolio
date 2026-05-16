@@ -263,6 +263,14 @@
   ],
   "blogPosts": [
     {
+      "title": "Your Function Signature Is Lying: Managing Errors as Values in TypeScript",
+      "description": "Discover why try/catch falls short in TypeScript, the advantages of managing errors as values with Railway Oriented Programming, and pragmatic functional programming with tsentials' Result<T>, Maybe<T>, RuleEngine and more.",
+      "blogUrl": "",
+      "date": "05/16/2026",
+      "imageUrl": "/images/your-function-signature-is-lying.webp",
+      "slug": "your-function-signature-is-lying"
+    },
+    {
       "title": "Stop Writing Code, Start Managing Systems: The Real Potential of AI-Powered Development",
       "description": "Stop treating AI as an autocomplete and start thinking like a CTO. A comprehensive guide to Claude Code covering CLAUDE.md strategy, context management, hooks, custom agents, multi-agent orchestration, model routing, and self-learning systems.",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",

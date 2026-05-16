@@ -263,6 +263,14 @@
   ],
   "blogPosts": [
     {
+      "title": "La firma de tu función miente: Gestión de errores como valores en TypeScript",
+      "description": "Descubre por qué try/catch es insuficiente en TypeScript, las ventajas de gestionar errores como valores con Railway Oriented Programming y programación funcional pragmática con Result<T>, Maybe<T>, RuleEngine de tsentials y más.",
+      "blogUrl": "",
+      "date": "16/05/2026",
+      "imageUrl": "/images/your-function-signature-is-lying.webp",
+      "slug": "your-function-signature-is-lying"
+    },
+    {
       "title": "Deja de escribir código, empieza a gestionar sistemas: El verdadero potencial del desarrollo impulsado por IA",
       "description": "Deja de tratar la IA como un autocompletado y empieza a pensar como un CTO. Una guía completa sobre Claude Code que cubre la estrategia CLAUDE.md, gestión de contexto, hooks, agentes personalizados, orquestación multi-agente, enrutamiento de modelos y sistemas de autoaprendizaje.",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",

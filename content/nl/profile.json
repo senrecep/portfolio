@@ -263,6 +263,14 @@
   ],
   "blogPosts": [
     {
+      "title": "Je functiesignatuur liegt: Fouten als waarden beheren in TypeScript",
+      "description": "Ontdek waarom try/catch tekortschiet in TypeScript, de voordelen van foutenbeheer als waarden met Railway Oriented Programming en pragmatisch functioneel programmeren met tsentials' Result<T>, Maybe<T>, RuleEngine en meer.",
+      "blogUrl": "",
+      "date": "16-05-2026",
+      "imageUrl": "/images/your-function-signature-is-lying.webp",
+      "slug": "your-function-signature-is-lying"
+    },
+    {
       "title": "Stop met code schrijven, begin met systemen beheren: Het echte potentieel van AI-gestuurde ontwikkeling",
       "description": "Stop met AI te behandelen als autocomplete en begin te denken als een CTO. Een uitgebreide gids over Claude Code met CLAUDE.md-strategie, contextbeheer, hooks, aangepaste agents, multi-agent orchestratie, modelroutering en zelflerende systemen.",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",

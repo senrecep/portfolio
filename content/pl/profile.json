@@ -263,6 +263,14 @@
   ],
   "blogPosts": [
     {
+      "title": "Sygnatura twojej funkcji kłamie: Zarządzanie błędami jako wartościami w TypeScript",
+      "description": "Dowiedz się, dlaczego try/catch jest niewystarczający w TypeScript, jakie są zalety zarządzania błędami jako wartościami z Railway Oriented Programming oraz pragmatycznego programowania funkcyjnego z Result<T>, Maybe<T>, RuleEngine z tsentials i więcej.",
+      "blogUrl": "",
+      "date": "16.05.2026",
+      "imageUrl": "/images/your-function-signature-is-lying.webp",
+      "slug": "your-function-signature-is-lying"
+    },
+    {
       "title": "Przestań pisać kod, zacznij zarządzać systemami: Prawdziwy potencjał programowania wspieranego przez AI",
       "description": "Przestań traktować AI jako autouzupełnianie i zacznij myśleć jak CTO. Kompleksowy przewodnik po Claude Code obejmujący strategię CLAUDE.md, zarządzanie kontekstem, hooki, niestandardowych agentów, orkiestrację wielu agentów, routing modeli i systemy samouczące się.",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",

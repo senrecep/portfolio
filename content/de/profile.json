@@ -232,6 +232,14 @@
   ],
   "blogPosts": [
     {
+      "title": "Ihre Funktionssignatur lügt: Fehler als Werte in TypeScript verwalten",
+      "description": "Entdecken Sie, warum try/catch in TypeScript unzureichend ist, die Vorteile der Fehlerverwaltung als Werte mit Railway Oriented Programming und pragmatische funktionale Programmierung mit tsentials' Result<T>, Maybe<T>, RuleEngine und mehr.",
+      "blogUrl": "",
+      "date": "16.05.2026",
+      "imageUrl": "/images/your-function-signature-is-lying.webp",
+      "slug": "your-function-signature-is-lying"
+    },
+    {
       "title": "Hören Sie auf Code zu schreiben, beginnen Sie Systeme zu verwalten: Das wahre Potenzial KI-gestützter Entwicklung",
       "description": "Hören Sie auf, KI als Autovervollständigung zu betrachten und beginnen Sie wie ein CTO zu denken. Ein umfassender Claude Code Leitfaden über CLAUDE.md-Strategie, Kontextmanagement, Hooks, benutzerdefinierte Agenten, Multi-Agenten-Orchestrierung, Modell-Routing und selbstlernende Systeme.",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",

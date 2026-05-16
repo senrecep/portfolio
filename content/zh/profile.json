@@ -263,6 +263,14 @@
   ],
   "blogPosts": [
     {
+      "title": "你的函数签名在撒谎：在TypeScript中将错误作为值管理",
+      "description": "了解TypeScript中try/catch为何不足、使用Railway Oriented Programming将错误作为值管理的优势，以及通过tsentials的Result<T>、Maybe<T>、RuleEngine等工具进行实用函数式编程。",
+      "blogUrl": "",
+      "date": "2026/05/16",
+      "imageUrl": "/images/your-function-signature-is-lying.webp",
+      "slug": "your-function-signature-is-lying"
+    },
+    {
       "title": "停止编写代码，开始管理系统：AI驱动开发的真正潜力",
       "description": "停止将AI视为自动补全工具，开始像CTO一样思考。这是一份全面的Claude Code指南，涵盖CLAUDE.md策略、上下文管理、钩子、自定义代理、多代理编排、模型路由和自学习系统。",
       "blogUrl": "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de",
