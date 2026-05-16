@@ -153,8 +153,8 @@ function MarkdownTable({ content }: { content: string }) {
   const { headers, rows } = parseMarkdownTable(content);
 
   return (
-    <div className="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-700">
-      <table className="w-full text-sm text-left border-collapse">
+    <div className="not-prose my-6 max-w-full overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-700">
+      <table className="w-full text-sm text-left border-collapse min-w-[500px]">
         <thead>
           <tr className="bg-zinc-100 dark:bg-zinc-800">
             {headers.map((header, i) => (
@@ -180,7 +180,7 @@ function MarkdownTable({ content }: { content: string }) {
               {row.map((cell, cellIdx) => (
                 <td
                   key={cellIdx}
-                  className="px-4 py-2.5 text-zinc-600 dark:text-zinc-300 border-b border-zinc-100 dark:border-zinc-800 font-mono whitespace-nowrap"
+                  className="px-4 py-2.5 text-zinc-600 dark:text-zinc-300 border-b border-zinc-100 dark:border-zinc-800 font-mono"
                 >
                   {cell}
                 </td>
@@ -207,45 +207,39 @@ function CopyButton({ content }: { content: string }) {
       type="button"
       onClick={handleCopy}
       aria-label="Copy code"
-      className="absolute top-3 right-3 flex items-center gap-1.5 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity rounded-md px-2 py-1 text-xs text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 z-10"
+      className="absolute bottom-2 right-2 flex items-center justify-center size-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity rounded-md text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 z-10"
     >
       {copied ? (
-        <>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13"
-            height="13"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-          Copied!
-        </>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
       ) : (
-        <>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13"
-            height="13"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-          </svg>
-          Copy
-        </>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+          <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+        </svg>
       )}
     </button>
   );
@@ -264,21 +258,10 @@ function BlockCode({ children, className }: BlockCodeProps) {
     return <MarkdownTable content={content} />;
   }
 
-  const langMatch = /language-(\w+)/.exec(className || "");
-  const language = langMatch ? langMatch[1] : null;
-
   return (
-    <span className="relative block group">
-      {language && (
-        <span className="absolute top-3 right-[4.5rem] text-xs text-zinc-500 font-mono select-none pointer-events-none z-10">
-          {language}
-        </span>
-      )}
-      <CopyButton content={content} />
-      <code className="block min-w-max px-5 py-4 text-sm text-zinc-300 font-mono leading-relaxed whitespace-pre">
-        {children}
-      </code>
-    </span>
+    <code className="block min-w-max px-5 py-4 text-sm text-zinc-300 font-mono leading-relaxed whitespace-pre">
+      {children}
+    </code>
   );
 }
 
@@ -305,7 +288,7 @@ interface BlogContentProps {
 
 export function BlogContent({ content }: BlogContentProps) {
   return (
-    <div className="prose prose-neutral dark:prose-invert max-w-none">
+    <div className="prose prose-neutral dark:prose-invert max-w-none min-w-0 overflow-x-hidden">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
@@ -352,10 +335,11 @@ export function BlogContent({ content }: BlogContentProps) {
 
             return (
               <IsBlockCodeContext.Provider value={true}>
-                <div className="not-prose my-6">
+                <div className="not-prose my-6 relative group">
                   <pre className="bg-zinc-950 dark:bg-zinc-900 border border-zinc-800 dark:border-zinc-700 rounded-xl overflow-x-auto">
                     {children}
                   </pre>
+                  <CopyButton content={codeContent} />
                 </div>
               </IsBlockCodeContext.Provider>
             );
@@ -408,6 +392,41 @@ export function BlogContent({ content }: BlogContentProps) {
             <ol className="list-decimal list-outside ml-6 my-4 space-y-1">
               {children}
             </ol>
+          ),
+          table: ({ children }) => (
+            <div className="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-700">
+              <table className="w-full text-sm text-left border-collapse min-w-[500px]">
+                {children}
+              </table>
+            </div>
+          ),
+          thead: ({ children }) => <thead>{children}</thead>,
+          tbody: ({ children }) => <tbody>{children}</tbody>,
+          tr: ({ children, ...props }) => {
+            const isHeader =
+              (props as { node?: { parentNode?: { tagName?: string } } }).node
+                ?.parentNode?.tagName === "thead";
+            return (
+              <tr
+                className={
+                  isHeader
+                    ? "bg-zinc-100 dark:bg-zinc-800"
+                    : "even:bg-white dark:even:bg-zinc-900 odd:bg-zinc-50 dark:odd:bg-zinc-800/50"
+                }
+              >
+                {children}
+              </tr>
+            );
+          },
+          th: ({ children }) => (
+            <th className="px-4 py-3 font-semibold text-zinc-700 dark:text-zinc-200 whitespace-nowrap border-b border-zinc-200 dark:border-zinc-700">
+              {children}
+            </th>
+          ),
+          td: ({ children }) => (
+            <td className="px-4 py-2.5 text-zinc-600 dark:text-zinc-300 border-b border-zinc-100 dark:border-zinc-800 font-mono">
+              {children}
+            </td>
           ),
           li: ({ children }) => <li className="leading-relaxed">{children}</li>,
         }}
