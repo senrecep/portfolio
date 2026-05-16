@@ -1,3 +1,4 @@
+import { getAllBlogPosts } from "@/lib/blog";
 import type { Profile } from "@/lib/i18n/content-loader";
 
 interface JsonLdProps {
@@ -150,37 +151,29 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         }
       : null;
 
-  const easyappProject = projects?.find(
-    (p) => p.projectUrl === "https://easyapp.ai",
-  );
+  const featuredProject = projects?.find((p) => p.featured === true);
 
-  const softwareAppSchema = easyappProject
+  const softwareAppSchema = featuredProject
     ? {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        name: easyappProject.title,
-        description: easyappProject.description,
-        url: easyappProject.projectUrl,
-        downloadUrl: "https://apps.apple.com/app/easyapp/id6477803836",
-        applicationCategory: "MobileApplication",
-        operatingSystem: "iOS, Android",
+        name: featuredProject.title,
+        description: featuredProject.description,
+        url: featuredProject.projectUrl,
+        codeRepository: featuredProject.projectUrl,
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Web",
         author: { "@id": personId },
+        license: "https://opensource.org/licenses/MIT",
         offers: {
           "@type": "Offer",
           price: "0",
           priceCurrency: "USD",
         },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.5",
-          ratingCount: "50",
-          bestRating: "5",
-          worstRating: "1",
-        },
       }
     : null;
 
-  const localBlogSlugs = new Set(["sample-blog-post", "sample-seo-guide"]);
+  const localBlogSlugs = new Set(getAllBlogPosts("en").map((p) => p.slug));
 
   const blogListSchema =
     blogPosts && blogPosts.length > 0
