@@ -2,7 +2,7 @@ import { getAllBlogPosts, getAvailableLanguagesForSlug } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
-const siteUrl = "https://senrecep.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const siteTitle = "Recep Şen - Blog";
 const siteDescription =
   "Technical blog by Recep Şen on .NET, microservices, AI development, and software engineering.";

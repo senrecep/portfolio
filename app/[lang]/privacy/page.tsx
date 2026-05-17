@@ -108,7 +108,8 @@ export default async function PrivacyPage({ params }: PageProps) {
                 This privacy policy explains how {profile.personalInfo.name}{" "}
                 (&quot;I&quot;, &quot;me&quot;, or &quot;my&quot;) collects,
                 uses, and protects information when you visit this personal
-                portfolio website at senrecep.com.
+                portfolio website at{" "}
+                {siteUrl.replace(/^https?:\/\//, "")}.
               </p>
             </section>
 
