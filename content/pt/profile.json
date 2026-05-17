@@ -208,32 +208,65 @@
       "title": "Easyapp",
       "description": "Liderei a arquitetura e desenvolvimento de uma plataforma baseada em microserviços que atende mais de 250.000 usuários. Implementei otimização de custos orientada por IA e infraestrutura sob demanda eficiente em capital.",
       "projectUrl": "https://easyapp.ai",
-      "tags": ["IA", "Mobile", "No-Code"],
+      "tags": [
+        "IA",
+        "Mobile",
+        "No-Code"
+      ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
-    },
-    {
-      "title": "Aspire Microservice Starter Template",
-      "description": "Um template para criar um microserviço com o Framework Aspire.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
       "description": "Simplifica o desenvolvimento em C# fornecendo blocos de construção essenciais, incluindo um framework para implementar design patterns comuns como Result Pattern, Any Pattern e Maybe Pattern.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "Programação Funcional"],
+      "tags": [
+        "C#",
+        ".NET",
+        "Design Patterns",
+        "Programação Funcional"
+      ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
+    },
+    {
+      "title": "Aspire Microservice Starter Template",
+      "description": "Um template para criar um microserviço com o Framework Aspire.",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Simplifica o tratamento de erros em TypeScript com Railway-Oriented Programming. Fornece Result<T>, Maybe<T>, Rule Engine, padrões DDD e mais de 20 módulos componíveis para programação funcional type-safe sem dependências.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": [
+        "TypeScript",
+        "Programação Funcional",
+        "Tratamento de Erros",
+        "DDD",
+        "Código Aberto"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     },
     {
       "title": "Template de Portfólio",
       "description": "Um template de portfólio rápido e otimizado para SEO com suporte ilimitado a idiomas, temas escuro/claro e seções totalmente personalizáveis para qualquer profissão. Construído com Next.js 15 e React 19. Licença MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "i18n",
+        "Open Source"
+      ],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -241,7 +274,13 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "O simulador de comparação de salários mais completo da Turquia. Compare a renda líquida entre funcionários SGK (4/a) e autônomos Bağ-Kur (4/b). Cálculos de salário bruto/líquido, impostos, prêmios e custos do empregador.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "Finanças", "Impostos", "SGK", "Bağ-Kur"],
+      "tags": [
+        "JavaScript",
+        "Finanças",
+        "Impostos",
+        "SGK",
+        "Bağ-Kur"
+      ],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -259,14 +298,6 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
-    },
-    {
-      "title": "tsentials",
-      "description": "Simplifica o tratamento de erros em TypeScript com Railway-Oriented Programming. Fornece Result<T>, Maybe<T>, Rule Engine, padrões DDD e mais de 20 módulos componíveis para programação funcional type-safe sem dependências.",
-      "projectUrl": "https://github.com/senrecep/tsentials",
-      "tags": ["TypeScript", "Programação Funcional", "Tratamento de Erros", "DDD", "Código Aberto"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
-      "year": "2025"
     }
   ],
   "blogPosts": [

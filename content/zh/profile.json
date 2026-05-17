@@ -208,32 +208,65 @@
       "title": "Easyapp",
       "description": "领导了一个服务超过15万用户的微服务平台的架构和开发。实施了AI驱动的成本优化和资本高效的按需基础设施。",
       "projectUrl": "https://easyapp.ai",
-      "tags": ["AI", "移动端", "No-Code"],
+      "tags": [
+        "AI",
+        "移动端",
+        "No-Code"
+      ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
-    },
-    {
-      "title": "Aspire Microservice Starter Template",
-      "description": "使用 Aspire Framework 创建微服务的模板。",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
       "description": "通过提供必要的构建块来简化 C# 开发，包括用于实现常见设计模式（如 Result Pattern、Any Pattern 和 Maybe Pattern）的框架。",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "函数式编程"],
+      "tags": [
+        "C#",
+        ".NET",
+        "Design Patterns",
+        "函数式编程"
+      ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
+    },
+    {
+      "title": "Aspire Microservice Starter Template",
+      "description": "使用 Aspire Framework 创建微服务的模板。",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "通过 Railway-Oriented Programming 简化 TypeScript 错误处理。提供 Result<T>、Maybe<T>、规则引擎、DDD 模式和 20 多个可组合模块，实现零依赖的类型安全函数式编程。",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": [
+        "TypeScript",
+        "函数式编程",
+        "错误处理",
+        "DDD",
+        "开源"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     },
     {
       "title": "作品集模板",
       "description": "快速、SEO 优化的作品集模板，支持无限语言、深色/浅色主题，以及适用于任何职业的完全可定制部分。使用 Next.js 15 和 React 19 构建。MIT 许可。",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "开源"],
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "i18n",
+        "开源"
+      ],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -241,7 +274,13 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "土耳其最全面的薪资比较模拟器。比较 SGK 雇员（4/a）和 Bağ-Kur 自雇人员（4/b）的净收入。总工资/净工资、税款、保费、雇主成本计算。",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "金融", "税务", "SGK", "Bağ-Kur"],
+      "tags": [
+        "JavaScript",
+        "金融",
+        "税务",
+        "SGK",
+        "Bağ-Kur"
+      ],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -259,14 +298,6 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
-    },
-    {
-      "title": "tsentials",
-      "description": "通过 Railway-Oriented Programming 简化 TypeScript 错误处理。提供 Result<T>、Maybe<T>、规则引擎、DDD 模式和 20 多个可组合模块，实现零依赖的类型安全函数式编程。",
-      "projectUrl": "https://github.com/senrecep/tsentials",
-      "tags": ["TypeScript", "函数式编程", "错误处理", "DDD", "开源"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
-      "year": "2025"
     }
   ],
   "blogPosts": [

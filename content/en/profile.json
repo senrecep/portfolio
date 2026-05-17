@@ -209,24 +209,51 @@
       "year": "2022",
       "description": "Led the architecture and development of a microservices-based platform serving 250,000+ users. Implemented AI-driven cost optimization and a capital-efficient, on-demand infrastructure.",
       "projectUrl": "https://easyapp.ai",
-      "tags": ["AI", "Mobile", "No-Code"],
+      "tags": [
+        "AI",
+        "Mobile",
+        "No-Code"
+      ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp"
-    },
-    {
-      "title": "Aspire Microservice Starter Template",
-      "year": "2024",
-      "description": "A template for creating a microservice with the Aspire Framework.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Microservices"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png"
     },
     {
       "title": "CSharpEssentials",
       "year": "2023",
       "description": "Simplifies C# development by providing essential building blocks, including a framework for implementing common design patterns such as the Result Pattern, Any Pattern, and Maybe Pattern.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": ["C#", ".NET", "Design Patterns", "Functional Programming"],
+      "tags": [
+        "C#",
+        ".NET",
+        "Design Patterns",
+        "Functional Programming"
+      ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
+    },
+    {
+      "title": "Aspire Microservice Starter Template",
+      "year": "2024",
+      "description": "A template for creating a microservice with the Aspire Framework.",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png"
+    },
+    {
+      "title": "tsentials",
+      "year": "2025",
+      "description": "Simplifies TypeScript error handling with railway-oriented programming. Provides Result<T>, Maybe<T>, Rule Engine, DDD patterns, and 20+ composable modules for type-safe functional programming with zero dependencies.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": [
+        "TypeScript",
+        "Functional Programming",
+        "Error Handling",
+        "DDD",
+        "Open Source"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png"
     },
     {
       "title": "Portfolio Template",
@@ -234,7 +261,13 @@
       "description": "A fast, SEO-optimized portfolio template with unlimited language support, dark/light themes, and fully customizable sections for any profession. Built with Next.js 15 and React 19. MIT licensed.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "i18n",
+        "Open Source"
+      ],
       "imageUrl": "/images/project-portfolio.webp"
     },
     {
@@ -242,7 +275,13 @@
       "year": "2025",
       "description": "Turkey's most comprehensive salary comparison simulator. Compare net income between SGK salaried employees (4/a) and Bağ-Kur self-employed (4/b). Gross/Net salary, tax, premium, employer cost calculations. 2026 TES Reform simulation, Young Entrepreneur support, Service Export exemption. Monthly/Yearly mode, TRY/USD currency support.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "Finance", "Tax", "SGK", "Bağ-Kur"],
+      "tags": [
+        "JavaScript",
+        "Finance",
+        "Tax",
+        "SGK",
+        "Bağ-Kur"
+      ],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     },
     {
@@ -259,14 +298,6 @@
         "Docker"
       ],
       "imageUrl": "/images/project-qms.svg"
-    },
-    {
-      "title": "tsentials",
-      "year": "2025",
-      "description": "Simplifies TypeScript error handling with railway-oriented programming. Provides Result<T>, Maybe<T>, Rule Engine, DDD patterns, and 20+ composable modules for type-safe functional programming with zero dependencies.",
-      "projectUrl": "https://github.com/senrecep/tsentials",
-      "tags": ["TypeScript", "Functional Programming", "Error Handling", "DDD", "Open Source"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png"
     }
   ],
   "blogPosts": [

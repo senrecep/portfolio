@@ -208,17 +208,13 @@
       "title": "Easyapp",
       "description": "Руководил архитектурой и разработкой платформы на микросервисах, обслуживающей более 150 000 пользователей. Внедрил оптимизацию затрат на основе ИИ и экономичную инфраструктуру по требованию.",
       "projectUrl": "https://easyapp.ai",
-      "tags": ["ИИ", "Мобильные", "No-Code"],
+      "tags": [
+        "ИИ",
+        "Мобильные",
+        "No-Code"
+      ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
-    },
-    {
-      "title": "Aspire Microservice Starter Template",
-      "description": "Шаблон для создания микросервиса с использованием фреймворка Aspire.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [".NET", "Aspire", "Микросервисы"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
@@ -234,11 +230,43 @@
       "year": "2023"
     },
     {
+      "title": "Aspire Microservice Starter Template",
+      "description": "Шаблон для создания микросервиса с использованием фреймворка Aspire.",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Микросервисы"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Упрощает обработку ошибок в TypeScript с помощью Railway-Oriented Programming. Предоставляет Result<T>, Maybe<T>, Rule Engine, паттерны DDD и более 20 компонуемых модулей для типобезопасного функционального программирования без зависимостей.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": [
+        "TypeScript",
+        "Функциональное программирование",
+        "Обработка ошибок",
+        "DDD",
+        "Открытый исходный код"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
+    },
+    {
       "title": "Шаблон портфолио",
       "description": "Быстрый, SEO-оптимизированный шаблон портфолио с неограниченной языковой поддержкой, тёмной/светлой темами и полностью настраиваемыми разделами для любой профессии. Создан на Next.js 15 и React 19. Лицензия MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "i18n",
+        "Open Source"
+      ],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -246,7 +274,13 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "Самый полный симулятор сравнения зарплат в Турции. Сравнивайте чистый доход между наёмными работниками SGK (4/a) и самозанятыми Bağ-Kur (4/b). Расчёты брутто/нетто зарплаты, налогов, взносов, затрат работодателя.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": ["JavaScript", "Финансы", "Налоги", "SGK", "Bağ-Kur"],
+      "tags": [
+        "JavaScript",
+        "Финансы",
+        "Налоги",
+        "SGK",
+        "Bağ-Kur"
+      ],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -264,14 +298,6 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
-    },
-    {
-      "title": "tsentials",
-      "description": "Упрощает обработку ошибок в TypeScript с помощью Railway-Oriented Programming. Предоставляет Result<T>, Maybe<T>, Rule Engine, паттерны DDD и более 20 компонуемых модулей для типобезопасного функционального программирования без зависимостей.",
-      "projectUrl": "https://github.com/senrecep/tsentials",
-      "tags": ["TypeScript", "Функциональное программирование", "Обработка ошибок", "DDD", "Открытый исходный код"],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
-      "year": "2025"
     }
   ],
   "blogPosts": [
