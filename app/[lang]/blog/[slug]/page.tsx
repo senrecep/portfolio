@@ -263,12 +263,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         </Link>
 
         {post.imageUrl && (
-          <div className="relative w-full h-64 rounded-xl overflow-hidden mb-8">
+          <div className="rounded-xl overflow-hidden mb-8">
             <Image
               src={post.imageUrl}
               alt={post.title}
               fill
-              className="object-cover"
+              className="!relative !w-full !h-auto"
               sizes="(max-width: 768px) 100vw, 768px"
               priority
             />
