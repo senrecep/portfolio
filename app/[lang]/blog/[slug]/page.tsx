@@ -126,6 +126,17 @@ export default async function BlogPostPage({ params }: PageProps) {
       ? "TechArticle"
       : "Article";
 
+  // Build translation links between language versions
+  const otherVersions = availableLangs.filter((l) => l !== lang);
+  const translationRefs = otherVersions.map((l) => ({
+    "@type": articleType,
+    "@id": `${siteUrl}/${l}/blog/${slug}#article`,
+    url: `${siteUrl}/${l}/blog/${slug}`,
+    inLanguage: l,
+  }));
+
+  const isOriginal = lang === "en";
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": articleType,
@@ -177,6 +188,18 @@ export default async function BlogPostPage({ params }: PageProps) {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", "article > p:first-of-type"],
     },
+    ...(isOriginal &&
+      translationRefs.length > 0 && {
+        workTranslation: translationRefs,
+      }),
+    ...(!isOriginal && {
+      translationOfWork: {
+        "@type": articleType,
+        "@id": `${siteUrl}/en/blog/${slug}#article`,
+        url: `${siteUrl}/en/blog/${slug}`,
+        inLanguage: "en",
+      },
+    }),
   };
 
   const breadcrumbSchema = {

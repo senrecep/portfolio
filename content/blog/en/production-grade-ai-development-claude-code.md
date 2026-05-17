@@ -559,7 +559,8 @@ You are an expert [role] for this project.
 **Cross-Platform Management:** [Context7 CLI](https://github.com/upstash/context7/tree/master/packages/cli) (ctx7) manages skills across Claude Code, Cursor, Codex, and other AI editors:
 
 ```bash
-npx ctx7 skills search [term]   npx ctx7 skills install [skill] 
+npx ctx7 skills search [term]
+npx ctx7 skills install [skill]
 ```
 
 ### The Difference Between Skill and Agent
@@ -899,11 +900,15 @@ Define frequently used workflows as commands.
 
 ```bash
 #!/bin/bash
-CRITICAL_PLUGINS=(    "csharp-lsp@claude-plugins-official"    
-"typescript-lsp@claude-plugins-official"    "context7@claude-plugins-official"    
-"serena@claude-plugins-official"    "commit-commands@claude-plugins-official"    
-"code-review@claude-plugins-official"    "github@claude-plugins-official"    
-"playwright@claude-plugins-official"
+CRITICAL_PLUGINS=(
+    "csharp-lsp@claude-plugins-official"
+    "typescript-lsp@claude-plugins-official"
+    "context7@claude-plugins-official"
+    "serena@claude-plugins-official"
+    "commit-commands@claude-plugins-official"
+    "code-review@claude-plugins-official"
+    "github@claude-plugins-official"
+    "playwright@claude-plugins-official"
 )
 for plugin in "${CRITICAL_PLUGINS[@]}"; do
     claude plugins install "$plugin"

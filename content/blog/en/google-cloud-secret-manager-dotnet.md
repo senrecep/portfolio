@@ -117,16 +117,16 @@ When your application runs across regions and latency matters, you can point eac
 ### Development/Staging/Production
 
 ```csharp
-builder.Configuration.AddGcpSecretManager(options =>{
+builder.Configuration.AddGcpSecretManager(options =>
+{
     options.BatchSize = 10;
     options.PageSize = 300;
-    options.AddProject(new ProjectSecretConfiguration    {
-    ProjectId = "my-app-" + environment,    PrefixFilters = [$"{
-    environment
-}_"]
+    options.AddProject(new ProjectSecretConfiguration
+    {
+        ProjectId = "my-app-" + environment,
+        PrefixFilters = [$"{environment}_"]
+    });
 });
-});
-    
 ```
 
 This approach gives you programmatic control over the configuration. You can dynamically set the project ID and prefix based on the current environment, and tune performance parameters like `BatchSize` and `PageSize` for your specific workload. It fits naturally into CI/CD pipelines where the environment name drives everything.

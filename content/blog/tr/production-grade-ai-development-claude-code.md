@@ -554,7 +554,8 @@ Bu proje için uzman bir [rol] olarak çalışıyorsunuz.
 **Cross-Platform Yönetim:** [Context7 CLI](https://github.com/upstash/context7/tree/master/packages/cli) (ctx7), Claude Code, Cursor, Codex ve diğer AI editörlerinde skill'leri yönetir:
 
 ```bash
-npx ctx7 skills search [term]   npx ctx7 skills install [skill] 
+npx ctx7 skills search [term]
+npx ctx7 skills install [skill]
 ```
 
 ### Agent ile Skill Arasındaki Fark
@@ -893,11 +894,15 @@ Sık kullanılan iş akışlarını komut olarak tanımlayın.
 
 ```bash
 #!/bin/bash
-CRITICAL_PLUGINS=(    "csharp-lsp@claude-plugins-official"    
-"typescript-lsp@claude-plugins-official"    "context7@claude-plugins-official"    
-"serena@claude-plugins-official"    "commit-commands@claude-plugins-official"    
-"code-review@claude-plugins-official"    "github@claude-plugins-official"    
-"playwright@claude-plugins-official"
+CRITICAL_PLUGINS=(
+    "csharp-lsp@claude-plugins-official"
+    "typescript-lsp@claude-plugins-official"
+    "context7@claude-plugins-official"
+    "serena@claude-plugins-official"
+    "commit-commands@claude-plugins-official"
+    "code-review@claude-plugins-official"
+    "github@claude-plugins-official"
+    "playwright@claude-plugins-official"
 )
 for plugin in "${CRITICAL_PLUGINS[@]}"; do
     claude plugins install "$plugin"

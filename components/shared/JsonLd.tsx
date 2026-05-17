@@ -1,4 +1,4 @@
-import { getAllBlogPosts } from "@/lib/blog";
+import { getAllBlogSlugs } from "@/lib/blog";
 import type { Profile } from "@/lib/i18n/content-loader";
 
 interface JsonLdProps {
@@ -184,14 +184,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
       }
     : null;
 
-  const localBlogSlugs = new Set([
-    "ai-coding-tools-complete-guide",
-    "google-cloud-secret-manager-dotnet",
-    "modern-way-manage-csharp-business-rules",
-    "performance-analysis-parameter-passing-csharp",
-    "production-grade-ai-development-claude-code",
-    "stop-writing-code-start-managing-systems",
-  ]);
+  const localBlogSlugs = new Set(getAllBlogSlugs());
 
   const blogListSchema =
     blogPosts && blogPosts.length > 0

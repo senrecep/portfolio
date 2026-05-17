@@ -117,16 +117,16 @@ Uygulamanız birden fazla bölgede çalışıyorsa ve gecikme önemliyse, her de
 ### Development/Staging/Production
 
 ```csharp
-builder.Configuration.AddGcpSecretManager(options =>{
+builder.Configuration.AddGcpSecretManager(options =>
+{
     options.BatchSize = 10;
     options.PageSize = 300;
-    options.AddProject(new ProjectSecretConfiguration    {
-    ProjectId = "my-app-" + environment,    PrefixFilters = [$"{
-    environment
-}_"]
+    options.AddProject(new ProjectSecretConfiguration
+    {
+        ProjectId = "my-app-" + environment,
+        PrefixFilters = [$"{environment}_"]
+    });
 });
-});
-    
 ```
 
 Bu yaklaşım yapılandırma üzerinde programatik kontrol sağlar. Proje ID'sini ve prefix'i mevcut ortama göre dinamik olarak ayarlayabilir ve `BatchSize` ile `PageSize` gibi performans parametrelerini kendi iş yükünüze göre ince ayar yapabilirsiniz. Ortam adının her şeyi yönlendirdiği CI/CD pipeline'larına doğal olarak uyum sağlar.
