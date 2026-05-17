@@ -4,7 +4,7 @@ import { getAllBlogPosts } from "@/lib/blog";
 export const dynamic = "force-static";
 
 export function GET() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const {
     personalInfo,
     skills,

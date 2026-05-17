@@ -18,7 +18,7 @@ interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const dynamic = "force-static";
 export const revalidate = false;

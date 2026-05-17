@@ -2,7 +2,7 @@ import { getAllBlogPosts, getAvailableLanguagesForSlug } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const siteTitle = "Your Name - Blog";
 const siteDescription =
   "Technical blog by Your Name on software engineering, development, and technology.";
