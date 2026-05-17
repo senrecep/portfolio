@@ -259,6 +259,14 @@
         "Docker"
       ],
       "imageUrl": "/images/project-qms.svg"
+    },
+    {
+      "title": "tsentials",
+      "year": "2025",
+      "description": "Simplifies TypeScript error handling with railway-oriented programming. Provides Result<T>, Maybe<T>, Rule Engine, DDD patterns, and 20+ composable modules for type-safe functional programming with zero dependencies.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "Functional Programming", "Error Handling", "DDD", "Open Source"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png"
     }
   ],
   "blogPosts": [

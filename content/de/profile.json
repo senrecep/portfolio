@@ -228,6 +228,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Vereinfacht die TypeScript-Fehlerbehandlung mit Railway-Oriented Programming. Bietet Result<T>, Maybe<T>, Rule Engine, DDD-Muster und über 20 komponierbare Module für typsichere funktionale Programmierung ohne Abhängigkeiten.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "Funktionale Programmierung", "Fehlerbehandlung", "DDD", "Open Source"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [

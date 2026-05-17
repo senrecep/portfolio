@@ -259,6 +259,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Vereenvoudigt TypeScript-foutafhandeling met Railway-Oriented Programming. Biedt Result<T>, Maybe<T>, Rule Engine, DDD-patronen en meer dan 20 componeerbare modules voor typeveilige functionele programmering zonder afhankelijkheden.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "Functioneel Programmeren", "Foutafhandeling", "DDD", "Open Source"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [

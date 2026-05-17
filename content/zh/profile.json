@@ -259,6 +259,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "通过 Railway-Oriented Programming 简化 TypeScript 错误处理。提供 Result<T>、Maybe<T>、规则引擎、DDD 模式和 20 多个可组合模块，实现零依赖的类型安全函数式编程。",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "函数式编程", "错误处理", "DDD", "开源"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [

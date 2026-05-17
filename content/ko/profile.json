@@ -259,6 +259,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Railway-Oriented Programming으로 TypeScript 오류 처리를 간소화합니다. Result<T>, Maybe<T>, Rule Engine, DDD 패턴 및 20개 이상의 조합 가능한 모듈을 제공하여 의존성 없이 타입 안전한 함수형 프로그래밍을 지원합니다.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "함수형 프로그래밍", "오류 처리", "DDD", "오픈소스"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [

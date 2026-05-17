@@ -259,6 +259,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Semplifica la gestione degli errori in TypeScript con Railway-Oriented Programming. Fornisce Result<T>, Maybe<T>, Rule Engine, pattern DDD e oltre 20 moduli componibili per la programmazione funzionale type-safe senza dipendenze.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "Programmazione Funzionale", "Gestione Errori", "DDD", "Open Source"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [

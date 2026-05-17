@@ -228,6 +228,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Railway-oriented programming ile TypeScript hata yönetimini basitleştirir. Sıfır bağımlılıkla Result<T>, Maybe<T>, Rule Engine, DDD desenleri ve 20'den fazla birleştirilebilir modül ile tip güvenli fonksiyonel programlama sunar.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "Fonksiyonel Programlama", "Hata Yönetimi", "DDD", "Açık Kaynak"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [

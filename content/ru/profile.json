@@ -264,6 +264,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Упрощает обработку ошибок в TypeScript с помощью Railway-Oriented Programming. Предоставляет Result<T>, Maybe<T>, Rule Engine, паттерны DDD и более 20 компонуемых модулей для типобезопасного функционального программирования без зависимостей.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "Функциональное программирование", "Обработка ошибок", "DDD", "Открытый исходный код"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [

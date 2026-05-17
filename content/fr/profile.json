@@ -259,6 +259,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Simplifie la gestion des erreurs TypeScript avec la programmation orientée Railway. Fournit Result<T>, Maybe<T>, Rule Engine, patterns DDD et plus de 20 modules composables pour une programmation fonctionnelle type-safe sans dépendances.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "Programmation Fonctionnelle", "Gestion des Erreurs", "DDD", "Open Source"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [

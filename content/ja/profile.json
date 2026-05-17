@@ -259,6 +259,14 @@
       ],
       "imageUrl": "/images/project-qms.svg",
       "year": "2024"
+    },
+    {
+      "title": "tsentials",
+      "description": "Railway-Oriented ProgrammingによるTypeScriptエラー処理の簡素化。Result<T>、Maybe<T>、ルールエンジン、DDDパターン、20以上のコンポーザブルモジュールを提供し、依存関係ゼロで型安全な関数型プログラミングを実現します。",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": ["TypeScript", "関数型プログラミング", "エラー処理", "DDD", "オープンソース"],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
     }
   ],
   "blogPosts": [
