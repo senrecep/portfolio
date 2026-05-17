@@ -46,7 +46,7 @@ To solve this problem, I developed a package that makes Google Cloud Secret Mana
 
 All you need to do to get started is install the NuGet package:
 
-```
+```bash
 dotnet add package CSharpEssentials.GcpSecretManager
 ```
 
@@ -56,11 +56,11 @@ The library supports various usage scenarios for different needs. Here are the m
 
 1.  **Simple Application Scenario**
 
-```
+```csharp
 builder.Configuration.AddGcpSecretManager();
 ```
 
-```
+```json
 {
   "GoogleSecretManager": {
     "Projects": [
@@ -81,7 +81,7 @@ builder.Configuration.AddGcpSecretManager();
 
 **2\. Microservice Architecture Scenario**
 
-```
+```json
 {
   "GoogleSecretManager": {
     "Projects": [
@@ -114,7 +114,7 @@ builder.Configuration.AddGcpSecretManager();
 
 **3\. Multi-Region Application Scenario**
 
-```
+```json
 {
   "GoogleSecretManager": {
     "Projects": [
@@ -147,7 +147,7 @@ builder.Configuration.AddGcpSecretManager();
 
 **4\. Development/Staging/Production Scenario**
 
-```
+```csharp
 builder.Configuration.AddGcpSecretManager(options =>{
     options.BatchSize = 10;
     options.PageSize = 300;
@@ -169,7 +169,7 @@ builder.Configuration.AddGcpSecretManager(options =>{
 
 **5\. JSON and Raw Secret Scenario**
 
-```
+```json
 {
   "GoogleSecretManager": {
     "Projects": [

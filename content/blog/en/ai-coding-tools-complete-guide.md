@@ -33,7 +33,7 @@ This guide will take you from complete beginner to power user, covering:
 
 **Quick Setup**: If you prefer hands-on learning, share this gist with your AI coding tool:
 
-```
+```text
 Read this gist and set up my project: https://gist.github.com/senrecep/98d3583717581a4138bac62344261f6f
 ```
 
@@ -92,7 +92,7 @@ A markdown file at your project root that gives AI context. **Both Claude Code a
 
 ### Example CLAUDE.md
 
-```
+```markdown
 # MyApp
 
 ## WHAT - Project Overview
@@ -210,7 +210,7 @@ claude --version
 
 ### Essential Plugins
 
-```
+```bash
 /plugin install commit-commands
 /plugin install code-review
 /plugin install github
@@ -245,7 +245,7 @@ claude --version
 
 Create specialized AI assistants in `.claude/agents/`:
 
-```
+```yaml
 ---
 name: security-reviewer
 description: OWASP-focused code review
@@ -273,7 +273,7 @@ specify init . --ai claude
 
 **For existing projects, run this immediately after installation:**
 
-```
+```bash
 /speckit.constitution
 ```
 
@@ -286,7 +286,7 @@ This analyzes your codebase and extracts:
 
 ### Feature Development Workflow
 
-```
+```bash
 /speckit.specify "user authentication"
 /speckit.clarify
 /speckit.plan
@@ -340,7 +340,7 @@ oh-my-opencode transforms OpenCode into a multi-agent orchestration system.
 
 Trigger parallel agent execution:
 
-```
+```text
 ulw: implement authentication with tests and documentation
 ```
 
@@ -567,7 +567,7 @@ npx ctx7 skills install better-icons
 
 ### Directory Structure
 
-```
+```text
 # Global (user-level)
 ~/.claude/
 ├── CLAUDE.md           # Global context

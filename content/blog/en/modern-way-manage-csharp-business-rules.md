@@ -70,7 +70,7 @@ In this article, we’ll explore a modern and effective way to manage business r
 
 The Rule Engine supports both OOP and functional programming approaches. You can define rules using the following structures:
 
-```
+```csharp
 public sealed class UserRule : IRule<User> { }
 public sealed record UserRule : IRule<User> { }
 public struct UserRule : IRule<User> { }
@@ -90,7 +90,7 @@ Advantages of using \`readonly record struct\`:
 **3.1. Simple Rules  
 **Rules that perform a single validation:
 
-```
+```csharp
 IRule<TContext>
 IRule<TContext, TResult>
 IAsyncRule<TContext>
@@ -108,7 +108,7 @@ internal readonly record struct AdultRule : IRule<User>{
 **3.2. Linear Rules  
 **Chain of rules that follow each other:
 
-```
+```csharp
 ILinearRule<TContext>
 ILinearRule<TContext, TResult>
 ILinearAsyncRule<TContext>
@@ -127,7 +127,7 @@ internal readonly record struct EmailFormatRule : ILinearRule<string>{
 **3.3. Logical Rules  
 **Rules that can be combined with AND/OR operators:
 
-```
+```csharp
 IAndRule<TContext>
 IAndRule<TContext, TResult>
 IAndAsyncRule<TContext>
@@ -151,7 +151,7 @@ internal readonly record struct PaymentMethodRule : IOrRule<Payment>{
 **3.4. Conditional Rules  
 **Rules that can branch based on the result:
 
-```
+```csharp
 IConditionalRule<TContext>
 
 IConditionalRule<TContext, TResult>
@@ -172,7 +172,7 @@ internal readonly record struct CardTypeRule : IConditionalRule<CreditCard>{
 
 **1\. E-Commerce Order Validation**
 
-```
+```csharp
 public readonly record struct OrderValidationRule : IAndRule<Order>{
     private readonly IStockService _stockService;
     private readonly IPaymentService _paymentService;
@@ -194,7 +194,7 @@ public readonly record struct OrderValidationRule : IAndRule<Order>{
 
 **2\. Finance: Credit Application**
 
-```
+```csharp
 public readonly record struct CreditApplicationRule : ILinearRule<CreditApplication>{
     private readonly ICreditScoreService _creditScoreService;
     private readonly IBlacklistService _blacklistService;
@@ -232,7 +232,7 @@ public readonly record struct CreditApplicationRule : ILinearRule<CreditApplicat
 2.  **Centralized Error Management  
     **Define error objects in a central place instead of creating them in methods:
 
-```
+```csharp
 internal static class UserErrors{
     public static Error NotAdult => Error.Validation(
         code: "USER.NOT_ADULT",
@@ -295,7 +295,7 @@ Advantages of this approach:
 **AND Rules  
 **Cases where all rules must succeed:
 
-```
+```csharp
 Result result = RuleEngine.And(
     rules: [
         UserRules.ActiveCheck,
@@ -316,7 +316,7 @@ Result result = RuleEngine.And(
 **OR Rules  
 **Cases where at least one rule must succeed:
 
-```
+```csharp
 Result result = RuleEngine.Or(
     rules: [
         PaymentRules.CreditCardCheck,
@@ -335,7 +335,7 @@ Result result = RuleEngine.Or(
 **Linear Rules  
 **Cases requiring sequential validation:
 
-```
+```csharp
 Result result = RuleEngine.Linear(
     rules: [
         EmailRules.EmptyCheck,
@@ -373,7 +373,7 @@ Result result2 = RuleEngine.Linear(
 
 **Conditional Rules**
 
-```
+```csharp
 Result result = RuleEngine.If(
     rule: input => input > 0,
     success: input => input < 100,
@@ -387,7 +387,7 @@ Result result = RuleEngine.If(
 
 **1.1. Simple Rules**
 
-```
+```csharp
 IRule<TContext>
 IRule<TContext, TResult>
 IAsyncRule<TContext>
@@ -396,7 +396,7 @@ IAsyncRule<TContext, TResult>
 
 **1.2. Linear Rules**
 
-```
+```csharp
 ILinearRule<TContext>
 ILinearRule<TContext, TResult>
 ILinearAsyncRule<TContext>
@@ -405,7 +405,7 @@ ILinearAsyncRule<TContext, TResult>
 
 **1.3. OR Rules**
 
-```
+```csharp
 IOrRule<TContext>
 IOrRule<TContext, TResult>
 IOrAsyncRule<TContext>
@@ -414,7 +414,7 @@ IOrAsyncRule<TContext, TResult>
 
 **1.4. AND Rules**
 
-```
+```csharp
 IAndRule<TContext>
 IAndRule<TContext, TResult>
 IAndAsyncRule<TContext>
@@ -423,7 +423,7 @@ IAndAsyncRule<TContext, TResult>
 
 **1.5. Conditional Rules**
 
-```
+```csharp
 IConditionalRule<TContext>
 IConditionalRule<TContext, TResult>
 IConditionalAsyncRule<TContext>
@@ -434,7 +434,7 @@ IConditionalAsyncRule<TContext, TResult>
 
 **2.1. Simple Function Signatures**
 
-```
+```csharp
 Func<TContext, Result>
 Func<TContext, CancellationToken, Result>
 Func<TContext, CancellationToken, ValueTask<Result>>
@@ -442,7 +442,7 @@ Func<TContext, CancellationToken, ValueTask<Result>>
 
 **2.2. Generic Result Returning Functions**
 
-```
+```csharp
 Func<TContext, Result<TResult>>
 Func<TContext, CancellationToken, Result<TResult>>
 Func<TContext, CancellationToken, ValueTask<Result<TResult>>>

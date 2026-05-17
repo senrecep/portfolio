@@ -82,7 +82,7 @@ My first CLAUDE.md file exceeded 160 lines. I had written out every rule, every 
 
 The solution: keep your CLAUDE.md under 100 lines. Move details to separate files. Claude will look at those files when needed.
 
-```
+```text
 CLAUDE.md (70-100 lines)              - Always read
 .claude/rules/architecture.md         - Referenced when needed
 .claude/rules/security.md             - Referenced when needed
@@ -133,7 +133,7 @@ Here's a scenario: you want to apply the same rules to all your test files. But 
 
 You can define rules by file pattern in the `.claude/rules/` directory:
 
-```
+```markdown
 ---
 paths: ["**/*.test.tsx"]
 ---
@@ -360,7 +360,7 @@ Agent Teams let you coordinate multiple Claude Code instances as a team. Unlike 
 
 You need to review a PR. Think like a CTO: don't just ask "is the code nice?", examine all dimensions:
 
-```
+```text
 Team Lead (you): Coordination
 Teammate 1: Security review (OWASP, input validation, auth)
 Teammate 2: Code quality (patterns, SOLID, cleanliness)

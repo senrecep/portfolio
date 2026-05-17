@@ -42,7 +42,7 @@ In modern software development, performance is a critical factor for the success
 
 **Raw Benchmark Results**
 
-```
+```text
 | Method                                | Categories  | Mean      | Error     | StdDev    | Median    | Iterations | Gen0   | Allocated |
 | ------------------------------------- | ----------- | --------: | --------: | --------: | --------: | ---------: | -----: | --------: |
 | EightParametersByReadonlyStruct       | EightParams | 0.0089 ns | 0.0021 ns | 0.0020 ns | 0.0095 ns | 15.00      | -      | -         |
