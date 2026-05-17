@@ -6,7 +6,7 @@ slug: "stop-writing-code-start-managing-systems"
 mediumUrl: "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de"
 imageUrl: "/images/stop-writing-code-start-managing-systems.webp"
 keywords: ["AI-powered development", "Claude Code", "multi-agent workflows", "context window", "CLAUDE.md strategy", "software engineering mindset", "AI orchestration", "developer productivity"]
-author: "Recep Sen"
+author: "Recep Şen"
 modifiedDate: "2026-02-28"
 category: "AI"
 faq:
@@ -133,7 +133,7 @@ Here's a scenario: you want to apply the same rules to all your test files. But 
 
 You can define rules by file pattern in the `.claude/rules/` directory:
 
-```markdown
+```text
 ---
 paths: ["**/*.test.tsx"]
 ---

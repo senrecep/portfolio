@@ -46,10 +46,10 @@ export async function generateMetadata({
   );
 
   return {
-    title: `${post.title} - Recep Sen`,
+    title: `${post.title} - Recep Şen`,
     description: post.description,
     keywords: post.keywords,
-    authors: [{ name: post.author || "Recep Sen" }],
+    authors: [{ name: post.author || "Recep Şen" }],
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -62,10 +62,10 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       url: canonicalUrl,
-      siteName: "Recep Sen",
+      siteName: "Recep Şen",
       publishedTime: post.date,
       modifiedTime: post.modifiedDate || post.date,
-      authors: [post.author || "Recep Sen"],
+      authors: [post.author || "Recep Şen"],
       images: post.imageUrl
         ? [
             {
@@ -139,7 +139,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     author: {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: post.author || "Recep Sen",
+      name: post.author || "Recep Şen",
       url: siteUrl,
     },
     datePublished: post.date,
@@ -147,7 +147,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     publisher: {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: "Recep Sen",
+      name: "Recep Şen",
       url: siteUrl,
     },
     ...(post.imageUrl && {
@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     isPartOf: {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "Recep Sen",
+      name: "Recep Şen",
       url: siteUrl,
     },
     speakable: {

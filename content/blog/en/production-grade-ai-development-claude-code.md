@@ -6,7 +6,7 @@ slug: "production-grade-ai-development-claude-code"
 mediumUrl: "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744"
 imageUrl: "/images/production-grade-ai-development-with-claude-code.webp"
 keywords: ["Claude Code", "AI development", "plugins", "MCP servers", "custom agents", "hooks", "oh-my-claudecode", "production AI"]
-author: "Recep Sen"
+author: "Recep Şen"
 modifiedDate: "2026-01-21"
 category: "AI"
 faq:
@@ -48,7 +48,7 @@ In this article, I’ll share how I transformed Claude Code into a professional-
 -   Structured feature development with Speckit
 -   Team onboarding and knowledge sharing strategies
 
-**⚡ Want to skip ahead?** If you prefer hands-on setup over reading, share this gist with Claude Code:
+**Want to skip ahead?** If you prefer hands-on setup over reading, share this gist with Claude Code:
 
 ```text
 Read this gist and set up my project: https://gist.github.com/senrecep/98d3583717581a4138bac62344261f6f
@@ -92,7 +92,7 @@ CLAUDE.md (70-100 lines)            → Always read
 
 **Backend CLAUDE.md Example (Clean Architecture + CQRS)**
 
-```markdown
+```text
 # CLAUDE.md
 > **New to this project?** Run `./scripts/setup-claude.sh`
 ## WHAT - Project Overview.NET 9.0 microservices ecosystem. Clean Architecture + CQRS.
@@ -117,7 +117,7 @@ Presentation/      → WebApi (thin layer, delegates to Application)
 
 **Mobile CLAUDE.md Example (NX Monorepo + React Native)**
 
-```markdown
+```text
 # Mobile Project
 ## WHAT - Project Overview
 **NX monorepo** for mobile application supporting iOS, Android, and Web.
@@ -148,7 +148,7 @@ When Claude knows “why,” it makes better decisions even in edge cases. If yo
 
 The `~/.claude/CLAUDE.md` file contains global instructions that apply across all projects. For example, I define frequently used CLI tools here:
 
-```markdown
+```text
 ## JSON Tools Available
 I have the following CLI tools installed for JSON processing:
 - **jq** - JSON query and transformation (`jq '.key' file.json`)
@@ -167,7 +167,7 @@ When working with JSON files:
 **Pro Tip: Subagent Control  
 **Claude Code sometimes spawns Sonnet or Haiku subagents even for knowledge tasks. For higher quality output, add this line to your global CLAUDE.md:
 
-```markdown
+```text
 ## Subagent PreferencesAlways launch opus subagents for knowledge-intensive tasks.
 ```
 
@@ -175,14 +175,12 @@ On large projects, the **Orchestrator + Subagents** combination works far more e
 
 ### CLAUDE.md Golden Rules
 
-```markdown
 | Rule                       | Why                                               |
 | -------------------------- | ------------------------------------------------- |
 | **< 100 lines**            | Long files fill up context                        |
 | **Explain WHY**            | Claude makes better decisions when it knows "why" |
 | **Add NOT TO DO**          | Prevent Claude's known tendencies                 |
 | **Progressive disclosure** | Reference details in separate files               |
-```
 
 ### **Six Areas Every Effective CLAUDE.md Covers**
 
@@ -190,7 +188,6 @@ The WHAT/WHY/HOW structure defines _how_ to present information, while the six a
 
 Through trial and error, I noticed that well-functioning CLAUDE.md files share a common structure. Each one covers these six areas:
 
-```markdown
 | Area                  | What to Include                                        |
 | --------------------- | ------------------------------------------------------ |
 | **Commands**          | Executable commands with flags (`npm test --coverage`) |
@@ -199,11 +196,10 @@ Through trial and error, I noticed that well-functioning CLAUDE.md files share a
 | **Code Style**        | Examples of good code, not just descriptions           |
 | **Git Workflow**      | Branch naming, commit format, PR process               |
 | **Boundaries**        | What the AI should never touch                         |
-```
 
 **I use a three-tier approach for boundaries:**
 
-```markdown
+```text
 ## Boundaries
 - ✅ **Always:** Run tests before commits, follow naming conventions
 - ⚠️ **Ask first:** Database migrations, new dependencies
@@ -221,13 +217,11 @@ Through trial and error, I noticed that well-functioning CLAUDE.md files share a
 
 ### The 20–40% Rule
 
-```markdown
 | Metric                         | Value          |
 | ------------------------------ | -------------- |
 | Opus 4.5 Context               | 200,000 tokens |
 | **Quality degradation begins** | **20-40%**     |
 | Critical degradation           | 60%+           |
-```
 
 Most developers assume context works fine until it’s 100% full. The reality is that **quality loss begins around 20–40%**. After 60%, Claude:
 
@@ -266,14 +260,12 @@ When context bloats:
 
 ### Red Flags — When to Clear?
 
-```markdown
 | Signal                        | Action                        |
 | ----------------------------- | ----------------------------- |
 | Claude keeps repeating itself | `/clear`                      |
 | Forgetting previous context   | Write to SCRATCHPAD, `/clear` |
 | Editing wrong files           | Clear context                 |
 | Noticeable quality drop       | `/compact` + `/clear`         |
-```
 
 ## Section 3: External Memory Systems
 
@@ -283,7 +275,7 @@ Claude is stateless. Every conversation starts from scratch. So how do we carry 
 
 A `SCRATCHPAD.md` file at the project root:
 
-```markdown
+```text
 # Scratchpad - External Memory
 ## Current Task[Currently active task]
 ## Key Decisions Made
@@ -303,7 +295,7 @@ A `SCRATCHPAD.md` file at the project root:
 
 **Alternative: progress.txt Pattern** — A more minimal approach for autonomous loops (like Ralph):
 
-```markdown
+```text
 # progress.txt
 ## Completed
 - [x] Auth module - JWT implementation
@@ -374,7 +366,6 @@ The real power of Claude Code lies in plugins. Here’s the distribution of plug
 
 ### LSP Plugins (Language Server Protocol)
 
-```markdown
 | Plugin           | Language   | Why Critical                         |
 | ---------------- | ---------- | ------------------------------------ |
 | `csharp-lsp`     | C#         | Type errors, IntelliSense in backend |
@@ -383,13 +374,11 @@ The real power of Claude Code lies in plugins. Here’s the distribution of plug
 | `gopls-lsp`      | Go         | CLI tool development                 |
 | `kotlin-lsp`     | Kotlin     | Android native development           |
 | `lua-lsp`        | Lua        | Neovim config, game scripting        |
-```
 
 **Without LSP** Claude sees code as just text. **With LSP** it detects type errors, missing imports, unused variables — everything.
 
 ### Development Workflow Plugins
 
-```markdown
 | Plugin              | Description                  | Use Case                              |
 | ------------------- | ---------------------------- | ------------------------------------- |
 | `commit-commands`   | `/commit`, `/commit-push-pr` | Git workflow automation               |
@@ -398,11 +387,9 @@ The real power of Claude Code lies in plugins. Here’s the distribution of plug
 | `feature-dev`       | Guided feature development   | Complex feature implementation        |
 | `code-simplifier`   | Code simplification          | Refactoring                           |
 | `security-guidance` | Security best practices      | Vulnerability scanning                |
-```
 
 ### Integration Plugins
 
-```markdown
 | Plugin      | Integration     | Use                          |
 | ----------- | --------------- | ---------------------------- |
 | `github`    | GitHub          | Issues, PRs, Actions         |
@@ -411,31 +398,25 @@ The real power of Claude Code lies in plugins. Here’s the distribution of plug
 | `firebase`  | Firebase        | Auth, Firestore, hosting     |
 | `linear`    | Linear          | Issue tracking               |
 | `figma`     | Figma           | Design-to-code               |
-```
 
 ### Semantic Analysis & Documentation
 
-```markdown
 | Plugin            | Use                                        |
 | ----------------- | ------------------------------------------ |
 | `serena`          | Semantic code analysis, symbol navigation  |
 | `context7`        | Library documentation lookup               |
 | `greptile`        | Cross-repo semantic search                 |
 | `document-skills` | PDF, spreadsheet, documentation generation |
-```
 
 ### Browser Automation
 
-```markdown
 | Plugin        | Use                                   |
 | ------------- | ------------------------------------- |
 | `playwright`  | Browser testing, E2E automation       |
 | `dev-browser` | Claude-controlled browser for testing |
-```
 
 ### Productivity & UI
 
-```markdown
 | Plugin                  | Use                       |
 | ----------------------- | ------------------------- |
 | `claude-hud`            | Status line enhancement   |
@@ -443,11 +424,10 @@ The real power of Claude Code lies in plugins. Here’s the distribution of plug
 | `learning-output-style` | Educational output mode   |
 | `design-and-refine`     | Iterative design workflow |
 | `claude-stt`            | Speech-to-text input      |
-```
 
 ## Section 5: Custom Agents — Project and Domain-Specific AI Assistants
 
-**💡Find Ready-Made Agents:** Browse community agents at [aitmpl.com/agents](https://www.aitmpl.com/agents) — pre-built agents for code review, debugging, architecture, and more.
+**Find Ready-Made Agents:** Browse community agents at [aitmpl.com/agents](https://www.aitmpl.com/agents) — pre-built agents for code review, debugging, architecture, and more.
 
 ### What is an Agent?
 
@@ -504,7 +484,7 @@ An agent is a Claude instance specialized for a specific task. It’s defined by
 
 ### Agent File Structure
 
-```markdown
+```text
 ---name: c-sharp-prodescription: Write idiomatic C
 # code with modern language features.tools: Read, Write, Edit, Bashmodel: sonnet---You are a C
 # and .NET expert specializing in modern, performant enterprise applications.
@@ -524,7 +504,7 @@ An agent is a Claude instance specialized for a specific task. It’s defined by
 
 My first agents only had a “don’t do” list. But Claude sometimes became overly cautious because it didn’t know what it _could_ do. Now I use a three-tier system:
 
-```markdown
+```text
 ## Boundaries
 - ✅ **Always do:** Write to `tests/`, run tests before commits, follow naming conventions
 - ⚠️ **Ask first:** Database schema changes, adding dependencies, modifying CI/CD config
@@ -539,7 +519,7 @@ The advantage of this approach:
 
 For example, here’s how I define boundaries for my `test-agent`:
 
-```markdown
+```text
 ## Boundaries
 - ✅ **Always:** Write to `tests/`, use existing test patterns, run `npm test` to verify
 - ⚠️ **Ask first:** Adding new test dependencies, changing test configuration
@@ -550,7 +530,7 @@ For example, here’s how I define boundaries for my `test-agent`:
 
 When creating a new agent, I follow this structure:
 
-```markdown
+```text
 ---
 name: your-agent-name
 description: [One-sentence description of what this agent does]
@@ -574,7 +554,7 @@ You are an expert [role] for this project.
 
 ## Section 6: Skills — Reusable Knowledge and Workflows
 
-**💡 Discover Skills:** Browse community skills at [skills.sh](https://skills.sh/) — 200+ installable skills with `npx skills add <owner/repo>`
+**Discover Skills:** Browse community skills at [skills.sh](https://skills.sh/) — 200+ installable skills with `npx skills add <owner/repo>`
 
 **Cross-Platform Management:** [Context7 CLI](https://github.com/upstash/context7/tree/master/packages/cli) (ctx7) manages skills across Claude Code, Cursor, Codex, and other AI editors:
 
@@ -584,14 +564,12 @@ npx ctx7 skills search [term]   npx ctx7 skills install [skill]
 
 ### The Difference Between Skill and Agent
 
-```markdown
 | Agent                    | Skill                       |
 | ------------------------ | --------------------------- |
 | Autonomous task executor | Reusable knowledge/workflow |
 | Runs as subagent         | Runs in main conversation   |
 | Has tool restrictions    | Uses all available tools    |
 | Task-focused             | Knowledge-focused           |
-```
 
 ### Why I Create Custom Skills
 
@@ -702,20 +680,17 @@ Model Context Protocol — A protocol that adds external tools to Claude.
 
 ### MCP Use Cases
 
-```markdown
 | MCP Server    | Use                                      |
 | ------------- | ---------------------------------------- |
 | `context7`    | Library documentation lookup             |
 | `serena`      | Semantic code navigation, symbol finding |
 | `nx-mcp`      | NX workspace analysis                    |
 | `opencontext` | Cross-project knowledge base             |
-```
 
 ## Section 8: Hooks — Automation and Continuous Learning
 
 ### Hook Types
 
-```markdown
 | Hook               | When It Runs              |
 | ------------------ | ------------------------- |
 | `PreToolUse`       | Before a tool is called   |
@@ -723,7 +698,6 @@ Model Context Protocol — A protocol that adds external tools to Claude.
 | `SessionStart`     | At session start          |
 | `UserPromptSubmit` | When user sends a message |
 | `Stop`             | When agent stops          |
-```
 
 ### Claudeception Activator Hook
 
@@ -841,7 +815,7 @@ A 5-step workflow for complex features:
 
 A file that defines project principles — non-negotiable rules:
 
-```markdown
+```text
 # .specify/memory/constitution.md
 ## Non-Negotiable Principles
 ### I. Clean Architecture & Layer SeparationEvery service MUST follow the four-layer structure with strict dependency rules:
@@ -867,14 +841,12 @@ No code changes may be committed without passing verification:
 
 ### When to Use Speckit?
 
-```markdown
 | Situation            | Approach                    |
 | -------------------- | --------------------------- |
 | Simple bug fix       | Do directly                 |
 | Small feature        | Plan mode (Shift+Tab)       |
 | Complex feature      | `/speckit.specify` workflow |
 | Multi-service change | Definitely Speckit          |
-```
 
 ## Section 11: Custom Commands
 
@@ -882,7 +854,7 @@ Define frequently used workflows as commands.
 
 **/git-pr — Commit, Push, PR**
 
-```markdown
+```text
 # .claude/commands/git-pr.mdCommit staged changes, push to remote, and create a pull request.
 ## Steps
 1. Run `git status` to see changes
@@ -896,7 +868,7 @@ Define frequently used workflows as commands.
 
 **/git-fix-issue — Fetch and Fix Issue**
 
-```markdown
+```text
 # .claude/commands/git-fix-issue.md---args: issue_number---Fetch GitHub issue and implement the fix.
 ## Steps
 1. Fetch issue: `gh issue view $ARGUMENTS`
@@ -910,7 +882,6 @@ Define frequently used workflows as commands.
 
 ### Project-Local vs Global
 
-```markdown
 | Component               | Location     | Scope   | Git? |
 | ----------------------- | ------------ | ------- | ---- |
 | CLAUDE.md               | Project root | Project | ✅    |
@@ -923,7 +894,6 @@ Define frequently used workflows as commands.
 | ~/.claude/mcp.json      | Home         | Global  | ❌    |
 | ~/.claude/hooks/        | Home         | Global  | ❌    |
 | ~/.claude/settings.json | Home         | Global  | ❌    |
-```
 
 ### Setup Script
 
@@ -1033,7 +1003,6 @@ One of the biggest productivity gains comes from leveraging community resources.
 
 [**aitmpl.com**](https://www.aitmpl.com/) — The complete Claude Code template marketplace.
 
-```markdown
 | Category      | What You'll Find                                          |
 | ------------- | --------------------------------------------------------- |
 | **Agents**    | Pre-built agents for code review, debugging, architecture |
@@ -1043,7 +1012,6 @@ One of the biggest productivity gains comes from leveraging community resources.
 | **MCPs**      | Model Context Protocol server configurations              |
 | **Skills**    | Reusable knowledge modules                                |
 | **Templates** | Complete project setups (React, Next.js, .NET, etc.)      |
-```
 
 **Why it matters:** Instead of writing every agent and command from scratch, start with battle-tested templates. The platform includes 30+ company stacks (OpenAI, Stripe, AWS, GitHub) — configurations proven in production.
 
@@ -1061,14 +1029,12 @@ One of the biggest productivity gains comes from leveraging community resources.
 npx skills add <owner/repo>
 ```
 
-```markdown
 | Feature              | Details                                          |
 | -------------------- | ------------------------------------------------ |
 | **Skills Count**     | 200+ and growing                                 |
 | **Supported Agents** | 15+ (Claude Code, Cursor, Copilot, Gemini, etc.) |
 | **Contributors**     | Vercel, Anthropic, Expo, community developers    |
 | **Installation**     | Single command via npx                           |
-```
 
 **Popular skills include:**
 
@@ -1159,7 +1125,6 @@ Then it creates a customized Claude ecosystem that respects your existing patter
 
 ### The Gist Contains
 
-```markdown
 | Section    | Purpose                                                      |
 | ---------- | ------------------------------------------------------------ |
 | **Part A** | New project setup flow with checklist                        |
@@ -1167,7 +1132,6 @@ Then it creates a customized Claude ecosystem that respects your existing patter
 | **Part C** | Core templates (CLAUDE.md, agents, commands)                 |
 | **Part D** | Plugin & tool installation guides                            |
 | **Part E** | Instructions for Claude (scenario detection, error handling) |
-```
 
 ### Cross-Platform Support
 
@@ -1179,7 +1143,6 @@ The gist includes automatic handling for:
 
 ### Why Use the Gist?
 
-```markdown
 | Manual Setup         | Gist-Assisted Setup         |
 | -------------------- | --------------------------- |
 | Read entire article  | Skim article for concepts   |
@@ -1187,7 +1150,6 @@ The gist includes automatic handling for:
 | Copy-paste templates | Claude customizes templates |
 | Debug setup issues   | Claude handles errors       |
 | ~1-2 hours           | ~10-15 minutes              |
-```
 
 The article explains WHY. The gist tells Claude WHAT to do. Together, they give you a production-grade setup in minutes.
 
@@ -1207,8 +1169,6 @@ When properly configured, Claude Code can radically transform your software deve
 8.  **Speckit for complex features** — structured development
 
 Adapt this configuration to your own projects. Every project is different — the important thing is to understand the patterns and customize them to your needs.
-
-_A final note: This article, including all of the above tools, was written entirely using Claude Code CLI — from outline creation, research, drafting, to iterative editing. The best way to test your tools is to use them every day._
 
 ## Resources
 
@@ -1235,9 +1195,3 @@ _A final note: This article, including all of the above tools, was written entir
 -   [AndyMik90/Auto-Claude](https://github.com/AndyMik90/Auto-Claude)
 -   [brobertsaz/claude-os](https://github.com/brobertsaz/claude-os)
 -   [0xSojalSec/cc-wf-studio](https://github.com/0xSojalSec/cc-wf-studio)
-
-**About the Author  
-**\- Website: [senrecep.com](https://senrecep.com/)  
-\- GitHub: [senrecep](https://github.com/senrecep)  
-\- LinkedIn: [senrecep](https://linkedin.com/in/senrecep)  
-\- X: [@senrecep0](https://twitter.com/senrecep0)

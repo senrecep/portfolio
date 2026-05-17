@@ -79,7 +79,7 @@ export function GET() {
 
   const content = `# ${personalInfo.name} - Comprehensive AI Context Profile
 
-> This document provides deep context for AI models about Recep Sen's professional background,
+> This document provides deep context for AI models about Recep Şen's professional background,
 > technical expertise, work history, projects, and publications.
 > For a summary version, see: ${siteUrl}/llms.txt
 
@@ -87,7 +87,7 @@ export function GET() {
 
 ${personalInfo.about}
 
-Recep Sen is CTO at Taptoweb, a technology company building no-code mobile app solutions. He has been
+Recep Şen is CTO at Taptoweb, a technology company building no-code mobile app solutions. He has been
 with Taptoweb since 2022, growing the platform from early-stage to 250,000+ users. He designed and
 led the development of a 28-service microservices platform powering Easyapp.ai, a no-code mobile app
 builder that processes millions of app-building requests using AI-driven cost optimization and

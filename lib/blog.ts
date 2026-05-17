@@ -82,7 +82,7 @@ export function getBlogPost(slug: string, lang?: string): BlogPost | null {
         slug,
         lang: l,
         keywords: (data.keywords as string[]) ?? [],
-        author: (data.author as string) ?? "Recep Sen",
+        author: (data.author as string) ?? "Recep Şen",
         modifiedDate: data.modifiedDate as string | undefined,
         category: (data.category as string) ?? "Technology",
         faq: (data.faq as { q: string; a: string }[]) ?? [],

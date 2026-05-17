@@ -1,6 +1,6 @@
 ---
-title: "Performance Analysis of Parameter Passing Methods in C#"
-description: "Deep dive into C# parameter passing: Comparing struct, class, record & ref types with benchmarks. Learn best practices for optimization."
+title: "C#'ta Parametre Geçirme Yöntemlerinin Performans Analizi"
+description: "C# parametre geçirme yöntemlerinin derinlemesine analizi: struct, class, record ve ref türleri benchmark'larla karşılaştırılıyor. Optimizasyon için en iyi pratikler."
 date: "2025-02-20"
 slug: "performance-analysis-parameter-passing-csharp"
 mediumUrl: "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624"
@@ -10,39 +10,39 @@ author: "Recep Şen"
 modifiedDate: "2025-02-20"
 category: "Technology"
 faq:
-  - q: "Which C# type is fastest for passing parameters in high-performance scenarios?"
-    a: "Based on BenchmarkDotNet benchmarks across 660 test scenarios, readonly record struct and ref struct types consistently outperform class and record reference types. Value types avoid heap allocation entirely, which eliminates GC pressure and reduces mean execution time significantly in hot paths."
-  - q: "When should I use struct vs class for method parameters in C#?"
-    a: "Use struct types (especially readonly struct or readonly record struct) when the data is small (typically under 16 bytes), immutable, and passed frequently in performance-critical code. Use class or record reference types when the object is large, shared, or mutated, since copying large structs is more expensive than passing a reference."
-  - q: "How does BenchmarkDotNet measure C# parameter passing performance?"
-    a: "BenchmarkDotNet runs each test scenario multiple times (averaging 11 iterations per scenario in this study) and reports mean execution time, standard deviation, median, and heap allocation (Gen0 collections and bytes allocated). This statistical approach filters out noise and gives reliable performance comparisons across different type combinations."
+  - q: "Yüksek performanslı senaryolarda C# parametre geçirme için hangi tür en hızlıdır?"
+    a: "660 test senaryosuna dayanan BenchmarkDotNet ölçümlerine göre, readonly record struct ve ref struct türleri class ve record referans türlerini tutarlı biçimde geride bırakıyor. Value type'lar heap allocation'ı tamamen ortadan kaldırdığından GC baskısı oluşmuyor ve yoğun çağrı yapılan yollarda ortalama yürütme süresi belirgin şekilde düşüyor."
+  - q: "C#'ta metod parametreleri için struct mı, class mı kullanmalıyım?"
+    a: "Veri küçükse (genellikle 16 byte'ın altında), değişmezse ve performans kritik kodda sık sık geçiriliyorsa struct türlerini (özellikle readonly struct veya readonly record struct) tercih edin. Nesne büyükse, paylaşımlıysa veya değiştiriliyorsa class ya da record referans türleri daha uygun; büyük bir struct'ı kopyalamak referans geçirmekten daha pahalıya gelebilir."
+  - q: "BenchmarkDotNet, C# parametre geçirme performansını nasıl ölçüyor?"
+    a: "BenchmarkDotNet her test senaryosunu birden fazla kez çalıştırır (bu çalışmada senaryolu başına ortalama 11 iterasyon) ve ortalama yürütme süresi, standart sapma, medyan ve heap allocation'ı (Gen0 collection sayısı ve ayrılan byte miktarı) raporlar. Bu istatistiksel yaklaşım gürültüyü filtreler ve farklı tür kombinasyonları arasında güvenilir performans karşılaştırmaları sunar."
 ---
 
-A while back I was profiling a high-throughput service that processed hundreds of thousands of requests per second. The CPU profiles looked reasonable, memory allocations looked fine — until I noticed that a handful of hot-path methods were consistently triggering Gen0 garbage collections. The culprit turned out to be something I had never thought twice about: the way I was passing parameters.
+Bir süre önce saniyede yüz binlerce istek işleyen yüksek verimli bir servisi profillıyordum. CPU profilleri makul görünüyordu, bellek tahsisleri de gayet iyiydi — ta ki sıcak yoldaki birkaç metodun sürekli Gen0 garbage collection tetiklediğini fark edene kadar. Sorunun kaynağı, üzerine hiç düşünmediğim bir şeydi: parametreleri nasıl geçirdiğim.
 
-That experience sent me down a rabbit hole. I wanted actual numbers — not intuition, not Stack Overflow answers, but measured nanosecond-level data across every major C# type. So I built a BenchmarkDotNet harness, ran 660 test scenarios, and wrote up what I found.
+O deneyim beni derin bir araştırmaya sürükledi. Sezgiye ya da Stack Overflow cevaplarına değil, gerçek sayılara ihtiyacım vardı; C#'ın tüm önemli türleri için nanosaniye düzeyinde ölçülmüş verilere. Bu yüzden BenchmarkDotNet ile bir test altyapısı kurdum, 660 test senaryosu çalıştırdım ve bulduklarımı burada derliyorum.
 
-## Test Setup
+## Test Kurulumu
 
-Before getting into the results, here's exactly what I measured and how.
+Sonuçlara geçmeden önce neyi ve nasıl ölçtüğümü açıklayayım.
 
-**Technical specifications:**
+**Teknik özellikler:**
 - Test Framework: BenchmarkDotNet
-- Test Scenarios: Parameter counts from 3 to 8
-- Total Test Count: 660 (60 scenarios × average 11 iterations)
-- Tested Types:
-  - Struct-based: `struct`, `readonly struct`, `ref struct`, `readonly ref struct`, `record struct`, `readonly record struct`
-  - Reference-based: `class`, `sealed class`, `record`, `sealed record`
-  - Direct parameter passing (no wrapper type)
+- Test Senaryoları: 3 ile 8 arasında parametre sayısı
+- Toplam Test Sayısı: 660 (60 senaryo x ortalama 11 iterasyon)
+- Test Edilen Türler:
+  - Struct tabanlı: `struct`, `readonly struct`, `ref struct`, `readonly ref struct`, `record struct`, `readonly record struct`
+  - Referans tabanlı: `class`, `sealed class`, `record`, `sealed record`
+  - Doğrudan parametre geçirme (sarmalayıcı tür kullanılmadan)
 
-**Measurement metrics:**
-- Mean: Average execution time
-- Error: Margin of error in measurements
-- StdDev: Consistency of measurements
-- Median: Median execution time
-- Memory Usage: Bytes allocated on the heap
+**Ölçüm metrikleri:**
+- Mean: Ortalama yürütme süresi
+- Error: Ölçümlerdeki hata payı
+- StdDev: Ölçümlerin tutarlılığı
+- Median: Medyan yürütme süresi
+- Memory Usage: Heap'te ayrılan byte miktarı
 
-## Raw Benchmark Results
+## Ham Benchmark Sonuçları
 
 ```text
 | Method                                | Categories  | Mean      | Error     | StdDev    | Median    | Iterations | Gen0   | Allocated |
@@ -125,44 +125,44 @@ Before getting into the results, here's exactly what I measured and how.
 | ThreeParametersByRecord               | ThreeParams | 3.9852 ns | 0.1021 ns | 0.1327 ns | 3.9314 ns | 24.00      | 0.0051 | 32 B      |
 ```
 
-## Struct-Based Types
+## Struct Tabanlı Türler
 
-The headline result from these benchmarks is how dramatically struct-based types outperform reference types at 5+ parameters. The gap is not marginal — we're talking about the difference between sub-nanosecond execution and ~4 ns, with zero heap allocation versus 32–48 bytes per call.
+Bu benchmark'ların öne çıkan sonucu, 5 ve üzeri parametre sayısında struct tabanlı türlerin referans türlerini ne denli dramatik biçimde geride bırakması. Aradaki fark küçük bir marj değil; nanosaniyenin altında yürütme süresi ile ~4 ns arasındaki uçurum ve her çağrıda sıfır heap allocation yerine 32–48 byte tahsis edilmesi.
 
-**`struct` and `readonly struct`** showed excellent performance across the board, particularly for small data structures. With 3–4 parameters you're looking at 0.6–0.7 ns. Jump to 5+ parameters and the JIT starts doing something clever — times drop to 0.01–0.03 ns. Adding `readonly` to a struct buys you another 5–10% on average, since the compiler can skip defensive copies when passing to methods that might otherwise mutate the value.
+**`struct` ve `readonly struct`**, tüm senaryolarda, özellikle küçük veri yapıları için mükemmel performans sergiledi. 3–4 parametrede 0,6–0,7 ns civarındasınız. 5 ve üzerine çıkıldığında JIT bir şeyler öğrenmiş gibi davranıyor; süreler 0,01–0,03 ns'ye düşüyor. Bir struct'a `readonly` eklemek ortalamada yüzde 5–10'luk ek kazanım sağlıyor; çünkü derleyici, değeri potansiyel olarak mutasyona uğratabilecek metodlara geçirildiğinde savunma amaçlı kopyalamayı atlayabiliyor.
 
-**`ref struct` and `readonly ref struct`** sit in roughly the same performance band as their non-ref counterparts, with the added constraint that they can't escape to the heap. If you're building something like a parser or a span-based processing pipeline, this is often exactly what you want: the compiler enforces stack-only lifetime, and you get the performance to match.
+**`ref struct` ve `readonly ref struct`**, ref olmayan kardeşleriyle yaklaşık aynı performans bandında seyrediyor; üstelik heap'e kaçamama kısıtlamasını da beraberinde getiriyor. Parser ya da span tabanlı bir işlem hattı geliştiriyorsanız çoğu zaman tam olarak aradığınız şey bu: derleyici stack-only ömrü zorluyor ve buna uygun performans elde ediyorsunuz.
 
-**`record struct` and `readonly record struct`** were consistently the best-performing types in the 3–4 parameter range (~0.57 ns), edging out the plain struct variants. They carry all the benefits of value semantics — zero allocation, stack storage — and layer on value-based equality and immutability for free. For most modern C# code that needs a small, immutable parameter bundle, `readonly record struct` is the answer.
+**`record struct` ve `readonly record struct`**, 3–4 parametre aralığında (~0,57 ns) tutarlı biçimde en iyi performansı gösteren türler oldu; düz struct varyantlarını bile geride bıraktılar. Value semantics'in tüm avantajlarını taşıyorlar — sıfır allocation, stack depolama — ve üstüne değer tabanlı eşitlik ile değişmezliği bedava sunuyorlar. Küçük, değişmez bir parametre paketi gereken modern C# kodunun büyük bölümü için `readonly record struct` doğru yanıt.
 
-## Reference Types
+## Referans Türler
 
-The story for reference types is simpler and less exciting from a performance standpoint. Every class-based variant hovered in the 3.4–4.2 ns range regardless of parameter count, and every call allocated 32–48 bytes on the heap. That allocation cost is what matters in tight loops — it's not the 4 ns per call, it's the GC pressure that accumulates.
+Referans türlerin hikayesi performans açısından daha sade ve daha az heyecan verici. Her class tabanlı varyant, parametre sayısından bağımsız olarak 3,4–4,2 ns bandında gezindi ve her çağrı heap'te 32–48 byte tahsis etti. Sıkı döngülerde önemli olan bu allocation maliyeti; çağrı başına 4 ns değil, biriken GC baskısı.
 
-**`class` and `sealed class`** are essentially the same story. `sealed class` is 1–3% faster, which tracks with the fact that sealing a class allows the JIT to devirtualize certain call patterns. In practice, you'd never choose `sealed` purely for this gain — but it's good to know the ceiling.
+**`class` ve `sealed class`** özünde aynı hikayeyi anlatıyor. `sealed class` yüzde 1–3 daha hızlı; bu, bir class'ı sealed yapmak JIT'in belirli çağrı desenlerini devirtualize etmesine olanak tanıdığından beklenen bir sonuç. Pratikte yalnızca bu kazanım için `sealed` tercih etmezsiniz — ama tavanı bilmek faydalı.
 
-**`record` and `sealed record`** match class performance almost exactly. They bring value-based equality and a nice positional syntax, but they don't change the fundamental allocation model. If you're wrapping parameters in a `record` for convenience, you're still paying the heap cost.
+**`record` ve `sealed record`**, class performansıyla neredeyse birebir örtüşüyor. Değer tabanlı eşitlik ve güzel bir positional syntax getiriyorlar, ancak temel allocation modelini değiştirmiyorlar. Parametreleri kolaylık için bir `record`'a sararsanız heap maliyetini ödemeye devam edersiniz.
 
-## Direct Parameter Passing
+## Doğrudan Parametre Geçirme
 
-There's one outlier worth talking about: passing parameters directly, with no wrapper type at all. It clocked in at 0.015–0.037 ns with zero allocation — the fastest option across the board when parameter count is low. The trade-off is ergonomics. Once you get past 4–5 parameters, a naked method signature becomes hard to read, hard to refactor, and easy to get wrong. The struct variants close the gap fast enough that grouping into a `readonly record struct` is almost always the better call.
+Üzerinde durmaya değer bir istisna var: sarmalayıcı tür kullanmadan parametreleri doğrudan geçirmek. Düşük parametre sayısında sıfır allocation ile 0,015–0,037 ns'ye ulaştı; genel olarak en hızlı seçenek. Bedeli ergonomi. 4–5 parametrenin ötesine geçince çıplak bir metod imzası okumayı zorlaştırıyor, yeniden düzenlemeyi güçleştiriyor ve hata yapmayı kolaylaştırıyor. Struct varyantları aradaki farkı o kadar hızlı kapatıyor ki `readonly record struct` içinde gruplandırmak neredeyse her zaman daha iyi bir tercih.
 
-## Practical Recommendations
+## Pratik Öneriler
 
-The numbers above translate into a few concrete rules I now follow:
+Yukarıdaki sayılar, artık benim de uyguladığım birkaç somut kurala dönüşüyor:
 
-**For 3–4 parameters in a hot path**, reach for `readonly record struct`. You get ~0.57 ns execution, zero allocation, built-in equality, and a clean constructor syntax. The ergonomics are better than a plain struct and the performance is comparable.
+**Sıcak yolda 3–4 parametre için** `readonly record struct`'a uzanın. ~0,57 ns yürütme süresi, sıfır allocation, yerleşik eşitlik ve temiz bir constructor syntax elde edersiniz. Ergonomi düz struct'tan daha iyi, performans ise karşılaştırılabilir düzeyde.
 
-**For 5+ parameters**, all struct variants converge at ~0.01–0.03 ns, which is essentially noise-floor territory. Pick whichever struct type fits your constraints: `readonly struct` if you need to pass by value across a wide API, `ref struct` if you want to guarantee stack-only lifetime.
+**5 ve üzeri parametre için** tüm struct varyantları ~0,01–0,03 ns'de birleşiyor; bu artık ölçüm tabanı gürültüsü sayılabilecek bir aralık. Kısıtlamalarınıza uyan struct türünü seçin: geniş bir API'de değer olarak geçirmeniz gerekiyorsa `readonly struct`, stack-only ömrü garantilemek istiyorsanız `ref struct`.
 
-**When you need inheritance or large shared objects**, class types are appropriate — just don't use them on hot paths where the allocation cost will accumulate. Object pooling or a structural redesign is usually a better answer than trying to optimize a class-based parameter pattern.
+**Kalıtıma ya da büyük paylaşımlı nesnelere ihtiyaç duyduğunuzda** class türleri uygundur; yalnızca allocation maliyetinin biriktiği sıcak yollarda kullanmaktan kaçının. Object pooling ya da yapısal bir yeniden tasarım, class tabanlı bir parametre desenini optimize etmeye çalışmaktan genellikle daha iyi bir yanıttır.
 
-**When value equality matters but you're not on a hot path**, `record` reference types are fine. The ergonomics are excellent and the ~4 ns allocation cost is irrelevant in most application code.
+**Değer eşitliği önemli ama sıcak yolda değilseniz**, `record` referans türleri gayet iyi çalışır. Ergonomi mükemmel, ~4 ns allocation maliyeti ise çoğu uygulama kodunda önemsiz kalır.
 
-## Conclusion
+## Sonuç
 
-The gap between struct-based and reference-type parameter passing in C# is larger than most developers expect — roughly 200x in execution time and 100% in allocation overhead at 5+ parameters. That difference is usually invisible in typical application code, but it surfaces quickly in high-frequency paths: parsers, serializers, math-heavy compute loops, or any method that gets called millions of times per second.
+C#'ta struct tabanlı ve referans türü parametre geçirme arasındaki uçurum, çoğu geliştiricinin beklediğinden çok daha büyük; 5 ve üzeri parametrede yürütme süresinde yaklaşık 200 kat, allocation yükünde ise yüzde 100'lük bir fark var. Bu fark tipik uygulama kodunda çoğunlukla görünmez, ama yüksek frekanslı yollarda çabucak yüzeye çıkıyor: parser'lar, serializer'lar, hesaplama yoğun döngüler ya da saniyede milyonlarca kez çağrılan her metod.
 
-The good news is that the modern C# type system gives you precise tools to handle this. `readonly record struct` hits the sweet spot of performance, immutability, and developer ergonomics for the majority of cases. Once you internalize when to reach for each variant, writing allocation-free hot paths stops feeling like a sacrifice and starts feeling like the natural default.
+İyi haber şu ki modern C# tür sistemi bunu yönetmek için tam anlamıyla hassas araçlar sunuyor. `readonly record struct`, vakaların büyük çoğunluğunda performans, değişmezlik ve geliştirici ergonomisinin buluşma noktası. Her varyanta ne zaman uzanacağınızı içselleştirdiğinizde, allocation-free sıcak yollar yazmak bir fedakarlık gibi değil, doğal varsayılan gibi hissettirecek.
 
-The full benchmark source is available on [.NET Fiddle](https://dotnetfiddle.net/cyCLlv).
+Benchmark kaynak kodunun tamamına [.NET Fiddle](https://dotnetfiddle.net/cyCLlv) üzerinden ulaşabilirsiniz.

@@ -121,42 +121,42 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What technologies does Recep Sen specialize in?",
+        name: "What technologies does Recep Şen specialize in?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen specializes in .NET/C# for backend systems, with deep expertise in microservices architecture and Domain-Driven Design (DDD). On the data layer, he works with PostgreSQL, Redis, RabbitMQ, MongoDB, and Elasticsearch. For cloud infrastructure, he uses Google Cloud Platform, Docker, and Kubernetes. On the frontend, he works with TypeScript, Next.js, and React. He also works extensively with agentic AI systems, LLM integration, vector databases, and AI workflow automation.",
+          text: "Recep Şen specializes in .NET/C# for backend systems, with deep expertise in microservices architecture and Domain-Driven Design (DDD). On the data layer, he works with PostgreSQL, Redis, RabbitMQ, MongoDB, and Elasticsearch. For cloud infrastructure, he uses Google Cloud Platform, Docker, and Kubernetes. On the frontend, he works with TypeScript, Next.js, and React. He also works extensively with agentic AI systems, LLM integration, vector databases, and AI workflow automation.",
         },
       },
       {
         "@type": "Question",
-        name: "What is the scale of the Easyapp platform that Recep Sen built?",
+        name: "What is the scale of the Easyapp platform that Recep Şen built?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen led the full architecture and development of Easyapp.ai from inception, a no-code mobile app builder that reached 250,000+ users. He designed a 28-service microservices platform that processes millions of app-building requests. The platform uses AI-driven cost optimization to run capital-efficiently using on-demand infrastructure, significantly reducing operating costs compared to always-on architectures. He served as CTO at Taptoweb, the company behind Easyapp, overseeing the full technology organization and system architecture.",
+          text: "Recep Şen led the full architecture and development of Easyapp.ai from inception, a no-code mobile app builder that reached 250,000+ users. He designed a 28-service microservices platform that processes millions of app-building requests. The platform uses AI-driven cost optimization to run capital-efficiently using on-demand infrastructure, significantly reducing operating costs compared to always-on architectures. He served as CTO at Taptoweb, the company behind Easyapp, overseeing the full technology organization and system architecture.",
         },
       },
       {
         "@type": "Question",
-        name: "What open-source projects has Recep Sen built?",
+        name: "What open-source projects has Recep Şen built?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen has built several notable open-source projects available on GitHub. CSharpEssentials is a C# library implementing the Result Pattern, Any Pattern, and Maybe Pattern, with over 59,000 NuGet package downloads across 16 packages. He also created an Aspire Microservice Starter Template that provides a production-ready foundation for .NET microservices using the .NET Aspire orchestration framework. Additionally, he maintains an open-source Next.js portfolio template (MIT licensed) used by developers worldwide.",
+          text: "Recep Şen has built several notable open-source projects available on GitHub. CSharpEssentials is a C# library implementing the Result Pattern, Any Pattern, and Maybe Pattern, with over 59,000 NuGet package downloads across 16 packages. He also created an Aspire Microservice Starter Template that provides a production-ready foundation for .NET microservices using the .NET Aspire orchestration framework. Additionally, he maintains an open-source Next.js portfolio template (MIT licensed) used by developers worldwide.",
         },
       },
       {
         "@type": "Question",
-        name: "Where does Recep Sen work?",
+        name: "Where does Recep Şen work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen is CTO at Taptoweb, a technology company building no-code mobile app solutions. In this role, he leads all technical decisions, system architecture, and engineering team direction. He has been with Taptoweb since 2022, growing the platform from early-stage to 250,000+ users. His work spans backend systems, cloud infrastructure, mobile platforms, and agentic AI integrations.",
+          text: "Recep Şen is CTO at Taptoweb, a technology company building no-code mobile app solutions. In this role, he leads all technical decisions, system architecture, and engineering team direction. He has been with Taptoweb since 2022, growing the platform from early-stage to 250,000+ users. His work spans backend systems, cloud infrastructure, mobile platforms, and agentic AI integrations.",
         },
       },
       {
         "@type": "Question",
-        name: "What is Recep Sen's background in AI development?",
+        name: "What is Recep Şen's background in AI development?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Sen works with agentic AI frameworks, having published comprehensive guides on Claude Code, OpenCode, and multi-agent orchestration systems. He has hands-on experience with LLM integration and fine-tuning, vector databases, semantic caching systems, and AI workflow automation. His practical AI work includes building AI-driven cost optimization systems for large-scale infrastructure and developing production AI workflows across multiple enterprise projects. He has written extensively on AI-powered development, with articles on Claude Code ecosystems, multi-agent systems, and AI development best practices.",
+          text: "Recep Şen works with agentic AI frameworks, having published comprehensive guides on Claude Code, OpenCode, and multi-agent orchestration systems. He has hands-on experience with LLM integration and fine-tuning, vector databases, semantic caching systems, and AI workflow automation. His practical AI work includes building AI-driven cost optimization systems for large-scale infrastructure and developing production AI workflows across multiple enterprise projects. He has written extensively on AI-powered development, with articles on Claude Code ecosystems, multi-agent systems, and AI development best practices.",
         },
       },
     ],

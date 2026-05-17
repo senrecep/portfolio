@@ -6,7 +6,7 @@ slug: "your-function-signature-is-lying"
 mediumUrl: ""
 imageUrl: "/images/your-function-signature-is-lying.webp"
 keywords: ["TypeScript error handling", "Railway Oriented Programming", "Result type", "functional programming", "tsentials", "error as value", "applicative validation", "RuleEngine", "Maybe type", "DDD TypeScript"]
-author: "Recep Sen"
+author: "Recep Şen"
 modifiedDate: "2026-05-16"
 category: "TypeScript"
 faq:

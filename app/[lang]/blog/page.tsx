@@ -33,7 +33,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: `${t.sections.blog.title} - Recep Sen`,
+    title: `${t.sections.blog.title} - Recep Şen`,
     description: t.sections.blog.description,
     alternates: {
       canonical: `${siteUrl}/${lang}/blog`,
@@ -44,15 +44,15 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      title: `${t.sections.blog.title} - Recep Sen`,
+      title: `${t.sections.blog.title} - Recep Şen`,
       description: t.sections.blog.description,
       url: `${siteUrl}/${lang}/blog`,
-      siteName: "Recep Sen",
+      siteName: "Recep Şen",
       locale: lang,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${t.sections.blog.title} - Recep Sen`,
+      title: `${t.sections.blog.title} - Recep Şen`,
       description: t.sections.blog.description,
       creator: "@senrecep0",
     },

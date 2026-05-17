@@ -6,7 +6,7 @@ slug: "google-cloud-secret-manager-dotnet"
 mediumUrl: "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027"
 imageUrl: "/images/dotnet-secret-manager.webp"
 keywords: ["Google Cloud Secret Manager", ".NET", "CSharpEssentials", "secrets management", "IConfiguration", "GCP", "microservices", "environment configuration"]
-author: "Recep Sen"
+author: "Recep Şen"
 modifiedDate: "2025-01-30"
 category: "Tutorial"
 faq:
@@ -18,43 +18,29 @@ faq:
     a: "The library implements a custom IConfigurationProvider that pulls secrets from Google Cloud Secret Manager and exposes them through the standard IConfiguration interface. This means you can access secrets exactly like appsettings.json values using dependency injection and options patterns."
 ---
 
-Hello 👋
+Every .NET developer eventually hits the same wall: you have API keys, database connection strings, and passwords scattered across `appsettings.json` files, environment variables, and maybe even hardcoded somewhere you would rather not admit. You know it is not sustainable. You know it is not secure. But wiring up a proper secrets management solution always feels like it should be simpler than it actually is.
 
-How do you manage sensitive information (API keys, database connection strings, passwords, etc.) in your .NET applications? Securely storing, configuring for different environments, and centrally managing this information has always been an important concern.
+I hit that wall while working on a microservice architecture running on Google Cloud. Google's own Secret Manager client library works fine on its own, but getting it to play nicely with .NET's `IConfiguration` system -- the thing your entire application already depends on for configuration -- was more friction than I wanted. Especially when you multiply that friction across multiple services, multiple environments, and multiple regions.
 
-Today, I want to introduce you to the CSharpEssentials.GcpSecretManager library that I developed to solve this problem. This library allows you to seamlessly integrate Google Cloud Secret Manager into your .NET applications.
+So I built a library to fix it. CSharpEssentials.GcpSecretManager bridges Google Cloud Secret Manager and .NET's configuration system so that secrets show up exactly like values from `appsettings.json`. No special access patterns, no custom service registrations -- just the standard `IConfiguration` interface your code already uses.
 
+## What the Library Offers
 
-![](https://miro.medium.com/v2/resize:fit:700/1*oI7K_leu1aMPgbgSsicn1Q.png)
+The library focuses on the problems that actually come up in production. It provides seamless Google Cloud Secret Manager integration with .NET's `IConfiguration`, prefix-based filtering so each service only loads its own secrets, batch processing for performance when you have hundreds of secrets, region-specific configuration for latency-sensitive deployments, and support for both JSON-parsed and raw secret values.
 
-**Why Did I Develop This Library?**
+## Getting Started
 
-While using Google Cloud Secret Manager in my .NET project, Google’s own library worked quite well, but integrating it with .NET’s configuration system (IConfiguration) was a bit cumbersome. Especially in microservice architecture or multi-environment (development, staging, production) scenarios, setting up and managing separate configurations for each service could become quite complex.
-
-To solve this problem, I developed a package that makes Google Cloud Secret Manager easier to integrate with .NET’s configuration system and offers solutions suitable for different scenarios.
-
-**What Does the Library Offer?**
-
-\- 🔐 Google Cloud Secret Manager integration  
-\- 🚀 Prefix-based filtering and custom secret ID support  
-\- ⚡ Performance optimization with batch processing  
-\- 🌍 Region-specific configuration  
-\- 🎯 JSON parsing and raw secret support  
-\- 📦 Easy integration with .NET configuration system (IConfiguration)
-
-**How to Use?**
-
-All you need to do to get started is install the NuGet package:
+Install the NuGet package and you are ready to go:
 
 ```bash
 dotnet add package CSharpEssentials.GcpSecretManager
 ```
 
-**Usage Scenarios**
+## Usage Scenarios
 
-The library supports various usage scenarios for different needs. Here are the most common scenarios and how to use them:
+The library supports several configurations depending on your architecture. Here are the most common ones.
 
-1.  **Simple Application Scenario**
+### Simple Application
 
 ```csharp
 builder.Configuration.AddGcpSecretManager();
@@ -72,14 +58,9 @@ builder.Configuration.AddGcpSecretManager();
 }
 ```
 
-**When should you use it?**
+This is the quickest path. You define the project ID in `appsettings.json`, call `AddGcpSecretManager()`, and every secret in that project becomes available through `IConfiguration`. It works well when you have a single application with a single GCP project and just want your secrets centralized without any ceremony.
 
-\- You want to manage default configuration through \`appsettings.json\`  
-\- You don’t need custom configuration code  
-\- You want to centrally manage your secrets on Google Cloud  
-\- You want quick integration
-
-**2\. Microservice Architecture Scenario**
+### Microservice Architecture
 
 ```json
 {
@@ -104,15 +85,9 @@ builder.Configuration.AddGcpSecretManager();
 }
 ```
 
-**When should you use it?**
+In a microservice setup, you typically have separate GCP projects per service, and each service should only load the secrets it actually needs. Prefix-based filtering makes this clean: the payment service loads only `payment_*` secrets, the user service loads only `user_*` secrets. No accidental cross-contamination, and startup stays fast because you are not pulling in hundreds of irrelevant secrets.
 
-\- You have a microservice architecture  
-\- You use separate GCP projects for each service  
-\- Some services share common secrets  
-\- You use prefix-based service separation  
-\- You want region-specific performance optimization
-
-**3\. Multi-Region Application Scenario**
+### Multi-Region Application
 
 ```json
 {
@@ -137,15 +112,9 @@ builder.Configuration.AddGcpSecretManager();
 }
 ```
 
-**When should you use it?**
+When your application runs across regions and latency matters, you can point each deployment to the closest Secret Manager replica. The same project can be referenced multiple times with different regions and prefix filters, so your EU deployment pulls `eu_*` secrets from `europe-west1` while your US deployment pulls `us_*` secrets from `us-central1`.
 
-\- Your application runs in different regions  
-\- You have region-specific secrets  
-\- Latency is critical  
-\- You need separate configuration for each region  
-\- You have high-performance requirements
-
-**4\. Development/Staging/Production Scenario**
+### Development/Staging/Production
 
 ```csharp
 builder.Configuration.AddGcpSecretManager(options =>{
@@ -160,14 +129,9 @@ builder.Configuration.AddGcpSecretManager(options =>{
     
 ```
 
-**When should you use it?**
+This approach gives you programmatic control over the configuration. You can dynamically set the project ID and prefix based on the current environment, and tune performance parameters like `BatchSize` and `PageSize` for your specific workload. It fits naturally into CI/CD pipelines where the environment name drives everything.
 
-\- You use different secrets for different environments  
-\- You have environment-based project separation  
-\- You need environment-based configuration in your CI/CD pipeline  
-\- You want to customize performance parameters
-
-**5\. JSON and Raw Secret Scenario**
+### JSON and Raw Secrets
 
 ```json
 {
@@ -197,63 +161,25 @@ builder.Configuration.AddGcpSecretManager(options =>{
 }
 ```
 
-**What are RawSecretIds and RawSecretPrefixes for?**
+By default, the library tries to parse secret values as JSON and flatten them into configuration keys. But not everything is JSON. Service account credential files, SSL/TLS certificates, SSH private keys, and PEM files are all stored as raw text. Marking them with `RawSecretIds` or `RawSecretPrefixes` tells the library to skip JSON parsing and store the value as-is.
 
-This feature is particularly useful in these cases:
+One thing to keep in mind: secrets listed in `RawSecretIds` and `RawSecretPrefixes` must also appear in `SecretIds` or `PrefixFilters`. The raw flags control how a secret is parsed, not whether it is loaded.
 
-\- When storing cloud provider service account/credential files  
-\- When storing SSL/TLS certificates  
-\- When storing SSH private keys  
-\- When storing PEM format files  
-\- When storing custom configurations that are not in JSON format
+## Performance Tips
 
-**Important Note:**
+There are a few levers you can pull to keep startup times low. Increase `BatchSize` (try 20) when you have many secrets, and increase `PageSize` (try 500) for large projects. Always specify `Region` to avoid unnecessary cross-region calls. Use `PrefixFilters` aggressively so you are only loading what you need. And for specific known secrets, `SecretIds` lets you skip the listing step entirely and fetch them directly.
 
-Secrets specified in \`RawSecretIds\` and \`RawSecretPrefixes\` must also be defined in \`SecretIds\` or \`PrefixFilters\`.
+## Security Tips
 
-**Performance Tips**
+On the security side, use service accounts with minimal permissions -- `secretmanager.secretAccessor` is usually all you need. Create separate service accounts per environment so a compromised dev credential cannot read production secrets. Organize your secret names with environment-based prefixes (`prod_`, `staging_`, `dev_`) and service-based prefixes (`auth_`, `payment_`, `email_`) to keep things manageable as your secret count grows.
 
-Here are some points to consider for using the library most efficiently:
+## Wrapping Up
 
-1.  **Batch and Page Size Optimization:  
-    **\- Increase \`BatchSize\` for many secrets (e.g., 20)  
-    \- Increase \`PageSize\` for large projects (e.g., 500)  
-    \- Always specify \`Region\`
-2.  **Secret Filtering:  
-    **\- Use \`PrefixFilters\` to filter unnecessary secrets  
-    \- Use \`SecretIds\` for specific secrets  
-    \- Use \`RawSecretIds\` for secrets that are not in JSON format or JSON secrets that you don’t want to be parsed
-3.  **Region Optimization:  
-    **\- Specify appropriate region for each project  
-    \- Use separate project configuration for each region in multi-region applications
+CSharpEssentials.GcpSecretManager takes the friction out of using Google Cloud Secret Manager in .NET applications. Whether you are running a single web app or orchestrating dozens of microservices across regions, the configuration options scale with your architecture. The library is open source and actively maintained -- contributions and issue reports are welcome.
 
-**Security Tips**
+## Links
 
-Here are some recommended best practices for managing your secrets securely:
-
-1.  **Service Account Management:  
-    **\- Use service accounts with minimal permissions  
-    \- Create separate service accounts for each environment  
-    \- Store credentials files securely
-2.  **Secret Organization:  
-    **\- Use environment-based prefixes: \`prod\_\`, \`staging\_\`, \`dev\_\`  
-    \- Use service-based prefixes: \`auth\_\`, \`payment\_\`, \`email\_\`  
-    \- Use special prefixes for sensitive secrets
-
-**Conclusion**
-
-CSharpEssentials.GcpSecretManager enables you to use Google Cloud Secret Manager in your .NET projects securely, performantly, and flexibly. Whether it’s a simple web application or a complex microservice architecture — it offers suitable configuration options for every scenario.
-
-The library is designed to meet the needs of modern .NET applications and continues to evolve. I believe it has features that can meet your needs as well.
-
-**Useful Links**
-
-\- 📦 [NuGet Package](https://www.nuget.org/packages/CSharpEssentials.GcpSecretManager)
-
-\- 💻 [GitHub — GcpSecretManager](https://github.com/SenRecep/CSharpEssentials/tree/main/CSharpEssentials.GcpSecretManager)
-
-\- 🔍 [CSharpEssentials Library Family](https://github.com/SenRecep/CSharpEssentials)
-
-\- 📚 [All My NuGet Packages](https://www.nuget.org/profiles/recepsen)
-
-I’ve shared the project as open source on GitHub. You can examine the source code, fork the project if you want to contribute, and send pull requests. If you encounter any problems or have feature suggestions, you can open an issue on GitHub. If you want to try it and provide feedback, I’m looking forward to your comments!
+- [NuGet Package](https://www.nuget.org/packages/CSharpEssentials.GcpSecretManager)
+- [GitHub - GcpSecretManager](https://github.com/SenRecep/CSharpEssentials/tree/main/CSharpEssentials.GcpSecretManager)
+- [CSharpEssentials Library Family](https://github.com/SenRecep/CSharpEssentials)
+- [All My NuGet Packages](https://www.nuget.org/profiles/recepsen)

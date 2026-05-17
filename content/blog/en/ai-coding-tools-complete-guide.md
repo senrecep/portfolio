@@ -6,7 +6,7 @@ slug: "ai-coding-tools-complete-guide"
 mediumUrl: "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1"
 imageUrl: "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
 keywords: ["Claude Code", "OpenCode", "AI coding tools", "CLAUDE.md", "MCP", "context management", "AI-assisted development", "code generation"]
-author: "Recep Sen"
+author: "Recep Şen"
 modifiedDate: "2026-01-24"
 category: "AI"
 faq:
@@ -92,7 +92,7 @@ A markdown file at your project root that gives AI context. **Both Claude Code a
 
 ### Example CLAUDE.md
 
-```markdown
+```text
 # MyApp
 
 ## WHAT - Project Overview
@@ -587,5 +587,3 @@ npx ctx7 skills install better-icons
 ```
 
 ---
-
-*This guide was written using Claude Code CLI. Updated January 2026.*
