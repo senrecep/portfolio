@@ -171,7 +171,7 @@ interface AppError {
 tsentials'in gerçek gücü, tek bir Result oluşturmakta değil, onları **zincirlemekte**. Bir gerçek dünya senaryosuna bakalım:
 
 ```typescript
-const profile = await fromAsync(fetchUser(userId))
+const profile = await fromAsync(fetchUser(userId)) // fetchUser, Promise<Result<T>> döndürmeli
   .andThen(user => validateAge(user))
   .ensure(user => user.isActive, Err.validation('User.Inactive', 'Hesap aktif değil'))
   .map(user => user.profile)
@@ -214,7 +214,7 @@ const result = chain(Result.success(user))
   .bind(u => validateUser(u))
   .ensure(u => u.age >= 18, Err.validation('Age.Underage', '18 yaşından büyük olmalı'))
   .map(u => u.profile)
-  .unwrap();
+  .unwrap(); // Result<Profile> döner — ham değeri değil, zinciri bitirir
 ```
 
 **Stil 3 — Async builder** (modern async/await sevenler için):
@@ -269,7 +269,7 @@ Kurallar sadece fonksiyondur. Test edilebilir, birleştirilebilir, yeniden kulla
 
 ## Sadece hata yönetimi değil
 
-tsentials sadece bir Result kütüphanesi değil. 20 modülden oluşan, tutarlı bir felsefe etrafında tasarlanmış bir araç seti:
+tsentials sadece bir Result kütüphanesi değil. 19 modülden oluşan, tutarlı bir felsefe etrafında tasarlanmış bir araç seti:
 
 ### Maybe<T> — "Billion dollar mistake"'in çözümü
 
@@ -370,7 +370,10 @@ Alexis King'in "Parse, Don't Validate" prensibinin doğrudan uygulaması. `JSON.
 ```typescript
 const eqUser = Eq.struct({ id: Eq.number, name: Eq.string });
 const byAge = Ord.contramap(Ord.number, (u: User) => u.age);
-const isEligible = Predicate.and(Predicate.and(isAdult, isActive), hasVerifiedEmail);
+const isAdult = Predicate.from((u: User) => u.age >= 18);
+const isActive = Predicate.from((u: User) => u.isActive);
+const hasVerifiedEmail = Predicate.from((u: User) => u.emailVerified);
+const isEligible = Predicate.all(isAdult, isActive, hasVerifiedEmail);
 ```
 
 fp-ts'in kategori teorisi jargonunu almadan, aynı gücü sunar. Yapısal eşitlik, tip güvenli sıralama, birleştirilebilir boolean fonksiyonlar — hepsi yerleşik.
@@ -445,8 +448,8 @@ const registrationRules = RuleEngine.and(isAdult, hasStrongPassword);
 // 2. Pipeline'ı kur
 async function registerUser(input: RegisterInput) {
   return fromAsync(Promise.resolve(Result.success(input)))
-    .andThen(data => RuleEngine.evaluate(registrationRules, data))
-    .andThen(() => fetchResult.post<User>('/api/users', input))
+    .andThen(data => RuleEngine.evaluate(registrationRules, data)) // validasyon sonrası void döner
+    .andThen(() => fetchResult.post<User>('/api/users', input))   // dış input closure'dan kullanılır
     .tap(user => logger.info('Kullanıcı oluşturuldu', { id: user.id }))
     .match(
       user => ({ success: true, user }),
@@ -463,7 +466,7 @@ Hata yönetimi paradigmaları değişiyor. Go ve Rust'ın error-as-value yaklaş
 
 tsentials'ı oluştururken motivasyonum tam olarak buydu: *pragmatik fonksiyonel programlama*. Kategori teorisinin derinliklerine dalmadan, railway-oriented programming'in pratik faydalarını TypeScript geliştiricilerine sunmak. Aynı felsefeyi önce C#'ta uyguladım; TypeScript'e taşırken dilin güçlü yanlarını — discriminated union'lar, tip daraltma, namespace merging — sonuna kadar kullandım.
 
-Bu kütüphane 20 modül, 652 test ve tutarlı bir tasarım felsefesi içeriyor. Büyük çaplı kurumsal projelerden küçük açık kaynak araçlara kadar her yerde kullanılabilir.
+Bu kütüphane 19 modül, 1079 test ve tutarlı bir tasarım felsefesi içeriyor. Büyük çaplı kurumsal projelerden küçük açık kaynak araçlara kadar her yerde kullanılabilir.
 
 Bir gerçeği de kabul edelim: artık kodun çoğunu geliştiriciler yazmıyor. AI ajanları yazıyor, geliştiriciler kontrol ediyor. Bu yeni paradigmada bir kütüphanenin kalitesi sadece API tasarımıyla değil, **AI tarafından ne kadar doğru kullanılabildiğiyle** de ölçülür. tsentials buna hazır: her modül için detaylı agent skill tanımları, API imzaları, kritik isimlendirme kuralları ve kullanım örnekleri yerleşik olarak dokümante edilmiş durumda. Claude Code, Cursor, Copilot — hangi AI aracını kullanırsanız kullanın, bu skill'leri besleyerek kütüphaneden tam verim alabilirsiniz. AI'ın `andThen` yerine `then` yazması, `Result.map`'i curried sanması gibi hatalar, doğru context verildiğinde ortadan kalkıyor. Kütüphane sadece insanlar için değil, ajanlar için de okunabilir.
 

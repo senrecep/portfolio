@@ -171,7 +171,7 @@ You use `code` for programmatic decisions. You use `description` to show message
 The real power of tsentials isn't in creating a single Result, but in **chaining them**. Let's look at a real-world scenario:
 
 ```typescript
-const profile = await fromAsync(fetchUser(userId))
+const profile = await fromAsync(fetchUser(userId)) // fetchUser must return Promise<Result<T>>
   .andThen(user => validateAge(user))
   .ensure(user => user.isActive, Err.validation('User.Inactive', 'Hesap aktif değil'))
   .map(user => user.profile)
@@ -214,7 +214,7 @@ const result = chain(Result.success(user))
   .bind(u => validateUser(u))
   .ensure(u => u.age >= 18, Err.validation('Age.Underage', '18 yaşından büyük olmalı'))
   .map(u => u.profile)
-  .unwrap();
+  .unwrap(); // Result<Profile> — exits the chain, not the raw value
 ```
 
 **Style 3 — Async builder** (for those who love modern async/await):
@@ -269,7 +269,7 @@ Rules are just functions. They're testable, composable, and reusable. They're in
 
 ## More than just error handling
 
-tsentials is not just a Result library. It's a toolkit designed around a consistent philosophy, consisting of 20 modules:
+tsentials is not just a Result library. It's a toolkit designed around a consistent philosophy, consisting of 19 modules:
 
 ### Maybe<T> — The solution to the "billion-dollar mistake"
 
@@ -370,7 +370,10 @@ A direct application of Alexis King's "Parse, Don't Validate" principle. `JSON.p
 ```typescript
 const eqUser = Eq.struct({ id: Eq.number, name: Eq.string });
 const byAge = Ord.contramap(Ord.number, (u: User) => u.age);
-const isEligible = Predicate.and(Predicate.and(isAdult, isActive), hasVerifiedEmail);
+const isAdult = Predicate.from((u: User) => u.age >= 18);
+const isActive = Predicate.from((u: User) => u.isActive);
+const hasVerifiedEmail = Predicate.from((u: User) => u.emailVerified);
+const isEligible = Predicate.all(isAdult, isActive, hasVerifiedEmail);
 ```
 
 The same power as fp-ts without the category theory jargon. Structural equality, type-safe ordering, composable boolean functions — all built in.
@@ -445,8 +448,8 @@ const registrationRules = RuleEngine.and(isAdult, hasStrongPassword);
 // 2. Set up the pipeline
 async function registerUser(input: RegisterInput) {
   return fromAsync(Promise.resolve(Result.success(input)))
-    .andThen(data => RuleEngine.evaluate(registrationRules, data))
-    .andThen(() => fetchResult.post<User>('/api/users', input))
+    .andThen(data => RuleEngine.evaluate(registrationRules, data)) // returns void after validation
+    .andThen(() => fetchResult.post<User>('/api/users', input))   // uses outer input via closure
     .tap(user => logger.info('Kullanıcı oluşturuldu', { id: user.id }))
     .match(
       user => ({ success: true, user }),
@@ -463,7 +466,7 @@ Error handling paradigms are changing. The error-as-value approach from Go and R
 
 This was exactly my motivation in creating tsentials: *pragmatic functional programming*. Bringing the practical benefits of railway-oriented programming to TypeScript developers without diving into the depths of category theory. I applied the same philosophy first in C#; when porting it to TypeScript, I took full advantage of the language's strengths — discriminated unions, type narrowing, namespace merging.
 
-This library contains 20 modules, 652 tests, and a consistent design philosophy. It can be used everywhere, from large-scale enterprise projects to small open-source tools.
+This library contains 19 modules, 1079 tests, and a consistent design philosophy. It can be used everywhere, from large-scale enterprise projects to small open-source tools.
 
 Let's also acknowledge a reality: developers no longer write most of the code. AI agents write it; developers review it. In this new paradigm, a library's quality is measured not just by its API design, but by **how accurately AI can use it**. tsentials is ready for this: detailed agent skill definitions, API signatures, critical naming rules, and usage examples are documented as built-in for every module. Whether you use Claude Code, Cursor, or Copilot, you can feed these skills to get full value from the library. Mistakes like AI writing `then` instead of `andThen`, or assuming `Result.map` is curried, disappear when given the right context. The library is readable not just for humans, but for agents too.
 
