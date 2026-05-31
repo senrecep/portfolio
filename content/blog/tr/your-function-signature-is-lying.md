@@ -53,8 +53,8 @@ Java'da `throws` anahtar kelimesi var. TypeScript'te yok. Fonksiyon imzanız eks
 try {
   const user = getUser(0);
 } catch (error) {
-  // error: unknown — ne geldi, nereden geldi, tipi ne?
-  console.error(error.message); // Derleme hatası
+  // error: unknown — what arrived, where from, what type?
+  console.error(error.message); // Compile error
 }
 ```
 
@@ -86,11 +86,11 @@ Bu sorunlara çözüm, fonksiyonel programlama dünyasında yıllardır bilinen 
 Kodunuzu bir demiryolu hattı olarak hayal edin:
 
 ```text
-  ─── Başarı Rayı ──────────────────────────────────────►
+  ─── Success Track ─────────────────────────────────────►
        │              │              │              │
    [validate]    [transform]    [save]        [notify]
        │              │              │              │
-  ─── Hata Rayı ─────────────────────────────────────────►
+  ─── Error Track ────────────────────────────────────────►
 ```
 
 İki paralel ray var: başarı rayı ve hata rayı. Her fonksiyon bir demiryolu makası gibi çalışıyor. Girdi başarılıysa, bir sonraki adıma iletiyor. Hata oluşursa, hata rayına geçiyor. Ve kritik nokta: **hata rayına bir kez girdiniz mi, sonraki fonksiyonlar otomatik olarak atlanıyor.** Zincir kırılmıyor, kontrol akışı bozulmuyor — veri sadece hata rayında ilerliyor.
@@ -106,15 +106,15 @@ Bu modelin üç temel mekanizması var:
 Burada kritik bir ayrım var. Geleneksel monadic zincirleme (bind/chain) **ilk hatada durur**:
 
 ```text
-Kullanıcı verisi → [email kontrolü ❌] → STOP
-                   Sonuç: "Email geçersiz"
+User data → [email check ❌] → STOP
+                   Result: "Email is invalid"
 ```
 
 Ama bir form dolduran kullanıcı, email de yanlışsa şifre de kısaysa, **ikisini birden** bilmek ister. Bu, **applicative validation** yaklaşımını gerektirir:
 
 ```text
-Kullanıcı verisi → [email kontrolü ❌] + [şifre kontrolü ❌] + [yaş kontrolü ✓]
-                   Sonuç: ["Email geçersiz", "Şifre çok kısa"]
+User data → [email check ❌] + [password check ❌] + [age check ✓]
+                   Result: ["Email is invalid", "Password too short"]
 ```
 
 Scott Wlaschin'in de vurguladığı gibi: "*Validasyon sıralı yapılıyor. Bu yüzden bir seferde sadece bir hata dönüyor. Tüm validasyon hatalarını bir anda döndürebilsek güzel olmaz mıydı?*"
@@ -173,9 +173,9 @@ tsentials'in gerçek gücü, tek bir Result oluşturmakta değil, onları **zinc
 ```typescript
 const profile = await fromAsync(fetchUser(userId)) // fetchUser, Promise<Result<T>> döndürmeli
   .andThen(user => validateAge(user))
-  .ensure(user => user.isActive, Err.validation('User.Inactive', 'Hesap aktif değil'))
+  .ensure(user => user.isActive, Err.validation('User.Inactive', 'Account is not active'))
   .map(user => user.profile)
-  .tap(profile => logger.info('Profil yüklendi', { userId }))
+  .tap(profile => logger.info('Profile loaded', { userId }))
   .match(
     profile => renderProfile(profile),
     errors => renderErrors(errors)
@@ -201,7 +201,7 @@ const result = Result.then(
   Result.ensure(
     Result.success(user),
     u => u.age >= 18,
-    Err.validation('Age.Underage', '18 yaşından büyük olmalı')
+    Err.validation('Age.Underage', 'Must be 18 or older')
   ),
   u => saveUser(u)
 );
@@ -212,7 +212,7 @@ const result = Result.then(
 ```typescript
 const result = chain(Result.success(user))
   .bind(u => validateUser(u))
-  .ensure(u => u.age >= 18, Err.validation('Age.Underage', '18 yaşından büyük olmalı'))
+  .ensure(u => u.age >= 18, Err.validation('Age.Underage', 'Must be 18 or older'))
   .map(u => u.profile)
   .unwrap(); // Result<Profile> döner — ham değeri değil, zinciri bitirir
 ```
@@ -235,7 +235,7 @@ Mevcut kodunuzda exception fırlatan fonksiyonlar var. Bu kaçınılmaz. `JSON.p
 ```typescript
 const parsed = Result.try(
   () => JSON.parse(rawInput),
-  e => Err.validation('Json.Invalid', 'Geçersiz JSON formatı')
+  e => Err.validation('Json.Invalid', 'Invalid JSON format')
 );
 ```
 
@@ -248,12 +248,12 @@ Exception fırlatan dünya ile Result döndüren dünya arasında güvenli bir g
 ```typescript
 const isAdult = RuleEngine.fromPredicate<User>(
   u => u.age >= 18,
-  Err.validation('Age.Underage', '18 yaşından büyük olmalı')
+  Err.validation('Age.Underage', 'Must be 18 or older')
 );
 
 const hasValidEmail = RuleEngine.fromPredicate<User>(
   u => isEmail(u.email),
-  u => Err.validation('Email.Invalid', `${u.email} geçerli değil`)
+  u => Err.validation('Email.Invalid', `${u.email} is not valid`)
 );
 
 const registrationRules = RuleEngine.and(isAdult, hasValidEmail, hasAcceptedTerms);
@@ -280,14 +280,14 @@ const userName = pipe(
   Maybe.from(user),                              // null/undefined → None
   m => Maybe.map(m, u => u.profile),
   m => Maybe.bind(m, p => Maybe.from(p.displayName)),
-  m => Maybe.getOrDefault(m, 'Anonim')
+  m => Maybe.getOrDefault(m, 'Anonymous')
 );
 ```
 
 `Result` ve `Maybe` arasında köprü fonksiyonları var. Bir `Maybe`'nin `None` olması bir hata mı, yoksa sadece yokluk mu? Bu kararı siz verirsiniz:
 
 ```typescript
-maybeToResult(Maybe.from(user), Err.notFound('User.Missing', 'Kullanıcı bulunamadı'));
+maybeToResult(Maybe.from(user), Err.notFound('User.Missing', 'User not found'));
 ```
 
 ### These<E, A> — Kısmi başarı
@@ -314,7 +314,7 @@ const result = processUser(user);
 Scott Wlaschin'in ünlü prensibi: "*Making Illegal States Unrepresentable.*" Bir dizi varsa ve boş olmaması gerekiyorsa, bunu **tip sisteminde** ifade edin:
 
 ```typescript
-function head<T>(as: NonEmptyArray<T>): T {  // T | undefined DEĞİL, direkt T
+function head<T>(as: NonEmptyArray<T>): T {  // NOT T | undefined, directly T
   return as[0];
 }
 ```
@@ -344,10 +344,10 @@ Kalıtım değil, **kompozisyon**. `createEntityBase()` domain event'leri ve aud
 ### HTTP ve JSON — Asla fırlatmayan API'ler
 
 ```typescript
-// Asla exception fırlatmaz. Network hatası, 404, 500... hepsi Result<T>
+// Never throws. Network errors, 404, 500... all become Result<T>
 const user = await fetchResult.get<User>('/api/users/42');
 
-// Fluent builder ile
+// With the fluent builder
 const users = await RequestBuilder.get('/api/users')
   .header('Authorization', `Bearer ${token}`)
   .query('page', '1')
@@ -432,25 +432,25 @@ import { RuleEngine } from 'tsentials/rules';
 import { Err } from 'tsentials/errors';
 import { fetchResult } from 'tsentials/http';
 
-// 1. Kuralları tanımla
+// 1. Define the rules
 const isAdult = RuleEngine.fromPredicate<RegisterInput>(
   input => input.age >= 18,
-  Err.validation('Age.Underage', '18 yaşından büyük olmalısınız')
+  Err.validation('Age.Underage', 'You must be 18 or older')
 );
 
 const hasStrongPassword = RuleEngine.fromPredicate<RegisterInput>(
   input => input.password.length >= 8,
-  Err.validation('Password.Weak', 'Şifre en az 8 karakter olmalı')
+  Err.validation('Password.Weak', 'Password must be at least 8 characters')
 );
 
 const registrationRules = RuleEngine.and(isAdult, hasStrongPassword);
 
-// 2. Pipeline'ı kur
+// 2. Set up the pipeline
 async function registerUser(input: RegisterInput) {
   return fromAsync(Promise.resolve(Result.success(input)))
     .andThen(data => RuleEngine.evaluate(registrationRules, data)) // validasyon sonrası void döner
     .andThen(() => fetchResult.post<User>('/api/users', input))   // dış input closure'dan kullanılır
-    .tap(user => logger.info('Kullanıcı oluşturuldu', { id: user.id }))
+    .tap(user => logger.info('User created', { id: user.id }))
     .match(
       user => ({ success: true, user }),
       errors => ({ success: false, errors: errors.map(e => e.description) })
@@ -491,7 +491,7 @@ import { Result } from 'tsentials/result';
 import { Err } from 'tsentials/errors';
 
 const result = Result.success(42);
-// İlk adımınızı attınız. Gerisini tip sistemi gösterecek.
+// You've taken the first step. The type system will show you the rest.
 ```
 
 **GitHub:** [github.com/senrecep/tsentials](https://github.com/senrecep/tsentials)

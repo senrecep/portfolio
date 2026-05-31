@@ -173,9 +173,9 @@ The real power of tsentials isn't in creating a single Result, but in **chaining
 ```typescript
 const profile = await fromAsync(fetchUser(userId)) // fetchUser must return Promise<Result<T>>
   .andThen(user => validateAge(user))
-  .ensure(user => user.isActive, Err.validation('User.Inactive', 'Hesap aktif değil'))
+  .ensure(user => user.isActive, Err.validation('User.Inactive', 'Account is not active'))
   .map(user => user.profile)
-  .tap(profile => logger.info('Profil yüklendi', { userId }))
+  .tap(profile => logger.info('Profile loaded', { userId }))
   .match(
     profile => renderProfile(profile),
     errors => renderErrors(errors)
@@ -201,7 +201,7 @@ const result = Result.then(
   Result.ensure(
     Result.success(user),
     u => u.age >= 18,
-    Err.validation('Age.Underage', '18 yaşından büyük olmalı')
+    Err.validation('Age.Underage', 'Must be 18 or older')
   ),
   u => saveUser(u)
 );
@@ -212,7 +212,7 @@ const result = Result.then(
 ```typescript
 const result = chain(Result.success(user))
   .bind(u => validateUser(u))
-  .ensure(u => u.age >= 18, Err.validation('Age.Underage', '18 yaşından büyük olmalı'))
+  .ensure(u => u.age >= 18, Err.validation('Age.Underage', 'Must be 18 or older'))
   .map(u => u.profile)
   .unwrap(); // Result<Profile> — exits the chain, not the raw value
 ```
@@ -235,7 +235,7 @@ Your existing code has functions that throw exceptions. This is unavoidable. `JS
 ```typescript
 const parsed = Result.try(
   () => JSON.parse(rawInput),
-  e => Err.validation('Json.Invalid', 'Geçersiz JSON formatı')
+  e => Err.validation('Json.Invalid', 'Invalid JSON format')
 );
 ```
 
@@ -248,12 +248,12 @@ Business rules are usually written as if/else chains. As they grow, they become 
 ```typescript
 const isAdult = RuleEngine.fromPredicate<User>(
   u => u.age >= 18,
-  Err.validation('Age.Underage', '18 yaşından büyük olmalı')
+  Err.validation('Age.Underage', 'Must be 18 or older')
 );
 
 const hasValidEmail = RuleEngine.fromPredicate<User>(
   u => isEmail(u.email),
-  u => Err.validation('Email.Invalid', `${u.email} geçerli değil`)
+  u => Err.validation('Email.Invalid', `${u.email} is not valid`)
 );
 
 const registrationRules = RuleEngine.and(isAdult, hasValidEmail, hasAcceptedTerms);
@@ -280,14 +280,14 @@ const userName = pipe(
   Maybe.from(user),                              // null/undefined → None
   m => Maybe.map(m, u => u.profile),
   m => Maybe.bind(m, p => Maybe.from(p.displayName)),
-  m => Maybe.getOrDefault(m, 'Anonim')
+  m => Maybe.getOrDefault(m, 'Anonymous')
 );
 ```
 
 There are bridge functions between `Result` and `Maybe`. Is a `Maybe`'s `None` an error, or just absence? You make that decision:
 
 ```typescript
-maybeToResult(Maybe.from(user), Err.notFound('User.Missing', 'Kullanıcı bulunamadı'));
+maybeToResult(Maybe.from(user), Err.notFound('User.Missing', 'User not found'));
 ```
 
 ### These<E, A> — Partial success
@@ -435,12 +435,12 @@ import { fetchResult } from 'tsentials/http';
 // 1. Define the rules
 const isAdult = RuleEngine.fromPredicate<RegisterInput>(
   input => input.age >= 18,
-  Err.validation('Age.Underage', '18 yaşından büyük olmalısınız')
+  Err.validation('Age.Underage', 'You must be 18 or older')
 );
 
 const hasStrongPassword = RuleEngine.fromPredicate<RegisterInput>(
   input => input.password.length >= 8,
-  Err.validation('Password.Weak', 'Şifre en az 8 karakter olmalı')
+  Err.validation('Password.Weak', 'Password must be at least 8 characters')
 );
 
 const registrationRules = RuleEngine.and(isAdult, hasStrongPassword);
@@ -450,7 +450,7 @@ async function registerUser(input: RegisterInput) {
   return fromAsync(Promise.resolve(Result.success(input)))
     .andThen(data => RuleEngine.evaluate(registrationRules, data)) // returns void after validation
     .andThen(() => fetchResult.post<User>('/api/users', input))   // uses outer input via closure
-    .tap(user => logger.info('Kullanıcı oluşturuldu', { id: user.id }))
+    .tap(user => logger.info('User created', { id: user.id }))
     .match(
       user => ({ success: true, user }),
       errors => ({ success: false, errors: errors.map(e => e.description) })
