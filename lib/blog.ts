@@ -77,7 +77,7 @@ function readBlogFile(slug: string, lang: string): Result<BlogPost> {
         slug,
         lang,
         keywords: (data.keywords as string[]) ?? [],
-        author: (data.author as string) ?? "Recep Şen",
+        author: (data.author as string) ?? "Your Name",
         modifiedDate: data.modifiedDate as string | undefined,
         category: (data.category as string) ?? "Technology",
         faq: (data.faq as { q: string; a: string }[]) ?? [],

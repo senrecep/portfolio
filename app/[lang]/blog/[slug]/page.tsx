@@ -8,9 +8,10 @@ import {
   getAllBlogSlugs,
   getAvailableLanguagesForSlug,
   getBlogPost,
+  getBlogPostResult,
 } from "@/lib/blog";
 import { formatDate, languageCodes, languages } from "@/lib/i18n/config";
-import { getProfile } from "@/lib/i18n/server-content-loader";
+import { getProfileResult } from "@/lib/i18n/server-content-loader";
 import { translations } from "@/lib/i18n/translations";
 import { BlogContent } from "./BlogContent";
 
@@ -98,13 +99,19 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { lang, slug } = await params;
-  const post = getBlogPost(slug, lang);
+  const postResult = getBlogPostResult(slug, lang);
 
-  if (!post) {
+  if (!postResult.ok) {
     notFound();
   }
 
-  const profile = await getProfile(lang);
+  const post = postResult.value;
+
+  const profileResult = await getProfileResult(lang);
+  if (!profileResult.ok) {
+    notFound();
+  }
+  const profile = profileResult.value;
   const t = translations[lang];
 
   const availableLangs = getAvailableLanguagesForSlug(slug);
