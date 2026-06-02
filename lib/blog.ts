@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { Err } from "tsentials/errors";
+import { Result } from "tsentials/result";
 
 export interface BlogPost {
   slug: string;
@@ -59,19 +61,12 @@ export function getAllBlogSlugs(_lang?: string): string[] {
   return enSlugs;
 }
 
-// Read a blog post for a given language, falling back to English
-export function getBlogPost(slug: string, lang?: string): BlogPost | null {
-  const effectiveLang = lang || DEFAULT_LANG;
-
-  // Try language-specific file first, then fall back to English
-  const candidates =
-    effectiveLang === DEFAULT_LANG
-      ? [DEFAULT_LANG]
-      : [effectiveLang, DEFAULT_LANG];
-
-  for (const l of candidates) {
-    try {
-      const filePath = path.join(getBlogDirForLang(l), `${slug}.md`);
+// Read a single blog markdown file as a Result — a missing/unreadable file
+// becomes a structured AppError instead of a swallowed exception.
+function readBlogFile(slug: string, lang: string): Result<BlogPost> {
+  return Result.try(
+    (): BlogPost => {
+      const filePath = path.join(getBlogDirForLang(lang), `${slug}.md`);
       const rawContent = fs.readFileSync(filePath, "utf-8");
       const { data, content } = matter(rawContent);
       const wordCount = content.split(/\s+/).length;
@@ -80,7 +75,7 @@ export function getBlogPost(slug: string, lang?: string): BlogPost | null {
         ...(data as Omit<BlogPostMeta, "lang" | "slug">),
         content,
         slug,
-        lang: l,
+        lang,
         keywords: (data.keywords as string[]) ?? [],
         author: (data.author as string) ?? "Recep Şen",
         modifiedDate: data.modifiedDate as string | undefined,
@@ -89,12 +84,38 @@ export function getBlogPost(slug: string, lang?: string): BlogPost | null {
         wordCount,
         readingTime,
       };
-    } catch {
-      // Try next candidate
-    }
+    },
+    () =>
+      Err.notFound("Blog.NotFound", `Post '${slug}' not found in '${lang}'`),
+  );
+}
+
+// Read a blog post for a given language, falling back to English.
+// The lang -> en fallback uses Result.compensate so the English file is only
+// read when the requested language fails — matching the original lazy
+// short-circuit (no extra read on the happy path).
+export function getBlogPostResult(
+  slug: string,
+  lang?: string,
+): Result<BlogPost> {
+  const effectiveLang = lang || DEFAULT_LANG;
+  if (effectiveLang === DEFAULT_LANG) {
+    return readBlogFile(slug, DEFAULT_LANG);
   }
 
-  return null;
+  return Result.compensate(readBlogFile(slug, effectiveLang), () =>
+    readBlogFile(slug, DEFAULT_LANG),
+  );
+}
+
+// Backward-compatible wrapper — keeps the BlogPost | null contract for existing
+// consumers while delegating to the Result-based pipeline underneath.
+export function getBlogPost(slug: string, lang?: string): BlogPost | null {
+  return Result.match(
+    getBlogPostResult(slug, lang),
+    (post) => post,
+    () => null,
+  );
 }
 
 // Resolve the canonical URL for a blog post, using the actual language the file exists in

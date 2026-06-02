@@ -46,3 +46,6 @@ public/workbox-*.js.map
 .omc
 
 firebase-debug.log
+
+# planning (local, not tracked)
+plans/
