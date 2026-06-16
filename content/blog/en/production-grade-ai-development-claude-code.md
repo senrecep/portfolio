@@ -68,13 +68,19 @@ Claude will automatically configure everything based on your project. Come back 
 **My first approach was a massive 160+ line CLAUDE.md file. The result? Claude constantly missed important information.
 
 ```text
-Why this is wrong:├── Unnecessary token consumption every session├── Long file = scattered attention└── Critical rules get lost in the noise
+Why this is wrong:
+├── Unnecessary token consumption every session
+├── Long file = scattered attention
+└── Critical rules get lost in the noise
 ```
 
 **Mistake #2: Using It Like a Linter**
 
 ```text
-# WRONG APPROACH- Use semicolons at end of lines- Use 2 spaces instead of tabs- Variable names should be camelCase
+# WRONG APPROACH
+- Use semicolons at end of lines
+- Use 2 spaces instead of tabs
+- Variable names should be camelCase
 ```
 
 ESLint,Biome and Prettier already handle this. Using Claude as a linter just fills up context unnecessarily.
