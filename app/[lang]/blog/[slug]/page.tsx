@@ -13,6 +13,9 @@ import {
 import { formatDate, languageCodes, languages } from "@/lib/i18n/config";
 import { getProfileResult } from "@/lib/i18n/server-content-loader";
 import { translations } from "@/lib/i18n/translations";
+import { BlogCopyLLM } from "@/components/blog/BlogCopyLLM";
+import { BlogTableOfContents } from "@/components/blog/BlogTableOfContents";
+import { extractTocItems } from "@/lib/toc";
 import { BlogContent } from "./BlogContent";
 
 interface PageProps {
@@ -119,6 +122,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const canonicalLang = post.lang === "neutral" ? lang : post.lang;
   const canonicalUrl = `${siteUrl}/${canonicalLang}/blog/${slug}`;
+
+  const tocItems = extractTocItems(post.content);
 
   const techCategories = [
     "Tutorial",
@@ -306,15 +311,24 @@ export default async function BlogPostPage({ params }: PageProps) {
         )}
 
         <header className="mb-8">
-          <time dateTime={post.date} className="text-sm text-muted-foreground">
-            {formatDate(post.date, lang)}
-          </time>
-          {post.readingTime && (
-            <span className="text-sm text-muted-foreground">
-              {" "}
-              · {post.readingTime} min read
-            </span>
-          )}
+          <div className="flex items-center gap-3 flex-wrap">
+            <time dateTime={post.date} className="text-sm text-muted-foreground">
+              {formatDate(post.date, lang)}
+            </time>
+            {post.readingTime && (
+              <span className="text-sm text-muted-foreground">
+                · {post.readingTime} {t.sections.blog.minRead}
+              </span>
+            )}
+            <BlogCopyLLM
+              title={post.title}
+              author={post.author || "Recep Şen"}
+              publishDate={post.date}
+              slug={slug}
+              lang={lang}
+              content={post.content}
+            />
+          </div>
           <h1 className="mt-2 text-3xl font-bold leading-tight">
             {post.title}
           </h1>
@@ -333,7 +347,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           )}
         </header>
 
-        <BlogContent content={post.content} />
+        <BlogTableOfContents items={tocItems} title={t.sections.blog.tableOfContents} />
+        <BlogContent content={post.content} lang={lang} />
       </main>
       <Footer
         profile={profile}

@@ -18,8 +18,6 @@ faq:
     a: "The Plan → Execute → Verify loop is a structured workflow where you first have the AI plan the approach (in read-only plan mode), then execute the implementation, then verify results with tests and linting before accepting the work. This prevents runaway AI changes, makes errors catchable early, and produces more predictable, reviewable outputs."
 ---
 
-**Bu makaleyi Turkce okuyun:** [Kod Yazmayi Birakin, Sistemi Yonetin: AI Destekli Gelistirmenin Gercek Potansiyeli](https://medium.com/%40senrecep/kod-yazmay%C4%B1-b%C4%B1rak%C4%B1n-sistemi-y%C3%B6netin-ai-destekli-geli%C5%9Ftirmenin-ger%C3%A7ek-potansiyeli-64cab2c7305c)
-
 ## Introduction: I Was Already Using AI Tools
 
 I'm not going to start this article with "what is Claude Code and how do you install it." Because most people reading this are already using some AI tool. Cursor, Copilot, Windsurf, maybe ChatGPT; we've tried them all, we've seen their strengths and weaknesses.

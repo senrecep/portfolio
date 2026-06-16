@@ -18,8 +18,6 @@ faq:
     a: "Plan → Execute → Verify döngüsü, önce AI'ın yaklaşımı planlamasını (salt okunur Plan Mode'da), ardından implementasyonu gerçekleştirmesini, sonra da işi kabul etmeden önce testler ve linting ile sonuçları doğrulamasını sağlayan yapılandırılmış bir iş akışıdır. Bu, kontrolsüz AI değişikliklerini önler, hataları erken yakalanabilir hale getirir ve daha öngörülebilir, incelenebilir çıktılar üretir."
 ---
 
-**Read this article in English:** [Stop Writing Code, Start Managing Systems: The Real Potential of AI-Powered Development](https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de)
-
 ## Giriş: AI Araçlarını Zaten Kullanıyordum
 
 Bu makaleye "Claude Code nedir ve nasıl kurulur" diye başlamayacağım. Çünkü bunu okuyan insanların çoğu zaten bir AI aracı kullanıyor. Cursor, Copilot, Windsurf, belki ChatGPT; hepsini denedik, güçlü ve zayıf yönlerini gördük.
