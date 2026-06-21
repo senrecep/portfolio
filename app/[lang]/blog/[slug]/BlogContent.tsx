@@ -9,7 +9,6 @@ import {
   useState,
 } from "react";
 import ReactMarkdown from "react-markdown";
-import { translations } from "@/lib/i18n/translations";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
 import csharp from "react-syntax-highlighter/dist/esm/languages/prism/csharp";
@@ -26,6 +25,7 @@ import typescript from "react-syntax-highlighter/dist/esm/languages/prism/typesc
 import yaml from "react-syntax-highlighter/dist/esm/languages/prism/yaml";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
+import { translations } from "@/lib/i18n/translations";
 
 SyntaxHighlighter.registerLanguage("bash", bash);
 SyntaxHighlighter.registerLanguage("sh", bash);
@@ -53,7 +53,9 @@ SyntaxHighlighter.registerLanguage("yml", yaml);
 const IsBlockCodeContext = createContext(false);
 
 type BlogT = typeof translations.en.sections.blog;
-const BlogTranslationsContext = createContext<BlogT>(translations.en.sections.blog);
+const BlogTranslationsContext = createContext<BlogT>(
+  translations.en.sections.blog,
+);
 
 function slugify(text: string): string {
   return text
@@ -370,145 +372,152 @@ interface BlogContentProps {
 }
 
 export function BlogContent({ content, lang }: BlogContentProps) {
-  const blogT = translations[lang]?.sections.blog ?? translations.en.sections.blog;
+  const blogT =
+    translations[lang]?.sections.blog ?? translations.en.sections.blog;
   return (
     <BlogTranslationsContext.Provider value={blogT}>
-    <article className="prose prose-neutral dark:prose-invert max-w-none min-w-0 overflow-x-hidden">
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={{
-          h1: ({ children }) => (
-            <HeadingWithAnchor level={1}>{children}</HeadingWithAnchor>
-          ),
-          h2: ({ children }) => (
-            <HeadingWithAnchor level={2}>{children}</HeadingWithAnchor>
-          ),
-          h3: ({ children }) => (
-            <HeadingWithAnchor level={3}>{children}</HeadingWithAnchor>
-          ),
-          h4: ({ children }) => (
-            <HeadingWithAnchor level={4}>{children}</HeadingWithAnchor>
-          ),
-          pre: ({ children }) => {
-            let codeContent = "";
-            let codeClassName = "";
-            Children.forEach(children, (child) => {
-              if (isValidElement(child)) {
-                const props = child.props as {
-                  children?: React.ReactNode;
-                  className?: string;
-                };
-                codeContent =
-                  typeof props.children === "string"
-                    ? props.children
-                    : codeContent;
-                codeClassName = props.className || "";
+      <article className="prose prose-neutral dark:prose-invert max-w-none min-w-0 overflow-x-hidden">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            h1: ({ children }) => (
+              <HeadingWithAnchor level={1}>{children}</HeadingWithAnchor>
+            ),
+            h2: ({ children }) => (
+              <HeadingWithAnchor level={2}>{children}</HeadingWithAnchor>
+            ),
+            h3: ({ children }) => (
+              <HeadingWithAnchor level={3}>{children}</HeadingWithAnchor>
+            ),
+            h4: ({ children }) => (
+              <HeadingWithAnchor level={4}>{children}</HeadingWithAnchor>
+            ),
+            pre: ({ children }) => {
+              let codeContent = "";
+              let codeClassName = "";
+              Children.forEach(children, (child) => {
+                if (isValidElement(child)) {
+                  const props = child.props as {
+                    children?: React.ReactNode;
+                    className?: string;
+                  };
+                  codeContent =
+                    typeof props.children === "string"
+                      ? props.children
+                      : codeContent;
+                  codeClassName = props.className || "";
+                }
+              });
+
+              const isTable = !codeClassName && isMarkdownTable(codeContent);
+
+              if (isTable) {
+                return (
+                  <IsBlockCodeContext.Provider value={true}>
+                    {children}
+                  </IsBlockCodeContext.Provider>
+                );
               }
-            });
 
-            const isTable = !codeClassName && isMarkdownTable(codeContent);
+              const langMatch = /language-(\w+)/.exec(codeClassName);
+              const language = langMatch ? langMatch[1] : null;
 
-            if (isTable) {
               return (
                 <IsBlockCodeContext.Provider value={true}>
-                  {children}
+                  <section
+                    className="not-prose my-6 group relative rounded-xl border border-zinc-800 dark:border-zinc-700 bg-zinc-950 dark:bg-zinc-900 overflow-x-auto"
+                    aria-label={
+                      language ? `${language} code block` : "code block"
+                    }
+                  >
+                    <CopyButton content={codeContent} />
+                    <pre className="m-0 border-0 bg-transparent">
+                      {children}
+                    </pre>
+                  </section>
                 </IsBlockCodeContext.Provider>
               );
-            }
-
-            const langMatch = /language-(\w+)/.exec(codeClassName);
-            const language = langMatch ? langMatch[1] : null;
-
-            return (
-              <IsBlockCodeContext.Provider value={true}>
-                <section
-                  className="not-prose my-6 group relative rounded-xl border border-zinc-800 dark:border-zinc-700 bg-zinc-950 dark:bg-zinc-900 overflow-x-auto"
-                  aria-label={language ? `${language} code block` : "code block"}
+            },
+            code: Code,
+            a: ({ href, children, ...props }) => {
+              const isExternal =
+                href?.startsWith("http") || href?.startsWith("//");
+              return (
+                <a
+                  href={href}
+                  {...(isExternal && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
+                  className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+                  {...props}
                 >
-                  <CopyButton content={codeContent} />
-                  <pre className="m-0 border-0 bg-transparent">{children}</pre>
-                </section>
-              </IsBlockCodeContext.Provider>
-            );
-          },
-          code: Code,
-          a: ({ href, children, ...props }) => {
-            const isExternal =
-              href?.startsWith("http") || href?.startsWith("//");
-            return (
-              <a
-                href={href}
-                {...(isExternal && {
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                })}
-                className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
-                {...props}
-              >
+                  {children}
+                </a>
+              );
+            },
+            img: ({ src, alt }) => {
+              if (!src || typeof src !== "string") return null;
+              return <BlogImage src={src} alt={alt ?? ""} />;
+            },
+            blockquote: ({ children }) => (
+              <blockquote className="border-l-4 border-primary/50 pl-4 my-6 italic text-muted-foreground">
                 {children}
-              </a>
-            );
-          },
-          img: ({ src, alt }) => {
-            if (!src || typeof src !== "string") return null;
-            return <BlogImage src={src} alt={alt ?? ""} />;
-          },
-          blockquote: ({ children }) => (
-            <blockquote className="border-l-4 border-primary/50 pl-4 my-6 italic text-muted-foreground">
-              {children}
-            </blockquote>
-          ),
-          ul: ({ children }) => (
-            <ul className="list-disc list-outside ml-6 my-4 space-y-1">
-              {children}
-            </ul>
-          ),
-          ol: ({ children }) => (
-            <ol className="list-decimal list-outside ml-6 my-4 space-y-1">
-              {children}
-            </ol>
-          ),
-          table: ({ children }) => (
-            <div className="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-700">
-              <table className="w-full text-sm text-left border-collapse min-w-[500px]">
+              </blockquote>
+            ),
+            ul: ({ children }) => (
+              <ul className="list-disc list-outside ml-6 my-4 space-y-1">
                 {children}
-              </table>
-            </div>
-          ),
-          thead: ({ children }) => <thead>{children}</thead>,
-          tbody: ({ children }) => <tbody>{children}</tbody>,
-          tr: ({ children, ...props }) => {
-            const isHeader =
-              (props as { node?: { parentNode?: { tagName?: string } } }).node
-                ?.parentNode?.tagName === "thead";
-            return (
-              <tr
-                className={
-                  isHeader
-                    ? "bg-zinc-100 dark:bg-zinc-800"
-                    : "even:bg-white dark:even:bg-zinc-900 odd:bg-zinc-50 dark:odd:bg-zinc-800/50"
-                }
-              >
+              </ul>
+            ),
+            ol: ({ children }) => (
+              <ol className="list-decimal list-outside ml-6 my-4 space-y-1">
                 {children}
-              </tr>
-            );
-          },
-          th: ({ children }) => (
-            <th className="px-4 py-3 font-semibold text-zinc-700 dark:text-zinc-200 whitespace-nowrap border-b border-zinc-200 dark:border-zinc-700">
-              {children}
-            </th>
-          ),
-          td: ({ children }) => (
-            <td className="px-4 py-2.5 text-zinc-600 dark:text-zinc-300 border-b border-zinc-100 dark:border-zinc-800 font-mono">
-              {children}
-            </td>
-          ),
-          li: ({ children }) => <li className="leading-relaxed">{children}</li>,
-        }}
-      >
-        {content}
-      </ReactMarkdown>
-    </article>
+              </ol>
+            ),
+            table: ({ children }) => (
+              <div className="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-700">
+                <table className="w-full text-sm text-left border-collapse min-w-[500px]">
+                  {children}
+                </table>
+              </div>
+            ),
+            thead: ({ children }) => <thead>{children}</thead>,
+            tbody: ({ children }) => <tbody>{children}</tbody>,
+            tr: ({ children, ...props }) => {
+              const isHeader =
+                (props as { node?: { parentNode?: { tagName?: string } } }).node
+                  ?.parentNode?.tagName === "thead";
+              return (
+                <tr
+                  className={
+                    isHeader
+                      ? "bg-zinc-100 dark:bg-zinc-800"
+                      : "even:bg-white dark:even:bg-zinc-900 odd:bg-zinc-50 dark:odd:bg-zinc-800/50"
+                  }
+                >
+                  {children}
+                </tr>
+              );
+            },
+            th: ({ children }) => (
+              <th className="px-4 py-3 font-semibold text-zinc-700 dark:text-zinc-200 whitespace-nowrap border-b border-zinc-200 dark:border-zinc-700">
+                {children}
+              </th>
+            ),
+            td: ({ children }) => (
+              <td className="px-4 py-2.5 text-zinc-600 dark:text-zinc-300 border-b border-zinc-100 dark:border-zinc-800 font-mono">
+                {children}
+              </td>
+            ),
+            li: ({ children }) => (
+              <li className="leading-relaxed">{children}</li>
+            ),
+          }}
+        >
+          {content}
+        </ReactMarkdown>
+      </article>
     </BlogTranslationsContext.Provider>
   );
 }
