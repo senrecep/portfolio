@@ -1,4 +1,4 @@
-import { getAllBlogPosts } from "@/lib/blog";
+import { getAllBlogSlugs } from "@/lib/blog";
 import type { Profile } from "@/lib/i18n/content-loader";
 
 interface JsonLdProps {
@@ -171,7 +171,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
       }
     : null;
 
-  const localBlogSlugs = new Set(getAllBlogPosts("en").map((p) => p.slug));
+  const localBlogSlugs = new Set(getAllBlogSlugs());
 
   const blogListSchema =
     blogPosts && blogPosts.length > 0

@@ -1,5 +1,9 @@
 import type { MetadataRoute } from "next";
-import { getAllBlogSlugs, getBlogPost } from "@/lib/blog";
+import {
+  getAllBlogSlugs,
+  getAvailableLanguagesForSlug,
+  getBlogPost,
+} from "@/lib/blog";
 import { defaultLanguage, languageCodes } from "@/lib/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -73,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: blogAlternates },
   }));
 
-  // Individual blog post routes for all languages
+  // Individual blog post routes — only for languages with actual content
   const blogSlugs = getAllBlogSlugs();
   const blogPostRoutes = blogSlugs.flatMap((slug) => {
     const post = getBlogPost(slug, defaultLanguage);
@@ -81,13 +85,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ? new Date(post.modifiedDate || post.date)
       : lastModified;
 
+    const availableLangs = getAvailableLanguagesForSlug(slug);
+
     const postAlternates: Record<string, string> = {};
-    for (const lang of languageCodes) {
+    for (const lang of availableLangs) {
       postAlternates[lang] = `${siteUrl}/${lang}/blog/${slug}`;
     }
     postAlternates["x-default"] = `${siteUrl}/${defaultLanguage}/blog/${slug}`;
 
-    return languageCodes.map((lang) => ({
+    return availableLangs.map((lang) => ({
       url: `${siteUrl}/${lang}/blog/${slug}`,
       lastModified: postLastModified,
       changeFrequency: "monthly" as const,
