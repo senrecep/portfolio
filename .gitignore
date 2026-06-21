@@ -49,3 +49,6 @@ firebase-debug.log
 
 # planning (local, not tracked)
 plans/
+
+# serena MCP tool cache (local tooling state)
+.serena/

@@ -13,6 +13,9 @@ import {
 import { formatDate, languageCodes, languages } from "@/lib/i18n/config";
 import { getProfileResult } from "@/lib/i18n/server-content-loader";
 import { translations } from "@/lib/i18n/translations";
+import { BlogCopyLLM } from "@/components/blog/BlogCopyLLM";
+import { BlogTableOfContents } from "@/components/blog/BlogTableOfContents";
+import { extractTocItems } from "@/lib/toc";
 import { BlogContent } from "./BlogContent";
 
 interface PageProps {
@@ -120,6 +123,8 @@ export default async function BlogPostPage({ params }: PageProps) {
   const canonicalLang = post.lang === "neutral" ? lang : post.lang;
   const canonicalUrl = `${siteUrl}/${canonicalLang}/blog/${slug}`;
 
+  const tocItems = extractTocItems(post.content);
+
   const techCategories = [
     "Tutorial",
     "Guide",
@@ -132,6 +137,17 @@ export default async function BlogPostPage({ params }: PageProps) {
     post.category && techCategories.includes(post.category)
       ? "TechArticle"
       : "Article";
+
+  // Build translation links between language versions
+  const otherVersions = availableLangs.filter((l) => l !== lang);
+  const translationRefs = otherVersions.map((l) => ({
+    "@type": articleType,
+    "@id": `${siteUrl}/${l}/blog/${slug}#article`,
+    url: `${siteUrl}/${l}/blog/${slug}`,
+    inLanguage: l,
+  }));
+
+  const isOriginal = lang === "en";
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -184,6 +200,18 @@ export default async function BlogPostPage({ params }: PageProps) {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", "article > p:first-of-type"],
     },
+    ...(isOriginal &&
+      translationRefs.length > 0 && {
+        workTranslation: translationRefs,
+      }),
+    ...(!isOriginal && {
+      translationOfWork: {
+        "@type": articleType,
+        "@id": `${siteUrl}/en/blog/${slug}#article`,
+        url: `${siteUrl}/en/blog/${slug}`,
+        inLanguage: "en",
+      },
+    }),
   };
 
   const breadcrumbSchema = {
@@ -247,12 +275,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         </Link>
 
         {post.imageUrl && (
-          <div className="relative w-full h-64 rounded-xl overflow-hidden mb-8">
+          <div className="rounded-xl overflow-hidden mb-8">
             <Image
               src={post.imageUrl}
               alt={post.title}
               fill
-              className="object-cover"
+              className="!relative !w-full !h-auto"
               sizes="(max-width: 768px) 100vw, 768px"
               priority
             />
@@ -283,15 +311,24 @@ export default async function BlogPostPage({ params }: PageProps) {
         )}
 
         <header className="mb-8">
-          <time dateTime={post.date} className="text-sm text-muted-foreground">
-            {formatDate(post.date, lang)}
-          </time>
-          {post.readingTime && (
-            <span className="text-sm text-muted-foreground">
-              {" "}
-              · {post.readingTime} min read
-            </span>
-          )}
+          <div className="flex items-center gap-3 flex-wrap">
+            <time dateTime={post.date} className="text-sm text-muted-foreground">
+              {formatDate(post.date, lang)}
+            </time>
+            {post.readingTime && (
+              <span className="text-sm text-muted-foreground">
+                · {post.readingTime} {t.sections.blog.minRead}
+              </span>
+            )}
+            <BlogCopyLLM
+              title={post.title}
+              author={post.author || "Your Name"}
+              publishDate={post.date}
+              slug={slug}
+              lang={lang}
+              content={post.content}
+            />
+          </div>
           <h1 className="mt-2 text-3xl font-bold leading-tight">
             {post.title}
           </h1>
@@ -310,7 +347,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           )}
         </header>
 
-        <BlogContent content={post.content} />
+        <BlogTableOfContents items={tocItems} title={t.sections.blog.tableOfContents} />
+        <BlogContent content={post.content} lang={lang} />
       </main>
       <Footer
         profile={profile}

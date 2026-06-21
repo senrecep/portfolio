@@ -4,11 +4,12 @@ import {
   Children,
   createContext,
   isValidElement,
+  use,
   useCallback,
-  useContext,
   useState,
 } from "react";
 import ReactMarkdown from "react-markdown";
+import { translations } from "@/lib/i18n/translations";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
 import csharp from "react-syntax-highlighter/dist/esm/languages/prism/csharp";
@@ -50,6 +51,9 @@ SyntaxHighlighter.registerLanguage("yml", yaml);
 
 // Context to reliably detect block code (code inside pre) vs inline code
 const IsBlockCodeContext = createContext(false);
+
+type BlogT = typeof translations.en.sections.blog;
+const BlogTranslationsContext = createContext<BlogT>(translations.en.sections.blog);
 
 function slugify(text: string): string {
   return text
@@ -94,6 +98,7 @@ function HeadingWithAnchor({ level, children }: HeadingProps) {
   const text = extractText(children);
   const id = slugify(text);
   const [copied, setCopied] = useState(false);
+  const blogT = use(BlogTranslationsContext);
 
   const handleCopy = useCallback(() => {
     const url = `${window.location.origin}${window.location.pathname}#${id}`;
@@ -110,7 +115,7 @@ function HeadingWithAnchor({ level, children }: HeadingProps) {
         <button
           type="button"
           onClick={handleCopy}
-          aria-label="Copy link to section"
+          aria-label={blogT.copyLink}
           className="inline-flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground hover:text-primary"
         >
           <svg
@@ -131,7 +136,7 @@ function HeadingWithAnchor({ level, children }: HeadingProps) {
         </button>
         {copied && (
           <span className="absolute left-6 top-1/2 -translate-y-1/2 bg-foreground text-background text-xs font-medium px-2 py-1 rounded-md whitespace-nowrap pointer-events-none z-10">
-            Copied!
+            {blogT.copied}
           </span>
         )}
       </span>
@@ -168,12 +173,11 @@ function parseMarkdownTable(content: string): ParsedTable {
 
   for (const line of lines) {
     if (!line.startsWith("|")) continue;
-    // Skip separator rows (e.g., | --- | :---: | ---: |)
     if (/^\|[\s\-:]+\|/.test(line)) continue;
 
     const cells = line
       .split("|")
-      .slice(1, -1) // remove leading and trailing empty strings from split
+      .slice(1, -1)
       .map((cell) => cell.trim());
 
     if (headers.length === 0) {
@@ -232,6 +236,7 @@ function MarkdownTable({ content }: { content: string }) {
 
 function CopyButton({ content }: { content: string }) {
   const [copied, setCopied] = useState(false);
+  const blogT = use(BlogTranslationsContext);
 
   const handleCopy = useCallback(() => {
     navigator.clipboard?.writeText(content).catch(() => {});
@@ -243,7 +248,7 @@ function CopyButton({ content }: { content: string }) {
     <button
       type="button"
       onClick={handleCopy}
-      aria-label="Copy code"
+      aria-label={blogT.copyCode}
       className="absolute bottom-2 right-2 flex items-center justify-center size-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity rounded-md text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 z-10"
     >
       {copied ? (
@@ -297,7 +302,7 @@ function BlockCode({ children, className }: BlockCodeProps) {
 
   const language = className?.replace("language-", "") ?? "";
 
-  if (language) {
+  if (language && language !== "text") {
     return (
       <SyntaxHighlighter
         language={language}
@@ -331,7 +336,7 @@ interface CodeProps {
 }
 
 function Code({ children, className }: CodeProps) {
-  const isBlock = useContext(IsBlockCodeContext);
+  const isBlock = use(IsBlockCodeContext);
   if (!isBlock) {
     return (
       <code className="bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 px-1.5 py-0.5 rounded text-[0.875em] font-mono">
@@ -342,13 +347,33 @@ function Code({ children, className }: CodeProps) {
   return <BlockCode className={className}>{children}</BlockCode>;
 }
 
-interface BlogContentProps {
-  content: string;
+function BlogImage({ src, alt }: { src: string; alt: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return null;
+  return (
+    <span className="block my-6">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="w-full rounded-2xl border border-zinc-200 dark:border-zinc-700"
+        onError={() => setFailed(true)}
+      />
+    </span>
+  );
 }
 
-export function BlogContent({ content }: BlogContentProps) {
+interface BlogContentProps {
+  content: string;
+  lang: string;
+}
+
+export function BlogContent({ content, lang }: BlogContentProps) {
+  const blogT = translations[lang]?.sections.blog ?? translations.en.sections.blog;
   return (
-    <div className="prose prose-neutral dark:prose-invert max-w-none min-w-0 overflow-x-hidden">
+    <BlogTranslationsContext.Provider value={blogT}>
+    <article className="prose prose-neutral dark:prose-invert max-w-none min-w-0 overflow-x-hidden">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
@@ -365,7 +390,6 @@ export function BlogContent({ content }: BlogContentProps) {
             <HeadingWithAnchor level={4}>{children}</HeadingWithAnchor>
           ),
           pre: ({ children }) => {
-            // Inspect children to detect table content before rendering
             let codeContent = "";
             let codeClassName = "";
             Children.forEach(children, (child) => {
@@ -385,7 +409,6 @@ export function BlogContent({ content }: BlogContentProps) {
             const isTable = !codeClassName && isMarkdownTable(codeContent);
 
             if (isTable) {
-              // Table: no dark wrapper, MarkdownTable provides its own styling
               return (
                 <IsBlockCodeContext.Provider value={true}>
                   {children}
@@ -393,14 +416,18 @@ export function BlogContent({ content }: BlogContentProps) {
               );
             }
 
+            const langMatch = /language-(\w+)/.exec(codeClassName);
+            const language = langMatch ? langMatch[1] : null;
+
             return (
               <IsBlockCodeContext.Provider value={true}>
-                <div className="not-prose my-6 relative group">
-                  <pre className="bg-zinc-950 dark:bg-zinc-900 border border-zinc-800 dark:border-zinc-700 rounded-xl overflow-x-auto">
-                    {children}
-                  </pre>
+                <section
+                  className="not-prose my-6 group relative rounded-xl border border-zinc-800 dark:border-zinc-700 bg-zinc-950 dark:bg-zinc-900 overflow-x-auto"
+                  aria-label={language ? `${language} code block` : "code block"}
+                >
                   <CopyButton content={codeContent} />
-                </div>
+                  <pre className="m-0 border-0 bg-transparent">{children}</pre>
+                </section>
               </IsBlockCodeContext.Provider>
             );
           },
@@ -422,21 +449,9 @@ export function BlogContent({ content }: BlogContentProps) {
               </a>
             );
           },
-          img: ({ src, alt, ...props }) => {
-            if (!src) return null;
-            return (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={src}
-                alt={alt || ""}
-                loading="lazy"
-                className="rounded-lg my-6 w-full h-auto"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
-                {...props}
-              />
-            );
+          img: ({ src, alt }) => {
+            if (!src || typeof src !== "string") return null;
+            return <BlogImage src={src} alt={alt ?? ""} />;
           },
           blockquote: ({ children }) => (
             <blockquote className="border-l-4 border-primary/50 pl-4 my-6 italic text-muted-foreground">
@@ -493,6 +508,7 @@ export function BlogContent({ content }: BlogContentProps) {
       >
         {content}
       </ReactMarkdown>
-    </div>
+    </article>
+    </BlogTranslationsContext.Provider>
   );
 }
