@@ -206,7 +206,7 @@
   "projects": [
     {
       "title": "Easyapp",
-      "description": "15만 명 이상의 사용자에게 서비스를 제공하는 마이크로서비스 기반 플랫폼의 아키텍처와 개발을 주도했습니다. AI 기반 비용 최적화와 자본 효율적인 온디맨드 인프라를 구현했습니다.",
+      "description": "모바일 미니 앱을 만들고 수익화하는 AI 기반 노코드 플랫폼, 링크로 접속, 다운로드 불필요. 사용자가 비즈니스를 설명하면 AI가 1분 이내에 푸시 알림, 로열티 프로그램, 인앱 결제, 예약 등 20개 이상의 내장 서비스를 갖춘 프로덕션 완성 앱을 생성합니다. 16개 카테고리의 자체 앱 스토어 보유. 250,000명 이상이 사용하는 마이크로서비스 인프라의 아키텍처와 개발을 주도했습니다.",
       "projectUrl": "https://easyapp.ai",
       "tags": [
         "AI",
@@ -215,6 +215,36 @@
       ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
+    },
+    {
+      "title": "aciktir.io",
+      "year": "2026",
+      "description": "레스토랑 관리 및 QR 코드 기반 주문을 위한 AI 기반 SaaS 플랫폼. 칸반 보드로 주문, 영수증, 분석을 관리하며 상품, 카테고리, 쿠폰, 옵션 그룹, 교차 판매, 패키지 메뉴를 포함한 카탈로그 관리를 지원합니다. 다중 지점 관리, 팀 관리, 테이블 그룹화, 다양한 주문 유형을 지원합니다. 고객은 QR 웹 메뉴, AI 챗봇 또는 WhatsApp AI 봇으로 주문할 수 있습니다.",
+      "projectUrl": "https://aciktir.io/",
+      "tags": [
+        "SaaS",
+        "AI",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "멀티테넌트"
+      ],
+      "imageUrl": "/images/project-aciktirio.png"
+    },
+    {
+      "title": "QMS - 품질 관리 시스템",
+      "description": "두 가지 핵심 모듈을 갖춘 엔터프라이즈급 품질 관리 시스템: 문서 관리(DMS) - 전체 개정 이력, 2단계 승인 워크플로우, 타겟 배포, 추적된 읽기 확인; 시정 조치 요청(CAR/DFI) - ISO 9001 준수 8단계 워크플로우, 근본 원인 분석, 팀 및 비용 추적이 포함된 시정 조치 관리, 전문 PDF 보고서. Redis Pub/Sub을 통한 실시간 SSE 알림, BullMQ를 통한 자동 알림 및 에스컬레이션 포함 비동기 이메일 전송, 역할 기반 접근 제어, 완전한 감사 추적 기능을 제공합니다. Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM), Redis로 구축되었습니다.",
+      "projectUrl": "https://github.com/senrecep/qms",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "BullMQ",
+        "Docker"
+      ],
+      "imageUrl": "/images/project-qms.svg",
+      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
@@ -228,18 +258,6 @@
       ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
-    },
-    {
-      "title": "Aspire Microservice Starter Template",
-      "description": "Aspire Framework로 마이크로서비스를 생성하기 위한 템플릿.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
     },
     {
       "title": "tsentials",
@@ -256,6 +274,62 @@
       "year": "2025"
     },
     {
+      "title": "Aspire Microservice Starter Template",
+      "description": ".NET Aspire Framework로 구축된 프로덕션 준비 완료 마이크로서비스 스타터 템플릿. 서비스 기본값, 헬스 체크, 분산 추적, 컨테이너 오케스트레이션을 즉시 제공, 관측 가능한 클라우드 네이티브 서비스 구축을 위한 구조화된 기반입니다.",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
+    },
+    {
+      "title": "Pixfete",
+      "year": "2025",
+      "description": "이벤트를 위한 셀프 호스팅 사진 공유 플랫폼. 게스트가 QR 코드를 스캔하여 스마트폰에서 사진과 영상을 업로드하면 관리자 승인 후 공유 갤러리에 표시됩니다. 브라우저 내 동영상 재인코딩, 다중 스토리지 지원(Cloudflare R2, Google Drive, 로컬 디스크), 이벤트 카운트다운, 위치 지도, WhatsApp 대체 업로드를 포함합니다.",
+      "projectUrl": "https://github.com/senrecep/pixfete",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Bun",
+        "SQLite",
+        "셀프 호스팅",
+        "오픈소스"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/pixfete/main/assets/logo.webp"
+    },
+    {
+      "title": "Invitra",
+      "year": "2025",
+      "description": "결혼식 및 이벤트를 위한 실시간 하객 관리 시스템. 이름, 예상/확정 인원, 우선순위 그룹, 교통수단, 담당자별로 하객을 추적합니다. 라이브 대시보드는 WebSocket을 통해 여러 담당자 간에 수용 통계, 그룹 분포, 교통 데이터를 실시간으로 동기화합니다.",
+      "projectUrl": "https://github.com/senrecep/invitra",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Socket.io",
+        "실시간",
+        "오픈소스"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/invitra/main/public/icons/icon-512.png"
+    },
+    {
+      "title": "Career & Salary Comparison Simulator",
+      "description": "SGK 근로자(4/a)와 Bağ-Kur 자영업자(4/b) 간 순소득을 비교하는 터키 최고의 급여 비교 도구. 2026 TES 개혁 시뮬레이션, 청년 기업인 및 서비스 수출 면제, TRY/USD 통화 지원과 함께 총/순 급여, 세금, 보험료, 고용주 비용을 계산합니다.",
+      "projectUrl": "https://salary-sim.senrecep.com/",
+      "tags": [
+        "JavaScript",
+        "금융",
+        "세금",
+        "SGK",
+        "Bağ-Kur"
+      ],
+      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
+      "year": "2025"
+    },
+    {
       "title": "포트폴리오 템플릿",
       "description": "무제한 언어 지원, 다크/라이트 테마, 모든 직업에 맞게 완전히 커스터마이즈 가능한 섹션을 갖춘 빠르고 SEO 최적화된 포트폴리오 템플릿. Next.js 15와 React 19로 구축. MIT 라이선스.",
       "projectUrl": "https://github.com/senrecep/portfolio",
@@ -269,35 +343,6 @@
       ],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
-    },
-    {
-      "title": "Career & Salary Comparison Simulator",
-      "description": "터키에서 가장 포괄적인 급여 비교 시뮬레이터. SGK 직장인(4/a)과 Bağ-Kur 자영업자(4/b) 간의 순수입을 비교합니다. 총급여/순급여, 세금, 보험료, 고용주 비용 계산.",
-      "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "금융",
-        "세금",
-        "SGK",
-        "Bağ-Kur"
-      ],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
-      "year": "2025"
-    },
-    {
-      "title": "QMS - 품질 관리 시스템",
-      "description": "두 가지 핵심 모듈을 갖춘 엔터프라이즈급 품질 관리 시스템: 문서 관리(DMS) - 전체 개정 이력, 2단계 승인 워크플로우, 타겟 배포, 추적된 읽기 확인; 시정 조치 요청(CAR/DFI) - ISO 9001 준수 8단계 워크플로우, 근본 원인 분석, 팀 및 비용 추적이 포함된 시정 조치 관리, 전문 PDF 보고서. Redis Pub/Sub을 통한 실시간 SSE 알림, BullMQ를 통한 자동 알림 및 에스컬레이션 포함 비동기 이메일 전송, 역할 기반 접근 제어, 완전한 감사 추적 기능을 제공합니다. Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM), Redis로 구축되었습니다.",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
     }
   ],
   "blogPosts": [

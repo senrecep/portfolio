@@ -206,7 +206,7 @@
   "projects": [
     {
       "title": "Easyapp",
-      "description": "15万人以上のユーザーにサービスを提供するマイクロサービスベースのプラットフォームのアーキテクチャと開発をリード。AI駆動のコスト最適化と資本効率の高いオンデマンドインフラを実装。",
+      "description": "モバイルミニアプリの作成・収益化のためのAI搭載ノーコードプラットフォーム, リンクでアクセス可能、ダウンロード不要。ユーザーはビジネスを説明するだけで、AIが1分以内にプッシュ通知・ポイントプログラム・アプリ内決済・予約など20以上のサービスを備えた本番対応アプリを生成します。16カテゴリの独自アプリストアを保有。250,000人以上が利用するマイクロサービス基盤のアーキテクチャと開発をリードしました。",
       "projectUrl": "https://easyapp.ai",
       "tags": [
         "AI",
@@ -215,6 +215,36 @@
       ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
+    },
+    {
+      "title": "aciktir.io",
+      "year": "2026",
+      "description": "レストラン管理とQRコードベースの注文のためのAI搭載SaaSプラットフォーム。カンバンボードで注文・レシート・分析を管理し、商品・カテゴリ・クーポン・オプショングループ・クロスセル・パッケージメニューを含むカタログ管理に対応。複数店舗管理、チーム管理、テーブルグループ化、複数注文タイプをサポート。顧客はQR Webメニュー、AIチャットボット、またはWhatsApp AIボットで注文できます。",
+      "projectUrl": "https://aciktir.io/",
+      "tags": [
+        "SaaS",
+        "AI",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "マルチテナント"
+      ],
+      "imageUrl": "/images/project-aciktirio.png"
+    },
+    {
+      "title": "QMS - 品質管理システム",
+      "description": "2つのコアモジュールを持つエンタープライズグレードの品質管理システム：文書管理（DMS） - 完全な改訂履歴、二段階承認ワークフロー、ターゲット配布、追跡された閲覧確認；是正処置要求（CAR/DFI） - ISO 9001準拠の8ステップワークフロー、根本原因分析、チームとコスト追跡付き是正処置管理、プロフェッショナルPDFレポート。Redis Pub/Sub経由のリアルタイムSSE通知、BullMQを通じた自動リマインダーとエスカレーション付き非同期メール配信、ロールベースのアクセス制御、完全な監査証跡を搭載。Next.js 16、Bun、TypeScript、PostgreSQL（Drizzle ORM）、Redisで構築。",
+      "projectUrl": "https://github.com/senrecep/qms",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "BullMQ",
+        "Docker"
+      ],
+      "imageUrl": "/images/project-qms.svg",
+      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
@@ -228,18 +258,6 @@
       ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
-    },
-    {
-      "title": "Aspire Microservice Starter Template",
-      "description": "Aspire Frameworkでマイクロサービスを作成するためのテンプレート。",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
     },
     {
       "title": "tsentials",
@@ -256,6 +274,62 @@
       "year": "2025"
     },
     {
+      "title": "Aspire Microservice Starter Template",
+      "description": ".NET Aspire Frameworkで構築された、本番環境対応のマイクロサービススターターテンプレート。サービスのデフォルト設定、ヘルスチェック、分散トレーシング、コンテナオーケストレーションをすぐに利用可能, 観測可能なクラウドネイティブサービスを構築するための体系的な基盤。",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
+    },
+    {
+      "title": "Pixfete",
+      "year": "2025",
+      "description": "イベント向けのセルフホスト型フォト共有プラットフォーム。ゲストはQRコードをスキャンしてスマートフォンから写真や動画をアップロードし、管理者の承認後に共有ギャラリーに表示されます。ブラウザ内動画再エンコード、マルチストレージ対応（Cloudflare R2、Google Drive、ローカルディスク）、カウントダウン、地図、WhatsAppフォールバックを搭載。",
+      "projectUrl": "https://github.com/senrecep/pixfete",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Bun",
+        "SQLite",
+        "セルフホスト",
+        "オープンソース"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/pixfete/main/assets/logo.webp"
+    },
+    {
+      "title": "Invitra",
+      "year": "2025",
+      "description": "結婚式やイベント向けのリアルタイムゲスト管理システム。ゲストを名前、潜在的・確定人数、優先グループ、交通手段、担当者別に追跡。ライブダッシュボードはWebSocketを通じて複数の担当者間で収容統計、グループ別内訳、交通データをリアルタイム同期します。",
+      "projectUrl": "https://github.com/senrecep/invitra",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Socket.io",
+        "リアルタイム",
+        "オープンソース"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/invitra/main/public/icons/icon-512.png"
+    },
+    {
+      "title": "Career & Salary Comparison Simulator",
+      "description": "SGK被雇用者（4/a）とBağ-Kur自営業者（4/b）の手取り収入を比較するトルコ最も包括的な給与比較ツール。2026年TES改革シミュレーション、若手起業家および輸出サービス免除、TRY/USD通貨対応で総支給額・手取り額・税金・保険料・雇用主コストを計算します。",
+      "projectUrl": "https://salary-sim.senrecep.com/",
+      "tags": [
+        "JavaScript",
+        "ファイナンス",
+        "税金",
+        "SGK",
+        "Bağ-Kur"
+      ],
+      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
+      "year": "2025"
+    },
+    {
       "title": "ポートフォリオテンプレート",
       "description": "無制限の言語サポート、ダーク/ライトテーマ、あらゆる職業に対応できる完全カスタマイズ可能なセクションを備えた、高速でSEO最適化されたポートフォリオテンプレート。Next.js 15とReact 19で構築。MITライセンス。",
       "projectUrl": "https://github.com/senrecep/portfolio",
@@ -269,35 +343,6 @@
       ],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
-    },
-    {
-      "title": "Career & Salary Comparison Simulator",
-      "description": "トルコで最も包括的な給与比較シミュレーター。SGK被雇用者（4/a）とBağ-Kur自営業者（4/b）の手取り収入を比較。総支給/手取り給与、税金、保険料、雇用主コストの計算。",
-      "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "ファイナンス",
-        "税金",
-        "SGK",
-        "Bağ-Kur"
-      ],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
-      "year": "2025"
-    },
-    {
-      "title": "QMS - 品質管理システム",
-      "description": "2つのコアモジュールを持つエンタープライズグレードの品質管理システム：文書管理（DMS） - 完全な改訂履歴、二段階承認ワークフロー、ターゲット配布、追跡された閲覧確認；是正処置要求（CAR/DFI） - ISO 9001準拠の8ステップワークフロー、根本原因分析、チームとコスト追跡付き是正処置管理、プロフェッショナルPDFレポート。Redis Pub/Sub経由のリアルタイムSSE通知、BullMQを通じた自動リマインダーとエスカレーション付き非同期メール配信、ロールベースのアクセス制御、完全な監査証跡を搭載。Next.js 16、Bun、TypeScript、PostgreSQL（Drizzle ORM）、Redisで構築。",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
     }
   ],
   "blogPosts": [

@@ -175,7 +175,7 @@
   "projects": [
     {
       "title": "Easyapp",
-      "description": "250.000+ kullanıcıya hizmet veren mikroservis tabanlı platformun mimarisi ve geliştirilmesini yönettim. Yapay zeka destekli maliyet optimizasyonu ve sermaye etkin, talep üzerine altyapı uyguladım.",
+      "description": "Mobil mini uygulamalar oluşturmak ve para kazanmak için yapay zeka destekli bir kodsuz platform, link ile erişilebilir, indirme gerekmez. Kullanıcılar işletmelerini tanımlar ve yapay zeka bir dakikadan kısa sürede; anlık bildirimler, sadakat programları, uygulama içi ödeme, randevu rezervasyonu ve 20'den fazla yerleşik hizmet içeren üretime hazır bir uygulama oluşturur. 16 kategoride kendi uygulama mağazasına sahip. 250.000'den fazla kullanıcıya hizmet veren mikroservis altyapısının mimarisi ve geliştirilmesini yönettim.",
       "projectUrl": "https://easyapp.ai",
       "tags": [
         "Yapay Zeka",
@@ -184,6 +184,36 @@
       ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
+    },
+    {
+      "title": "aciktir.io",
+      "year": "2026",
+      "description": "Restoran yönetimi ve QR tabanlı sipariş için yapay zeka destekli SaaS platformu. İşletmeler kanban board üzerinden sipariş, fiş ve analizlerini yönetir; katalog yönetiminde ürün, kategori, kupon, seçenek grubu, çapraz satış ve paket menüler oluşturabilir. Çoklu şube ve ekip yönetimi, masa gruplama, masa/tezgah/paket/teslimat sipariş tipleri desteklenir. Müşteriler QR web menüsü, yapay zeka sohbet botu veya WhatsApp AI botu üzerinden sipariş verebilir.",
+      "projectUrl": "https://aciktir.io/",
+      "tags": [
+        "SaaS",
+        "Yapay Zeka",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Multi-tenant"
+      ],
+      "imageUrl": "/images/project-aciktirio.png"
+    },
+    {
+      "title": "QMS - Kalite Yönetim Sistemi",
+      "description": "ISO 9001 standartları üzerine kurulu kurumsal kalite yönetim sistemi. İki aşamalı onay iş akışı, revizyon geçmişi, kontrollü dağıtım ve okundu takibini kapsayan doküman yönetimi ile 8 adımlı iş akışı, kök neden analizi, maliyet takibi ve PDF rapor sunan düzeltici faaliyet (DÜF) modülü içerir. Redis üzerinden gerçek zamanlı SSE bildirimleri, BullMQ ile asenkron e-posta ve rol tabanlı erişim kontrolü sunar.",
+      "projectUrl": "https://github.com/senrecep/qms",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "BullMQ",
+        "Docker"
+      ],
+      "imageUrl": "/images/project-qms.svg",
+      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
@@ -199,18 +229,6 @@
       "year": "2023"
     },
     {
-      "title": "Aspire Mikroservis Başlangıç Şablonu",
-      "description": "Aspire Framework ile mikroservis oluşturmak için bir şablon.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Mikroservisler"
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
-    },
-    {
       "title": "tsentials",
       "description": "Railway-oriented programming ile TypeScript hata yönetimini basitleştirir. Sıfır bağımlılıkla Result<T>, Maybe<T>, Rule Engine, DDD desenleri ve 20'den fazla birleştirilebilir modül ile tip güvenli fonksiyonel programlama sunar.",
       "projectUrl": "https://github.com/senrecep/tsentials",
@@ -223,6 +241,48 @@
       ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
       "year": "2025"
+    },
+    {
+      "title": "Aspire Mikroservis Başlangıç Şablonu",
+      "description": ".NET Aspire Framework ile oluşturulmuş, üretime hazır bir mikroservis başlangıç şablonu. Hizmet varsayılanları, sağlık kontrolleri, dağıtık izleme ve konteyner orkestrasyonunu hazır sunar; gözlemlenebilir, cloud-native servisler için yapılandırılmış bir temel sağlar.",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Mikroservisler"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
+    },
+    {
+      "title": "Pixfete",
+      "year": "2025",
+      "description": "Etkinlikler için kendi kendine barındırılan bir fotoğraf paylaşım platformu. Misafirler QR kodu okutarak telefon üzerinden fotoğraf ve video yükler; admin onayının ardından ortak galeride görünür. Tarayıcı içi video dönüştürücü, çoklu depolama desteği (Cloudflare R2, Google Drive, yerel disk), etkinlik geri sayımı, konum haritası ve WhatsApp yükleme alternatifi sunar.",
+      "projectUrl": "https://github.com/senrecep/pixfete",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Bun",
+        "SQLite",
+        "Öz Barındırılan",
+        "Açık Kaynak"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/pixfete/main/assets/logo.webp"
+    },
+    {
+      "title": "Invitra",
+      "year": "2025",
+      "description": "Düğün ve etkinlikler için gerçek zamanlı misafir yönetim sistemi. Misafirleri isim, potansiyel/kesin kişi sayısı, öncelik grubu, ulaşım tipi ve organizatöre göre takip edin. Canlı gösterge paneli, toplam kapasite, grup dağılımı ve ulaşım istatistiklerini birden fazla organizatör arasında WebSocket üzerinden eş zamanlı senkronize eder.",
+      "projectUrl": "https://github.com/senrecep/invitra",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Socket.io",
+        "Gerçek Zamanlı",
+        "Açık Kaynak"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/invitra/main/public/icons/icon-512.png"
     },
     {
       "title": "Portfolyo Şablonu",
@@ -241,7 +301,7 @@
     },
     {
       "title": "Kariyer ve Maaş Karşılaştırma Simülatörü",
-      "description": "Türkiye'nin en kapsamlı maaş karşılaştırma simülatörü. SGK'lı maaşlı çalışan (4/a) ile Bağ-Kur'lı şahıs şirketi (4/b) net gelir karşılaştırması. Brüt/Net maaş, vergi, prim, işveren maliyeti hesaplama. 2026 TES Reform simülasyonu, Genç Girişimci desteği, Hizmet İhracatı istisnası. Aylık/Yıllık mod, TRY/USD para birimi desteği.",
+      "description": "SGK çalışanları (4/a) ile Bağ-Kur bağımsız çalışanları (4/b) arasında net gelir karşılaştırması yapan Türkiye'nin en kapsamlı maaş hesaplama aracı. 2026 TES Reformu simülasyonu, Genç Girişimci ve Hizmet İhracatı istisnaları ve TRY/USD desteğiyle brüt/net maaş, vergi, prim ve işveren maliyetlerini hesaplar.",
       "projectUrl": "https://salary-sim.senrecep.com/",
       "tags": [
         "JavaScript",
@@ -252,21 +312,6 @@
       ],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
-    },
-    {
-      "title": "QMS - Kalite Yönetim Sistemi",
-      "description": "İki temel modüle sahip kurumsal düzeyde bir kalite yönetim sistemi: Doküman Yönetimi (DMS) - tam revizyon geçmişi, iki aşamalı onay iş akışları, hedefli dağıtım ve okuma onayları; Düzeltici Faaliyet İstekleri (DFİ/CAR) - ISO 9001 uyumlu 8 adımlı iş akışı, kök neden analizi, ekip ve maliyet takipli düzeltici faaliyet yönetimi ve profesyonel PDF raporlama. Redis Pub/Sub üzerinden gerçek zamanlı SSE bildirimleri, BullMQ ile otomatik hatırlatmalar ve eskalasyon, rol tabanlı erişim kontrolü ve eksiksiz denetim kaydı içerir. Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) ve Redis ile geliştirildi.",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
     }
   ],
   "blogPosts": [

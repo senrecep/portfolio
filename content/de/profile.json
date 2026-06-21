@@ -175,7 +175,7 @@
   "projects": [
     {
       "title": "Easyapp",
-      "description": "Leitete die Architektur und Entwicklung einer mikroservice-basierten Plattform für über 250.000 Nutzer. Implementierte KI-gesteuerte Kostenoptimierung und eine kapitaleffiziente, bedarfsgerechte Infrastruktur.",
+      "description": "Eine KI-gestützte No-Code-Plattform zum Erstellen und Monetarisieren von mobilen Mini-Apps, per Link zugänglich, kein Download erforderlich. Nutzer beschreiben ihr Unternehmen und KI generiert in unter einer Minute eine produktionsreife App mit Push-Benachrichtigungen, Treueprogrammen, In-App-Zahlungen, Terminbuchung und 20+ weiteren integrierten Diensten. Verfügt über einen eigenen App Store in 16 Kategorien. Leitete die Architektur und Entwicklung der Microservices-Infrastruktur mit 250.000+ Nutzern.",
       "projectUrl": "https://easyapp.ai",
       "tags": [
         "KI",
@@ -186,43 +186,34 @@
       "year": "2022"
     },
     {
-      "title": "CSharpEssentials",
-      "description": "Vereinfacht die C#-Entwicklung durch die Bereitstellung wesentlicher Bausteine, einschließlich eines Frameworks zur Implementierung gängiger Entwurfsmuster wie Result Pattern, Any Pattern und Maybe Pattern.",
-      "projectUrl": "https://github.com/senrecep/CSharpEssentials",
+      "title": "aciktir.io",
+      "year": "2026",
+      "description": "Eine KI-gestützte SaaS-Plattform für Restaurantverwaltung und QR-basierte Bestellungen. Unternehmen verwalten Bestellungen, Quittungen und Analysen über ein Kanban-Board, mit Katalogverwaltung für Produkte, Kategorien, Gutscheine, Optionsgruppen, Cross-Selling und Paketmenüs. Unterstützt Multi-Branch-Management, Teamverwaltung, Tischgruppierung und verschiedene Bestelltypen (Dine-in, Takeaway, Lieferung). Kunden bestellen über QR-Webmenü, KI-Chatbot oder WhatsApp-KI-Bot.",
+      "projectUrl": "https://aciktir.io/",
       "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "Funktionale Programmierung"
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
-      "year": "2023"
-    },
-    {
-      "title": "Aspire Microservice Starter Template",
-      "description": "Eine Vorlage für die Erstellung eines Microservice mit dem Aspire Framework.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
-    },
-    {
-      "title": "tsentials",
-      "description": "Vereinfacht die TypeScript-Fehlerbehandlung mit Railway-Oriented Programming. Bietet Result<T>, Maybe<T>, Rule Engine, DDD-Muster und über 20 komponierbare Module für typsichere funktionale Programmierung ohne Abhängigkeiten.",
-      "projectUrl": "https://github.com/senrecep/tsentials",
-      "tags": [
+        "SaaS",
+        "KI",
+        "Next.js",
         "TypeScript",
-        "Funktionale Programmierung",
-        "Fehlerbehandlung",
-        "DDD",
-        "Open Source"
+        "PostgreSQL",
+        "Multi-tenant"
       ],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
-      "year": "2025"
+      "imageUrl": "/images/project-aciktirio.png"
+    },
+    {
+      "title": "QMS - Qualitätsmanagementsystem",
+      "description": "Ein unternehmenstaugliches Qualitätsmanagementsystem mit zwei Kernmodulen: Dokumentenmanagement (DMS) mit vollständiger Revisionshistorie, zweistufigen Genehmigungsworkflows, gezielter Verteilung und nachverfolgbaren Lesebestätigungen; und Korrekturmaßnahmen (CAR/DFI) mit einem 8-stufigen ISO-9001-Workflow, Ursachenanalyse, Korrekturmaßnahmenverfolgung mit Teams und Kosten sowie professionellen PDF-Berichten. Umfasst Echtzeit-SSE-Benachrichtigungen über Redis Pub/Sub, asynchrone E-Mail-Zustellung durch BullMQ mit automatisierten Erinnerungen und Eskalation, rollenbasierte Zugriffskontrolle und eine vollständige Audit-Trail. Erstellt mit Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) und Redis.",
+      "projectUrl": "https://github.com/senrecep/qms",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "BullMQ",
+        "Docker"
+      ],
+      "imageUrl": "/images/project-qms.svg",
+      "year": "2024"
     },
     {
       "title": "Portfolio-Vorlage",
@@ -240,6 +231,75 @@
       "year": "2025"
     },
     {
+      "title": "CSharpEssentials",
+      "description": "Vereinfacht die C#-Entwicklung durch die Bereitstellung wesentlicher Bausteine, einschließlich eines Frameworks zur Implementierung gängiger Entwurfsmuster wie Result Pattern, Any Pattern und Maybe Pattern.",
+      "projectUrl": "https://github.com/senrecep/CSharpEssentials",
+      "tags": [
+        "C#",
+        ".NET",
+        "Design Patterns",
+        "Funktionale Programmierung"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
+      "year": "2023"
+    },
+    {
+      "title": "tsentials",
+      "description": "Vereinfacht die TypeScript-Fehlerbehandlung mit Railway-Oriented Programming. Bietet Result<T>, Maybe<T>, Rule Engine, DDD-Muster und über 20 komponierbare Module für typsichere funktionale Programmierung ohne Abhängigkeiten.",
+      "projectUrl": "https://github.com/senrecep/tsentials",
+      "tags": [
+        "TypeScript",
+        "Funktionale Programmierung",
+        "Fehlerbehandlung",
+        "DDD",
+        "Open Source"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
+      "year": "2025"
+    },
+    {
+      "title": "Aspire Microservice Starter Template",
+      "description": "Eine produktionsreife Starter-Vorlage für .NET-Microservices mit dem Aspire Framework. Bietet Service-Defaults, Health Checks, verteiltes Tracing und Container-Orchestrierung von Anfang an, eine strukturierte Grundlage für beobachtbare, cloud-native Services.",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
+    },
+    {
+      "title": "Pixfete",
+      "year": "2025",
+      "description": "Eine selbst gehostete Plattform zum Teilen von Eventfotos. Gäste scannen einen QR-Code, um Fotos und Videos vom Smartphone hochzuladen, die nach der Admin-Moderation in einer gemeinsamen Galerie erscheinen. Enthält In-Browser-Videokonvertierung, Multi-Storage-Backend (Cloudflare R2, Google Drive, lokaler Speicher), Event-Countdown, Standortkarte und WhatsApp-Fallback.",
+      "projectUrl": "https://github.com/senrecep/pixfete",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Bun",
+        "SQLite",
+        "Self-Hosted",
+        "Open Source"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/pixfete/main/assets/logo.webp"
+    },
+    {
+      "title": "Invitra",
+      "year": "2025",
+      "description": "Ein Echtzeit-Gästeverwaltungssystem für Hochzeiten und Veranstaltungen. Verfolgen Sie Gäste nach Name, potenzieller und bestätigter Personenzahl, Prioritätsgruppe, Transportart und Organisator. Das Live-Dashboard synchronisiert Kapazitätsstatistiken, Gruppenaufteilungen und Transportdaten über mehrere Organisatoren hinweg via WebSockets.",
+      "projectUrl": "https://github.com/senrecep/invitra",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Socket.io",
+        "Echtzeit",
+        "Open Source"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/invitra/main/public/icons/icon-512.png"
+    },
+    {
       "title": "Karriere- und Gehaltsvergleichssimulator",
       "description": "Umfassendster Gehaltsvergleichssimulator der Türkei. Vergleich des Nettoeinkommens zwischen SGK-Angestellten (4/a) und Bağ-Kur-Selbstständigen (4/b). Brutto-/Nettogehalt, Steuern, Prämien und Arbeitgeberkostenberechnungen. 2026 TES-Reform-Simulation, Unterstützung für junge Unternehmer, Dienstleistungsexportbefreiung. Monatlicher/Jährlicher Modus, TRY/USD-Währungsumrechnung.",
       "projectUrl": "https://salary-sim.senrecep.com/",
@@ -252,21 +312,6 @@
       ],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
-    },
-    {
-      "title": "QMS - Qualitätsmanagementsystem",
-      "description": "Ein unternehmenstaugliches Qualitätsmanagementsystem mit zwei Kernmodulen: Dokumentenmanagement (DMS) mit vollständiger Revisionshistorie, zweistufigen Genehmigungsworkflows, gezielter Verteilung und nachverfolgbaren Lesebestätigungen; und Korrekturmaßnahmen (CAR/DFI) mit einem 8-stufigen ISO-9001-Workflow, Ursachenanalyse, Korrekturmaßnahmenverfolgung mit Teams und Kosten sowie professionellen PDF-Berichten. Umfasst Echtzeit-SSE-Benachrichtigungen über Redis Pub/Sub, asynchrone E-Mail-Zustellung durch BullMQ mit automatisierten Erinnerungen und Eskalation, rollenbasierte Zugriffskontrolle und eine vollständige Audit-Trail. Erstellt mit Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) und Redis.",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
     }
   ],
   "blogPosts": [

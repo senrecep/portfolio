@@ -206,7 +206,7 @@
   "projects": [
     {
       "title": "Easyapp",
-      "description": "Lideré la arquitectura y desarrollo de una plataforma basada en microservicios que sirve a más de 250.000 usuarios. Implementé optimización de costos impulsada por IA e infraestructura bajo demanda eficiente en capital.",
+      "description": "Una plataforma no-code impulsada por IA para crear y monetizar mini apps móviles, accesibles por enlace, sin descarga. Los usuarios describen su negocio y la IA genera en menos de un minuto una app lista para producción con notificaciones push, programas de fidelidad, pagos in-app, reserva de citas y 20+ servicios integrados adicionales. Cuenta con su propia tienda de apps en 16 categorías. Dirigió la arquitectura y desarrollo de la infraestructura de microservicios que sirve a 250.000+ usuarios.",
       "projectUrl": "https://easyapp.ai",
       "tags": [
         "IA",
@@ -215,6 +215,36 @@
       ],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
+    },
+    {
+      "title": "aciktir.io",
+      "year": "2026",
+      "description": "Una plataforma SaaS impulsada por IA para la gestión de restaurantes y pedidos por código QR. Los negocios gestionan pedidos, recibos y análisis a través de un tablero kanban, con gestión de catálogo (productos, categorías, cupones, grupos de opciones, venta cruzada, menús paquete). Admite gestión multisucursal, equipos, agrupación de mesas y múltiples tipos de pedidos. Los clientes piden por menú web QR, chatbot IA o bot de WhatsApp IA.",
+      "projectUrl": "https://aciktir.io/",
+      "tags": [
+        "SaaS",
+        "IA",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Multi-tenant"
+      ],
+      "imageUrl": "/images/project-aciktirio.png"
+    },
+    {
+      "title": "QMS - Sistema de Gestión de Calidad",
+      "description": "Un sistema de gestión de calidad de nivel empresarial con dos módulos principales: Gestión de Documentos (DMS) con historial completo de revisiones, flujos de aprobación en dos etapas, distribución dirigida y confirmaciones de lectura rastreadas; y Solicitudes de Acciones Correctivas (CAR/DFI) con un flujo de trabajo ISO 9001 de 8 pasos, análisis de causa raíz, seguimiento de acciones correctivas con equipos y costos, e informes PDF profesionales. Incluye notificaciones SSE en tiempo real vía Redis Pub/Sub, entrega de correo asíncrona mediante BullMQ con recordatorios automatizados y escalamiento, control de acceso basado en roles y registro de auditoría completo. Construido con Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) y Redis.",
+      "projectUrl": "https://github.com/senrecep/qms",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "BullMQ",
+        "Docker"
+      ],
+      "imageUrl": "/images/project-qms.svg",
+      "year": "2024"
     },
     {
       "title": "CSharpEssentials",
@@ -228,18 +258,6 @@
       ],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
-    },
-    {
-      "title": "Aspire Microservice Starter Template",
-      "description": "Una plantilla para crear un microservicio con el Framework Aspire.",
-      "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
-      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
-      "year": "2024"
     },
     {
       "title": "tsentials",
@@ -256,6 +274,62 @@
       "year": "2025"
     },
     {
+      "title": "Aspire Microservice Starter Template",
+      "description": "Una plantilla de inicio lista para producción para microservicios .NET con el Framework Aspire. Proporciona valores predeterminados de servicio, comprobaciones de estado, rastreo distribuido y orquestación de contenedores de forma inmediata, una base estructurada para construir servicios cloud-native observables.",
+      "projectUrl": "https://github.com/senrecep/Aspire",
+      "tags": [
+        ".NET",
+        "Aspire",
+        "Microservices"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
+      "year": "2024"
+    },
+    {
+      "title": "Pixfete",
+      "year": "2025",
+      "description": "Una plataforma autoalojada para compartir fotos en eventos. Los invitados escanean un código QR para subir fotos y videos desde su teléfono, que aparecen en una galería compartida tras la moderación del administrador. Incluye recodificación de video en el navegador, almacenamiento múltiple (Cloudflare R2, Google Drive, disco local), cuenta regresiva, mapa de ubicación y alternativa WhatsApp.",
+      "projectUrl": "https://github.com/senrecep/pixfete",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Bun",
+        "SQLite",
+        "Auto-alojado",
+        "Open Source"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/pixfete/main/assets/logo.webp"
+    },
+    {
+      "title": "Invitra",
+      "year": "2025",
+      "description": "Un sistema de gestión de invitados en tiempo real para bodas y eventos. Realiza un seguimiento de los invitados por nombre, número potencial y confirmado, grupo de prioridad, tipo de transporte y organizador. El panel en vivo sincroniza estadísticas de capacidad, distribución por grupos y datos de transporte entre múltiples organizadores vía WebSockets.",
+      "projectUrl": "https://github.com/senrecep/invitra",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Socket.io",
+        "Tiempo Real",
+        "Open Source"
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/senrecep/invitra/main/public/icons/icon-512.png"
+    },
+    {
+      "title": "Career & Salary Comparison Simulator",
+      "description": "La herramienta de comparación salarial más completa de Turquía para comparar el ingreso neto entre empleados SGK (4/a) y autónomos Bağ-Kur (4/b). Calcula salario bruto/neto, impuestos, primas y costos del empleador con simulación de la reforma TES 2026, exenciones para Jóvenes Emprendedores y Exportación de Servicios, y soporte de divisas TRY/USD.",
+      "projectUrl": "https://salary-sim.senrecep.com/",
+      "tags": [
+        "JavaScript",
+        "Finanzas",
+        "Impuestos",
+        "SGK",
+        "Bağ-Kur"
+      ],
+      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
+      "year": "2025"
+    },
+    {
       "title": "Plantilla de Portafolio",
       "description": "Una plantilla de portafolio rápida y optimizada para SEO con soporte ilimitado de idiomas, temas oscuro/claro y secciones totalmente personalizables para cualquier profesión. Construida con Next.js 15 y React 19. Licencia MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
@@ -269,35 +343,6 @@
       ],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
-    },
-    {
-      "title": "Career & Salary Comparison Simulator",
-      "description": "El simulador de comparación de salarios más completo de Turquía. Compare el ingreso neto entre empleados asalariados SGK (4/a) y autónomos Bağ-Kur (4/b). Cálculos de salario bruto/neto, impuestos, primas y costos del empleador.",
-      "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "Finanzas",
-        "Impuestos",
-        "SGK",
-        "Bağ-Kur"
-      ],
-      "imageUrl": "https://salary-sim.senrecep.com/icon.png",
-      "year": "2025"
-    },
-    {
-      "title": "QMS - Sistema de Gestión de Calidad",
-      "description": "Un sistema de gestión de calidad de nivel empresarial con dos módulos principales: Gestión de Documentos (DMS) con historial completo de revisiones, flujos de aprobación en dos etapas, distribución dirigida y confirmaciones de lectura rastreadas; y Solicitudes de Acciones Correctivas (CAR/DFI) con un flujo de trabajo ISO 9001 de 8 pasos, análisis de causa raíz, seguimiento de acciones correctivas con equipos y costos, e informes PDF profesionales. Incluye notificaciones SSE en tiempo real vía Redis Pub/Sub, entrega de correo asíncrona mediante BullMQ con recordatorios automatizados y escalamiento, control de acceso basado en roles y registro de auditoría completo. Construido con Next.js 16, Bun, TypeScript, PostgreSQL (Drizzle ORM) y Redis.",
-      "projectUrl": "https://github.com/senrecep/qms",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "BullMQ",
-        "Docker"
-      ],
-      "imageUrl": "/images/project-qms.svg",
-      "year": "2024"
     }
   ],
   "blogPosts": [
