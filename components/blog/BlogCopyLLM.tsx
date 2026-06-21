@@ -21,7 +21,8 @@ export function BlogCopyLLM({
   content,
 }: BlogCopyLLMProps) {
   const [copied, setCopied] = useState(false);
-  const blogT = translations[lang]?.sections.blog ?? translations.en.sections.blog;
+  const blogT =
+    translations[lang]?.sections.blog ?? translations.en.sections.blog;
 
   const handleCopy = () => {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://senrecep.dev";

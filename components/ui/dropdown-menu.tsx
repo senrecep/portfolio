@@ -54,7 +54,7 @@ DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
 export {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuTrigger,
 };

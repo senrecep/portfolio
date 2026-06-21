@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BlogCopyLLM } from "@/components/blog/BlogCopyLLM";
+import { BlogTableOfContents } from "@/components/blog/BlogTableOfContents";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import {
@@ -13,8 +15,6 @@ import {
 import { formatDate, languageCodes, languages } from "@/lib/i18n/config";
 import { getProfileResult } from "@/lib/i18n/server-content-loader";
 import { translations } from "@/lib/i18n/translations";
-import { BlogCopyLLM } from "@/components/blog/BlogCopyLLM";
-import { BlogTableOfContents } from "@/components/blog/BlogTableOfContents";
 import { extractTocItems } from "@/lib/toc";
 import { BlogContent } from "./BlogContent";
 
@@ -312,7 +312,10 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         <header className="mb-8">
           <div className="flex items-center gap-3 flex-wrap">
-            <time dateTime={post.date} className="text-sm text-muted-foreground">
+            <time
+              dateTime={post.date}
+              className="text-sm text-muted-foreground"
+            >
               {formatDate(post.date, lang)}
             </time>
             {post.readingTime && (
@@ -347,7 +350,10 @@ export default async function BlogPostPage({ params }: PageProps) {
           )}
         </header>
 
-        <BlogTableOfContents items={tocItems} title={t.sections.blog.tableOfContents} />
+        <BlogTableOfContents
+          items={tocItems}
+          title={t.sections.blog.tableOfContents}
+        />
         <BlogContent content={post.content} lang={lang} />
       </main>
       <Footer
