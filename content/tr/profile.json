@@ -4,7 +4,7 @@
     "position": "CTO",
     "company": "Taptoweb",
     "companyUrl": "https://taptoweb.com",
-    "about": "Taptoweb'de CTO olarak, 250.000'den fazla kullanıcıya sahip kodsuz mobil uygulama oluşturucu Easyapp.ai'yi destekleyen 28 servisli mikroservis platformunu tasarladım. .NET/C#, Domain-Driven Design ve agentic AI sistemleri konularında uzmanım.",
+    "about": "Taptoweb'de Easyapp.ai'nin arkasındaki mimariyi tasarlıyorum. Dağıtık sistemler ve AI agent'ları üzerine çalışıyorum.",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -177,11 +177,7 @@
       "title": "Easyapp",
       "description": "Mobil mini uygulamalar oluşturmak ve para kazanmak için yapay zeka destekli bir kodsuz platform, link ile erişilebilir, indirme gerekmez. Kullanıcılar işletmelerini tanımlar ve yapay zeka bir dakikadan kısa sürede; anlık bildirimler, sadakat programları, uygulama içi ödeme, randevu rezervasyonu ve 20'den fazla yerleşik hizmet içeren üretime hazır bir uygulama oluşturur. 16 kategoride kendi uygulama mağazasına sahip. 250.000'den fazla kullanıcıya hizmet veren mikroservis altyapısının mimarisi ve geliştirilmesini yönettim.",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "Yapay Zeka",
-        "Mobil",
-        "Kodsuz"
-      ],
+      "tags": ["Yapay Zeka", "Mobil", "Kodsuz"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -219,12 +215,7 @@
       "title": "CSharpEssentials",
       "description": "Result Pattern, Any Pattern ve Maybe Pattern gibi yaygın tasarım desenlerini uygulama çerçevesi dahil olmak üzere temel yapı taşları sağlayarak C# geliştirmeyi basitleştirir.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Tasarım Desenleri",
-        "Fonksiyonel Programlama"
-      ],
+      "tags": ["C#", ".NET", "Tasarım Desenleri", "Fonksiyonel Programlama"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -246,11 +237,7 @@
       "title": "Aspire Mikroservis Başlangıç Şablonu",
       "description": ".NET Aspire Framework ile oluşturulmuş, üretime hazır bir mikroservis başlangıç şablonu. Hizmet varsayılanları, sağlık kontrolleri, dağıtık izleme ve konteyner orkestrasyonunu hazır sunar; gözlemlenebilir, cloud-native servisler için yapılandırılmış bir temel sağlar.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Mikroservisler"
-      ],
+      "tags": [".NET", "Aspire", "Mikroservisler"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -289,13 +276,7 @@
       "description": "Sınırsız dil desteği, açık/koyu tema ve her meslek için özelleştirilebilir bölümler sunan hızlı, SEO optimize portfolyo şablonu. Next.js 15 ve React 19 ile geliştirildi. MIT lisanslı.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "Açık Kaynak"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "Açık Kaynak"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -303,13 +284,7 @@
       "title": "Kariyer ve Maaş Karşılaştırma Simülatörü",
       "description": "SGK çalışanları (4/a) ile Bağ-Kur bağımsız çalışanları (4/b) arasında net gelir karşılaştırması yapan Türkiye'nin en kapsamlı maaş hesaplama aracı. 2026 TES Reformu simülasyonu, Genç Girişimci ve Hizmet İhracatı istisnaları ve TRY/USD desteğiyle brüt/net maaş, vergi, prim ve işveren maliyetlerini hesaplar.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "Finans",
-        "Vergi",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "Finans", "Vergi", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     }

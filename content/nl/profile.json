@@ -4,7 +4,7 @@
     "position": "CTO",
     "company": "Taptoweb",
     "companyUrl": "https://taptoweb.com",
-    "about": "CTO bij Taptoweb, waar ik een microservices-platform met 28 services ontwierp voor Easyapp.ai - een no-code mobiele app-bouwer met 250.000+ gebruikers. Ik ben gespecialiseerd in .NET/C#, Domain-Driven Design en agentische AI-systemen.",
+    "about": "Bij Taptoweb ontwerp ik de architectuur achter Easyapp.ai en werk ik aan gedistribueerde systemen en AI-agents.",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -208,11 +208,7 @@
       "title": "Easyapp",
       "description": "Een AI-aangedreven no-code platform voor het maken en monetariseren van mobiele mini-apps, toegankelijk via een link, geen download vereist. Gebruikers beschrijven hun bedrijf en AI genereert in minder dan een minuut een productieklare app met pushmeldingen, loyaliteitsprogramma's, in-app betalingen, afsprakenbeheer en 20+ andere ingebouwde services. Heeft een eigen app store in 16 categorieën. Leidde de architectuur en ontwikkeling van de microservicesinfrastructuur voor 250.000+ gebruikers.",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "AI",
-        "Mobiel",
-        "No-Code"
-      ],
+      "tags": ["AI", "Mobiel", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -251,13 +247,7 @@
       "description": "Een snelle, SEO-geoptimaliseerde portfolio template met onbeperkte taalondersteuning, donker/licht thema's en volledig aanpasbare secties voor elk beroep. Gebouwd met Next.js 15 en React 19. MIT gelicenseerd.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "Open Source"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     },
@@ -265,12 +255,7 @@
       "title": "CSharpEssentials",
       "description": "Vereenvoudigt C# ontwikkeling door essentiële bouwstenen te bieden, inclusief een framework voor het implementeren van veelvoorkomende design patterns zoals het Result Pattern, Any Pattern en Maybe Pattern.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "Functioneel Programmeren"
-      ],
+      "tags": ["C#", ".NET", "Design Patterns", "Functioneel Programmeren"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -292,11 +277,7 @@
       "title": "Aspire Microservice Starter Template",
       "description": "Een productieklare starterssjabloon voor .NET-microservices met het Aspire Framework. Biedt service-standaarden, health checks, gedistribueerde tracing en containerorkestratie direct beschikbaar, een gestructureerde basis voor het bouwen van observeerbare, cloud-native services.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
+      "tags": [".NET", "Aspire", "Microservices"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -334,13 +315,7 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "Het meest uitgebreide salarisbevergelijkingstool van Turkije voor het vergelijken van netto-inkomen tussen SGK-werknemers (4/a) en zelfstandigen via Bağ-Kur (4/b). Berekent bruto/netto salaris, belastingen, premies en werkgeverskosten met 2026 TES-hervorming simulatie, vrijstellingen voor Jonge Ondernemers en Diensten Export, en TRY/USD valuta ondersteuning.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "Financiën",
-        "Belasting",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "Financiën", "Belasting", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     }

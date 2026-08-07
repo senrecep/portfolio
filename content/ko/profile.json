@@ -4,7 +4,7 @@
     "position": "CTO",
     "company": "Taptoweb",
     "companyUrl": "https://taptoweb.com",
-    "about": "Taptoweb의 CTO로서, 250,000명 이상의 사용자를 보유한 노코드 모바일 앱 빌더 Easyapp.ai를 구동하는 28개 서비스 마이크로서비스 플랫폼을 설계했습니다. .NET/C#, 도메인 주도 설계, 에이전틱 AI 시스템을 전문으로 합니다.",
+    "about": "Taptoweb에서 Easyapp.ai를 뒷받침하는 아키텍처를 설계하며, 분산 시스템과 AI 에이전트를 다루고 있습니다.",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -208,11 +208,7 @@
       "title": "Easyapp",
       "description": "모바일 미니 앱을 만들고 수익화하는 AI 기반 노코드 플랫폼, 링크로 접속, 다운로드 불필요. 사용자가 비즈니스를 설명하면 AI가 1분 이내에 푸시 알림, 로열티 프로그램, 인앱 결제, 예약 등 20개 이상의 내장 서비스를 갖춘 프로덕션 완성 앱을 생성합니다. 16개 카테고리의 자체 앱 스토어 보유. 250,000명 이상이 사용하는 마이크로서비스 인프라의 아키텍처와 개발을 주도했습니다.",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "AI",
-        "모바일",
-        "No-Code"
-      ],
+      "tags": ["AI", "모바일", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -250,12 +246,7 @@
       "title": "CSharpEssentials",
       "description": "Result Pattern, Any Pattern, Maybe Pattern과 같은 일반적인 디자인 패턴을 구현하기 위한 프레임워크를 포함한 필수 빌딩 블록을 제공하여 C# 개발을 단순화합니다.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "함수형 프로그래밍"
-      ],
+      "tags": ["C#", ".NET", "Design Patterns", "함수형 프로그래밍"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -277,11 +268,7 @@
       "title": "Aspire Microservice Starter Template",
       "description": ".NET Aspire Framework로 구축된 프로덕션 준비 완료 마이크로서비스 스타터 템플릿. 서비스 기본값, 헬스 체크, 분산 추적, 컨테이너 오케스트레이션을 즉시 제공, 관측 가능한 클라우드 네이티브 서비스 구축을 위한 구조화된 기반입니다.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
+      "tags": [".NET", "Aspire", "Microservices"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -319,13 +306,7 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "SGK 근로자(4/a)와 Bağ-Kur 자영업자(4/b) 간 순소득을 비교하는 터키 최고의 급여 비교 도구. 2026 TES 개혁 시뮬레이션, 청년 기업인 및 서비스 수출 면제, TRY/USD 통화 지원과 함께 총/순 급여, 세금, 보험료, 고용주 비용을 계산합니다.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "금융",
-        "세금",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "금융", "세금", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -334,13 +315,7 @@
       "description": "무제한 언어 지원, 다크/라이트 테마, 모든 직업에 맞게 완전히 커스터마이즈 가능한 섹션을 갖춘 빠르고 SEO 최적화된 포트폴리오 템플릿. Next.js 15와 React 19로 구축. MIT 라이선스.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "오픈 소스"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "오픈 소스"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     }

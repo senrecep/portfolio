@@ -4,7 +4,7 @@
     "position": "CTO",
     "company": "Taptoweb",
     "companyUrl": "https://taptoweb.com",
-    "about": "CTO at Taptoweb, where I designed a 28-service microservices platform powering Easyapp.ai - a no-code mobile app builder with 250,000+ users. I specialize in .NET/C#, Domain-Driven Design, and agentic AI systems.",
+    "about": "I design the architecture behind Easyapp.ai at Taptoweb and work on distributed systems and AI agents.",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -209,11 +209,7 @@
       "year": "2022",
       "description": "An AI-powered no-code platform for creating and monetizing mobile mini apps, accessible via link, no download required. Users describe their business and AI generates a production-ready app in under a minute, complete with push notifications, loyalty programs, in-app payments, appointment booking, and 20+ more built-in services. Features its own app store across 16 categories. Led the architecture and development of the microservices infrastructure serving 250,000+ users.",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "AI",
-        "Mobile",
-        "No-Code"
-      ],
+      "tags": ["AI", "Mobile", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp"
     },
     {
@@ -252,13 +248,7 @@
       "description": "A fast, SEO-optimized portfolio template with unlimited language support, dark/light themes, and fully customizable sections for any profession. Built with Next.js 15 and React 19. MIT licensed.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "Open Source"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp"
     },
     {
@@ -266,12 +256,7 @@
       "year": "2023",
       "description": "Simplifies C# development by providing essential building blocks, including a framework for implementing common design patterns such as the Result Pattern, Any Pattern, and Maybe Pattern.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "Functional Programming"
-      ],
+      "tags": ["C#", ".NET", "Design Patterns", "Functional Programming"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png"
     },
     {
@@ -293,11 +278,7 @@
       "year": "2024",
       "description": "A production-ready starter template for .NET microservices built with the Aspire Framework. Provides service defaults, health checks, distributed tracing, and container orchestration out of the box, a structured foundation for building observable, cloud-native services.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
+      "tags": [".NET", "Aspire", "Microservices"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png"
     },
     {
@@ -335,13 +316,7 @@
       "year": "2025",
       "description": "Turkey's most comprehensive salary comparison tool for calculating and comparing net income between SGK employees (4/a) and Bağ-Kur self-employed (4/b). Covers gross/net salary, taxes, premiums, and employer costs with 2026 TES Reform simulation, Young Entrepreneur and Service Export exemptions, and TRY/USD currency support.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "Finance",
-        "Tax",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "Finance", "Tax", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png"
     }
   ],

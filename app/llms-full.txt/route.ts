@@ -87,21 +87,20 @@ export function GET() {
 
 ${personalInfo.about}
 
-Recep Şen is CTO at Taptoweb, a technology company building no-code mobile app solutions. He has been
-with Taptoweb since 2022, growing the platform from early-stage to 250,000+ users. He designed and
-led the development of a 28-service microservices platform powering Easyapp.ai, a no-code mobile app
-builder that processes millions of app-building requests using AI-driven cost optimization and
-capital-efficient on-demand infrastructure.
+Recep Şen is CTO at Taptoweb, the company behind Easyapp.ai, a no-code mobile app builder with
+250,000+ users. He joined in 2022 and designed the microservices platform that powers the product,
+which handles millions of app-building requests on on-demand infrastructure with AI-driven cost
+optimization.
 
-He is an active open-source contributor with 59,809+ NuGet package downloads across 16 packages,
-primarily through the CSharpEssentials library. He writes extensively on AI-powered development,
-with published guides on Claude Code, OpenCode, and multi-agent orchestration systems.
+He maintains several open-source projects, including the CSharpEssentials library, whose packages
+have passed 59,000 downloads on NuGet. He writes about AI-assisted development, including guides
+on Claude Code, OpenCode, and multi-agent orchestration.
 
 ## Work History
 
 ### CTO - Taptoweb (2022 - Present)
 - Led architecture and development of Easyapp.ai, a no-code mobile app builder serving 250,000+ users
-- Designed a 28-service microservices platform processing millions of app-building requests
+- Designed the microservices platform processing millions of app-building requests
 - Implemented AI-driven cost optimization with on-demand infrastructure to reduce operating costs
 - Oversaw full technology organization: system architecture, engineering direction, and technical strategy
 - Built and integrated agentic AI workflows and LLM-powered automation into production systems

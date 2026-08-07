@@ -4,7 +4,7 @@
     "position": "CTO",
     "company": "Taptoweb",
     "companyUrl": "https://taptoweb.com",
-    "about": "CTO en Taptoweb, donde diseñé una plataforma de microservicios de 28 servicios que impulsa Easyapp.ai - un constructor de aplicaciones móviles sin código con más de 250.000 usuarios. Me especializo en .NET/C#, Domain-Driven Design y sistemas de IA agéntica.",
+    "about": "En Taptoweb diseño la arquitectura detrás de Easyapp.ai y trabajo con sistemas distribuidos y agentes de IA.",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -208,11 +208,7 @@
       "title": "Easyapp",
       "description": "Una plataforma no-code impulsada por IA para crear y monetizar mini apps móviles, accesibles por enlace, sin descarga. Los usuarios describen su negocio y la IA genera en menos de un minuto una app lista para producción con notificaciones push, programas de fidelidad, pagos in-app, reserva de citas y 20+ servicios integrados adicionales. Cuenta con su propia tienda de apps en 16 categorías. Dirigió la arquitectura y desarrollo de la infraestructura de microservicios que sirve a 250.000+ usuarios.",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "IA",
-        "Móvil",
-        "No-Code"
-      ],
+      "tags": ["IA", "Móvil", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -250,12 +246,7 @@
       "title": "CSharpEssentials",
       "description": "Simplifica el desarrollo en C# proporcionando bloques de construcción esenciales, incluyendo un framework para implementar patrones de diseño comunes como el Result Pattern, Any Pattern y Maybe Pattern.",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "Programación Funcional"
-      ],
+      "tags": ["C#", ".NET", "Design Patterns", "Programación Funcional"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -277,11 +268,7 @@
       "title": "Aspire Microservice Starter Template",
       "description": "Una plantilla de inicio lista para producción para microservicios .NET con el Framework Aspire. Proporciona valores predeterminados de servicio, comprobaciones de estado, rastreo distribuido y orquestación de contenedores de forma inmediata, una base estructurada para construir servicios cloud-native observables.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
+      "tags": [".NET", "Aspire", "Microservices"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -319,13 +306,7 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "La herramienta de comparación salarial más completa de Turquía para comparar el ingreso neto entre empleados SGK (4/a) y autónomos Bağ-Kur (4/b). Calcula salario bruto/neto, impuestos, primas y costos del empleador con simulación de la reforma TES 2026, exenciones para Jóvenes Emprendedores y Exportación de Servicios, y soporte de divisas TRY/USD.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "Finanzas",
-        "Impuestos",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "Finanzas", "Impuestos", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -334,13 +315,7 @@
       "description": "Una plantilla de portafolio rápida y optimizada para SEO con soporte ilimitado de idiomas, temas oscuro/claro y secciones totalmente personalizables para cualquier profesión. Construida con Next.js 15 y React 19. Licencia MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "Open Source"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     }

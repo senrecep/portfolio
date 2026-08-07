@@ -4,7 +4,7 @@
     "position": "CTO",
     "company": "Taptoweb",
     "companyUrl": "https://taptoweb.com",
-    "about": "担任Taptoweb的CTO，设计了为Easyapp.ai提供支持的28服务微服务平台, 一个拥有25万+用户的无代码移动应用构建器。专注于.NET/C#、领域驱动设计和智能AI系统。",
+    "about": "在Taptoweb，我设计Easyapp.ai背后的架构，主要做分布式系统和AI智能体。",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -208,11 +208,7 @@
       "title": "Easyapp",
       "description": "一个 AI 驱动的无代码平台，用于创建和变现移动端 Mini App, 通过链接访问，无需下载。用户描述业务，AI 在一分钟内生成包含推送通知、积分计划、应用内支付、预约功能等 20 余项内置服务的生产就绪应用。拥有覆盖 16 个类别的独立应用商店。主导了服务 250,000+ 用户的微服务架构设计与开发。",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "AI",
-        "移动端",
-        "No-Code"
-      ],
+      "tags": ["AI", "移动端", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -221,14 +217,7 @@
       "year": "2026",
       "description": "一个面向餐厅管理和二维码点餐的 AI 驱动 SaaS 平台。企业通过看板管理订单、收据和数据分析，支持产品、分类、优惠券、选项组、交叉销售和套餐菜单等目录管理。支持多门店管理、团队权限、桌台分组及多种订单类型（堂食、外带、外卖）。顾客可通过二维码网页菜单、AI 聊天机器人或 WhatsApp AI 机器人下单。",
       "projectUrl": "https://aciktir.io/",
-      "tags": [
-        "SaaS",
-        "AI",
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "多租户"
-      ],
+      "tags": ["SaaS", "AI", "Next.js", "TypeScript", "PostgreSQL", "多租户"],
       "imageUrl": "/images/project-aciktirio.png"
     },
     {
@@ -250,12 +239,7 @@
       "title": "CSharpEssentials",
       "description": "通过提供必要的构建块来简化 C# 开发，包括用于实现常见设计模式（如 Result Pattern、Any Pattern 和 Maybe Pattern）的框架。",
       "projectUrl": "https://github.com/senrecep/CSharpEssentials",
-      "tags": [
-        "C#",
-        ".NET",
-        "Design Patterns",
-        "函数式编程"
-      ],
+      "tags": ["C#", ".NET", "Design Patterns", "函数式编程"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/CSharpEssentials/refs/heads/main/icon.png",
       "year": "2023"
     },
@@ -263,13 +247,7 @@
       "title": "tsentials",
       "description": "通过 Railway-Oriented Programming 简化 TypeScript 错误处理。提供 Result<T>、Maybe<T>、规则引擎、DDD 模式和 20 多个可组合模块，实现零依赖的类型安全函数式编程。",
       "projectUrl": "https://github.com/senrecep/tsentials",
-      "tags": [
-        "TypeScript",
-        "函数式编程",
-        "错误处理",
-        "DDD",
-        "开源"
-      ],
+      "tags": ["TypeScript", "函数式编程", "错误处理", "DDD", "开源"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/tsentials/refs/heads/main/assets/logo-128.png",
       "year": "2025"
     },
@@ -277,11 +255,7 @@
       "title": "Aspire Microservice Starter Template",
       "description": "基于 .NET Aspire Framework 构建的生产就绪型微服务入门模板。开箱即提供服务默认值、健康检查、分布式追踪和容器编排, 构建可观测云原生服务的结构化基础。",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Microservices"
-      ],
+      "tags": [".NET", "Aspire", "Microservices"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -290,14 +264,7 @@
       "year": "2025",
       "description": "一个用于活动的自托管照片分享平台。宾客扫描二维码即可从手机上传照片和视频，经管理员审核后显示在共享相册中。支持浏览器内视频转码、多存储后端（Cloudflare R2、Google Drive、本地磁盘）、活动倒计时、位置地图和 WhatsApp 上传备选方案。",
       "projectUrl": "https://github.com/senrecep/pixfete",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "Bun",
-        "SQLite",
-        "自托管",
-        "开源"
-      ],
+      "tags": ["Next.js", "TypeScript", "Bun", "SQLite", "自托管", "开源"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/pixfete/main/assets/logo.webp"
     },
     {
@@ -319,13 +286,7 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "土耳其最全面的薪资对比工具，用于比较 SGK 雇员（4/a）与 Bağ-Kur 自雇人员（4/b）的净收入。支持 2026 年 TES 改革模拟、青年创业者与服务出口豁免及 TRY/USD 双币种，计算税前/税后工资、税款、保险费及雇主成本。",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "金融",
-        "税务",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "金融", "税务", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -334,13 +295,7 @@
       "description": "快速、SEO 优化的作品集模板，支持无限语言、深色/浅色主题，以及适用于任何职业的完全可定制部分。使用 Next.js 15 和 React 19 构建。MIT 许可。",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "开源"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "开源"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     }

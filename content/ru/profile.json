@@ -4,7 +4,7 @@
     "position": "CTO",
     "company": "Taptoweb",
     "companyUrl": "https://taptoweb.com",
-    "about": "CTO в Taptoweb, где я разработал платформу микросервисов из 28 сервисов для Easyapp.ai - конструктора мобильных приложений без кода с более чем 250 000 пользователями. Специализируюсь на .NET/C#, Domain-Driven Design и агентных системах ИИ.",
+    "about": "В Taptoweb я проектирую архитектуру Easyapp.ai и работаю с распределёнными системами и AI-агентами.",
     "imageUrl": "/images/profile.webp",
     "callsign": "TB1REC",
     "email": "me@senrecep.com",
@@ -208,11 +208,7 @@
       "title": "Easyapp",
       "description": "No-code платформа на базе ИИ для создания и монетизации мобильных мини-приложений, доступных по ссылке, без установки. Пользователи описывают бизнес, и ИИ генерирует готовое к производству приложение менее чем за минуту с push-уведомлениями, программами лояльности, внутренними платежами, онлайн-записью и 20+ встроенными сервисами. Имеет собственный магазин приложений в 16 категориях. Руководил архитектурой и разработкой микросервисной инфраструктуры для 250 000+ пользователей.",
       "projectUrl": "https://easyapp.ai",
-      "tags": [
-        "ИИ",
-        "Мобильные",
-        "No-Code"
-      ],
+      "tags": ["ИИ", "Мобильные", "No-Code"],
       "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c3/c4/a2c3c4dc-9089-8d16-0579-06850a46c631/AppIconProduction-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp",
       "year": "2022"
     },
@@ -277,11 +273,7 @@
       "title": "Aspire Microservice Starter Template",
       "description": "Готовый к производству стартовый шаблон для .NET-микросервисов с Aspire Framework. Предоставляет настройки сервисов по умолчанию, проверки работоспособности, распределённую трассировку и оркестрацию контейнеров из коробки, структурированная основа для создания наблюдаемых cloud-native сервисов.",
       "projectUrl": "https://github.com/senrecep/Aspire",
-      "tags": [
-        ".NET",
-        "Aspire",
-        "Микросервисы"
-      ],
+      "tags": [".NET", "Aspire", "Микросервисы"],
       "imageUrl": "https://raw.githubusercontent.com/senrecep/Aspire/refs/heads/main/icon.png",
       "year": "2024"
     },
@@ -319,13 +311,7 @@
       "title": "Career & Salary Comparison Simulator",
       "description": "Наиболее полный инструмент сравнения зарплат в Турции для сравнения чистого дохода между работниками SGK (4/a) и самозанятыми Bağ-Kur (4/b). Рассчитывает брутто/нетто зарплату, налоги, взносы и расходы работодателя с симуляцией реформы TES 2026, льготами для молодых предпринимателей и экспорта услуг, а также поддержкой валют TRY/USD.",
       "projectUrl": "https://salary-sim.senrecep.com/",
-      "tags": [
-        "JavaScript",
-        "Финансы",
-        "Налоги",
-        "SGK",
-        "Bağ-Kur"
-      ],
+      "tags": ["JavaScript", "Финансы", "Налоги", "SGK", "Bağ-Kur"],
       "imageUrl": "https://salary-sim.senrecep.com/icon.png",
       "year": "2025"
     },
@@ -334,13 +320,7 @@
       "description": "Быстрый, SEO-оптимизированный шаблон портфолио с неограниченной языковой поддержкой, тёмной/светлой темами и полностью настраиваемыми разделами для любой профессии. Создан на Next.js 15 и React 19. Лицензия MIT.",
       "projectUrl": "https://github.com/senrecep/portfolio",
       "featured": true,
-      "tags": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "i18n",
-        "Open Source"
-      ],
+      "tags": ["Next.js", "React", "TypeScript", "i18n", "Open Source"],
       "imageUrl": "/images/project-portfolio.webp",
       "year": "2025"
     }

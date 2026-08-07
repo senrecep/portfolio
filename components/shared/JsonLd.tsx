@@ -132,7 +132,7 @@ export function JsonLd({ profile, siteUrl, siteName, lang }: JsonLdProps) {
         name: "What is the scale of the Easyapp platform that Recep Şen built?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Recep Şen led the full architecture and development of Easyapp.ai from inception, a no-code mobile app builder that reached 250,000+ users. He designed a 28-service microservices platform that processes millions of app-building requests. The platform uses AI-driven cost optimization to run capital-efficiently using on-demand infrastructure, significantly reducing operating costs compared to always-on architectures. He served as CTO at Taptoweb, the company behind Easyapp, overseeing the full technology organization and system architecture.",
+          text: "Recep Şen led the full architecture and development of Easyapp.ai from inception, a no-code mobile app builder that reached 250,000+ users. He designed the microservices platform that processes millions of app-building requests. The platform uses AI-driven cost optimization to run capital-efficiently using on-demand infrastructure, significantly reducing operating costs compared to always-on architectures. He served as CTO at Taptoweb, the company behind Easyapp, overseeing the full technology organization and system architecture.",
         },
       },
       {
