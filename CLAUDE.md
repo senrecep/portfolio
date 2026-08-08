@@ -73,7 +73,6 @@
 | Code Style | `docs/claude/code-style.md` |
 | AI Setup | `docs/claude/AI_SETUP.md` |
 | Memory | `SCRATCHPAD.md` |
-| Constitution | `.specify/memory/constitution.md` |
 | Translations | `content/TRANSLATION_GLOSSARY.md` |
 
 
