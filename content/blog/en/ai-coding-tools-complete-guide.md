@@ -6,7 +6,7 @@ slug: "ai-coding-tools-complete-guide"
 mediumUrl: "https://senrecep.medium.com/ai-coding-tools-the-complete-guide-to-claude-code-opencode-modern-development-eb9da4477dc1"
 imageUrl: "/images/The-Complete-Guide-to-Claude-Code-OpenCode-Modern-Development.webp"
 keywords: ["Claude Code", "OpenCode", "AI coding tools", "CLAUDE.md", "MCP", "context management", "AI-assisted development", "code generation"]
-author: "Recep Şen"
+author: "Recep ŞEN"
 modifiedDate: "2026-01-24"
 category: "AI"
 faq:

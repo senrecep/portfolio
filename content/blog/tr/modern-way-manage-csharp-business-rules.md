@@ -6,7 +6,7 @@ slug: "modern-way-manage-csharp-business-rules"
 mediumUrl: "https://medium.com/@senrecep/the-modern-way-to-manage-c-business-rules-rule-engine-pattern-14bb1c72d700"
 imageUrl: "/images/rule-engine.webp"
 keywords: ["C# business rules", "Rule Engine Pattern", "Result Pattern", "CSharpEssentials", "domain validation", "clean architecture", "error handling", "testability"]
-author: "Recep Şen"
+author: "Recep ŞEN"
 modifiedDate: "2025-02-04"
 category: "Tutorial"
 faq:

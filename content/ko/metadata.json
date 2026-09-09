@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - 소프트웨어 엔지니어",
+  "title": "Recep ŞEN - 소프트웨어 엔지니어",
   "description": "Taptoweb에서 Easyapp.ai를 뒷받침하는 아키텍처를 설계하며, 분산 시스템과 AI 에이전트를 다루고 있습니다.",
   "callsign": "TB1REC",
   "keywords": [
@@ -17,15 +17,15 @@
     "아마추어 무선"
   ],
   "openGraph": {
-    "title": "Recep Şen - 소프트웨어 엔지니어",
+    "title": "Recep ŞEN - 소프트웨어 엔지니어",
     "description": "Taptoweb에서 Easyapp.ai를 뒷받침하는 아키텍처를 설계하며, 분산 시스템과 AI 에이전트를 다루고 있습니다.",
-    "siteName": "Recep Şen 포트폴리오",
+    "siteName": "Recep ŞEN 포트폴리오",
     "images": [
       {
         "url": "/images/og-banner.ko.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
+        "alt": "Recep ŞEN - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "creator": "@senrecep0",
     "images": {
       "url": "/images/og-banner.ko.webp",
-      "alt": "Recep Şen - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
+      "alt": "Recep ŞEN - 소프트웨어 엔지니어 | 포트폴리오 미리보기"
     }
   }
 }

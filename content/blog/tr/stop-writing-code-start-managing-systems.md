@@ -6,7 +6,7 @@ slug: "stop-writing-code-start-managing-systems"
 mediumUrl: "https://senrecep.medium.com/stop-writing-code-start-managing-systems-the-real-potential-of-ai-powered-development-71fafeb144de"
 imageUrl: "/images/stop-writing-code-start-managing-systems.webp"
 keywords: ["AI destekli geliştirme", "Claude Code", "multi-agent iş akışları", "context window", "CLAUDE.md stratejisi", "yazılım mühendisliği zihniyeti", "AI orkestrasyonu", "geliştirici verimliliği", "AI doğrulaması", "paralel AI agent'ları"]
-author: "Recep Şen"
+author: "Recep ŞEN"
 modifiedDate: "2026-08-08"
 category: "AI"
 faq:

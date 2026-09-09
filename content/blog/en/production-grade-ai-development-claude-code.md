@@ -6,7 +6,7 @@ slug: "production-grade-ai-development-claude-code"
 mediumUrl: "https://medium.com/@senrecep/production-grade-ai-development-with-claude-code-a-comprehensive-ecosystem-guide-56d7c4a3b744"
 imageUrl: "/images/production-grade-ai-development-with-claude-code.webp"
 keywords: ["Claude Code", "AI development", "plugins", "MCP servers", "custom agents", "hooks", "oh-my-claudecode", "production AI"]
-author: "Recep Şen"
+author: "Recep ŞEN"
 modifiedDate: "2026-01-21"
 category: "AI"
 faq:

@@ -49,7 +49,7 @@ This document contains terms that should NOT be translated and must remain in th
 
 ## Personal Information (Do Not Translate)
 
-- Recep Şen
+- Recep ŞEN
 - TB1REC (Amateur Radio Callsign)
 - @senrecep0 (Social media handle)
 

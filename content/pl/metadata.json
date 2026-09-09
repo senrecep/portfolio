@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Inżynier Oprogramowania",
+  "title": "Recep ŞEN - Inżynier Oprogramowania",
   "description": "W Taptoweb projektuję architekturę stojącą za Easyapp.ai i pracuję nad systemami rozproszonymi i agentami AI.",
   "callsign": "TB1REC",
   "keywords": [
@@ -17,15 +17,15 @@
     "krótkofalowiec"
   ],
   "openGraph": {
-    "title": "Recep Şen - Inżynier Oprogramowania",
+    "title": "Recep ŞEN - Inżynier Oprogramowania",
     "description": "W Taptoweb projektuję architekturę stojącą za Easyapp.ai i pracuję nad systemami rozproszonymi i agentami AI.",
-    "siteName": "Portfolio Recep Şen",
+    "siteName": "Portfolio Recep ŞEN",
     "images": [
       {
         "url": "/images/og-banner.pl.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Inżynier Oprogramowania | Podgląd portfolio"
+        "alt": "Recep ŞEN - Inżynier Oprogramowania | Podgląd portfolio"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "creator": "@senrecep0",
     "images": {
       "url": "/images/og-banner.pl.webp",
-      "alt": "Recep Şen - Inżynier Oprogramowania | Podgląd portfolio"
+      "alt": "Recep ŞEN - Inżynier Oprogramowania | Podgląd portfolio"
     }
   }
 }

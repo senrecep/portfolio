@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Engenheiro de Software",
+  "title": "Recep ŞEN - Engenheiro de Software",
   "description": "Na Taptoweb projeto a arquitetura por trás do Easyapp.ai e trabalho com sistemas distribuídos e agentes de IA.",
   "callsign": "TB1REC",
   "keywords": [
@@ -17,15 +17,15 @@
     "radioamador"
   ],
   "openGraph": {
-    "title": "Recep Şen - Engenheiro de Software",
+    "title": "Recep ŞEN - Engenheiro de Software",
     "description": "Na Taptoweb projeto a arquitetura por trás do Easyapp.ai e trabalho com sistemas distribuídos e agentes de IA.",
-    "siteName": "Portfolio Recep Şen",
+    "siteName": "Portfolio Recep ŞEN",
     "images": [
       {
         "url": "/images/og-banner.pt.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Engenheiro de Software | Imagem de visualização do portfólio"
+        "alt": "Recep ŞEN - Engenheiro de Software | Imagem de visualização do portfólio"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "creator": "@senrecep0",
     "images": {
       "url": "/images/og-banner.pt.webp",
-      "alt": "Recep Şen - Engenheiro de Software | Imagem de visualização do portfólio"
+      "alt": "Recep ŞEN - Engenheiro de Software | Imagem de visualização do portfólio"
     }
   }
 }

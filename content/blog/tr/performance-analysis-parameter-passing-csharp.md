@@ -6,7 +6,7 @@ slug: "performance-analysis-parameter-passing-csharp"
 mediumUrl: "https://senrecep.medium.com/performance-analysis-of-parameter-passing-methods-in-c-ceeffcefd624"
 imageUrl: "/images/parameters.webp"
 keywords: ["C# performance", "parameter passing", "struct vs class", "BenchmarkDotNet", "ref struct", "readonly struct", "memory allocation", "C# optimization"]
-author: "Recep Şen"
+author: "Recep ŞEN"
 modifiedDate: "2025-02-20"
 category: "Technology"
 faq:

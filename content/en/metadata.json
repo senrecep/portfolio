@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Software Engineer",
+  "title": "Recep ŞEN - Software Engineer",
   "description": "I design the architecture behind Easyapp.ai at Taptoweb and work on distributed systems and AI agents.",
   "callsign": "TB1REC",
   "keywords": [
@@ -18,15 +18,15 @@
     "ham radio"
   ],
   "openGraph": {
-    "title": "Recep Şen - Software Engineer",
+    "title": "Recep ŞEN - Software Engineer",
     "description": "I design the architecture behind Easyapp.ai at Taptoweb and work on distributed systems and AI agents.",
-    "siteName": "Recep Şen Portfolio",
+    "siteName": "Recep ŞEN Portfolio",
     "images": [
       {
         "url": "/images/og-banner.en.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Software Engineer | Portfolio preview banner"
+        "alt": "Recep ŞEN - Software Engineer | Portfolio preview banner"
       }
     ]
   },
@@ -36,7 +36,7 @@
     "creator": "@senrecep0",
     "images": {
       "url": "/images/og-banner.en.webp",
-      "alt": "Recep Şen - Software Engineer | Portfolio preview banner"
+      "alt": "Recep ŞEN - Software Engineer | Portfolio preview banner"
     }
   }
 }

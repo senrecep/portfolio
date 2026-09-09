@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Software Engineer",
+  "title": "Recep ŞEN - Software Engineer",
   "description": "Bij Taptoweb ontwerp ik de architectuur achter Easyapp.ai en werk ik aan gedistribueerde systemen en AI-agents.",
   "callsign": "TB1REC",
   "keywords": [
@@ -17,15 +17,15 @@
     "radioamateur"
   ],
   "openGraph": {
-    "title": "Recep Şen - Software Engineer",
+    "title": "Recep ŞEN - Software Engineer",
     "description": "Bij Taptoweb ontwerp ik de architectuur achter Easyapp.ai en werk ik aan gedistribueerde systemen en AI-agents.",
-    "siteName": "Recep Şen Portfolio",
+    "siteName": "Recep ŞEN Portfolio",
     "images": [
       {
         "url": "/images/og-banner.nl.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Software Engineer | Portfolio voorbeeldafbeelding"
+        "alt": "Recep ŞEN - Software Engineer | Portfolio voorbeeldafbeelding"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "creator": "@senrecep0",
     "images": {
       "url": "/images/og-banner.nl.webp",
-      "alt": "Recep Şen - Software Engineer | Portfolio voorbeeldafbeelding"
+      "alt": "Recep ŞEN - Software Engineer | Portfolio voorbeeldafbeelding"
     }
   }
 }

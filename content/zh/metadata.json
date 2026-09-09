@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - 软件工程师",
+  "title": "Recep ŞEN - 软件工程师",
   "description": "在Taptoweb，我设计Easyapp.ai背后的架构，主要做分布式系统和AI智能体。",
   "callsign": "TB1REC",
   "keywords": [
@@ -17,15 +17,15 @@
     "业余无线电"
   ],
   "openGraph": {
-    "title": "Recep Şen - 软件工程师",
+    "title": "Recep ŞEN - 软件工程师",
     "description": "在Taptoweb，我设计Easyapp.ai背后的架构，主要做分布式系统和AI智能体。",
-    "siteName": "Recep Şen 作品集",
+    "siteName": "Recep ŞEN 作品集",
     "images": [
       {
         "url": "/images/og-banner.zh.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - 软件工程师 | 作品集预览图"
+        "alt": "Recep ŞEN - 软件工程师 | 作品集预览图"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "creator": "@senrecep0",
     "images": {
       "url": "/images/og-banner.zh.webp",
-      "alt": "Recep Şen - 软件工程师 | 作品集预览图"
+      "alt": "Recep ŞEN - 软件工程师 | 作品集预览图"
     }
   }
 }

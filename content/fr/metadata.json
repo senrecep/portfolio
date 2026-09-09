@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - Ingénieur Logiciel",
+  "title": "Recep ŞEN - Ingénieur Logiciel",
   "description": "Chez Taptoweb, je conçois l'architecture derrière Easyapp.ai et je travaille sur les systèmes distribués et les agents IA.",
   "callsign": "TB1REC",
   "keywords": [
@@ -17,15 +17,15 @@
     "radio amateur"
   ],
   "openGraph": {
-    "title": "Recep Şen - Ingénieur Logiciel",
+    "title": "Recep ŞEN - Ingénieur Logiciel",
     "description": "Chez Taptoweb, je conçois l'architecture derrière Easyapp.ai et je travaille sur les systèmes distribués et les agents IA.",
-    "siteName": "Portfolio Recep Şen",
+    "siteName": "Portfolio Recep ŞEN",
     "images": [
       {
         "url": "/images/og-banner.fr.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - Ingénieur Logiciel | Aperçu du portfolio"
+        "alt": "Recep ŞEN - Ingénieur Logiciel | Aperçu du portfolio"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "creator": "@senrecep0",
     "images": {
       "url": "/images/og-banner.fr.webp",
-      "alt": "Recep Şen - Ingénieur Logiciel | Aperçu du portfolio"
+      "alt": "Recep ŞEN - Ingénieur Logiciel | Aperçu du portfolio"
     }
   }
 }

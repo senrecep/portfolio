@@ -1,5 +1,5 @@
 {
-  "title": "Recep Şen - ソフトウェアエンジニア",
+  "title": "Recep ŞEN - ソフトウェアエンジニア",
   "description": "TaptowebでEasyapp.aiを支えるアーキテクチャを設計し、分散システムとAIエージェントに取り組んでいます。",
   "callsign": "TB1REC",
   "keywords": [
@@ -17,15 +17,15 @@
     "アマチュア無線"
   ],
   "openGraph": {
-    "title": "Recep Şen - ソフトウェアエンジニア",
+    "title": "Recep ŞEN - ソフトウェアエンジニア",
     "description": "TaptowebでEasyapp.aiを支えるアーキテクチャを設計し、分散システムとAIエージェントに取り組んでいます。",
-    "siteName": "Recep Şen ポートフォリオ",
+    "siteName": "Recep ŞEN ポートフォリオ",
     "images": [
       {
         "url": "/images/og-banner.ja.webp",
         "width": 1200,
         "height": 630,
-        "alt": "Recep Şen - ソフトウェアエンジニア | ポートフォリオプレビュー"
+        "alt": "Recep ŞEN - ソフトウェアエンジニア | ポートフォリオプレビュー"
       }
     ]
   },
@@ -35,7 +35,7 @@
     "creator": "@senrecep0",
     "images": {
       "url": "/images/og-banner.ja.webp",
-      "alt": "Recep Şen - ソフトウェアエンジニア | ポートフォリオプレビュー"
+      "alt": "Recep ŞEN - ソフトウェアエンジニア | ポートフォリオプレビュー"
     }
   }
 }

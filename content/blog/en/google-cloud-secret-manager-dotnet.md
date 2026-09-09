@@ -6,7 +6,7 @@ slug: "google-cloud-secret-manager-dotnet"
 mediumUrl: "https://senrecep.medium.com/google-cloud-secret-manager-integration-for-your-net-applications-84f2576f6027"
 imageUrl: "/images/dotnet-secret-manager.webp"
 keywords: ["Google Cloud Secret Manager", ".NET", "CSharpEssentials", "secrets management", "IConfiguration", "GCP", "microservices", "environment configuration"]
-author: "Recep Şen"
+author: "Recep ŞEN"
 modifiedDate: "2025-01-30"
 category: "Tutorial"
 faq:

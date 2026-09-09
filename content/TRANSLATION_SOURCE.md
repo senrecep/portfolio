@@ -133,7 +133,7 @@ This research proposes the development of a secure and fast online voting system
 
 ### Title
 ```
-Recep Şen - Software Engineer
+Recep ŞEN - Software Engineer
 ```
 
 ### Description
@@ -151,10 +151,10 @@ Building high-impact, scalable systems. I turn complex business challenges into 
 ### OpenGraph
 | Field | English |
 |-------|---------|
-| title | Recep Şen - Software Engineer |
+| title | Recep ŞEN - Software Engineer |
 | description | Building high-impact, scalable systems. I turn complex business challenges into elegant technical solutions that serve hundreds of thousands of users. |
-| siteName | Recep Şen Portfolio |
-| alt | Recep Şen - Software Engineer |
+| siteName | Recep ŞEN Portfolio |
+| alt | Recep ŞEN - Software Engineer |
 
 ---
 
